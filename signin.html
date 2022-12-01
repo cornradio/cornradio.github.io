@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>登录/注册</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #eee;
+        }
+        
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+        
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+        
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+        
+        .form-signin .top {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        .form-signin .middle {
+            margin-bottom: -1px;
+            border-radius: 0;
+        }
+        
+        .form-signin .bottom {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        
+        .gray {
+            color: rgba(0, 0, 0, 0.247);
+        }
+        
+        .deepgray {
+            color: rgba(0, 0, 0, 0.418);
+        }
+        
+        .hiddened {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form class="form-signin">
+            <h2 class="form-signin-heading"><b>登录</b></h2>
+            <label><a href="lab.html">⏮lab</a></label>
+            <label for="inputEmail" class="sr-only ">邮件地址</label>
+            <input type="email" id="inputEmail" class="form-control top" placeholder="邮箱地址" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control bottom" placeholder="密码" required>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> 记住我
+                </label>
+            </div>
+            <label class="deepgray"> 没有账户？<a onclick="show('demo')">注册</a></label>
+            <button class="btn btn-lg btn-primary btn-block " onclick="show('alert1')" type="submit">登录</button>
+            <h4 class="gray ">NO need to sign in but you still can</h3>
+
+        </form>
+
+    </div>
+    <!-- /container -->
+
+
+    <div class="container hiddened" id="demo">
+        <div style="height: 2px;width: 40% ; margin: auto; background-color: rgba(0, 0, 0, 0.247);"></div>
+
+        <form class="form-signin">
+            <h2 class="form-signin-heading"><b>注册</b></h2>
+
+            <label for="inputEmail" class="sr-only">邮件地址</label>
+            <input type="email" id="inputEmail" class="top form-control" placeholder="邮箱地址" required autofocus>
+            <input type="text" id="username" class="middle form-control" placeholder="昵称" required>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="middle form-control" placeholder="密码" required>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="bottom form-control" placeholder="重复密码" required>
+
+
+            <label class="deepgray"> 图片：</label>
+            <input type="file" id="photo" class="middle form-control" placeholder="图片" required>
+            <label class="deepgray"> 养过的小动物:(ctrl多个)</label><br>
+
+            <select multiple class="bottom" style="width: 100%">
+                            <option value="猫猫">猫猫</option>
+                            <option value="狗狗">狗狗</option>
+                            <option value="小王八">小乌龟</option>
+                            <option value="鼠">鼠</option>
+                            <option value="鸟">鸟</option>
+                            <option value="无">无</option>
+                        </select>
+            <keygen name="security">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">加密注册</button>
+
+
+        </form>
+    </div>
+
+
+</body>
+<script>
+    function show(string) {
+        var a = document.getElementById(string).style.display = "unset";
+    }
+</script>
+
+</html>

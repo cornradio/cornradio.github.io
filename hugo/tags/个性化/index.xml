@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>个性化 on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/</link>
+    <description>Recent content in 个性化 on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Thu, 15 Sep 2022 23:03:01 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/%E4%B8%AA%E6%80%A7%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自定义终端标识符</title>
+      <link>https://kasusa.github.io/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 15 Sep 2022 23:03:01 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
+      <description>zshrc zsh是macos目前默认的交互终端，如果要修改默认标识符有2中办法： 在～/.zshrc文件中加入行来设置： 你可以通过设置PS1这个变量，</description>
+    </item>
+    
+  </channel>
+</rss>

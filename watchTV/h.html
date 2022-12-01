@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="https://www.emojiall.com/en/header-svg/%F0%9F%94%9E.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uwu</title>
+  
+</head>
+
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(ellipse farthest-corner at center top,
+        #6410b3,
+        #993a6e);
+    color: #8b9095;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .room {
+    color: black;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+  }
+
+  .app {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 940px;
+    height: 590px;
+    background: rgba(0, 0, 0, 0.404);
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  header {
+    padding: 30px;
+    position: relative;
+    height: 70px;
+  }
+
+  header h1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #e1e4e9;
+  }
+
+  header h1 strong {
+    background: #d6d3d242;
+    color: #fff;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 6px;
+    font-size: 83%;
+    line-height: 1;
+    position: relative;
+    top: -1px;
+    left: 2px;
+  }
+
+  .icon {
+    --iconsize: 124px;
+    --marginsize: 48px;
+    height: var(--iconsize);
+    width: var(--iconsize);
+    margin-left: var(--marginsize);
+    margin-top: var(--marginsize);
+    background-color: #58585881;
+    display: inline-block;
+    transition: 0.22s;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.178), 2px 2px 4px rgba(0, 0, 0, 0.308);
+    border-radius: 30px;
+    background-size: contain;
+
+  }
+
+  .icon:hover {
+    transform: scale(1.2);
+    background-color: #11111118;
+    transition: 0.12s;
+
+  }
+
+  .icon:active {
+    transform: scale(1.1);
+    background-color: #f3f3f3;
+  }
+
+
+
+  .context-menu {
+    position: fixed;
+    z-index: 10000;
+    width: 150px;
+    background: #ffffff8a;
+    border-radius: 5px;
+    transform-origin: top left;
+    backdrop-filter: blur(20px);
+    transform: scale(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+
+  }
+
+  .active {
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+
+  }
+
+  .context-menu .item {
+    padding: 8px 10px;
+    font-size: 15px;
+    color: rgb(3, 3, 3);
+    border-left: 2px double rgba(5, 219, 247, 0);
+  }
+
+  .context-menu .item:hover {
+    border-left: 6px solid rgba(1, 9, 10, 0.993);
+    cursor: alias;
+    transition: 0.2s;
+
+  }
+
+  .context-menu hr {
+    margin: 0px 0px;
+    border-color: rgba(7, 7, 7, 0.123);
+  }
+
+  a{
+    text-decoration: none;
+  }
+  
+  .c1 {
+    /* background-image: url('https://tvax3.sinaimg.cn/large/006rgJELgy1h2j9phcofxj30a00a0aar.jpg'); */
+    /* background-image: url(coub.svg); */
+
+  }
+
+  .c2 {
+    background-image: url('https://tva4.sinaimg.cn/large/006rgJELgy1h2j9r6cxn7j30gs0gstde.jpg');
+  }
+
+  .c3 {
+    background-image: url('https://tvax2.sinaimg.cn/large/006rgJELgy1h2j9qqgsfyj30p30p3ao5.jpg');
+  }
+
+  .c4 {
+    background-image: url('https://tva2.sinaimg.cn/large/006rgJELgy1h2j9q8105kj30il0ilafw.jpg');
+  }
+
+  .c5 {
+    background-image: url(n-h.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black !important;
+    background-size: 90px;
+
+  }
+  .c6 {
+    background-image: url(pornhub.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black !important;
+    background-size: 90px;
+  }
+  .c7 {
+    background-image: url('https://tva4.sinaimg.cn/large/006rgJELgy1h2j9rgbozzj30450450sm.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(22 22 22) !important;
+    background-size: 90px;
+  }
+  .c8 {
+    background-image: url(chaturbate.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(246, 246, 246) !important;
+    background-size: 100px;  }
+
+</style>
+<script>
+  var hover_icon_name = ""
+  function go(str) {
+    switch (str) {
+      case "coub": window.open('https://coub.com/community/nsfw'); break;
+      case "sex": window.open('https://www.sex.com/gifs/hentai/'); break;
+      case "e-h": window.open('https://e-hentai.org/'); break;
+      case "derpi": window.open('https://derpibooru.org/'); break;
+      case "n-h": window.open('https://nhentai.to/'); break;
+      case "pornhub": window.open('https://pornhub.com/'); break;
+      case "xvideos": window.open('https://www.xvideos.com/'); break;
+      case "chaturbate": window.open('https://chaturbate.com/discover/?g=f'); break;
+      default: 
+        window.open('https://tv.cctv.com/live/' + str); break;
+      break;
+    }
+  }
+
+  // var ele = document.getElementById("cctv-icon");
+  // ele.onmouseover = function(ev){
+  //   alert('asdfa')
+  // }
+
+  // 在这里的所有项目都会被添加menu菜单linstener
+  var menulist = ["cctv", "bilibili"]
+
+  let ele = document.querySelector("#cctv-icon"); // This will not get any element because the page is not even loaded!
+ 
+ 
+  document.addEventListener("readystatechange", function () {
+    if (this.readyState == "interactive") {
+      var item = "cctv";
+//右键监听
+      document.querySelector("#" + item + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+// 点击空白位置
+      window.addEventListener("click", function () {
+        document.querySelector("#" + item + "-menu").classList.remove("active")
+      });
+    }
+  });
+
+
+</script>
+
+<body>
+  <div class="app">
+    <header>
+      <h1>Porn  <strong><a href="index.html">❤️</a></strong></h1> 
+    </header>
+    <div id="coub-icon" class="icon c1" onclick="go('coub')"></div>
+    <div id="sex-icon" class="icon c2" onclick="go('sex')"></div>
+    <div id="cctv-icon" class="icon c3" onclick="go('e-h')"></div>
+    <div class="icon c4" onclick="go('derpi')"></div>
+    <div class="icon c5" onclick="go('n-h')"></div>
+    <div class="icon c6" onclick="go('pornhub')"></div>
+    <div class="icon c7" onclick="go('xvideos')"></div>
+    <div class="icon c8" onclick="go('chaturbate')"></div>
+    <div class="icon"></div>
+    <div class="icon"></div>
+  </div>
+
+  <div id="youtube-menu" class="context-menu">
+    <a target="_blank" href="https://www.youtube.com/feed/history"><div class="item">历史记录</div></a>
+    <a target="_blank" href="https://www.youtube.com/playlist?list=WL"><div class="item">稍后观看</div></a>
+    <a target="_blank" href="https://www.youtube.com/feed/subscriptions"><div class="item">订阅中心</div></a>
+  </div>
+
+
+
+</body>
+
+</html>

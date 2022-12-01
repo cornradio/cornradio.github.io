@@ -1,0 +1,192 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+body {
+    color: #555;
+    margin: 0;
+    font-family: Comic Sans MS, 'Montserrat', sans-serif;
+}
+
+#go-lab-button img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #333;
+}
+
+p {
+    line-height: 1.5;
+}
+
+#header {
+    background-color: #1abc9c;
+    /* background-image: url("http://ww1.sinaimg.cn/large/0083vuQJly1gcwon2tuwtg306o03rtxi.gif"); */
+    background-size: contain;
+    height: 140px;
+    line-height: 150px;
+}
+
+a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(226, 151, 31);
+}
+
+#header a {
+    color: azure;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+#header a:hover {
+    color: rgb(243, 158, 158);
+    text-shadow: 0 20px 20px rgb(0, 0, 0);
+}
+
+#header-title {
+    display: block;
+    float: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#header-nav {
+    display: block;
+    float: right;
+    margin-top: 0px;
+}
+
+#header-nav li {
+    display: inline;
+    padding-left: 20px;
+}
+
+#go-lab-button {
+    opacity: 0.8;
+    filter: invert(10%);
+    -webkit-filter: invert(10%);
+}
+
+#go-lab-button:hover {
+    opacity: 0.9;
+    filter: invert(0%);
+}
+
+#footer {
+    background-color: #2f2f2f;
+    padding: 50px 0;
+}
+
+#footer h4 {
+    color: #c4f0e7;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#footer p {
+    color: #f3f7f6a9;
+}
+
+.column {
+    margin-left: 20px;
+    margin-right: 50px;
+    /* min-width: 300px; */
+    display: inline-block;
+    vertical-align: top;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.post-container:nth-child(even) {
+    background-color: rgba(231, 228, 228, 0.8);
+}
+
+.post,
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3em 1em;
+}
+
+.post-container:first-child>.post {
+    padding-top: 1em;
+}
+
+.post-author img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 25px;
+}
+
+.post-author span {
+    margin-left: 15px;
+}
+
+.post-date {
+    color: #6153df;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.about {
+    text-align: center;
+}
+
+.cloudmusic {
+    position: sticky;
+    position: -webkit-sticky;
+    right: 5px;
+    text-align: left;
+    top: 0;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Left</title>
+    <style>
+        body {
+            background-color: black;
+
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .gray {
+            border: solid 2px rgb(95, 95, 95);
+            background-color: rgb(39, 41, 39);
+
+        }
+
+        .green {
+            border: solid 2px greenyellow;
+            background-color: rgb(29, 85, 27);
+        }
+
+        #pot {
+            margin-top: 20px;
+            max-width: 370px;
+        }
+
+        p {
+            font-family: 'Cascadia Mono SemiBold', Times, serif;
+            color: greenyellow;
+        }
+
+        .emo {
+            animation: waviy 1s;
+            animation-delay: calc(.1s * var(--i));
+        }
+
+
+        .emo-inf {
+            animation: waviy 1s infinite;
+            animation-delay: calc(.1s * var(--i));
+        }
+
+
+        @keyframes waviy {
+
+            0%,
+            40%,
+            100% {
+                transform: translateY(0);
+            }
+
+            20% {
+                transform: translateY(-20px);
+                background-color: rgba(255, 255, 255, 0.699);
+            }
+        }
+        input{
+            background-color: rgb(5, 5, 5);
+            border: none;
+            color: white;
+            text-align: center;
+        }
+        input:hover{
+            background-color: rgb(56, 56, 56);
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="pot">
+        </div>
+    </center>
+    
+</body>
+<script>
+    function moving(define_date) {
+        // del all child in pot
+        const myNode = document.getElementById("pot");
+        myNode.innerHTML = '';
+        //decide the year
+        var nt = new Date();
+        if(!define_date=="")nt = new Date(define_date)
+
+        var i1 = nt.getMonth()
+        // console.log(i1)
+        block = document.getElementById('pot');
+        biggestindex =0
+        for (let index = 0; index < (i1) * 4; index++) {
+            block.innerHTML = block.innerHTML + '<div class="emo dot green" style="--i:' + index + '"> </div>'
+            biggestindex = index+1
+        }
+        var i2 = nt.getDate();
+        i2 = (i2 * 4 / 30).toPrecision(1);
+        if (i2>1)
+            for (let index = 0; index < i2; index++) {
+                tmp = index+biggestindex
+                block.innerHTML = block.innerHTML + '<div class="emo-inf dot green" style="--i:' + tmp + '"> </div>'
+            }
+        for (let index = 0; index < 4 - i2; index++) {
+            block.innerHTML = block.innerHTML + '<div class="dot gray"> </div>'
+        }
+        for (let index = 0; index < (11 - (i1)) * 4; index++) {
+            block.innerHTML = block.innerHTML + '<div class="dot gray" > </div>'
+        }
+    }
+    moving()
+    function debugfunc(){
+        var x = document.getElementById("time_debug").value;
+        moving(x)
+    }
+
+</script>
+
+</html>

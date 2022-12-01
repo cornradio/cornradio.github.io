@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAI clock</title>
+    <!-- <meta name="referrer" content="no-referrer" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        .hide {
+            display: none;
+            /* background-color: #dadada; */
+            background-color: #c2bebe;
+            width: fit-content;
+            padding: 22px;
+            border: 1px solid #868686;
+        }
+
+        .hide:hover {
+            display: block;
+        }
+
+        .myDIV:hover+.hide {
+            display: block;
+        }
+
+        .myDIV {
+            color: transparent;
+            float: left;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+    </style>
+
+    <style>
+        body {
+            background: rgb(218, 218, 218);
+            /* background: black; */
+        }
+
+        /* 黑色主题 */
+
+        .clock-1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #17D4FE;
+            font-size: 60px;
+            font-family: Odibee Sans;
+            letter-spacing: 7px;
+        }
+
+        .clock-2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #000000;
+            font-size: 60px;
+            font-family: Odibee Sans;
+            letter-spacing: 7px;
+            text-shadow: 0 0 10px #0000008a;
+        }
+
+        .clock-3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #272727;
+            font-size: 60px;
+            font-family: 'Odibee Sans';
+            letter-spacing: 7px;
+        }
+    </style>
+    <script src="../src/js/NoSleep.js"></script>
+
+</head>
+
+<body>
+    <div id="MyClockDisplay" class="clock-2" onload="showTime()">
+    </div>
+
+    <div class="myDIV">themes</div>
+    <div class="hide">
+        <button onclick="theme3()">雅灰</button>
+        <button onclick="theme2()">纸白</button> ||
+        <button onclick="theme1()">夜光</button>
+        <button onclick="theme4()">隐匿</button> ||
+        <button onclick="openFullscreen()">全屏</button>
+        <button onclick="fontsizeIncrease()">大字</button>
+        <button onclick="fontsizeDecrease()">小字</button>
+        <button id="coffeebtn" onclick="coffee()">常亮</button>
+
+    </div>
+
+
+    <script>
+        var noSleep = new NoSleep();
+        let coffeeOn = false;
+
+        function coffee() {
+            let btn = document.getElementById("coffeebtn");
+
+            if (coffeeOn == false) {
+                coffeeOn = true;
+                btn.style.backgroundColor = "#4BDD87";
+                noSleep.enable(); // keep the screen on!
+
+            } else {
+                coffeeOn = false;
+                btn.style.backgroundColor = "#EFEFEF";
+                noSleep.disable();
+            }
+        };
+
+        function showTimeampm() {
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var s = date.getSeconds(); // 0 - 59
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            var time = h + ":" + m + ":" + s + " " + session;
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+
+            setTimeout(showTime, 1000);
+        }
+
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var s = date.getSeconds(); // 0 - 59
+            var session = "AM";
+
+
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            var time = h + ":" + m + ":" + s;
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+
+            setTimeout(showTime, 1000);
+        }
+
+        function theme1() {
+            let d = document.getElementById("MyClockDisplay");
+            d.className = "clock-1";
+            let body = document.body;
+            body.style.backgroundColor = "#000"
+        }
+
+        function theme2() {
+            let d = document.getElementById("MyClockDisplay");
+            d.className = "clock-2";
+            let body = document.body;
+            body.style.backgroundColor = "#fff"
+        }
+
+        function theme3() {
+            let d = document.getElementById("MyClockDisplay");
+            d.className = "clock-2";
+            document.body.style.backgroundColor = "#dadada"
+        }
+
+        function theme4() {
+            let d = document.getElementById("MyClockDisplay");
+            d.className = "clock-3";
+            document.body.style.backgroundColor = "#000"
+        }
+
+        var elem = document.documentElement;
+
+        function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+        }
+
+        function fontsizeIncrease() {
+            let clock = document.getElementById("MyClockDisplay");
+            clock.style.setProperty("width", "100%");
+            clock.style.setProperty("font-size", "28vw");
+            clock.style.setProperty("margin", "20px");
+        }
+
+        function fontsizeDecrease() {
+            let clock = document.getElementById("MyClockDisplay");
+            clock.style.setProperty("width", "fit-content");
+            clock.style.setProperty("font-size", "60px");
+            clock.style.setProperty("margin", "0");
+        }
+
+        showTime();
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <!-- <script>
+        const axios = require('axios').default
+        const options = {
+            method: 'GET',
+            url: 'https://wis.qq.com/weather/common',
+            params: {
+                source: 'pc',
+                weather_type: 'observe|forecast_24h|air|alarm|rise',
+                province: '上海',
+                city: '上海',
+                county: '浦东新区'
+            }
+        }
+        axios.request(options).then(function (response) {
+            console.log(response.data)
+        }).catch(function (error) {
+            console.error(error)
+        })
+    </script> -->
+
+</body>
+
+</html>

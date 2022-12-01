@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="https://www.emojiall.com/en/header-svg/%F0%9F%9B%A1.svg">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorKPlace</title>
+</head>
+
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(ellipse farthest-corner at center top,
+        #ffffff,
+        #044692);
+    color: #b4b6b8;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .room {
+    color: black;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+  }
+
+  .app {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 940px;
+    height: 590px;
+    background: #ffffff1f;;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  header {
+    padding: 30px;
+    position: relative;
+    height: 70px;
+  }
+
+  header h1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1c222b;
+  }
+
+  header h1 strong {
+    background: #0664a3;
+    color: #fff;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 6px;
+    font-size: 83%;
+    line-height: 1;
+    position: relative;
+    top: -1px;
+    left: 2px;
+  }
+
+  .icon {
+    --iconsize: 124px;
+    --marginsize: 48px;
+    height: var(--iconsize);
+    width: var(--iconsize);
+    margin-left: var(--marginsize);
+    margin-top: var(--marginsize);
+    background-color: #20202031;
+    display: inline-block;
+    transition: 0.22s;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.178), 2px 2px 4px rgba(0, 0, 0, 0.308);
+    border-radius: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .icon:hover {
+    transform: scale(1.2);
+    background-color: #f3f3f3;
+    transition: 0.12s;
+
+  }
+
+  .icon:active {
+    transform: scale(1.1);
+    background-color: #f3f3f3;
+  }
+
+
+  .context-menu {
+    position: fixed;
+    z-index: 10000;
+    width: 150px;
+    background: #ffffffd9;
+    border-radius: 5px;
+    transform-origin: top left;
+    backdrop-filter: blur(20px);
+    transform: scale(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+
+  }
+
+  .active {
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+
+  }
+
+  .context-menu .item {
+    padding: 8px 10px;
+    font-size: 15px;
+    color: rgb(3, 3, 3);
+    border-left: 2px double rgba(5, 219, 247, 0);
+  }
+
+  .context-menu .item:hover {
+    /* border-left: 6px solid rgba(1, 9, 10, 0.993); */
+    cursor: alias;
+    transition: 0.2s;
+
+  }
+
+  .context-menu hr {
+    margin: 0px 0px;
+    border-color: rgba(7, 7, 7, 0.123);
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  
+  .c1 {
+    background-image: url("https://tvax3.sinaimg.cn/large/006rgJELly1h0f47wdnu5j306y07a3yk.jpg");
+
+  }
+  
+  .c2 {   
+    
+    background-image: url("https://tva2.sinaimg.cn/large/006rgJELly1h0f4ta4ijxj308c08ctag.jpg");
+  }
+  
+  .c3 {
+    background-image: url("https://tvax4.sinaimg.cn/large/006rgJELly1h0f4acwo6yj306y07awet.jpg");
+    
+  }
+  
+  .c4 {
+    background-image: url("https://tvax3.sinaimg.cn/large/006rgJELly1h0f4irh22mj308c08cjrs.jpg");
+    
+  }
+  
+  .c5 {
+    background-image: url("https://tva3.sinaimg.cn/large/006rgJELly1h0f4oqqsuaj308c08cdi6.jpg");
+  }
+  /* background-image: url(""); */
+
+  .c6 {
+    background-image: url("https://tvax3.sinaimg.cn/large/006rgJELly1h0f4waqo8jj308c08cq2y.jpg");
+    
+    }
+    .c7{background-image: url("https://tvax4.sinaimg.cn/large/006rgJELly1h0zsr4orpbj30gs0g40uo.jpg");
+  }
+  .c8{
+    background-image: url("https://tvax3.sinaimg.cn/large/0083vuQJgy1h5b0jolm2hj30af0afgnj.jpg");
+  }
+  .c9{
+    background-image: url("https://tvax3.sinaimg.cn/large/0083vuQJgy1h5b0bgdradj308c08c0tn.jpg");
+  }
+  .c10{
+    background-image: url('https://tva2.sinaimg.cn/large/0083vuQJgy1h5b0efclmzj30ah09k0ss.jpg');
+  }
+
+
+</style>
+<script>
+  var hover_icon_name = ""
+  function go(str) {
+    switch (str) {
+      case "sstlvpn": window.open('https://ssl.sscenter.sh.cn/prx/000/http/localhost/login/index.html'); break;
+      case "dokuwiki": window.open('http://192.168.71.231:8000/dokuwiki/doku.php'); break;
+      case "ywpt": window.open('http://192.168.250.54:7070/'); break;
+      case "sstlmail": window.open('https://mail.sscenter.sh.cn/'); break;
+      case "djbh": window.open('http://www.djbh.net/'); break;
+      case "freebuff": window.open('https://www.freebuf.com/'); break;
+      case "was": window.open('http://192.168.76.236:9000/#/'); break; 
+      case "mmwiki": window.open('http://124.223.57.166/dengbao/ '); break;//all dengbao tool http://192.168.76.235:8001/test/
+      case "lvmeng": window.open('https://192.168.76.30/index/'); break;
+      case "bangbang": window.open('http://192.168.76.249:8100'); break;
+    }
+  }
+
+  // var ele = document.getElementById("cctv-icon");
+  // ele.onmouseover = function(ev){
+  //   alert('asdfa')
+  // }
+
+  // 在这里的所有项目都会被添加menu菜单linstener
+  var menulist = ["bangbang"]
+
+  let ele = document.querySelector("#cctv-icon"); // This will not get any element because the page is not even loaded!
+ 
+ 
+  document.addEventListener("readystatechange", function () {
+    if (this.readyState == "interactive") {
+      var item = "bangbang";
+//右键监听
+      document.querySelector("#" + item + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+// 点击空白位置
+      window.addEventListener("click", function () {
+        document.querySelector("#" + item + "-menu").classList.remove("active")
+      });
+
+      var item1 = "lvmeng";
+//右键监听
+      document.querySelector("#" + item1 + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item1 + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+// 点击空白位置
+      window.addEventListener("click", function () {
+        document.querySelector("#" + item1 + "-menu").classList.remove("active")
+      });
+    }
+  });
+
+
+</script>
+
+<body>
+  <div class="app">
+    <header>
+    <h1>DENG BAO<strong><a href="../watchTV">🛡️</a></strong></h1>
+    </header>
+    <div id="icon" class="icon c1" onclick="go('sstlvpn')"></div>
+    <div id="icon" class="icon c2" onclick="go('ywpt')"></div>
+    <div id="icon" class="icon c3" onclick="go('dokuwiki')"></div>
+    <div class="icon c4" onclick="go('sstlmail')"></div>
+    <div class="icon c5" onclick="go('djbh')" ></div>
+    <div class="icon c6" onclick="go('freebuff')"></div>
+    <div id="icon" class="icon c7" onclick="go('was')" ></div>
+    <div id="icon" class="icon c8" onclick="go('mmwiki')" ></div>
+    <div id="lvmeng-icon" class="icon c9" onclick="go('lvmeng')" ></div>
+    <div id="bangbang-icon" class="icon c10" onclick="go('bangbang')"></div>
+  </div>
+
+  <div id="bangbang-menu" class="context-menu">
+    <div class="item" onclick="go('cctv1')">operator SStl@2021</div>
+  </div>
+
+  <div id="lvmeng-menu" class="context-menu">
+    <div class="item" onclick="go('cctv1')">admin  <br>   Sstl@123</div>
+  </div>
+
+</body>
+
+</html>

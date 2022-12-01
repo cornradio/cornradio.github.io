@@ -1,0 +1,739 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>word小工具开发 - kasusa的技术博客</title><link rel="apple-touch-icon" href="https://kasusa.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://kasusa.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="word小工具开发">
+<meta itemprop="description" content="本期是发到公众号上的技术分享，分享的内容就是之前我的Docx相关东东，但是本篇除了介绍代码方便、会更加全面的讲解程序搭建的思路、以及myut"><meta itemprop="datePublished" content="2022-03-31T15:44:16+08:00" />
+<meta itemprop="dateModified" content="2022-03-31T15:44:16+08:00" />
+<meta itemprop="wordCount" content="4715">
+<meta itemprop="keywords" content="c#,word,开发," /><meta property="og:title" content="word小工具开发" />
+<meta property="og:description" content="本期是发到公众号上的技术分享，分享的内容就是之前我的Docx相关东东，但是本篇除了介绍代码方便、会更加全面的讲解程序搭建的思路、以及myut" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kasusa.github.io/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-31T15:44:16+08:00" />
+<meta property="article:modified_time" content="2022-03-31T15:44:16+08:00" /><meta property="og:site_name" content="kasusa的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="word小工具开发"/>
+<meta name="twitter:description" content="本期是发到公众号上的技术分享，分享的内容就是之前我的Docx相关东东，但是本篇除了介绍代码方便、会更加全面的讲解程序搭建的思路、以及myut"/>
+<meta name="twitter:site" content="@kasusa6"/>
+<link rel="preload" href="https://kasusa.github.io/hugo/css/bundle.min.97751a78b909969082c383b150b8b8dfbc7ba2b319af63bc78d325ac60d06966.css" integrity="sha256-l3UaeLkJlpCCw4OxULi437x7orMZr2O8eNMlrGDQaWY=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://kasusa.github.io/hugo/css/bundle.min.97751a78b909969082c383b150b8b8dfbc7ba2b319af63bc78d325ac60d06966.css" integrity="sha256-l3UaeLkJlpCCw4OxULi437x7orMZr2O8eNMlrGDQaWY=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://kasusa.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://kasusa.github.io/hugo/">Kasusa
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=word%e5%b0%8f%e5%b7%a5%e5%85%b7%e5%bc%80%e5%8f%91&url=https%3a%2f%2fkasusa.github.io%2fhugo%2fposts%2fdocx%25E7%259B%25B8%25E5%2585%25B3%25E7%259A%2584%25E6%258A%2580%25E6%259C%25AF%25E5%2588%2586%25E4%25BA%25AB%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkasusa.github.io%2fhugo%2fposts%2fdocx%25E7%259B%25B8%25E5%2585%25B3%25E7%259A%2584%25E6%258A%2580%25E6%259C%25AF%25E5%2588%2586%25E4%25BA%25AB%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="蓝色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="绿色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="红色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="蓝绿色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黄色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://kasusa.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Akasusa.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://kasusa.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://kasusa.github.io/hugo/posts/">全部博客</a></li><li class="breadcrumb-item active">Word小工具开发</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">Word小工具开发
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2022-03-31
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>10 分钟阅读
+  </span><a href="https://kasusa.github.io/hugo/tags/c#/" class="badge rounded-pill text-white bg-primary post-taxonomy">c#</a><a href="https://kasusa.github.io/hugo/tags/word/" class="badge rounded-pill text-white bg-primary post-taxonomy">word</a><a href="https://kasusa.github.io/hugo/tags/%E5%BC%80%E5%8F%91/" class="badge rounded-pill text-white bg-primary post-taxonomy">开发</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前情提要">前情提要</a></li>
+    <li><a href="#信心">信心</a></li>
+    <li><a href="#主要原子功能">主要原子功能</a></li>
+    <li><a href="#例子生成出报告申请介绍">例子“生成《出报告申请》”介绍</a></li>
+    <li><a href="#界面设计">界面设计</a></li>
+    <li><a href="#程序思路">程序思路</a>
+      <ul>
+        <li><a href="#需求的分析和程序开发可行性判断">需求的分析和程序开发可行性判断</a></li>
+        <li><a href="#程序开发">程序开发</a></li>
+        <li><a href="#语言和调用库文件">语言和调用库文件</a></li>
+        <li><a href="#文件读入结构理解">文件读入、结构理解</a></li>
+        <li><a href="#段落搜索">段落搜索</a></li>
+        <li><a href="#表格搜索">表格搜索</a></li>
+        <li><a href="#内容处理">内容处理</a></li>
+        <li><a href="#模板的制作和关键词替换">模板的制作和关键词替换</a></li>
+      </ul>
+    </li>
+    <li><a href="#程序测试">程序测试</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><blockquote>
+<p>本期是发到公众号上的技术分享，分享的内容就是之前我的Docx相关东东，但是本篇除了介绍代码方便、会更加全面的讲解程序搭建的思路、以及myutil（我写的关于Docx的库）的使用。</p>
+</blockquote>
+<h1 id="word小工具开发">word小工具开发</h1>
+<h2 id="前情提要">前情提要</h2>
+<p>自从去年9月份至今，我已经做过很多的小工具了，从最开始的完全不涉及文档操作，到丰富的docx查询编辑，积累了不少的经验，如果你也有一些点子、想开发一些小程序简化自己的工作（特别是和word操作相关的），那么本文会对你有些许帮助！</p>
+<h2 id="信心">信心</h2>
+<p>首先我们不要对开发这件事情抱有很大的抵触心理，不要认为这是一件很难的事情。</p>
+<p>如果是一个学习过C语言课程的人，那么他上手会是很简单的。</p>
+<p>如果是一个学过桌面程序开发的人，那么他应该可以秒上手！</p>
+<p>本文主要使用的编程语言是C#，相对于python他有如下优点：</p>
+<ol>
+<li>拖拽式的界面设计非常简便</li>
+<li>少量信息的存储甚至不需要学习操作文件</li>
+<li>C#操作Docx的库相对于python来说更加好用，且有丰富的官方例子（python-docx库会存在有无法读取到某些表或者段落、无法正常修改页眉内容等问题）</li>
+</ol>
+<p>一般来说在思路清晰清晰的，根据功能复制程度、实现难度区别，开发时间应该是 1天~2天，相对于后续他为你提供的便利来说，真的是“磨刀不误砍柴工”。</p>
+<h2 id="主要原子功能">主要原子功能</h2>
+<ul>
+<li>多个文件的选择和排除</li>
+<li>word文件的读取</li>
+<li>word文件的段落内容搜索</li>
+<li>word文件的表格内容搜索</li>
+<li>word内容的批量替换</li>
+<li>少量数据的存储</li>
+<li>字符串操作</li>
+</ul>
+<h2 id="例子生成出报告申请介绍">例子“生成《出报告申请》”介绍</h2>
+<blockquote>
+<p>​	首先我会讲解一下这个程序的使用方法，通过这个真实的例子来分解程序的制作过程和开发思路</p>
+</blockquote>
+<p><strong>使用方法：</strong></p>
+<ol>
+<li>报告拖放到textbox内（自动获取路径）</li>
+<li>通过自动模式/手动模式进行出报告申请的生成</li>
+<li>手动输入项目经理、成员</li>
+<li>检查输出是否有误 —— 完成</li>
+</ol>
+<p><img class="img-fluid" alt="image" src="https://tva2.sinaimg.cn/large/006rgJELly1h0rqww221gj30aw07q75f.jpg" loading="lazy"
+  
+   />
+
+</p>
+<p>如上图所示，本程序有两种信息输入方式</p>
+<ul>
+<li>从报告中读取</li>
+<li>手工录入</li>
+</ul>
+<p><img class="img-fluid" alt="image" src="https://tva1.sinaimg.cn/large/006rgJELly1h0rqvro6gfj30dg0bwabq.jpg" loading="lazy"
+  
+   />
+
+</p>
+<p>上图则是从报告中提取到的数据展示，展示后还需要手动输入“我方人员”，因为这些内容无法从源文件中读取到。</p>
+<p>最后生成的成品文件则会保存到桌面指定的文件夹中（由于有敏感信息不做展示）。</p>
+<h2 id="界面设计">界面设计</h2>
+<p><img class="img-fluid" alt="image" src="https://tvax4.sinaimg.cn/large/006rgJELly1h0rr4lb1msj30hq0hkjz6.jpg" loading="lazy"
+  
+   />
+
+</p>
+<p>对于不同功能的应用，要活用<code>radiobutton</code>、<code>listbox</code>等控件简化开发流程和用户的操作门槛，虽然界面可能看起来有些许“过时”，但是诸如<code>treeview</code>、<code>checkbox</code>、<code>radiobutton</code>、<code>listbox</code>等都是微软默认提供且非常强大且易用的控件。</p>
+<p>同时在界面展示也要做的合理，如锚点的设置、按钮的摆放等</p>
+<ul>
+<li>对于有大量内容的中心控件（如上图中的文件选取栏），推荐设置就是上下左右都配置锚点，这样用户在使用的时候可以通过手工把窗口拉大的方式来让选取栏变大，从而方便操作；</li>
+</ul>
+<p><img class="img-fluid" alt="image" src="https://tvax2.sinaimg.cn/large/006rgJELly1h0rr8bg656j30cb0420te.jpg" loading="lazy"
+  
+   />
+
+</p>
+<ul>
+<li>对于底部的按钮则应该选择向下锚点，否则用户将窗体放大的时候就会变成这个样子</li>
+</ul>
+<p><img class="img-fluid" alt="image" src="https://tvax2.sinaimg.cn/large/006rgJELly1h0rrdstb3aj30ox0lfwhj.jpg" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="程序思路">程序思路</h2>
+<p>一个程序的开发可以简单的分成这三个步骤：</p>
+<ol>
+<li>需求的分析和程序开发可行性判断</li>
+<li>程序开发</li>
+<li>进行一些测试确保程序的可用性和稳定性</li>
+</ol>
+<h3 id="需求的分析和程序开发可行性判断">需求的分析和程序开发可行性判断</h3>
+<p>首先想让机器帮自己做某件麻烦事、或者是某些事情让机器做更好更快，这些想到的电子就是所谓的需求了。</p>
+<p>如果产生了一个点子，作为程序的开发人员首先就要大致的思考一下怎么样把这个点子变成现实——用什么方式、用什么现在自己会的技术来做这件事。</p>
+<p>从上面这个小程序的角度来看，脑内出现的过程是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">从报告中提取出信息 → 把信息存储到字典中 → 将字典中的对应字符串替换到新文件中 → 完成！
+</span></span></code></pre></div><p>作为个人开发者，如果某些功能要实现可能需要耗费非常多的时间、精力，或者根本想不到实现的办法，那么可以认为开发可行性是不佳的，可以考虑放弃这个点子。</p>
+<h3 id="程序开发">程序开发</h3>
+<ol>
+<li>明确思路，制定操作LIST如：xxx → xxx (较小的项目可以略过这步)</li>
+<li>通过搜索、表格定位等方式用程序获取所需数据</li>
+<li>根据需要替换的位置制作模板</li>
+<li>逐一实现</li>
+<li>通过实际使用等方式进行测试</li>
+</ol>
+<p>写一个大号的程序经常会有无从下手的感觉，所以第一个任务是把任务分成最小的“分子”。</p>
+<p>如下图是另一个程序的操作LIST，它确实很有用，可以清晰的看到是否有遗漏，以及完成了哪些部分，可以对自己的进度有一个大概的掌握，后期还可以用于程序的功能描述。</p>
+<p>这里使用的是markdown语法，对于每一个操作，如果实现了就在左边打一个x，如果没有则是空白的。</p>
+<p><img class="img-fluid" alt="image" src="https://tva1.sinaimg.cn/large/006rgJELly1h0s4rja7inj310a0nuaqq.jpg" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="语言和调用库文件">语言和调用库文件</h3>
+<p>读取文件方面，我采用了Docx开源库，可以在<a href="https://github.com/xceedsoftware/DocX" target="_blank" rel="noopener noreferrer">xceedsoftware/DocX:(github.com)</a>
+上下载。他速度很快，仅支持C#语言，同时官方提供了详细的文档，可以在<a href="https://github.com/xceedsoftware/DocX/tree/master/Xceed.Words.NET.Examples/Samples" target="_blank" rel="noopener noreferrer">/Xceed.Words.NET.Examples (github.com)</a>
+下载实验。</p>
+<p>在<a href="https://github.com/kasusa/archiver/blob/master/archiver/myutil.cs" target="_blank" rel="noopener noreferrer"> kasusa/archiver (github.com)</a>
+有我编写一个实用库，注释较全，本文中会大量使用库中实现的函数。</p>
+<p>至于支持python的docx库，我使用过他们一段时间，提供的支持不好，如页眉页脚无法轻易修改、部分存在的段落无法读取、多个相连的表格无法读取到后面的表格等问题，如果有人想要用python开发一个操作word的程序可以适度参考和避坑。</p>
+<h3 id="文件读入结构理解">文件读入、结构理解</h3>
+<p>文件读入是指把整个docx文件读到内存中，变成一个可以操作的对象：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//使用工具类“myuitl”一句话读取文件</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1">//path为docx文件的目录</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">doc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">myutil</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">public</span> <span class="n">myutil</span><span class="p">(</span><span class="kt">string</span> <span class="n">str_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="err">…</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="kt">var</span> <span class="n">document</span> <span class="p">=</span> <span class="n">DocX</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="c1">//读取document</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">document</span> <span class="p">=</span> <span class="n">document</span><span class="p">;</span><span class="c1">//document本体获取</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">tables</span> <span class="p">=</span> <span class="n">document</span><span class="p">.</span><span class="n">Tables</span><span class="p">;</span><span class="c1">//主要元素之一：表格</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="n">Paragraphs</span> <span class="p">=</span> <span class="n">document</span><span class="p">.</span><span class="n">Paragraphs</span><span class="p">;</span><span class="c1">//主要元素之一：段落</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="err">…</span>  
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>一个word文件被读取之后，主要可以操作的部分分为三块：</p>
+<ul>
+<li>
+<p>段落（paragraph）</p>
+<ul>
+<li>
+<p>段落在文档中是以类似链表的方式存储。</p>
+</li>
+<li>
+<p>获取的结果是<code>paragraph</code>对象，它存储段落内容字符串、段落的样式（如字体、对其格式、字号等）。</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//获取段落的文字内容</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kt">string</span> <span class="n">a</span> <span class="p">=</span> <span class="n">document</span><span class="p">.</span><span class="n">Paragraphs</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">Text</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1">//调整段落为两端对齐</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">document</span><span class="p">.</span><span class="n">Paragraphs</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">Alignment</span> <span class="p">=</span> <span class="n">Alignment</span><span class="p">.</span><span class="n">both</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1">//调整颜色</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">document</span><span class="p">.</span><span class="n">Paragraphs</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">Color</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">);</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>表格（tables）</p>
+<ul>
+<li>
+<p>表格在文档中是以类似链表的方式存储。</p>
+</li>
+<li>
+<p>表格的访问按照行、列进行，如果要访问指定表格，需要知道表格的索引、单元格相对于表格所在的行、列。</p>
+</li>
+<li>
+<p>每个单元格中可以包含多个段落，对于单元格的内容提取其中包含的段落内容。</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//文章中 第一个表格 第一行 第二个单元格（第二列）的内容</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">document</span><span class="p">.</span><span class="n">Tables</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">Rows</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">Cells</span><span class="p">[</span><span class="m">1</span><span class="p">].</span><span class="n">Paragraphs</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1">//获取总列数</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">document</span><span class="p">.</span><span class="n">Tables</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">ColumnCount</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1">//还有更多如多个单元格融合、增加行/列等</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>图片（images）</p>
+<ul>
+<li>图片分为Pictures、Images</li>
+<li>Images是真正的图片，如果你用zip打开word文件，可以发现存在一个文件夹放置所有图片的源文件</li>
+<li>Pictures是图片在word文档中的一种“引用”，他引用了Images中的图片，并显示在word文档的指定位置上</li>
+<li><img class="img-fluid" alt="image" src="https://tvax4.sinaimg.cn/large/006rgJELly1h0sv8sgajgj30le0ca43b.jpg" loading="lazy"
+  
+   />
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="段落搜索">段落搜索</h3>
+<p>段落的搜索是很必要的，我们毕竟不能直接根据段落的序号来获取数据，因为很多时候中间的段落数量是不确定的，所以绝对索引有很大的概率拿到错误的段落。</p>
+<p>搜索可以：</p>
+<ul>
+<li>直接搜索段落必然包含的内容来找到段落</li>
+<li>搜索段落附近的章节标题，通过段落相对序号来获取附近位置的段落</li>
+<li>对于会有多个搜索结果的，返回list，或者指定要求获得第几个搜索结果</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//列举一些实搜索现的例子</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">public</span> <span class="kt">string</span> <span class="n">Find_Paragraph_for_text</span><span class="p">(</span><span class="kt">string</span> <span class="n">v</span><span class="p">,</span><span class="kt">int</span> <span class="n">count</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Paragraph</span><span class="p">&gt;</span> <span class="n">Find_Paragraph_for_plist</span><span class="p">(</span> <span class="kt">string</span> <span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">Find_Paragraph_for_ilist</span><span class="p">(</span> <span class="kt">string</span> <span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1">//用搜索的方式获取段落</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"> <span class="n">tmpstr</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">Find_Paragraph_for_text</span><span class="p">(</span><span class="s">&#34;本报告记录编号：&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="c1">//用搜索的方式获取段落,附加找到的个数,下方例子为第二个</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="n">tmpstr</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">Find_Paragraph_for_text</span><span class="p">(</span><span class="s">&#34;记录编号：&#34;</span><span class="p">,</span><span class="m">2</span><span class="p">);</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">p</span> <span class="k">in</span> <span class="n">document</span><span class="p">.</span><span class="n">Paragraphs</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="c1">//Console.WriteLine(&#34;【找到:】&#34; + p.Text + Environment.NewLine);</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">        <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="表格搜索">表格搜索</h3>
+<p><img class="img-fluid" alt="image" src="https://tvax3.sinaimg.cn/large/006rgJELly1h0sy8718i9j30ux07rq4w.jpg" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="image" src="https://tva4.sinaimg.cn/large/006rgJELly1h0syiq0z24j30lc02oglw.jpg" loading="lazy"
+  
+   />
+
+</p>
+<p>表格搜索功能是独创的，原理如下：</p>
+<p>将表格第一行的内容字符串化，如“被测对象”、“序号机房名称物理位置重要程度备注”。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//搜索表头为“被测对象”</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kt">var</span>  <span class="n">table</span> <span class="p">=</span> <span class="n">findTableList</span><span class="p">(</span><span class="s">&#34;被测对象&#34;</span><span class="p">)[</span><span class="m">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1">//提供表格、行索引（row）、行内的单元格索引（cell),获取指定单元格内容</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="kt">string</span> <span class="n">text</span> <span class="p">=</span> <span class="n">table_Get_cell_text</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+</span></span></code></pre></div><p>表格搜索的实现如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Table</span><span class="p">&gt;</span> <span class="n">findTableList</span><span class="p">(</span><span class="kt">string</span> <span class="n">v1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">v1</span> <span class="p">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">).</span><span class="n">Replace</span><span class="p">(</span><span class="s">&#34;\t&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">List</span><span class="p">&lt;</span><span class="n">Table</span><span class="p">&gt;</span> <span class="n">tlist</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Table</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="c1">//Console.WriteLine(&#34;开始寻找表头是 :&#34;+v1+ &#34;的表格&#34;);</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">tables</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="kt">string</span> <span class="n">rowstring</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="n">tables</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ColumnCount</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="n">rowstring</span> <span class="p">+=</span> <span class="n">cell_get_text</span><span class="p">(</span><span class="n">table_Get_cell</span><span class="p">(</span><span class="n">tables</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="m">0</span><span class="p">,</span> <span class="n">j</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">rowstring</span><span class="p">==</span> <span class="n">v1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="c1">//Console.WriteLine(&#34;找到了table&#34;+i);</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="n">tlist</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">tables</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="n">ConsoleWriter</span><span class="p">.</span><span class="n">Writehiddeninfo</span><span class="p">(</span><span class="s">&#34;找到table个数：&#34;</span> <span class="p">+</span> <span class="n">tlist</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">return</span> <span class="n">tlist</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="内容处理">内容处理</h3>
+<p>能获取到的内容均以段落为最小单位，获取到了段落之后，由于段落的内容可能很多，不能直接使用，我们需要对其进行修改、删减、或者提取。</p>
+<ul>
+<li>直接摘取整段</li>
+<li>截取部分内容 （substring）</li>
+<li>提取有用的固定格式内容（regex）</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//获取的内容 本报告记录编号：P2022XXXXX-GB01 ， 需要的部分是P2022XXXXX</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"> <span class="kt">string</span> <span class="n">a</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">Find_Paragraph_for_text</span><span class="p">(</span><span class="s">&#34;本报告记录编号&#34;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1">//本报告记录编号：P2022XXXXX-GB01</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1">//从序号8开始，取长度为10的字符串</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">a</span> <span class="p">=</span> <span class="n">a</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">);</span> 
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">textBoxlog</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span></code></pre></div><p>如提取“测评准备过程的最后一天”时，因为存在多种书写格式、日期长短不一，需要使用正则表达式来提取内容、并且进行处理。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">//多种情况例子
+</span></span><span class="line"><span class="ln">2</span><span class="cl">1、2021年12月28日～2021年12月29日，测评准备过程。
+</span></span><span class="line"><span class="ln">3</span><span class="cl">1、2021年12月28日～12月29日，测评准备过程。
+</span></span><span class="line"><span class="ln">4</span><span class="cl">1、2021年1月9日，测评准备过程。
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">private</span> <span class="kt">string</span> <span class="n">date_process</span><span class="p">(</span><span class="kt">string</span> <span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="c1">//提取日期（结束日期）</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">ConsoleWriter</span><span class="p">.</span><span class="n">WriteCyan</span><span class="p">(</span><span class="s">&#34;在字符串中寻找日期：&#34;</span> <span class="p">+</span> <span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="kt">string</span> <span class="n">patternA</span> <span class="p">=</span> <span class="s">@&#34;\d\d\d\d年(\d)*月(\d)*日&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="kt">string</span> <span class="n">patternB</span> <span class="p">=</span> <span class="s">@&#34;(\d)*月(\d)*日&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="c1">//如果获取的短日期个数为2，但是长日期仅有1个，那么就是如2021年12月1日～12月1日这种写法</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="c1">//如果长短日期都只有一个，那么就是2021年12月1日这种写法（只有一天之类的）</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="kt">int</span> <span class="n">shortDcount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="kt">int</span> <span class="n">LongDcount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="n">Regex</span> <span class="n">rg</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Regex</span><span class="p">(</span><span class="n">patternB</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">MatchCollection</span> <span class="n">matchedShortDate</span> <span class="p">=</span> <span class="n">rg</span><span class="p">.</span><span class="n">Matches</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="n">shortDcount</span> <span class="p">=</span> <span class="n">matchedShortDate</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="c1">//Console.WriteLine(&#34;shortDcount&#34; + shortDcount);</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="n">rg</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Regex</span><span class="p">(</span><span class="n">patternA</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="n">MatchCollection</span> <span class="n">matchedLongDate</span> <span class="p">=</span> <span class="n">rg</span><span class="p">.</span><span class="n">Matches</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="n">LongDcount</span> <span class="p">=</span> <span class="n">matchedLongDate</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="c1">//Console.WriteLine(&#34;LongDcount&#34;+ LongDcount);</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">shortDcount</span> <span class="p">&gt;</span> <span class="n">LongDcount</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="kt">string</span> <span class="n">year</span> <span class="p">=</span> <span class="n">matchedLongDate</span><span class="p">[</span><span class="n">LongDcount</span> <span class="p">-</span> <span class="m">1</span><span class="p">].</span><span class="n">Value</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="kt">string</span> <span class="n">MandD</span> <span class="p">=</span> <span class="n">matchedShortDate</span><span class="p">[</span><span class="n">shortDcount</span> <span class="p">-</span> <span class="m">1</span><span class="p">].</span><span class="n">Value</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">        <span class="n">a</span> <span class="p">=</span> <span class="n">year</span> <span class="p">+</span> <span class="n">MandD</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">shortDcount</span> <span class="p">==</span> <span class="n">LongDcount</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">        <span class="n">a</span> <span class="p">=</span> <span class="n">matchedLongDate</span><span class="p">[</span><span class="n">LongDcount</span> <span class="p">-</span> <span class="m">1</span><span class="p">].</span><span class="n">Value</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="模板的制作和关键词替换">模板的制作和关键词替换</h3>
+<p>一般来说应用场景分为两种</p>
+<ul>
+<li>修改源文件</li>
+<li>从源文件中提取信息，制作其他文件</li>
+</ul>
+<p>本次介绍的属于第二种，对于制作其他文件，首先需要制作一个模板。</p>
+<p><img class="img-fluid" alt="image" src="https://tvax3.sinaimg.cn/large/006rgJELly1h0t3f85uj1j30sj0fddjl.jpg" loading="lazy"
+  
+   />
+
+</p>
+<p>然后我们只需要把【xxx公司】、【xxx系统】等内容替换为提取到的信息即可。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">//a是提取到的内容字符串，tempo是读进来的模板文档</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">a</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">table_Get_cell_text</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">tables</span><span class="p">[</span><span class="m">2</span><span class="p">],</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">str_公司</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">tempo</span><span class="p">.</span><span class="n">write_dictionary</span><span class="p">(</span><span class="s">&#34;xxx公司&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">a</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">table_Get_cell_text</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">tables</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">str_系统</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="n">tempo</span><span class="p">.</span><span class="n">write_dictionary</span><span class="p">(</span><span class="s">&#34;xxx系统&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"> <span class="c1">//写入</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"> <span class="n">tempo</span><span class="p">.</span><span class="n">ReplaceTextWithText_all</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1">//保存（myutil会默认保存到桌面 - out文件夹中）</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="n">tempo</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">$&#34;出报告申请_{str_公司}_{str_系统}.docx&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><h2 id="程序测试">程序测试</h2>
+<p>程序编写完成后，需要进行测试，一般前几次的测试会发现很多的问题，大部分都很容易修复。</p>
+<p>同时经过了自己的测试后，还可以吧自己的程序分享给他人使用、测试，因为不同人使用的习惯不同，让他人使用更容易发现一些自己发现不了的bug。</p>
+<h2 id="总结">总结</h2>
+<p>如果你也想开发操作Docx相关的桌面程序，经过阅读上面的文章，应该已经可以了解其大概开发方法。同时也欢迎参考我的源码、使用我的库文件：<a href="https://github.com/kasusa/archiver" target="_blank" rel="noopener noreferrer">github/kasusa/archiver</a>
+</p>
+</div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://kasusa.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://kasusa.github.io/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/">Ipad看哔咔哔咔
+</a>
+  </div><div class="post-nav post-next">
+    <a href="https://kasusa.github.io/hugo/posts/e-h%E6%8F%92%E4%BB%B6/">E-H阅读插件
+</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://kasusa.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/">Excel转换pdf
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/">Docx的搜索实现
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/">C# 保存程序设置
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/">C#执行命令
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/">Ipad看哔咔哔咔
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="kasusa/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Kasusa" src="https://kasusa.github.io/hugo/images/profile.webp" loading="lazy"
+   width="638" height="639"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">Kasusa</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>软测</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>上海</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://kasusa.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://kasusa.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/">Ubuntu设置ssh、修改mac地址(home Pc)
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/">Windows酷命令
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">自定义终端标识符
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/">传入参数ARGV
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/">自学 Linux 命令
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://kasusa.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://kasusa.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://kasusa.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://kasusa.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://kasusa.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://kasusa.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://kasusa.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://kasusa.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://kasusa.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://kasusa.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://kasusa.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://kasusa.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://kasusa.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a><a href="https://kasusa.github.io/hugo/tags/steam/" class="badge bg-primary text-white rounded post-taxonomy" title="steam">
+            steam
+          </a><a href="https://kasusa.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="mailto:kasusaland@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a><a class="nav-link social-link" target="_blank" href="https://github.com/kasusa" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://twitter.com/kasusa6" title="Twitter" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-twitter"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://kasusa.github.io/hugo/js/bundle.min.9709cce2934b34f10e61baee6dd363ccc0c77bbbf5958a961055f1dbf4361bab.js" integrity="sha256-lwnM4pNLNPEOYbrubdNjzMDHe7v1lYqWEFXx2/Q2G6s=" crossorigin="anonymous" defer></script><script defer src="https://kasusa.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+</body>
+</html>

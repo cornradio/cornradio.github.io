@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="https://tvax1.sinaimg.cn/large/006rgJELly1gs6wib0802j30b60b6dgt.jpg">
+    <!-- <link href="/css/indexstyle.css" rel="stylesheet" type="text/css" /> -->
+    <title>BLOG NAV →</title>
+    <style>
+        html {
+            background-color: rgb(23, 23, 23);
+            color: #e2f7ff;
+            font-size: 1.93em;
+            font-family: american typewriter;
+            /* background-image: url('https://tva3.sinaimg.cn/large/0083vuQJgy1h5e759ysfej30120120sh.jpg');
+            background-image: url('https://tva4.sinaimg.cn/large/0083vuQJgy1h5e7682bluj300z00y0sh.jpg');
+            background-image: url('https://tva3.sinaimg.cn/large/0083vuQJgy1h5e73e8x8kj30b40b4ju3.jpg');
+            background-image: url('https://tvax2.sinaimg.cn/large/0083vuQJgy1h5e779jrpej305k05kt8u.jpg'); */
+        }
+
+        .messages {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+        }
+
+        .new::after {
+            content: "";
+            height: 15px;
+            display: block;
+            color: aqua;
+        }
+
+        a {
+            /* overflow: hidden; */
+
+            color: #9de4ff;
+            text-decoration: none;
+            /* transition: 0s; */
+        }
+
+        a:hover {
+            color: #000000 !important;
+            text-decoration: underline;
+            background-color: rgba(144, 242, 74, 0.893);
+        }
+
+        .emo {
+            float: left;
+            margin-left: -1.7em;
+            animation: waviy 1s;
+            animation-delay: calc(.1s * var(--i));
+        }
+
+        @keyframes waviy {
+
+            0%,
+            40%,
+            100% {
+                transform: translateY(0)
+            }
+
+            20% {
+                transform: translateY(-20px)
+            }
+        }
+
+        .comment {
+            color: #0cce0967;
+            font-size: small;
+        }
+
+        .comment:hover {
+            color: #d2cdcd !important;
+            background-color: transparent !important;
+
+        }
+.bet{
+    opacity: 0.09;
+    transition: 0.4s;
+}
+bet *{
+    border: none;
+}
+/* .bet:hover{
+    opacity: 1;
+} */
+    </style>
+</head>
+<center>
+    <div class="bet">
+        <!-- <script async src="https://telegram.org/js/telegram-widget.js?1" 
+        data-telegram-post="kasusaland/2221"data-width="30%"></script> -->
+        <iframe src="daysleft/index2.html" height="182" width="100%" style="max-width: 670px;" title="Iframe Example"></iframe>
+    </div>
+</center>
+
+<div class="messages">
+    <div class="messages-content">
+        <a href="daysleft/" class="comment">//TODO Show Time</a></li><br>
+
+        <div class="message new">
+            <div class="emo" style="--i:0">🎬 </div>
+
+            <a href="watchTV/" style="color: rgb(80, 241, 193);">watchTV </a></li><br>
+        </div>
+
+        <div class="message new">
+            <div class="emo" style="--i:1">💾</div>
+            <a href="https://kasusa.github.io/hugo/">技术博客</a></li><br>
+            <a href="https://kasusa.github.io/lab">实验室</a></li><br>
+            <a href="https://kasusaland.blogspot.com/">部落格</a></li><br>
+            <a href="https://kasusa.github.io/index2">旧屋</a></li><br>
+        </div>
+
+        <div class="message new">
+            <div class="emo" style="--i:2">🐹</div>
+            <a href="https://t.me/kasusaland">Telegram</a></li><br>
+            <a href="https://github.com/kasusa">Github</a></li><br>
+        </div>
+        <div class="message new">
+            <div class="emo" style="--i:3">☁︎</div>
+            <a href="https://kasusa.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/" style="color: rgb(255, 203, 248);">友链 </a>
+            </li><br>
+            <a href="https://kasusa.github.io/get%20a%20life2.html" style="color: rgb(255, 208, 55);">机场列表 </a></li><br>
+            <a href="videos.html" style="color: rgb(80, 241, 193);">度盘资源 </a></li><br>
+        </div>
+    </div>
+</div>
+<script>
+    var myobj = document.getElementById("bet")
+    // myobj.innerHTML ='<AD>'
+</script>
+</html>

@@ -1,0 +1,831 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Python Xml和读取excel - kasusa的技术博客</title><link rel="apple-touch-icon" href="https://kasusa.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://kasusa.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="Python Xml和读取excel">
+<meta itemprop="description" content="最近我接到了一个工作，就是把一份很长很长的漏洞扫描报告导入到单位的“测评能手”工具中，但是这个工具不支持导入这个excel表格，所以我要艰难"><meta itemprop="datePublished" content="2022-08-08T19:35:59+08:00" />
+<meta itemprop="dateModified" content="2022-08-08T19:35:59+08:00" />
+<meta itemprop="wordCount" content="6516">
+<meta itemprop="keywords" content="python," /><meta property="og:title" content="Python Xml和读取excel" />
+<meta property="og:description" content="最近我接到了一个工作，就是把一份很长很长的漏洞扫描报告导入到单位的“测评能手”工具中，但是这个工具不支持导入这个excel表格，所以我要艰难" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kasusa.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-08T19:35:59+08:00" />
+<meta property="article:modified_time" content="2022-08-08T19:35:59+08:00" /><meta property="og:site_name" content="kasusa的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python Xml和读取excel"/>
+<meta name="twitter:description" content="最近我接到了一个工作，就是把一份很长很长的漏洞扫描报告导入到单位的“测评能手”工具中，但是这个工具不支持导入这个excel表格，所以我要艰难"/>
+<meta name="twitter:site" content="@kasusa6"/>
+<link rel="preload" href="https://kasusa.github.io/hugo/css/bundle.min.97751a78b909969082c383b150b8b8dfbc7ba2b319af63bc78d325ac60d06966.css" integrity="sha256-l3UaeLkJlpCCw4OxULi437x7orMZr2O8eNMlrGDQaWY=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://kasusa.github.io/hugo/css/bundle.min.97751a78b909969082c383b150b8b8dfbc7ba2b319af63bc78d325ac60d06966.css" integrity="sha256-l3UaeLkJlpCCw4OxULi437x7orMZr2O8eNMlrGDQaWY=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://kasusa.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://kasusa.github.io/hugo/">Kasusa
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=Python%20Xml%e5%92%8c%e8%af%bb%e5%8f%96excel&url=https%3a%2f%2fkasusa.github.io%2fhugo%2fposts%2fpython-xml%25E5%2592%258C%25E8%25AF%25BB%25E5%258F%2596excel%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkasusa.github.io%2fhugo%2fposts%2fpython-xml%25E5%2592%258C%25E8%25AF%25BB%25E5%258F%2596excel%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="蓝色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="绿色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="红色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="蓝绿色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黄色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://kasusa.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Akasusa.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://kasusa.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://kasusa.github.io/hugo/posts/">全部博客</a></li><li class="breadcrumb-item active">Python Xml和读取excel</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">Python Xml和读取excel
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2022-08-08
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>14 分钟阅读
+  </span><a href="https://kasusa.github.io/hugo/tags/python/" class="badge rounded-pill text-white bg-primary post-taxonomy">python</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装pandas">安装PANDAS</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#了解pandas">了解pandas</a></li>
+    <li><a href="#过滤">过滤</a></li>
+    <li><a href="#遍历">遍历</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>最近我接到了一个工作，就是把一份很长很长的漏洞扫描报告导入到单位的“测评能手”工具中，但是这个工具不支持导入这个excel表格，所以我要艰难的手动录入。</p>
+<p>表格的长度有16000行，是对主机和数据库的漏扫内容，每一行有用的信息如下：</p>
+<table>
+<thead>
+<tr>
+<th>主机</th>
+<th>漏洞名称</th>
+<th>危险等级</th>
+<th>漏洞简述</th>
+<th>详细描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xx.xx.xx.xx</td>
+<td>xx版本过旧</td>
+<td>低</td>
+<td>&ndash;</td>
+<td>&ndash;</td>
+</tr>
+</tbody>
+</table>
+<p>主机有几百台，包括8个项目所有的主机，每个项目又有一些自己的服务器和DB，他们提供了服务器和DB的ip列表，我的任务就是先把不同的项目的漏洞条目分好，然后通过手工的方式一条一条的导入漏洞</p>
+<h1 id="把excel数据导入python">把excel数据导入python</h1>
+<h2 id="安装pandas">安装PANDAS</h2>
+<p>通过pandas可以读取表格的sheet页了：</p>
+<p>首先安装pandas、以及读取需要表格依赖openpyxl库：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl">pip install pandas -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+</span></span><span class="line"><span class="ln">2</span><span class="cl">pip install openpyxl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+</span></span></code></pre></div><h1 id="读取sheets">读取sheet(s)</h1>
+<p>excel读取的时候需要选定sheet页，所以我们需要先获取sheet名称，</p>
+<p>可以通过<code>for x in sheet_names</code>来loop整个excel文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">xpath</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;输入excel文件地址：&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># get all sheet names</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">sheep_name</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelFile</span><span class="p">(</span><span class="n">xpath</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">sheet_names</span> <span class="o">=</span> <span class="n">sheep_name</span><span class="o">.</span><span class="n">sheet_names</span>
+</span></span></code></pre></div><h1 id="读取xlsx表格">读取XLSX表格</h1>
+<p>导入pandas库、读取xlsx文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;1.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">)</span> <span class="c1">#选取文件、要读取的sheet名</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span></code></pre></div><p><img class="img-fluid" alt="image" src="https://tva4.sinaimg.cn/large/006rgJELly1gx9t65s9y4j308703uq3j.jpg" loading="lazy"
+  
+   />
+
+</p>
+<p>为了能操作到指定元素，我们需要先了解一下pandas的数据存储格式是什么：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    	<span class="s1">&#39;列头1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Akey1&#39;</span><span class="p">,</span> <span class="s1">&#39;Akey2&#39;</span><span class="p">,</span><span class="s1">&#39;Akey3&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="s1">&#39;列头2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Bkey1&#39;</span><span class="p">,</span><span class="s1">&#39;Bkey2&#39;</span><span class="p">,</span><span class="s1">&#39;Bkey3&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">        <span class="s1">&#39;列头3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">       <span class="p">}</span>
+</span></span></code></pre></div><p>所以，pandas读取进来的我这个表就是这样的：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">print(data)
+</span></span><span class="line"><span class="ln">2</span><span class="cl">---
+</span></span><span class="line"><span class="ln">3</span><span class="cl">   列头1    列头2  列头3
+</span></span><span class="line"><span class="ln">4</span><span class="cl">0  Akey1  Bkey1  NaN
+</span></span><span class="line"><span class="ln">5</span><span class="cl">1  Akey2  Bkey2  NaN
+</span></span><span class="line"><span class="ln">6</span><span class="cl">2  Akey3  Bkey3  NaN
+</span></span></code></pre></div><p>获取第一列的值（通过列头名称选择）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">print(data[&#39;列头1&#39;])
+</span></span><span class="line"><span class="ln">2</span><span class="cl">print(data.列头1)
+</span></span><span class="line"><span class="ln">3</span><span class="cl">---
+</span></span><span class="line"><span class="ln">4</span><span class="cl">0    Akey1
+</span></span><span class="line"><span class="ln">5</span><span class="cl">1    Akey2
+</span></span><span class="line"><span class="ln">6</span><span class="cl">2    Akey3
+</span></span></code></pre></div><p>获取第一行的值（通过列序号选择）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">print(data.iloc[0])
+</span></span><span class="line"><span class="ln">2</span><span class="cl">---
+</span></span><span class="line"><span class="ln">3</span><span class="cl">列头1    Akey1
+</span></span><span class="line"><span class="ln">4</span><span class="cl">列头2    Bkey1
+</span></span><span class="line"><span class="ln">5</span><span class="cl">列头3      NaN
+</span></span></code></pre></div><p>获取第一行的、第一列的值：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">print(data.iloc[0].列头1)
+</span></span><span class="line"><span class="ln">2</span><span class="cl">print(data.iloc[0][0])
+</span></span><span class="line"><span class="ln">3</span><span class="cl">---
+</span></span><span class="line"><span class="ln">4</span><span class="cl">Akey1
+</span></span></code></pre></div><p>获取指定列、第一行的值:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">print(data[&#39;列头1&#39;][0])
+</span></span><span class="line"><span class="ln">2</span><span class="cl">print(data.列头1[0])
+</span></span><span class="line"><span class="ln">3</span><span class="cl">---
+</span></span><span class="line"><span class="ln">4</span><span class="cl">Akey1
+</span></span></code></pre></div><p>获取列头2为指定值的列头1内容：</p>
+<p>这里比较绕，不过无脑复制就好啦！而且这个取数据方式还是比较有用的。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">datarow = data.loc[data[&#39;列头2&#39;] == &#39;Bkey1&#39;]
+</span></span><span class="line"><span class="ln">2</span><span class="cl">print(datarow.列头1)
+</span></span><span class="line"><span class="ln">3</span><span class="cl">---
+</span></span><span class="line"><span class="ln">4</span><span class="cl">Akey1
+</span></span></code></pre></div><p>因为我的excel是数据源，我没有对修改excel和保存做深入研究，只有一句保存语句：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/333560640" target="_blank" rel="noopener noreferrer">参考</a>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">data.to_excel(excel_writer=&#39;demo.xlsx&#39;, sheet_name=&#39;sheet_1&#39;)
+</span></span></code></pre></div><h2 id="了解pandas">了解pandas</h2>
+<p>其实仅仅为了处理excel还是没必要了解pandas了，不过网上写的教学不是很清楚都，所以我还是搜索并了解了pandas才弄明白怎么用。</p>
+<p><a href="http://c.biancheng.net/pandas/loc-iloc.html" target="_blank" rel="noopener noreferrer">pandas c语言中文网</a>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 单维度的资料：</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;最大值&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;中位数&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># 所有data*2</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">*</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"># 判定所有的data和20相等</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">==</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 双维度的资料（表格读取后的效果）：</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="o">-------------------</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">   <span class="n">name</span>  <span class="n">salary</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="mi">0</span>   <span class="n">amy</span>    <span class="mi">3000</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="mi">1</span>  <span class="n">jhon</span>    <span class="mi">5000</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="mi">2</span>   <span class="n">bob</span>    <span class="mi">4000</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># 双维度的资料（自定义字典输入pandas）</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">data2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;amy&#39;</span><span class="p">,</span> <span class="s1">&#39;jhon&#39;</span><span class="p">,</span> <span class="s1">&#39;bob&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="s2">&#34;salary&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="c1"># 取得name列内容</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data2</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;=========&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c1"># 取得特定的横向</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="c1"># data = pd.read_excel(&#39;www2.xlsx&#39;, sheet_name=&#39;Sheet1&#39;)</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="n">data</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span> <span class="c1"># 竖着来的</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 横着来的(ilocation - 0,1,2,3,4……)</span>
+</span></span></code></pre></div><h2 id="过滤">过滤</h2>
+<p>但是有时候我们不知道自己想要的是第几行，比如想要知道amy的工资，要怎么办呢？</p>
+<p><code>data.loc</code>可以解决这个问题，比方说你可以提取<code>1,2</code>行让表格变成一个更小的表，所以我就可以组合语句，比方说这个地方有10个amy，你接可以拉一个amy表，看看谁的工资比较高。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1">#返回第2,3行变成的小的表格</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">data2</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span><span class="o">==</span><span class="s2">&#34;amy&#34;</span> <span class="c1">#返回amy所在行</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">data_amy</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">data2</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span><span class="o">==</span><span class="s2">&#34;amy&#34;</span> <span class="p">]</span> <span class="c1">#返回amy所在行变成的小的表格</span>
+</span></span></code></pre></div><h2 id="遍历">遍历</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">#dataInip是我通过想要的ip过滤的漏洞集合，</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1">#获取了data之后我要导入到自己的数据结构中，vul是我的数据结构的一部分，我会作为log进行打印</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">vulcount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dataInip</span><span class="p">[</span><span class="s1">&#39;级别&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">vulcount</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="n">vul</span> <span class="o">=</span> <span class="p">[</span><span class="n">dataInip</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;漏洞名称&#39;</span><span class="p">],</span> <span class="n">dataInip</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;简述&#39;</span><span class="p">],</span> <span class="n">mydict</span><span class="p">[</span><span class="n">dataInip</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;级别&#39;</span><span class="p">]],</span> <span class="n">dataInip</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;描述&#39;</span><span class="p">],</span> <span class="n">dataInip</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;解决方案&#39;</span><span class="p">]]</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">vul</span><span class="p">)</span>
+</span></span></code></pre></div><h1 id="缓存数据">缓存数据</h1>
+<p>好久没有用python了我就忘记了怎么存储数据了，只会用最简单的变量了，上网简单的查了一下，可以通过这种方式来新建一个自己需要的数据结构:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">class</span> <span class="nc">ip_and_vuls</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="n">ip</span> <span class="o">=</span> <span class="s2">&#34;123.456.789.456&#34;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="n">vuls</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1">#访问</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="n">ip_and_vuls</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="n">p1</span><span class="o">.</span><span class="n">ip</span> <span class="c1">#123.456.789.456</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="c1">#唯一的缺点就是用的时候得手动初始化， 用完了最好传出去copy</span>
+</span></span></code></pre></div><p>为什么我不用	<strong>init</strong>`初始化函数呢，因为我懒得学，而且这个操作更灵活（也更容易出现自己发现不了的bug）</p>
+<p>其实如果写代码逻辑够好的话，这种也没问题，但是逻辑如果糟糕一点就是一坨屎了。</p>
+<h1 id="xml">XML</h1>
+<p>为什么又说到这里呢，因为我最终的目的就是要把表格的内容转换成有效的xml，就可以直接导入而不用手动粘贴了。</p>
+<p>python的各种操作文件是我感觉异常简单的地方，c语言、java开个文件要好几行好复杂，python一行开了，一行输入完成了，一行又关好了。</p>
+<p>xml这里我学的不精，能用为主嘛。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># 获取xml（从外部文件读取）</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;xmlLearn.xml&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"># 获取xml根元素</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"># 打印xml（人不可读）</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ET</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># 为根节点添加值</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="n">root</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;launched&#34;</span><span class="p">,</span><span class="s2">&#34;2021-11-18 10:23:15&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"># 为所有的investor节点添加一个属性 id</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nb">id</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">for</span> <span class="n">investor</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;investor&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">investor</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="nb">id</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"># 删除所有investor节点下的id</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="k">for</span> <span class="n">investor</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;investor&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">del</span><span class="p">(</span><span class="n">investor</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="nb">id</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="c1">#添加一个节点investor（！重点！）</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="n">investor2</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;investor&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="n">investor2</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Karl Amber&#39;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="n">root</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">investor2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="c1"># 选择特定investor(xpath看不懂)</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="n">investor</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;.//investor[@id=&#39;4&#39;]&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">investor</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="c1"># 输出到文件（没有缩进）</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="n">tree</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;xmlLearn.xml&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><img class="img-fluid" alt="" src="https://tvax3.sinaimg.cn/large/006rgJELly1gwjmtdp4urj30e307awhc.jpg" loading="lazy"
+  
+   />
+
+</p>
+<p>这里我放一个图片希望大家看了可以懂，xml是一个嵌套树的结构，investor是root下面的，然而investor可以自己再有一个子节点（只要append就行了），xml是层级分明的文件结构</p>
+<p>不过默认输出有很大的问题啊（我感觉）一是没有缩进，二是不支持中文，我很困扰所以我找到了下面的解决办法，虽然解决了但是要多加两个import了。这两个import都是python自带的，不用安装。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">import</span> <span class="nn">codecs</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"># 美丽输出xml</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;money.xml&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">xmlstr</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parseString</span><span class="p">(</span><span class="n">ET</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">))</span><span class="o">.</span><span class="n">toprettyxml</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="s2">&#34;   &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="k">with</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;money.xml&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">,</span> <span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xmlstr</span><span class="p">)</span>
+</span></span></code></pre></div><p>对于我来说，我就只要增加节点，给节点加内容、最后按照等保标准导入格式输出一个xml就好了</p>
+<h1 id="附件">附件</h1>
+<p>我的成品（私人库主要是有点敏感信息所以就暂时不公开了）<a href="https://github.com/kasusa/exceltodata" target="_blank" rel="noopener noreferrer">kasusa/exceltodata: &ndash; (github.com)</a>
+</p>
+<p>等级保护漏洞导入用xml格式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="ln">  1</span><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl"><span class="nt">&lt;REPORT&gt;</span>
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="nt">&lt;SCANINFO</span> <span class="na">TOOLNAME=</span><span class="s">&#34;XXXX&#34;</span> <span class="na">MAKERS=</span><span class="s">&#34;XXXX&#34;</span> <span class="na">POLICY=</span><span class="s">&#34;XXXX&#34;</span> <span class="na">SCANTASK=</span><span class="s">&#34;&#34;</span> <span class="na">SCANTIME=</span><span class="s">&#34;&#34;</span> <span class="na">FILE_ID=</span><span class="s">&#34;&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl"><span class="c">&lt;!-- TOOLNAME=&#34;扫描工具名称&#34; MAKERS=&#34;工具厂商名称&#34; POLICY=&#34;策略版本&#34; SCANTASK=&#34;任务名称&#34; SCANTIME=&#34;扫描时间&#34; FILE_ID=&#34;文件ID(没啥大用处其实)&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">
+</span></span><span class="line"><span class="ln">  6</span><span class="cl"><span class="nt">&lt;SCANDATA</span> <span class="na">TYPE=</span><span class="s">&#34;OS&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">	<span class="nt">&lt;HOST</span> <span class="na">IP=</span><span class="s">&#34;192.168.0.100&#34;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- *IP地址： --&gt;</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">		<span class="nt">&lt;OSTYPE&gt;</span>WINDOWS<span class="nt">&lt;/OSTYPE&gt;</span> <span class="c">&lt;!--  操作系统类型：Windows、Linux、.... --&gt;</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl">		<span class="nt">&lt;OSVERSION&gt;</span>Windows Server 2008<span class="nt">&lt;/OSVERSION&gt;</span><span class="c">&lt;!--  操作系统版本：Windows 2008、RedHat 9、.... --&gt;</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">		<span class="nt">&lt;DATA&gt;</span>
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness]]&gt;</span><span class="nt">&lt;/NAME&gt;</span><span class="c">&lt;!-- *漏洞名称： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;CVE-2005-1794&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;CNVD-2005-1794&#34;</span> <span class="na">MS=</span><span class="s">&#34;MS07-111&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;xxxx&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34;,没有编号可用NONE标识 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>缓存区溢出<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如缓冲区溢出、设置不当、中间件漏洞、其他等等 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">				<span class="nt">&lt;CVSS&gt;</span>6.4<span class="nt">&lt;/CVSS&gt;</span><span class="c">&lt;!-- 通用漏洞评分： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">				<span class="nt">&lt;PORT&gt;</span>3389<span class="nt">&lt;/PORT&gt;</span><span class="c">&lt;!-- 端口： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>中<span class="nt">&lt;/RISK&gt;</span><span class="c">&lt;!-- *风险情况：高、中、低、信息 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[It may be possible to get access to the remote host]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span><span class="c">&lt;!-- 漏洞简述： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote version of the Remote Desktop Protocol Server (TerminalService) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span><span class="c">&lt;!-- *漏洞描述 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Force the use of SSL as a transport layer for this service if supported, or/and]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span><span class="c">&lt;!-- *解决方案/整改意见 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span><span class="c">&lt;!-- 证据 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[http://www.oxid.it/downloads/rdp-gbu.pdf]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	<span class="c">&lt;!-- 参考信息 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[Terminal Services Encryption Level is Medium or Low]]&gt;</span><span class="nt">&lt;/NAME&gt;</span><span class="c">&lt;!-- *漏洞名称： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;CVE-2005-1794&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;CNVD-2005-1794&#34;</span> <span class="na">MS=</span><span class="s">&#34;MS07-111&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;xxxx&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>设置不当<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如缓冲区溢出、设置不当、中间件漏洞、其他等等 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">				<span class="nt">&lt;CVSS&gt;</span>6.4<span class="nt">&lt;/CVSS&gt;</span><span class="c">&lt;!-- 通用漏洞评分： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">				<span class="nt">&lt;PORT&gt;</span>3389<span class="nt">&lt;/PORT&gt;</span>
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>中<span class="nt">&lt;/RISK&gt;</span>&gt;
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[The remote host is using weak cryptography.]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote Terminal Services service is not configured to use strong cryptography.xxxxxxxxxxxxxxxxxxxxx]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Change RDP encryption level to one of :xxxxxxxxxxxxxxxxxx]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span>
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[The terminal services encryption level is set to :]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">		<span class="nt">&lt;/DATA&gt;</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">	<span class="nt">&lt;/HOST&gt;</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">	
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">	<span class="nt">&lt;HOST</span> <span class="na">IP=</span><span class="s">&#34;102.168.20.20&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">		<span class="nt">&lt;OSTYPE&gt;</span>LINUX<span class="nt">&lt;/OSTYPE&gt;</span>
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">		<span class="nt">&lt;OSVERSION&gt;</span>RED HAT 9<span class="nt">&lt;/OSVERSION&gt;</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">		<span class="nt">&lt;DATA&gt;</span>
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness]]&gt;</span><span class="nt">&lt;/NAME&gt;</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;CVE-2005-1794&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;CNVD-2005-1794&#34;</span> <span class="na">MS=</span><span class="s">&#34;MS07-111&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;xxxx&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>缓存区溢出<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如缓冲区溢出、设置不当、中间件漏洞、其他等等 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">				<span class="nt">&lt;CVSS&gt;</span>6.4<span class="nt">&lt;/CVSS&gt;</span><span class="c">&lt;!-- 通用漏洞评分： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">				<span class="nt">&lt;PORT&gt;</span>3389<span class="nt">&lt;/PORT&gt;</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>中<span class="nt">&lt;/RISK&gt;</span>
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[It may be possible to get access to the remote host]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote version of the Remote Desktop Protocol Server (TerminalService) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Force the use of SSL as a transport layer for this service if supported, or/and]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span>
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[http://www.oxid.it/downloads/rdp-gbu.pdf]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[Terminal Services Encryption Level is Medium or Low]]&gt;</span><span class="nt">&lt;/NAME&gt;</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;CVE-2005-1794&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;CNVD-2005-1794&#34;</span> <span class="na">MS=</span><span class="s">&#34;MS07-111&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;xxxx&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>设置不当<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如缓冲区溢出、设置不当、中间件漏洞、其他等等 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">				<span class="nt">&lt;CVSS&gt;</span>6.4<span class="nt">&lt;/CVSS&gt;</span><span class="c">&lt;!-- 通用漏洞评分： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">				<span class="nt">&lt;PORT&gt;</span>3389<span class="nt">&lt;/PORT&gt;</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>中<span class="nt">&lt;/RISK&gt;</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[The remote host is using weak cryptography.]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote Terminal Services service is not configured to use strong cryptography.xxxxxxxxxxxxxxxxxxxxx]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span>
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Change RDP encryption level to one of :xxxxxxxxxxxxxxxxxx]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span>
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[The terminal services encryption level is set to :]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">		<span class="nt">&lt;/DATA&gt;</span>
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl">	<span class="nt">&lt;/HOST&gt;</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl"><span class="nt">&lt;/SCANDATA&gt;</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl"><span class="nt">&lt;SCANDATA</span> <span class="na">TYPE=</span><span class="s">&#34;DB&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">	<span class="nt">&lt;HOST</span> <span class="na">IP=</span><span class="s">&#34;102.168.20.20&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">		<span class="nt">&lt;PORT&gt;</span>1433<span class="nt">&lt;/PORT&gt;</span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">		<span class="nt">&lt;DBTYPE&gt;</span>Microsoft SQL Server<span class="nt">&lt;/DBTYPE&gt;</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">		<span class="nt">&lt;DBVERSION&gt;</span>Microsoft SQL Server 2008 R2<span class="nt">&lt;/DBVERSION&gt;</span>
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">		<span class="nt">&lt;DATA&gt;</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span> 
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[Easily-guessed password]]&gt;</span><span class="nt">&lt;/NAME&gt;</span><span class="c">&lt;!-- *漏洞名称： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;NONE&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;NONE&#34;</span> <span class="na">MS=</span><span class="s">&#34;NONE&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;NONE&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>弱口令<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如缓冲区溢出、设置不当、弱口令、其他等等 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>高<span class="nt">&lt;/RISK&gt;</span><span class="c">&lt;!-- *风险情况：高、中、低、信息 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[It may be possible to get access to the remote host]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span><span class="c">&lt;!-- 漏洞简述： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote version of the Remote Desktop Protocol Server (TerminalService) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span><span class="c">&lt;!-- *漏洞描述 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Force the use of SSL as a transport layer for this service if supported, or/and]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span><span class="c">&lt;!-- *解决方案/整改意见 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span><span class="c">&lt;!-- 证据 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[http://www.oxid.it/downloads/rdp-gbu.pdf]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	 <span class="c">&lt;!-- 参考信息 --&gt;</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[Terminal Services Encryption Level is Medium or Low]]&gt;</span><span class="nt">&lt;/NAME&gt;</span><span class="c">&lt;!-- *漏洞名称： --&gt;</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;NONE&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;NONE&#34;</span> <span class="na">MS=</span><span class="s">&#34;MS13-112&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;NONE&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>设置不当<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如缓冲区溢出、设置不当、弱口令、其他等等 --&gt;</span>
+</span></span><span class="line"><span class="ln">101</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>中<span class="nt">&lt;/RISK&gt;</span>
+</span></span><span class="line"><span class="ln">102</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[The remote host is using weak cryptography.]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span>
+</span></span><span class="line"><span class="ln">103</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote Terminal Services service is not configured to use strong cryptography.xxxxxxxxxxxxxxxxxxxxx]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span>
+</span></span><span class="line"><span class="ln">104</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Change RDP encryption level to one of :xxxxxxxxxxxxxxxxxx]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span>
+</span></span><span class="line"><span class="ln">105</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span><span class="c">&lt;!-- 证据 --&gt;</span>
+</span></span><span class="line"><span class="ln">106</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[The terminal services encryption level is set to :]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	
+</span></span><span class="line"><span class="ln">107</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln">108</span><span class="cl">		<span class="nt">&lt;/DATA&gt;</span>
+</span></span><span class="line"><span class="ln">109</span><span class="cl">	<span class="nt">&lt;/HOST&gt;</span>
+</span></span><span class="line"><span class="ln">110</span><span class="cl">	
+</span></span><span class="line"><span class="ln">111</span><span class="cl">	<span class="nt">&lt;HOST</span> <span class="na">IP=</span><span class="s">&#34;102.168.100.11&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="ln">112</span><span class="cl">		<span class="nt">&lt;PORT&gt;</span>1433<span class="nt">&lt;/PORT&gt;</span>
+</span></span><span class="line"><span class="ln">113</span><span class="cl">		<span class="nt">&lt;DBTYPE&gt;</span>Microsoft SQL Server<span class="nt">&lt;/DBTYPE&gt;</span>
+</span></span><span class="line"><span class="ln">114</span><span class="cl">		<span class="nt">&lt;DBVERSION&gt;</span>Microsoft SQL Server 2008 R2<span class="nt">&lt;/DBVERSION&gt;</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">		<span class="nt">&lt;DATA&gt;</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln">117</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[Easily-guessed password]]&gt;</span><span class="nt">&lt;/NAME&gt;</span> <span class="c">&lt;!-- *漏洞名称： --&gt;</span>
+</span></span><span class="line"><span class="ln">118</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;NONE&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;NONE&#34;</span> <span class="na">MS=</span><span class="s">&#34;NONE&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;NONE&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln">119</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln">120</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>弱口令<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如缓冲区溢出、设置不当、弱口令、其他等等 --&gt;</span>
+</span></span><span class="line"><span class="ln">121</span><span class="cl">				<span class="nt">&lt;CVSS&gt;</span>6.4<span class="nt">&lt;/CVSS&gt;</span><span class="c">&lt;!-- 通用漏洞评分： --&gt;</span>
+</span></span><span class="line"><span class="ln">122</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>高<span class="nt">&lt;/RISK&gt;</span><span class="c">&lt;!-- *风险情况：高、中、低、信息 --&gt;</span>
+</span></span><span class="line"><span class="ln">123</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[It may be possible to get access to the remote host]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span><span class="c">&lt;!-- 漏洞简述： --&gt;</span>
+</span></span><span class="line"><span class="ln">124</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote version of the Remote Desktop Protocol Server (TerminalService) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span><span class="c">&lt;!-- *漏洞描述 --&gt;</span>
+</span></span><span class="line"><span class="ln">125</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Force the use of SSL as a transport layer for this service if supported, or/and]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span><span class="c">&lt;!-- *解决方案/整改意见 --&gt;</span>
+</span></span><span class="line"><span class="ln">126</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span><span class="c">&lt;!-- 证据 --&gt;</span>
+</span></span><span class="line"><span class="ln">127</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[http://www.oxid.it/downloads/rdp-gbu.pdf]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	 <span class="c">&lt;!-- 参考信息 --&gt;</span>
+</span></span><span class="line"><span class="ln">128</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln">129</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln">130</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[Terminal Services Encryption Level is Medium or Low]]&gt;</span><span class="nt">&lt;/NAME&gt;</span> 
+</span></span><span class="line"><span class="ln">131</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;NONE&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;NONE&#34;</span> <span class="na">MS=</span><span class="s">&#34;MS13-112&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;NONE&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln">132</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln">133</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>弱口令<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如缓冲区溢出、设置不当、弱口令、其他等等 --&gt;</span>
+</span></span><span class="line"><span class="ln">134</span><span class="cl">				<span class="nt">&lt;CVSS&gt;</span>6.4<span class="nt">&lt;/CVSS&gt;</span><span class="c">&lt;!-- 通用漏洞评分： --&gt;</span>
+</span></span><span class="line"><span class="ln">135</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>中<span class="nt">&lt;/RISK&gt;</span>
+</span></span><span class="line"><span class="ln">136</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[The remote host is using weak cryptography.]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span>
+</span></span><span class="line"><span class="ln">137</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote Terminal Services service is not configured to use strong cryptography.xxxxxxxxxxxxxxxxxxxxx]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span>
+</span></span><span class="line"><span class="ln">138</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Change RDP encryption level to one of :xxxxxxxxxxxxxxxxxx]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span>
+</span></span><span class="line"><span class="ln">139</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span><span class="c">&lt;!-- 证据 --&gt;</span>
+</span></span><span class="line"><span class="ln">140</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[The terminal services encryption level is set to :]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	
+</span></span><span class="line"><span class="ln">141</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln">142</span><span class="cl">		<span class="nt">&lt;/DATA&gt;</span>
+</span></span><span class="line"><span class="ln">143</span><span class="cl">	<span class="nt">&lt;/HOST&gt;</span>
+</span></span><span class="line"><span class="ln">144</span><span class="cl"><span class="nt">&lt;/SCANDATA&gt;</span>
+</span></span><span class="line"><span class="ln">145</span><span class="cl">
+</span></span><span class="line"><span class="ln">146</span><span class="cl"><span class="nt">&lt;SCANDATA</span> <span class="na">TYPE=</span><span class="s">&#34;WEB&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="ln">147</span><span class="cl">	<span class="nt">&lt;HOST</span> <span class="na">WEB=</span><span class="s">&#34;HTTP:\\WWW.TEST.COM&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="ln">148</span><span class="cl">		<span class="nt">&lt;WEBSERVERBANNER&gt;</span>Apache tomcat<span class="nt">&lt;/WEBSERVERBANNER&gt;</span><span class="c">&lt;!-- Web Server Banner信息， --&gt;</span>
+</span></span><span class="line"><span class="ln">149</span><span class="cl">		<span class="nt">&lt;SERVERVERSION&gt;</span>Microsoft Windows 2008 R2<span class="nt">&lt;/SERVERVERSION&gt;</span><span class="c">&lt;!-- 服务器信息 --&gt;</span>
+</span></span><span class="line"><span class="ln">150</span><span class="cl">		<span class="nt">&lt;TECHNOLOGIES&gt;</span>JSP<span class="nt">&lt;/TECHNOLOGIES&gt;</span><span class="c">&lt;!-- 使用语言 --&gt;</span>
+</span></span><span class="line"><span class="ln">151</span><span class="cl">		<span class="nt">&lt;DATA&gt;</span>		
+</span></span><span class="line"><span class="ln">152</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln">153</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[SQL注入漏洞]]&gt;</span><span class="nt">&lt;/NAME&gt;</span> <span class="c">&lt;!-- *漏洞名称： --&gt;</span>
+</span></span><span class="line"><span class="ln">154</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;NONE&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;NONE&#34;</span> <span class="na">MS=</span><span class="s">&#34;NONE&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;NONE&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln">155</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln">156</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>注入类<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如注入类、跨站脚本类、信息泄露类、弱口令/默认口令类、系统/服务漏洞类、权限/配置设置不当类、产品漏洞类、其他类 --&gt;</span>
+</span></span><span class="line"><span class="ln">157</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>高<span class="nt">&lt;/RISK&gt;</span><span class="c">&lt;!-- *风险情况：高、中、低、信息 --&gt;</span>
+</span></span><span class="line"><span class="ln">158</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[It may be possible to get access to the remote host]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span><span class="c">&lt;!-- 漏洞简述： --&gt;</span>
+</span></span><span class="line"><span class="ln">159</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote version of the Remote Desktop Protocol Server (TerminalService) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span><span class="c">&lt;!-- *漏洞描述 --&gt;</span>
+</span></span><span class="line"><span class="ln">160</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Force the use of SSL as a transport layer for this service if supported, or/and]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span><span class="c">&lt;!-- *解决方案/整改意见 --&gt;</span>
+</span></span><span class="line"><span class="ln">161</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span><span class="c">&lt;!-- 证据 --&gt;</span>
+</span></span><span class="line"><span class="ln">162</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[http://www.oxid.it/downloads/rdp-gbu.pdf]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	 <span class="c">&lt;!-- 参考信息 --&gt;</span>
+</span></span><span class="line"><span class="ln">163</span><span class="cl">				<span class="nt">&lt;DETAILS&gt;</span>
+</span></span><span class="line"><span class="ln">164</span><span class="cl">					<span class="nt">&lt;URL</span> <span class="na">URL=</span><span class="s">&#34;HTTP:\\WWW.TEST.COM?DETAILS=100&#34;</span><span class="nt">&gt;</span><span class="c">&lt;!-- *存在漏洞的url --&gt;</span>
+</span></span><span class="line"><span class="ln">165</span><span class="cl">						<span class="nt">&lt;TYPE&gt;</span>STRING<span class="nt">&lt;/TYPE&gt;</span><span class="c">&lt;!-- 类型（string类型、int类型、search类型、反射性、存储型等等） --&gt;</span>
+</span></span><span class="line"><span class="ln">166</span><span class="cl">						<span class="nt">&lt;PARAMETER&gt;</span><span class="cp">&lt;![CDATA[DETAILS=100&#39; AND &#39;1&#39;=&#39;1]]&gt;</span><span class="nt">&lt;/PARAMETER&gt;</span><span class="c">&lt;!-- 存在漏洞的参数（可带测试脚本） --&gt;</span>
+</span></span><span class="line"><span class="ln">167</span><span class="cl">						<span class="nt">&lt;REQUEST&gt;</span><span class="cp">&lt;![CDATA[GET /preSysApp/global/js/validate/depends/prototype.js HTTP/1.1
+</span></span></span><span class="line"><span class="ln">168</span><span class="cl"><span class="cp">								 Pragma: no-cache
+</span></span></span><span class="line"><span class="ln">169</span><span class="cl"><span class="cp">								 Cache-Control: no-cache]]&gt;</span>
+</span></span><span class="line"><span class="ln">170</span><span class="cl">						<span class="nt">&lt;/REQUEST&gt;</span><span class="c">&lt;!-- 测试发送的request --&gt;</span>
+</span></span><span class="line"><span class="ln">171</span><span class="cl">						<span class="nt">&lt;RESPONSE&gt;</span><span class="c">&lt;!-- 接收的request --&gt;</span>
+</span></span><span class="line"><span class="ln">172</span><span class="cl">						<span class="cp">&lt;![CDATA[
+</span></span></span><span class="line"><span class="ln">173</span><span class="cl"><span class="cp">						xxxxxxxxxxxxxxxxxx
+</span></span></span><span class="line"><span class="ln">174</span><span class="cl"><span class="cp">						]]&gt;</span>
+</span></span><span class="line"><span class="ln">175</span><span class="cl">						<span class="nt">&lt;/RESPONSE&gt;</span>
+</span></span><span class="line"><span class="ln">176</span><span class="cl">					<span class="nt">&lt;/URL&gt;</span>
+</span></span><span class="line"><span class="ln">177</span><span class="cl">					<span class="nt">&lt;URL</span> <span class="na">URL=</span><span class="s">&#34;HTTP:\\WWW.TEST.COM?id=120&#34;</span><span class="nt">&gt;</span><span class="c">&lt;!-- *存在漏洞的url --&gt;</span>
+</span></span><span class="line"><span class="ln">178</span><span class="cl">						<span class="nt">&lt;TYPE&gt;</span>INT<span class="nt">&lt;/TYPE&gt;</span><span class="c">&lt;!-- 类型（string类型、int类型、search类型、反射性、存储型等等） --&gt;</span>
+</span></span><span class="line"><span class="ln">179</span><span class="cl">						<span class="nt">&lt;PARAMETER&gt;</span><span class="cp">&lt;![CDATA[ID=100 AND 1=1]]&gt;</span><span class="nt">&lt;/PARAMETER&gt;</span><span class="c">&lt;!-- 存在漏洞的参数（可带测试脚本） --&gt;</span>
+</span></span><span class="line"><span class="ln">180</span><span class="cl">						<span class="nt">&lt;REQUEST&gt;</span><span class="cp">&lt;![CDATA[GET /preSysApp/global/js/validate/depends/prototype.js HTTP/1.1
+</span></span></span><span class="line"><span class="ln">181</span><span class="cl"><span class="cp">								 Pragma: no-cache
+</span></span></span><span class="line"><span class="ln">182</span><span class="cl"><span class="cp">								 Cache-Control: no-cache]]&gt;</span>
+</span></span><span class="line"><span class="ln">183</span><span class="cl">						<span class="nt">&lt;/REQUEST&gt;</span><span class="c">&lt;!-- 测试发送的request --&gt;</span>
+</span></span><span class="line"><span class="ln">184</span><span class="cl">						<span class="nt">&lt;RESPONSE&gt;</span>
+</span></span><span class="line"><span class="ln">185</span><span class="cl">						<span class="cp">&lt;![CDATA[xxxxxxxxxxxxxxxxxx]]&gt;</span>
+</span></span><span class="line"><span class="ln">186</span><span class="cl">						<span class="nt">&lt;/RESPONSE&gt;</span><span class="c">&lt;!-- 接收的request --&gt;</span>
+</span></span><span class="line"><span class="ln">187</span><span class="cl">					<span class="nt">&lt;/URL&gt;</span>
+</span></span><span class="line"><span class="ln">188</span><span class="cl">				<span class="nt">&lt;/DETAILS&gt;</span>
+</span></span><span class="line"><span class="ln">189</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>	
+</span></span><span class="line"><span class="ln">190</span><span class="cl">			<span class="nt">&lt;VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln">191</span><span class="cl">				<span class="nt">&lt;NAME&gt;</span><span class="cp">&lt;![CDATA[跨站脚本]]&gt;</span><span class="nt">&lt;/NAME&gt;</span> <span class="c">&lt;!-- *漏洞名称： --&gt;</span>
+</span></span><span class="line"><span class="ln">192</span><span class="cl">				<span class="nt">&lt;NO</span> <span class="na">CVE=</span><span class="s">&#34;NONE&#34;</span> <span class="na">CNVD=</span><span class="s">&#34;NONE&#34;</span> <span class="na">MS=</span><span class="s">&#34;NONE&#34;</span> <span class="na">OTHER=</span><span class="s">&#34;NONE&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="ln">193</span><span class="cl">				<span class="c">&lt;!-- CVE=&#34;CVE编号&#34; CNVD=&#34;CNVD编号&#34; MS=&#34;微软编号&#34; OTHER=&#34;其他编号&#34; --&gt;</span>
+</span></span><span class="line"><span class="ln">194</span><span class="cl">				<span class="nt">&lt;VULTYPE&gt;</span>跨站脚本类<span class="nt">&lt;/VULTYPE&gt;</span><span class="c">&lt;!-- 漏洞类型：如注入类、跨站脚本类、信息泄露类、弱口令/默认口令类、系统/服务漏洞类、权限/配置设置不当类、产品漏洞类、其他类 --&gt;</span>
+</span></span><span class="line"><span class="ln">195</span><span class="cl">				<span class="nt">&lt;RISK&gt;</span>高<span class="nt">&lt;/RISK&gt;</span><span class="c">&lt;!-- *风险情况：高、中、低、信息 --&gt;</span>
+</span></span><span class="line"><span class="ln">196</span><span class="cl">				<span class="nt">&lt;SYNOPSIS&gt;</span><span class="cp">&lt;![CDATA[It may be possible to get access to the remote host]]&gt;</span><span class="nt">&lt;/SYNOPSIS&gt;</span><span class="c">&lt;!-- 漏洞简述： --&gt;</span>
+</span></span><span class="line"><span class="ln">197</span><span class="cl">				<span class="nt">&lt;DESCRIPTION&gt;</span><span class="cp">&lt;![CDATA[The remote version of the Remote Desktop Protocol Server (TerminalService) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP]]&gt;</span><span class="nt">&lt;/DESCRIPTION&gt;</span><span class="c">&lt;!-- *漏洞描述 --&gt;</span>
+</span></span><span class="line"><span class="ln">198</span><span class="cl">				<span class="nt">&lt;SOLUTION&gt;</span><span class="cp">&lt;![CDATA[- Force the use of SSL as a transport layer for this service if supported, or/and]]&gt;</span><span class="nt">&lt;/SOLUTION&gt;</span><span class="c">&lt;!-- *解决方案/整改意见 --&gt;</span>
+</span></span><span class="line"><span class="ln">199</span><span class="cl">				<span class="nt">&lt;VALIDATE&gt;</span><span class="cp">&lt;![CDATA[XXXXX]]&gt;</span><span class="nt">&lt;/VALIDATE&gt;</span><span class="c">&lt;!-- 证据 --&gt;</span>
+</span></span><span class="line"><span class="ln">200</span><span class="cl">				<span class="nt">&lt;REFERENCE&gt;</span><span class="cp">&lt;![CDATA[http://www.oxid.it/downloads/rdp-gbu.pdf]]&gt;</span><span class="nt">&lt;/REFERENCE&gt;</span>	 <span class="c">&lt;!-- 参考信息 --&gt;</span>
+</span></span><span class="line"><span class="ln">201</span><span class="cl">				<span class="nt">&lt;DETAILS&gt;</span>
+</span></span><span class="line"><span class="ln">202</span><span class="cl">					<span class="nt">&lt;URL</span> <span class="na">URL=</span><span class="s">&#34;HTTP:\\WWW.TEST.COM?DETAILS=100&#34;</span><span class="nt">&gt;</span><span class="c">&lt;!-- *存在漏洞的url --&gt;</span>
+</span></span><span class="line"><span class="ln">203</span><span class="cl">						<span class="nt">&lt;TYPE&gt;</span>反射性<span class="nt">&lt;/TYPE&gt;</span><span class="c">&lt;!-- 类型（string类型、int类型、search类型、反射性、存储型等等） --&gt;</span>
+</span></span><span class="line"><span class="ln">204</span><span class="cl">						<span class="nt">&lt;PARAMETER&gt;</span><span class="cp">&lt;![CDATA[DETAILS=100%20%3C%73%63%72%69%70%3E%61%6C%65%72%74%28%31%29%3C%2F%73%63%72%69%70%74%3E]]&gt;</span><span class="nt">&lt;/PARAMETER&gt;</span><span class="c">&lt;!-- 存在漏洞的参数（可带测试脚本） --&gt;</span>
+</span></span><span class="line"><span class="ln">205</span><span class="cl">						<span class="nt">&lt;REQUEST&gt;</span><span class="cp">&lt;![CDATA[GET /preSysApp/global/js/validate/depends/prototype.js HTTP/1.1
+</span></span></span><span class="line"><span class="ln">206</span><span class="cl"><span class="cp">								 Pragma: no-cache
+</span></span></span><span class="line"><span class="ln">207</span><span class="cl"><span class="cp">								 Cache-Control: no-cache]]&gt;</span>
+</span></span><span class="line"><span class="ln">208</span><span class="cl">						<span class="nt">&lt;/REQUEST&gt;</span><span class="c">&lt;!-- 测试发送的request --&gt;</span>
+</span></span><span class="line"><span class="ln">209</span><span class="cl">						<span class="nt">&lt;RESPONSE&gt;</span><span class="c">&lt;!-- 接收的request --&gt;</span>
+</span></span><span class="line"><span class="ln">210</span><span class="cl">						<span class="cp">&lt;![CDATA[xxxxxxxxxxxxxxxxxx]]&gt;</span>
+</span></span><span class="line"><span class="ln">211</span><span class="cl">						<span class="nt">&lt;/RESPONSE&gt;</span>
+</span></span><span class="line"><span class="ln">212</span><span class="cl">					<span class="nt">&lt;/URL&gt;</span>
+</span></span><span class="line"><span class="ln">213</span><span class="cl">				<span class="nt">&lt;/DETAILS&gt;</span>
+</span></span><span class="line"><span class="ln">214</span><span class="cl">			<span class="nt">&lt;/VULNERABLITY&gt;</span>
+</span></span><span class="line"><span class="ln">215</span><span class="cl">		<span class="nt">&lt;/DATA&gt;</span>
+</span></span><span class="line"><span class="ln">216</span><span class="cl">	<span class="nt">&lt;/HOST&gt;</span>
+</span></span><span class="line"><span class="ln">217</span><span class="cl"><span class="nt">&lt;/SCANDATA&gt;</span>
+</span></span><span class="line"><span class="ln">218</span><span class="cl"><span class="nt">&lt;/REPORT&gt;</span>
+</span></span></code></pre></div><hr>
+<p>python能提取excel还能处理，我就很开心了，还学到了xml相关的内容。</p>
+<p>今天花了5小时把上面所有东东从0学完，到直接把工具做好我感觉也够神的了我）</p>
+</div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://kasusa.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://kasusa.github.io/hugo/posts/sshtoparallels/">Ssh to Parallels （Kali）
+</a>
+  </div><div class="post-nav post-next">
+    <a href="https://kasusa.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/">自学 Linux 命令
+</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://kasusa.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/">使用python多线程批量ping
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/">Pip配置源
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/">Python移动文件、新建目录
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/">Python操作word
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/sshtoparallels/">Ssh to Parallels （Kali）
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="kasusa/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Kasusa" src="https://kasusa.github.io/hugo/images/profile.webp" loading="lazy"
+   width="638" height="639"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">Kasusa</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>软测</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>上海</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://kasusa.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://kasusa.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/">Ubuntu设置ssh、修改mac地址(home Pc)
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/">Windows酷命令
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">自定义终端标识符
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/">传入参数ARGV
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/">自学 Linux 命令
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://kasusa.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://kasusa.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://kasusa.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://kasusa.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://kasusa.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://kasusa.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://kasusa.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://kasusa.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://kasusa.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://kasusa.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://kasusa.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://kasusa.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://kasusa.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a><a href="https://kasusa.github.io/hugo/tags/steam/" class="badge bg-primary text-white rounded post-taxonomy" title="steam">
+            steam
+          </a><a href="https://kasusa.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="mailto:kasusaland@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a><a class="nav-link social-link" target="_blank" href="https://github.com/kasusa" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://twitter.com/kasusa6" title="Twitter" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-twitter"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://kasusa.github.io/hugo/js/bundle.min.9709cce2934b34f10e61baee6dd363ccc0c77bbbf5958a961055f1dbf4361bab.js" integrity="sha256-lwnM4pNLNPEOYbrubdNjzMDHe7v1lYqWEFXx2/Q2G6s=" crossorigin="anonymous" defer></script><script defer src="https://kasusa.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/*2019/4/19 13:30:58 */
+
+body {
+    color: #555;
+    margin: 0;
+    font-family: Comic Sans MS, 'Montserrat', sans-serif;
+}
+
+a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(226, 151, 31);
+}
+
+
+.transparent_pink {
+    background-color: #103e00c4;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+}
+
+#lab_header {
+    /* background-color: rgb(255, 139, 180); */
+            border-radius: 0 14px 140px 0;
+border: 5px solid #663cc7;
+    background-color: rgb(0 0 0);
+    /* height: 200px; */
+    line-height: 150px;
+    padding: 2em;
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.63);
+    margin-left: -5px;
+}
+
+#lab_header a {
+    font-family: Gloucester MT;
+    text-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+    font-size: 35px;
+    color: azure;
+    text-decoration: none;
+    /* margin-left: 20px; */
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: 0.4s;
+}
+
+#lab_header a:hover {
+    color: rgb(14, 13, 13);
+    text-shadow: 16px -3px red, -16px 2px blue;
+}
+
+main {
+    transition: all 01s;
+    -webkit-text-stroke: 4px #d6f4f4;
+    font-variation-settings: "wght" 900, "ital" 1;
+    font-size: 7rem;
+    line-height: 1.3em;
+    text-align: center;
+    color: transparent;
+    font-family: "Meta", sans-serif;
+    text-shadow: 1px 1px 15px #5df4ff6c, 5px 2px 0px #25121a, 15px 25px 10px #482896;
+    cursor: pointer;
+}
+
+main:hover {
+    font-variation-settings: "wght" 10, "ital" 1;
+    text-shadow: none;
+}
+
+.ristrict {
+    /* max-width: 1200px; */
+    z-index: 999;
+    max-width: 824px;
+    margin: auto;
+}
+
+.non-ristrict {
+    max-width: 100%;
+    margin: auto;
+}
+
+#lab_header-nav {
+    display: block;
+    float: right;
+    margin: 0px;
+}
+
+#lab_header-nav li {
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#go-home-button {
+    opacity: 1;
+    transition: 0.2s;
+    filter: invert(90%);
+}
+
+#go-home-button:hover {
+    filter: invert(0%);
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    border: 1px solid rgb(119, 18, 187);
+    width: 70%;
+    margin: 12px;
+    float: right;
+    box-shadow: 2px 6px 25px 2px rgba(0, 0, 0, 0.192);
+    transition: 0.4s;
+    border-radius: 5px;
+    transition-timing-function: cubic-bezier(0.15, 0.87, 0.36, 0.93);
+    background-color: transparent ;
+    margin-bottom: 10px;
+    padding: 2PX;
+
+}
+.box_container{
+ display: inline-block;
+}
+.card :hover .box_container{
+    display: inline-block;
+
+}
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.cardname {
+    font-size: 120%;
+}
+
+
+/* On mouse-over, add a deeper shadow */
+
+.card:hover {
+    box-shadow: 4px 9px 25px 5px rgba(0, 0, 0, 0.363);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.774) !important ;
+    transform: translate(0, -1rem);
+
+}
+
+.card p{
+    color: transparent ;
+    line-height: 0.5;
+}
+.card:hover p {
+    color: white ;
+    line-height: 0.5;
+    transform: translateX(1rem);
+}
+.kasusa:hover {
+    box-shadow: 4px 9px 25px 12px #E77CA2;
+    background-color: rgba(0, 0, 0, 0.774);
+    
+}
+
+.ceres:hover {
+    box-shadow: 4px 9px 25px 12px #8BC384;
+    background-color: rgba(0, 0, 0, 0.774);
+}
+
+.card:active {
+    transform: scale(0.97);
+}
+
+
+
+@media only screen and (min-width: 426px max-width:899px;) { 
+    main {
+        font-size:medium;
+        font-variation-settings: "wght" 10, "ital" 1;
+    }
+    .card {
+        width: 45%;
+    }
+}
+@media only screen and (min-width: 900px) {
+
+        .card {
+        width: 22%;
+    }
+}
+#footer {
+    margin-top: 4em;
+    clear: both;
+    background-color: #2f2f2f;
+    padding: 50px 0;
+}
+
+#footer h4 {
+    color: #c4f0e7;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#footer p {
+    color: #f3f7f6cb;
+}
+
+.column {
+    margin-left: 20px;
+    margin-right: 20px;
+    min-width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>steam on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/categories/steam/</link>
+    <description>Recent content in steam on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Tue, 30 Nov 2021 13:11:11 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/categories/steam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>steam如何绕过clash的全局代理</title>
+      <link>https://kasusa.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Tue, 30 Nov 2021 13:11:11 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</guid>
+      <description>我想要默认开启电脑的clash全局代理。但是要求steam这个东东登录和下载（尤其是游戏下载）不要走代理。下载太耗费流量了，还不能跑满网速。</description>
+    </item>
+    
+  </channel>
+</rss>

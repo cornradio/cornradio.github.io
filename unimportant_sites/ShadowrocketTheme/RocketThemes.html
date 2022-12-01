@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <script src="https://use.fontawesome.com/452826394c.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://wx1.sinaimg.cn/mw690/006rgJELgy1gaqcfichxlj30cs0cst9c.jpg">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ShadowRocket Themes</title>
+    <style>
+        /* html,
+        body {
+            height: 100%;
+            margin: 0;
+        } */
+
+        .officalicon {
+            width: 6em;
+            float: right;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(3, 3, 3, 0.068);
+        }
+        .jumbotron{
+            margin-bottom: 0;
+        }
+        .container{
+            padding-top: 20px;
+
+            padding-bottom: 20px;
+
+        }
+
+        .comment {
+            color: rgb(138, 138, 138);
+        }
+        .background {
+            padding-top: 20px;
+            background-image: url("img/dot.png");
+            background-size: 20px 20px;
+            
+        }
+
+        footer {
+            padding: 2em;
+            padding-bottom: 3em;
+            background-color: rgba(0, 0, 0, 0.911);
+            color: rgb(114, 114, 114);
+        }
+        footer a{
+            color: #0a8f99;
+        }
+
+        .card {
+            margin: auto;
+            margin-bottom: 2em;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+        }
+        .title {
+            padding-top: 0.7em;
+            padding-bottom: 0.3em;
+            border-bottom: solid 1px rgb(202, 202, 202);
+        }
+        .node_name {
+            padding: 1.5em;
+        }
+        .button {
+            position: relative;
+            display: inline;
+            float: right;
+            padding-left: .5em;
+            padding-right: .5em;
+            border-radius: .5em;
+        }
+        .author {
+            float: right;
+           
+        }
+
+        /* light_red */
+        .light_red .title {
+            background-color: #ffffff;
+            color: #8c3d57;
+        }
+
+        .light_red .button {
+            background-color: #ffcddb;
+            color: #d12856;
+        }
+
+        .light_red .node_name {
+            color: #87314b;
+            background-color: ;
+        }
+        .light_red .card-footer{
+            color:  #a1a1a1;
+        }
+
+        /* .day_blue */
+        .day_blue .title {
+            background-color: #ffffff;
+            color: #1e295f;
+        }
+
+        .day_blue .button {
+            background-color: #b5c2ff;
+            color: #1b2966;
+        }
+
+        .day_blue .node_name {
+            color: #a19e9b;
+            background-color: #fff;
+        }
+        .day_blue .card-footer{
+            color:  #a1a1a1;
+        }
+        /* .night_purple */
+        .night_purple{
+            border: #3f206c;
+            box-shadow: 0 0 10px #1a0736;
+        }
+        .night_purple .title {
+            background-color: #3f206c;
+            border-bottom: solid 1px rgb(82, 82, 82);
+            color: #fff;
+        }
+
+        .night_purple .button {
+            background-color: #08052b;
+            color: #9790de;
+        }
+
+        .night_purple .node_name {
+            color: #fff;
+            background-color: #222431;
+        }
+        .night_purple .card-footer{
+            background-color: #000;
+            color: #646363;
+        }
+        /* material_red */
+        .material_red {
+            border: #640022;
+            box-shadow: 0 0 10px rgb(209, 46, 46);
+        }
+        .material_red .title {
+            background-color: #640022;
+            border-bottom: solid 1px #640022;
+            color: #f92c65;
+        }
+
+        .material_red .button {
+            background-color: #00000021;
+            color: #f1a414;
+        }
+
+        .material_red .node_name {
+            color: #fff;
+            background-color: #640022;
+        }
+        .material_red .card-footer{
+            background-color: #640022;
+            color: #85606c;
+        }
+        /* Y_B */
+        .Y_B {
+            border: #121d2f;
+            box-shadow: 0 0 10px #121d2f;
+        }
+        .Y_B .title {
+            background-color: #121d2f;
+            border-bottom: solid 1px #121d2f;
+            color: #e9b92d;
+        }
+
+        .Y_B .button {
+            background-color: #5c69102f;
+            color: #fcc402;
+        }
+
+        .Y_B .node_name {
+            color: #fff;
+            background-color: #131d27;
+        }
+        .Y_B .card-footer{
+            background-color: #131d27;
+            color: #33587e;
+        }
+        /* dark_mint */
+        .dark_mint {
+            border: #1d1c21;
+            box-shadow: 0 0 10px #121d2f;
+        }
+        .dark_mint .title {
+            background-color: #1d1c21;
+            border-bottom: solid 1px #121d2f;
+            color: #15deb0;
+        }
+
+        .dark_mint .button {
+            background-color: #0d6450;
+            color: #15deb0;
+        }
+
+        .dark_mint .node_name {
+            color: #8ca7a8;
+            background-color: #1d1c21;
+        }
+        .dark_mint .card-footer{
+            background-color: #1d1c21;
+            color: #097259;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="jumbotron">
+        <img class="officalicon" src="img/origin.png" alt="ShadowRocket">
+        <h3>Shadowrocket Themes👻</h3>
+        <p></p>
+        <p class="comment">请使用 <kbd>Safari</kbd> </p>
+    </header>
+
+    <div class="background">
+        <div class=" container ">
+            <!-- 卡片模板 -->
+            <!-- <div class=" card">
+                <div class="title">
+                    <center>
+                        <h4><b>theme_name</b></h4>
+                    </center>
+                </div>
+                <div class="node_name">
+                    MyNode Beauty Lv_dio
+                    
+                    <div class="button">
+                        <i class="fa fa-1x fa-info"></i>
+                    </div>
+                </div>
+                <div class="card-footer">
+                        <a target="_blank" href="#">Get it</a>
+                        <span class="author"> author : anymous</span>
+                </div>
+            </div> -->
+
+            <!-- 浅红色主题 -->
+            <div class="light_red card">
+                <div class="title">
+                    <center>
+                        <h4><b> Winered</b></h4>
+                    </center>
+                </div>
+                <div class="node_name">
+                    酒红色日间主题
+
+                    <div class="button">
+                        <i class="fa fa-1x fa-info"></i>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="shadowrocket://color?NavigationBarColor=%23FFFFFF&NavigationBar2Color=%23FFFFFF&NavigationBarTextColor=%2392324F&NavigationBar2TextColor=%23FFFFFF&TabBarColor=%23FFFFFF&TabBarBorderColor=%23FFFFFF&TabBarSelectedColor=%23FA093F&TabBarUnselectedColor=%2392324F&TableBackgroundColor=%23FFFFFF&TableCellBackgroundColor=%23FFFFFF&TableSeparatorColor=%23FFFFFF&TextFieldTextColor=%23FA093F&TextLabelTextColor=%2392324F&DetailLabelTextColor=%23808080&TextLabelDeleteColor=%23FA093F&HeaderFooterTextColor=%23808080&ButtonIconColor=%23FA093F&ButtonNormalColor=%23FA093F&ButtonNormal2Color=%23CCFFFFFF&ButtonNormal3Color=%23808080&ButtonHighlightedColor=%2399FFFFFF&ButtonHighlighted2Color=%23FFFFFF&ButtonHighlighted3Color=%23000000&ButtonDisabledColor=%2380FFFFFF&ButtonDisabled2Color=%2380FFFFFF&PingSuccessTextColor=%237E6C6C&PingTimeoutTextColor=%2392324F&DefaultDotColor=%23FF3063&v=1.0">Get
+                        it</a>
+                    <span class="author"> author : anymous</span>
+                </div>
+            </div>
+
+            <div class="day_blue card">
+                <div class="title">
+                    <center>
+                        <h4><b>Deep Blue</b></h4>
+                    </center>
+                </div>
+                <div class="node_name">
+                    深蓝色日间主题
+
+                    <div class="button">
+                        <i class="fa fa-1x fa-info"></i>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="shadowrocket://color?NavigationBarColor=%23FFFFFF&NavigationBar2Color=%23FFFFFF&NavigationBarTextColor=%231D2F6F&NavigationBar2TextColor=%23FFFFFF&TabBarColor=%23FFFFFF&TabBarBorderColor=%23FFFFFF&TabBarSelectedColor=%231D2F6F&TabBarUnselectedColor=%237E6C6C&TableBackgroundColor=%23FFFFFF&TableCellBackgroundColor=%23FFFFFF&TableSeparatorColor=%23FFFFFF&TextFieldTextColor=%237E6C6C&TextLabelTextColor=%237E6C6C&DetailLabelTextColor=%231D2F6F&TextLabelDeleteColor=%23FA093F&HeaderFooterTextColor=%23808080&ButtonIconColor=%231D2F6F&ButtonNormalColor=%237E6C6C&ButtonNormal2Color=%23CCFFFFFF&ButtonNormal3Color=%23808080&ButtonHighlightedColor=%2399FFFFFF&ButtonHighlighted2Color=%23FFFFFF&ButtonHighlighted3Color=%23000000&ButtonDisabledColor=%2380FFFFFF&ButtonDisabled2Color=%2380FFFFFF&PingSuccessTextColor=%23808080&PingTimeoutTextColor=%23FA093F&DefaultDotColor=%231D2F6F&v=1.0">Get
+                        it</a>
+                    <span class="author"> author : anymous</span>
+                </div>
+            </div>
+
+            <div class="night_purple card">
+                <div class="title">
+                    <center>
+                        <h4><b>Night Purple</b></h4>
+                    </center>
+                </div>
+                <div class="node_name">
+                    暗紫色夜间主题 
+
+                    <div class="button">
+                        <i class="fa fa-1x fa-info"></i>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank" href="shadowrocket://color?NavigationBarColor=%233E206D&NavigationBar2Color=%23F0E3FF&NavigationBarTextColor=%23FFFFFF&NavigationBar2TextColor=%23FFFFFF&TabBarColor=%2318072D&TabBarBorderColor=%23916DD5&TabBarSelectedColor=%239791E9&TabBarUnselectedColor=%23808080&TableBackgroundColor=%23000000&TableCellBackgroundColor=%23222432&TableCellSelectedBackgroundColor=%23444444&TableSeparatorColor=%23000000&TextFieldTextColor=%23FFFFFF&PlaceholderColor=%23AAAAAA&TextLabelTextColor=%23FFFFFF&DetailLabelTextColor=%23808080&TextLabelDeleteColor=%23ED402E&HeaderFooterTextColor=%23808080&SearchFieldBackgroundColor=%23FFFFFF&IndicatorColor=%23808080&ButtonIconColor=%239791E9&ButtonNormalColor=%23FFFFFF&ButtonNormal2Color=%23CCFFFFFF&ButtonNormal3Color=%23808080&ButtonHighlightedColor=%2399FFFFFF&ButtonHighlighted2Color=%23FFFFFF&ButtonHighlighted3Color=%23000000&ButtonDisabledColor=%2380FFFFFF&ButtonDisabled2Color=%2380FFFFFF&PingSuccessTextColor=%2345995E&PingTimeoutTextColor=%23CF5747&DefaultDotColor=%23FF9400&HUDBackgroundColor=%23504366&v=1.0">Get it</a>
+                    <span class="author"> author : kasusa</span>
+                </div>
+            </div>
+
+            <div class="material_red card">
+                <div class="title">
+                    <center>
+                        <h4><b>Material RED</b></h4>
+                    </center>
+                </div>
+                <div class="node_name">
+                    质感红色主题
+                    
+                    <div class="button">
+                        <i class="fa fa-1x fa-info"></i>
+                    </div>
+                </div>
+                <div class="card-footer">
+                        <a target="_blank" href="shadowrocket://color?NavigationBarColor=%23640022&NavigationBar2Color=%23FF3063&NavigationBarTextColor=%23FF3063&NavigationBar2TextColor=%23808080&TabBarColor=%23640022&TabBarBorderColor=%23640022&TabBarSelectedColor=%23FE140B&TabBarUnselectedColor=%23FF3063&TableBackgroundColor=%23640022&TableCellBackgroundColor=%23640022&TableSeparatorColor=%23640022&TextFieldTextColor=%23808080&TextLabelTextColor=%23FFFFFF&DetailLabelTextColor=%23808080&TextLabelDeleteColor=%23FE140B&HeaderFooterTextColor=%23FFFFFF&ButtonIconColor=%23F3A318&ButtonNormalColor=%23FF3063&ButtonNormal2Color=%23FFFFFF&ButtonNormal3Color=%23FFFFFF&ButtonHighlightedColor=%23FF3063&ButtonHighlighted2Color=%23FFFFFF&ButtonHighlighted3Color=%23FFFFFF&ButtonDisabledColor=%23FF3063&ButtonDisabled2Color=%23FF3063&PingSuccessTextColor=%23808080&PingTimeoutTextColor=%23FE140B&DefaultDotColor=%23808080&v=1.0">Get it</a>
+                        <span class="author"> author : anymous</span>
+                </div>
+            </div>
+
+            <div class="Y_B card">
+                <div class="title">
+                    <center>
+                        <h4><b>Yellow & Blue</b></h4>
+                    </center>
+                </div>
+                <div class="node_name">
+                    经典舒适的商务配色
+                    
+                    <div class="button">
+                        <i class="fa fa-1x fa-info"></i>
+                    </div>
+                </div>
+                <div class="card-footer">
+                        <a target="_blank" href="shadowrocket://color?NavigationBarColor=%23121D30&NavigationBar2Color=%23121D28&NavigationBarTextColor=%23FFC300&NavigationBar2TextColor=%23FFC300&TabBarColor=%23121D28&TabBarBorderColor=%23121D28&TabBarSelectedColor=%23FF9400&TabBarUnselectedColor=%23FFC300&TableBackgroundColor=%23121D28&TableCellBackgroundColor=%23121D28&TableSeparatorColor=%23121D28&TextFieldTextColor=%23FFFFFF&TextLabelTextColor=%23FFFFFF&DetailLabelTextColor=%23FFC300&TextLabelDeleteColor=%23ED402E&HeaderFooterTextColor=%23FFFFFF&ButtonIconColor=%23FFC300&ButtonNormalColor=%23FFC300&ButtonNormal2Color=%23FFC300&ButtonNormal3Color=%23FFC300&ButtonHighlightedColor=%23FFC300&ButtonHighlighted2Color=%23FFC300&ButtonHighlighted3Color=%23000000&ButtonDisabledColor=%23FFC300&ButtonDisabled2Color=%23FFC300&PingSuccessTextColor=%2302EEEE&PingTimeoutTextColor=%23CF5747&DefaultDotColor=%23FF9400&v=1.0">Get it</a>
+                        <span class="author"> author : anymous</span>
+                </div>
+            </div>
+
+            <div class="dark_mint card">
+                <div class="title">
+                    <center>
+                        <h4><b>Nigth Mint</b></h4>
+                    </center>
+                </div>
+                <div class="node_name">
+                    材质质感的薄荷绿
+                    
+                    <div class="button">
+                        <i class="fa fa-1x fa-info"></i>
+                    </div>
+                </div>
+                <div class="card-footer">
+                        <a target="_blank" href="shadowrocket://color?NavigationBarColor=%231D1C21&NavigationBar2Color=%23FFFFFF&NavigationBarTextColor=%2315DFB1&NavigationBar2TextColor=%23FFFFFF&TabBarColor=%231D1C21&TabBarBorderColor=%231D1C21&TabBarSelectedColor=%2315DFB1&TabBarUnselectedColor=%2387A2A6&TableBackgroundColor=%231D1C21&TableCellBackgroundColor=%231D1C21&TableSeparatorColor=%231D1C21&TextFieldTextColor=%2315DFB1&TextLabelTextColor=%2387A2A6&DetailLabelTextColor=%23808080&TextLabelDeleteColor=%23FA093F&HeaderFooterTextColor=%23808080&ButtonIconColor=%2315DFB1&ButtonNormalColor=%2315DFB1&ButtonNormal2Color=%23CCFFFFFF&ButtonNormal3Color=%23808080&ButtonHighlightedColor=%2399FFFFFF&ButtonHighlighted2Color=%23FFFFFF&ButtonHighlighted3Color=%23FFFFFF&ButtonDisabledColor=%2380FFFFFF&ButtonDisabled2Color=%2380FFFFFF&PingSuccessTextColor=%23808080&PingTimeoutTextColor=%23FA093F&DefaultDotColor=%23808080&v=1.0">Get it</a>
+                        <span class="author"> author : anymous</span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer >
+        <p>
+            分享您制作的好看主题 <a href="mailto:kasusaland@gmail.com">发email给kasusa</a>
+        </p>
+        <p>
+            如果不能安装主题，请检查您是否使用最新版本的 <a href="https://apps.apple.com/us/app/shadowrocket/id932747118">Shadowrocket</a>
+        </p>
+        <p>
+            捷径社区的 <a href="https://sharecuts.cn/post/265">制作主题教程</a>
+        </p>
+        <p>
+            在自己制作主题的时候要考虑到通知的界面，上面有一些通知界面不正常显示的（如成功提示）
+        </p>
+        <p>
+            制作主题的工具会考虑开发的。不过会涉及到一些我没有学过的知识……
+        </p>
+
+
+        <span class="badge badge-primary"> \\ 2020-1-9 15:24</span>
+    </footer>
+
+</body>
+
+</html>

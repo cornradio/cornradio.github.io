@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分类 on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/categories/</link>
+    <description>Recent content in 分类 on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Thu, 15 Sep 2022 23:03:01 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bash</title>
+      <link>https://kasusa.github.io/hugo/categories/bash/</link>
+      <pubDate>Thu, 15 Sep 2022 23:03:01 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/categories/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos</title>
+      <link>https://kasusa.github.io/hugo/categories/centos/</link>
+      <pubDate>Mon, 14 Feb 2022 09:56:15 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/categories/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://kasusa.github.io/hugo/categories/ssh/</link>
+      <pubDate>Mon, 14 Feb 2022 09:56:15 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/categories/ssh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

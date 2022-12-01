@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>友链 on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/series/%E5%8F%8B%E9%93%BE/</link>
+    <description>Recent content in 友链 on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/series/%E5%8F%8B%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>友情链接</title>
+      <link>https://kasusa.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/</guid>
+      <description>友链。 颜树人 https://yantree.github.io/ （从不更新的死博客） La Bibliothèque de Lumière https://ble-m.ltgc.cc/ （卢米埃尔图书馆） Xeterium https://izfsk-ium.github.io/ （new！ 不知道会不会坚持写下去呢） Te</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function sendtxt(txt) {
+            var str1 = 'https://sc.ftqq.com/SCU79279T0c34cbc508bb507afdee47b1a9f6384a5e3502d24c50b.send?text=';
+            var str = str1 + txt;
+            document.getElementById('link').href = str;
+            // document.getElementById('link').innerHTML = '内容已改为'+txt;
+            document.getElementById('link').click();
+            
+        }
+        function gettxt(){
+           var txt = '[' + document.getElementById('namebox').value + ']';
+           txt += ' : '
+            txt +=  document.getElementById('saybox').value;
+           return txt;
+        }
+    </script>
+    <title>给kasusa的微信发个消息！</title>
+    <style>
+    body {
+        color: aliceblue;
+            background-color: rgb(8, 19, 18);
+            background-image: url("ShadowrocketTheme/img/dot.png");
+            background-size: 14px;
+            margin-top: 3em;
+        }
+
+        .box {
+            color: rgba(255, 255, 255, 0.589);
+        }
+        .box *{
+            background-color: rgba(255, 255, 255, 0.726);
+            box-shadow: 0 0 10px rgb(161, 161, 161);
+            margin: 10px;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        *:focus{
+            box-shadow: 5px 5px 5px  rgba(238, 70, 70, 0.479) ,-5px -5px 5px  rgba(70, 115, 238, 0.356);
+            transition: 0.2s;
+        }
+        .box a{
+            background-color: rgba(255, 255, 255, 0);
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+
+        <div class="box">
+            你的称呼 :
+            <br>
+            <input id="namebox" type="text" name="name" value="">
+            <br>
+            <br>
+            想说的话 :
+            <br>
+            <textarea id="saybox" name="" cols="22" rows="10"></textarea>
+            
+            <br>
+            <input onclick="sendtxt(gettxt())" style="padding-left:10px;padding-right:10px; " type="Submit" value="Submit">
+    
+            <a href="主人服务器又挂掉啦~" target="_blank" id="link"></a>
+        </div>
+        <p style="color: rgba(240, 248, 255, 0.548);">
+            请不要在text参数中传递引号、点、花括号等字符。<br>
+            因为微信的接口不支持一系列的特殊字符<br>
+        </p>
+    </center>
+    
+</body>
+</html>

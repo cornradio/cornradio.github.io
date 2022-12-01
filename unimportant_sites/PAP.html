@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PAP stories</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/labstyle.css">
+
+
+    <link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "></script>
+
+    <style>
+        .cards {
+            display: flex;
+        }
+        
+        .card {
+            width: 220px;
+            height: 300px;
+            background: rgb(105, 26, 29);
+            background-image: -webkit-linear-gradient(bottom, rgb(255, 255, 255) 0%, rgb(161, 73, 51) 80%);
+            border: 7px solid rgb(31, 27, 10);
+            /* border-radius: 1rem; */
+            padding: 1.5rem;
+            box-shadow: 3px 3px 12px 2px rgba(0, 0, 0, 0.6);
+            transition: 0.2s;
+        }
+        
+        .down {
+            clear: both;
+            float: bottom;
+        }
+        
+        .card a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+        
+        .card:not(:first-child) {
+            margin-left: -2rem;
+        }
+        
+        .card:not(:last-child):hover,
+        .card:not(:last-child):focus-within {
+            transform: translateY(-1rem);
+        }
+        
+        .card:not(:last-child):hover~.card,
+        .card:not(:last-child):focus-within~.card {
+            transform: translateX(2rem);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="jumbotron " style="margin-bottom:0%; ">
+        <div class="ristrict ">
+
+            <h1>Ponies After People 系列书籍</h1>
+
+        </div>
+    </div>
+
+    <div class="non-ristrict sticky-top bg-secondary ">
+        <div class="ristrict ">
+            <nav class="navbar navbar-expand-sm navbar-dark gray ">
+                <span class="navbar-text text-uppercase ">kasusa ||</span>
+                <ul class="navbar-nav justify-content-end ">
+                    <li class="nav-item "><a class="nav-link " href="../lab.html ">回到“LAB”</a></li>
+                    <li class="nac-item">
+                        <div class="container">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    书籍相关网站
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="https://www.equestriacn.com/2019/05/explore-pap-1-volume-initials-when-we-stand-on-the-timeline.html">中文介绍系列</a>
+                                    <a class="dropdown-item" href="https://www.fimfiction.net/group/207757/folder/42492/main">英文原版目录</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <br>
+
+
+    <div class="container ">
+
+        <div class="alert alert-success alert-dismissible fade show ">您可以点击下面的书来阅读
+        </div><br>
+
+        <div class="cards ">
+            <div class="card ">
+                <h3><a href="https://fimtale.com/t/2809 ">地球上最后一只小马</a></h3>
+                <div class="down ">
+
+                    <h4><span class="badge badge-dark ">第一部</span></h4>
+                    <div class="content ">
+                        <button onclick="window.location.href='https://fimtale.com/t/2809' " type="button " class="btn btn-sm btn-outline-dark ">中文</button>
+                        <button onclick="window.location.href='https://www.fimfiction.net/story/265629/the-last-pony-on-earth' " type="button " class="btn btn-sm btn-outline-dark ">English</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card ">
+                <h3><a href="https://fimtale.com/t/2880 ">亚历山大的奠基者</a></h3>
+                <h4><span class="badge badge-dark ">第二部</span></h4>
+                <div class="content ">
+                    <button onclick="window.location.href='https://fimtale.com/t/2880' " type="button " class="btn btn-sm btn-outline-dark ">中文</button>
+                    <button onclick="window.location.href='https://www.fimfiction.net/story/277114/founders-of-alexandria' " type="button " class="btn btn-sm btn-outline-dark ">English</button>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="card ">
+                <h3><a href="https://fimtale.com/t/2926 ">孤日永存</a></h3>
+                <h4><span class="badge badge-dark ">第三部</span></h4>
+                <div class="content ">
+                    <button onclick="window.location.href='https://fimtale.com/t/2926' " type="button " class="btn btn-sm btn-outline-dark ">中文</button>
+                    <button onclick="window.location.href='https://www.fimfiction.net/story/289382/the-eternal-lonely-day' " type="button " class="btn btn-sm btn-outline-dark ">English</button>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="card ">
+                <h3><a title="这一部更推荐阅读英文版 " href="https://fimtale.com/t/2549 ">没有我们的地球</a></h3>
+                <h4><span class="badge badge-dark ">第四部</span></h4>
+                <div class="content ">
+                    <button onclick="window.location.href='https://fimtale.com/t/2549' " type="button " class="btn btn-sm btn-outline-dark ">中文</button>
+                    <button onclick="window.location.href='https://www.fimfiction.net/story/318771/earth-without-us' " type="button " class="btn btn-sm btn-outline-dark ">English</button>
+                </div>
+                <p></p>
+            </div>
+        </div><br>
+
+
+        <div class="alert alert-primary alert-dismissible fade show ">
+            <strong>注意!</strong>下面的书只有英文版。
+        </div>
+        <div class="cards ">
+
+            <div class="card ">
+                <h3><a href="https://fimtale.com/t/2926 ">Bedtime Stories</a></h3>
+                <h4><span class="badge badge-dark ">5th</span></h4>
+                <div class="content ">
+                    <button onclick="window.location.href='https://www.fimfiction.net/story/363997/pap-bedtime-stories' " type="button " class="btn btn-sm btn-outline-dark ">English</button>
+                </div>
+                <p></p>
+            </div>
+            <div class="card ">
+                <h3><a href="# ">Meliora</a></h3>
+                <h4><span class="badge badge-dark ">6th</span></h4>
+                <div class="content ">
+                    <button onclick="window.location.href='https://www.fimfiction.net/story/411302/meliora' " type="button " class="btn btn-sm btn-outline-dark ">English</button>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="card ">
+                <h3><a href="# ">Knight of Wands</a></h3>
+                <h4><span class="badge badge-dark ">5th</span></h4>
+                <div class="content ">
+                    <button onclick="window.location.href='https://www.fimfiction.net/story/433340/knight-of-wands' " type="button " class="btn btn-sm btn-outline-dark ">English</button>
+                </div>
+                <p></p>
+            </div>
+        </div><br>
+
+</body>
+
+</html>
+
+<div class="row ">
+    <div class="col-sm-4 ">
+        <h3>PAP是什么</h3>
+        <p>
+            PaP是“Ponies After People”的缩写，为国外同人作者Starscribe所著的一整套长篇故事系列。到目前为止国内已有4部多一点的翻译，而作者已经更新到的第7部，终章已经完结。 第一部是《地球上最后一只小马》
+        </p>
+    </div>
+    <div class="col-sm-4 ">
+        <h3>起源</h3>
+        <p>孩之宝制作了与“小马宝莉”专属相关的各世代玩具与游戏，被收藏家称呼为第1代至第3代。首次于1992年公开播送的《My Little Pony Tales》，是在本电视系列剧之前。随着各种影音产品首映的释出，其设计随后改成了第3代版本。</p>
+    </div>
+
+</div>
+
+<div class="jumbotron text-center " style="margin-bottom:0 ">
+    <p class="text-muted">借助<a href="https://www.w3schools.com/bootstrap4/bootstrap_ref_js_alert.asp">bootstarp4</a>驱动</p>
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1094 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>自学 linux 命令 - kasusa的技术博客</title><link rel="apple-touch-icon" href="https://kasusa.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://kasusa.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://kasusa.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content=", " />
+<meta name="description" content="自学 linux 命令" /><meta itemprop="name" content="自学 linux 命令">
+<meta itemprop="description" content="自学 linux 命令"><meta itemprop="datePublished" content="2022-08-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-18T00:00:00+00:00" />
+<meta itemprop="wordCount" content="4250">
+<meta itemprop="keywords" content="ubuntu,命令行," /><meta property="og:title" content="自学 linux 命令" />
+<meta property="og:description" content="自学 linux 命令" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kasusa.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-18T00:00:00+00:00" /><meta property="og:site_name" content="kasusa的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="自学 linux 命令"/>
+<meta name="twitter:description" content="自学 linux 命令"/>
+<meta name="twitter:site" content="@kasusa6"/>
+<link rel="preload" href="https://kasusa.github.io/hugo/css/bundle.min.97751a78b909969082c383b150b8b8dfbc7ba2b319af63bc78d325ac60d06966.css" integrity="sha256-l3UaeLkJlpCCw4OxULi437x7orMZr2O8eNMlrGDQaWY=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://kasusa.github.io/hugo/css/bundle.min.97751a78b909969082c383b150b8b8dfbc7ba2b319af63bc78d325ac60d06966.css" integrity="sha256-l3UaeLkJlpCCw4OxULi437x7orMZr2O8eNMlrGDQaWY=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://kasusa.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://kasusa.github.io/hugo/">Kasusa
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=%e8%87%aa%e5%ad%a6%20linux%20%e5%91%bd%e4%bb%a4&url=https%3a%2f%2fkasusa.github.io%2fhugo%2fposts%2f%25E8%2587%25AA%25E5%25AD%25A6-linux-%25E5%2591%25BD%25E4%25BB%25A4%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkasusa.github.io%2fhugo%2fposts%2f%25E8%2587%25AA%25E5%25AD%25A6-linux-%25E5%2591%25BD%25E4%25BB%25A4%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="蓝色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="绿色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="红色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="蓝绿色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黄色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://kasusa.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://kasusa.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Akasusa.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://kasusa.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://kasusa.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://kasusa.github.io/hugo/posts/">全部博客</a></li><li class="breadcrumb-item active">自学 Linux 命令</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">自学 Linux 命令
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2022-08-18
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>9 分钟阅读
+  </span><a href="https://kasusa.github.io/hugo/tags/ubuntu/" class="badge rounded-pill text-white bg-primary post-taxonomy">ubuntu</a><a href="https://kasusa.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge rounded-pill text-white bg-primary post-taxonomy">命令行</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#控制台常用快捷键">控制台常用快捷键</a></li>
+    <li><a href="#一次性创建多个文件">一次性创建多个文件</a></li>
+    <li><a href="#常用通配符">常用通配符</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#配置主机名称">配置主机名称</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#在目录间移动">在目录间移动</a></li>
+    <li><a href="#创建文件和目录">创建文件和目录</a></li>
+    <li><a href="#复制文件目录">复制文件/目录</a></li>
+    <li><a href="#删除文件">删除文件</a></li>
+    <li><a href="#移动和重命名">移动和重命名</a></li>
+    <li><a href="#linux文件目录结构">linux文件目录结构</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#变量">变量</a></li>
+    <li><a href="#环境变量">环境变量</a></li>
+    <li><a href="#修改已有变量">修改已有变量</a></li>
+    <li><a href="#搜索文件">搜索文件</a></li>
+    <li><a href="#man-命令中常用按键以及用途">man 命令中常用按键以及用途</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#ps-aux命令">ps aux命令</a></li>
+    <li><a href="#ifconfig-命令">ifconfig 命令</a></li>
+    <li><a href="#uptime-命令">uptime 命令</a></li>
+    <li><a href="#uname--a">uname -a</a></li>
+    <li><a href="#free--h">free -h</a></li>
+    <li><a href="#last-命令">last 命令</a></li>
+    <li><a href="#history">history</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#pwd-命令">pwd 命令</a></li>
+    <li><a href="#cd-命令">cd 命令</a></li>
+    <li><a href="#ls">ls</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#cat-命令">cat 命令</a></li>
+    <li><a href="#more-命令">more 命令</a></li>
+    <li><a href="#head-和-tail">head 和 tail</a></li>
+    <li><a href="#wc-命令">wc 命令</a></li>
+    <li><a href="#压缩">压缩</a></li>
+    <li><a href="#搜索">搜索</a></li>
+    <li><a href="#别名">别名</a></li>
+    <li><a href="#变量和全局">变量和全局</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#vim-中常用的命令">Vim 中常用的命令</a></li>
+    <li><a href="#末行模式中可用的命令">末行模式中可用的命令</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p><a href="https://www.linuxprobe.com/training" target="_blank" rel="noopener noreferrer">官方培训课程</a>
+</p>
+<h2 id="控制台常用快捷键">控制台常用快捷键</h2>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+d</td>
+<td>键盘输入结束或退出终端</td>
+</tr>
+<tr>
+<td>Ctrl+s</td>
+<td>暂停当前程序，暂停后按下任意键恢复运行</td>
+</tr>
+<tr>
+<td>Ctrl+z</td>
+<td>将当前程序放到后台运行，恢复到前台为命令fg</td>
+</tr>
+<tr>
+<td>Ctrl+a</td>
+<td>将光标移至输入行头，相当于Home键</td>
+</tr>
+<tr>
+<td>Ctrl+e</td>
+<td>将光标移至输入行末，相当于End键</td>
+</tr>
+<tr>
+<td>Ctrl+k</td>
+<td>删除从光标所在位置到行末</td>
+</tr>
+<tr>
+<td>Alt+Backspace</td>
+<td>向前删除一个单词</td>
+</tr>
+<tr>
+<td>Shift+PgUp</td>
+<td>将终端显示向上滚动</td>
+</tr>
+<tr>
+<td>Shift+PgDn</td>
+<td>将终端显示向下滚动</td>
+</tr>
+</tbody>
+</table>
+<h2 id="一次性创建多个文件">一次性创建多个文件</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">#实际上是一个简单的shell loop
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ touch love_{1..10}_shiyanlou.txt
+</span></span></code></pre></div><h2 id="常用通配符">常用通配符</h2>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>|匹配 0 或多个字符
+? |	匹配任意一个字符
+[list] |	匹配 list 中的任意单一字符
+[^list] |	匹配 除 list 中的任意单一字符以外的字符
+[c1-c2] |	匹配 c1-c2 中的任意单一字符 如：[0-9][a-z]
+{string1,string2,&hellip;} |	匹配 string1 或 string2 (或更多)其一字符串
+{c1..c2} |	匹配 c1-c2 中全部字符 如{1..10}</li>
+</ul>
+<h1 id="用户管理">用户管理</h1>
+<p>创建用户(默认会让输入密码)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo adduser &lt;USERNAME&gt;
+</span></span></code></pre></div><p>修改密码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo passwd &lt;USERNAME&gt;
+</span></span></code></pre></div><p>切换用户</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">su &lt;USERNAME&gt;
+</span></span></code></pre></div><p>查看当前用户是谁</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">whoami
+</span></span></code></pre></div><p>查看用户组</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cat /etc/group | grep -E &#34;&lt;USERNAME&gt;&#34;
+</span></span></code></pre></div><p>给新建的用户sudo权限(第二条是centos里面的情况。)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">usermod -G sudo &lt;USERNAME&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">usermod -aG wheel &lt;USERNAME&gt; 
+</span></span></code></pre></div><p>删除用户(把它创建时自动创建的用户目录一并删除)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo deluser lilei --remove-home
+</span></span></code></pre></div><p><strong>adduser 和 useradd 的区别是什么</strong></p>
+<blockquote>
+<p>答：useradd 只创建用户，不会创建用户密码和工作目录，创建完了需要使用 passwd <!-- raw HTML omitted --> 去设置新用户的密码。adduser 在创建用户的同时，会创建工作目录和密码（提示你设置），做这一系列的操作。其实 useradd、userdel 这类操作更像是一种命令，执行完了就返回。而 adduser 更像是一种程序，需要你输入、确定等一系列操作
+查看所有登录的用户（都有谁，都在哪里登录）</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">who
+</span></span></code></pre></div><h1 id="常用东西">常用东西</h1>
+<h2 id="配置主机名称">配置主机名称</h2>
+<p><code>4.1.2 配置主机名称</code></p>
+<ol>
+<li>使用 Vim 编辑器修改“/etc/hostname”主机名称文件。</li>
+<li>把原始主机名称删除后追加你想要起的名字。注意，使用 Vim 编辑器修改主机名称文件后，要在末行模式下执行:wq!命令才能保存并退出文档。</li>
+<li>保存并退出文档，然后使用 hostname 命令检查是否修改成功。</li>
+</ol>
+<blockquote>
+<p>不好用的时候试着重新启动</p>
+</blockquote>
+<h1 id="文件管理">文件管理</h1>
+<p><img class="img-fluid" alt="图像权限" src="https://doc.shiyanlou.com/linux_base/3-10.png/wm" loading="lazy"
+  
+   />
+
+
+这个图是在使用<code>ls -l</code>时候前部的意义。</p>
+<p>chmod 修改权限。每一个数字代表对应权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">rwx|r-x|r-x
+</span></span><span class="line"><span class="ln">2</span><span class="cl">111|101|101 = 755
+</span></span></code></pre></div><p>chown 修改所有者</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">chown &lt;usrname&gt; &lt;filename&gt;
+</span></span></code></pre></div><h2 id="在目录间移动">在目录间移动</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">#去tmp目录</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">cd</span> /tmp
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1">#去上一层目录</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">cd</span> ..
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1">#去当前用户的home（无参数cd）</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="nb">cd</span> 
+</span></span></code></pre></div><h2 id="创建文件和目录">创建文件和目录</h2>
+<p>touch 可以创建文件/更新文件时间戳。
+mkdir 可以创建目录
+mkdir -p 可以创建多级目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"> mkdir -p father/son/grandson
+</span></span></code></pre></div><h2 id="复制文件目录">复制文件/目录</h2>
+<p>复制文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cp &lt;文件&gt; &lt;目的地&gt;
+</span></span></code></pre></div><p>复制目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cp &lt;要复制的目录&gt; &lt;目的地&gt;
+</span></span></code></pre></div><h2 id="删除文件">删除文件</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">rm &lt;文件&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">rm -r &lt;目录&gt;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">rm -f &lt;文件&gt; (包括有写保护的文件)
+</span></span><span class="line"><span class="ln">4</span><span class="cl">rm -rf &lt;任何东西&gt;
+</span></span></code></pre></div><h2 id="移动和重命名">移动和重命名</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">mv &lt;原文件&gt; &lt;新位置&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">mv &lt;原文件名&gt; &lt;新文件名字&gt;
+</span></span></code></pre></div><p>批量重命名</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">rename &lt;&#39;正则&#39;&gt; &lt;通配符&gt;
+</span></span></code></pre></div><h2 id="linux文件目录结构">linux文件目录结构</h2>
+<p><img class="img-fluid" alt="目录结构" src="https://doc.shiyanlou.com/linux_base/4-1.png/wm" loading="lazy"
+  
+   />
+
+</p>
+<h1 id="shell-script">shell script</h1>
+<h2 id="变量">变量</h2>
+<p>声明变量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">declare tmp
+</span></span></code></pre></div><p>直接用=赋值同时也可以新建变量,注意不要在等号左右使用空格</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmp=helloyou
+</span></span></code></pre></div><p>拿出变量tmp</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">echo $tmp
+</span></span></code></pre></div><p>删除变量tmp</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">unset tmp
+</span></span></code></pre></div><h2 id="环境变量">环境变量</h2>
+<p>暂时设置一个环境变量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmp=helloyuoman
+</span></span><span class="line"><span class="ln">2</span><span class="cl">export tmp
+</span></span></code></pre></div><p>永久设置一个环境变量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">/etc/bashrc         shell变量（有的 Linux 没有这个文件） 
+</span></span><span class="line"><span class="ln">2</span><span class="cl">/etc/profile        环境变量
+</span></span><span class="line"><span class="ln">3</span><span class="cl">/home/usr/.profile  用户变量
+</span></span></code></pre></div><p>shiyanlou的环境用的是zsh命令行，在根目录有一个<code>.zshrc</code>文件是初始化配置文件。
+可以使用这句来把 /home/shiyanlou/mybin 添加到path中</p>
+<blockquote>
+<p>注意,这里是用的 &raquo; 它意味&quot;追加&quot; , &gt; 是覆盖的意思</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ echo &#34;PATH=$PATH:/home/shiyanlou/mybin&#34; &gt;&gt; .zshrc
+</span></span></code></pre></div><p>直接刷新环境变量(无需开新的zsh)<strong>两种等效</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">source .zshrc
+</span></span><span class="line"><span class="ln">2</span><span class="cl">. .zshrc
+</span></span></code></pre></div><h2 id="修改已有变量">修改已有变量</h2>
+<table>
+<thead>
+<tr>
+<th>变量设置方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>${变量名#匹配字串}</td>
+<td>从头向后开始匹配，删除符合匹配字串的最短数据</td>
+</tr>
+<tr>
+<td>${变量名##匹配字串}</td>
+<td>从头向后开始匹配，删除符合匹配字串的最长数据</td>
+</tr>
+<tr>
+<td>${变量名%匹配字串}</td>
+<td>从尾向前开始匹配，删除符合匹配字串的最短数据</td>
+</tr>
+<tr>
+<td>${变量名%%匹配字串}</td>
+<td>从尾向前开始匹配，删除符合匹配字串的最长数据</td>
+</tr>
+<tr>
+<td>${变量名/旧的字串/新的字串}</td>
+<td>将符合旧字串的第一个字串替换为新的字串</td>
+</tr>
+<tr>
+<td>${变量名//旧的字串/新的字串}</td>
+<td>将符合旧字串的全部字串替换为新的字串</td>
+</tr>
+</tbody>
+</table>
+<h2 id="搜索文件">搜索文件</h2>
+<p>whereis 简单快速</p>
+<blockquote>
+<p>whereis 只能搜索二进制文件(-b)，man 帮助文件(-m)和源代码文件(-s)。如果想要获得更全面的搜索结果可以使用 locate 命令。</p>
+</blockquote>
+<p>locate快而全 使用要先安装,并且更新索引数据库</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="ln">2</span><span class="cl">sudo apt-get install locate
+</span></span><span class="line"><span class="ln">3</span><span class="cl">sudo updatedb
+</span></span></code></pre></div><p>find 超强大</p>
+<blockquote>
+<p>寻找/etc中(包括子目录)名为的 sources.list文件</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">find /etc -name sources.list
+</span></span></code></pre></div><h2 id="man-命令中常用按键以及用途">man 命令中常用按键以及用途</h2>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空格键</td>
+<td>向下翻一页</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从上至下搜索某个关键词，如“/linux”</td>
+</tr>
+<tr>
+<td>?</td>
+<td>从下至上搜索某个关键词，如“?linux”</td>
+</tr>
+<tr>
+<td>n</td>
+<td>定位到下一个搜索到的关键词</td>
+</tr>
+<tr>
+<td>N</td>
+<td>定位到上一个搜索到的关键词</td>
+</tr>
+</tbody>
+</table>
+<h1 id="系统状态">系统状态</h1>
+<h2 id="ps-aux命令">ps aux命令</h2>
+<table>
+<thead>
+<tr>
+<th>状态值</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R（运行）</td>
+<td>进程正在运行或在运行队列中等待。</td>
+</tr>
+<tr>
+<td>S（中断）</td>
+<td>进程处于休眠中，当某个条件形成后或者接收到信号时，则脱离该状态。</td>
+</tr>
+<tr>
+<td>D（不可中断）</td>
+<td>进程不响应系统异步信号，即便用 kill 命令也不能将其中断。</td>
+</tr>
+<tr>
+<td>Z（僵死）</td>
+<td>进程已经终止，但进程描述符依然存在, 直到父进程调用 wait4()系统函数后将进程释放。</td>
+</tr>
+<tr>
+<td>T（停止）</td>
+<td>进程收到停止信号后停止运行。</td>
+</tr>
+</tbody>
+</table>
+<p>如果我们在系统终端中执行一个命令后想立即停止它，可以同时按下 <code> Ctrl + C</code> 组合
+键（生产环境中比较常用的一个快捷键），这样将立即终止该命令的进程。或者，如果
+有些命令在执行时不断地在屏幕上输出信息，影响到后续命令的输入，则可以在执
+行命令时在末尾添加上一个 <code>&amp;</code> 符号，这样命令将进入系统后台来执行。</p>
+<h2 id="ifconfig-命令">ifconfig 命令</h2>
+<p>ifconfig 命令用于获取网卡配置与网络状态等信息，格式为“ifconfig [网络设备] [参数]”。使用 ifconfig 命令来查看本机当前的网卡配置与网络状态等信息时，其实主要查看的就是网卡名称、inet 参数后面的 IP 地址、ether 参数后面的网卡物理地址（又称为 MAC 地址）</p>
+<h2 id="uptime-命令">uptime 命令</h2>
+<p>uptime 用于查看系统的负载信息，格式为 uptime。</p>
+<p>uptime 命令真的很棒，它可以显示当前系统时间、系统已运行时间、启用终端数量以及平均负载值等信息。平均负载值指的是系统在最近 1 分钟、5 分钟、15 分钟内的压力情况（下面加粗的信息部分）；负载值越低越好，尽量不要长期超过 1，在生产环境中不要
+超过 5。</p>
+<h2 id="uname--a">uname -a</h2>
+<p>查看计算机的系统类型</p>
+<h2 id="free--h">free -h</h2>
+<p>查看内存</p>
+<h2 id="last-命令">last 命令</h2>
+<p>last 命令用于查看所有系统的登录记录，格式为“last [参数]”。</p>
+<h2 id="history">history</h2>
+<p>查看历史命令记录。
+<code>history -c</code> 清空记录</p>
+<h1 id="切换目录">切换目录</h1>
+<h2 id="pwd-命令">pwd 命令</h2>
+<p>pwd 命令用于显示用户当前所处的工作目录，格式为“pwd [选项]”。</p>
+<h2 id="cd-命令">cd 命令</h2>
+<table>
+<thead>
+<tr>
+<th>cd</th>
+<th>命令用于切换工作路径，格式为“cd [目录名称]”。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cd -</code></td>
+<td>命令返回到上一次所处的目录</td>
+</tr>
+<tr>
+<td><code>cd ..</code></td>
+<td>命令进入上级目录</td>
+</tr>
+<tr>
+<td><code>cd </code></td>
+<td>命令切换到当前用户的家目录</td>
+</tr>
+<tr>
+<td><code>cd ~username</code></td>
+<td>切换到其他用户的家目录。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ls">ls</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>~</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ls -a</td>
+<td>查看隐藏文件</td>
+</tr>
+<tr>
+<td>ls -l</td>
+<td>查看文件详细信息</td>
+</tr>
+<tr>
+<td>ls -la</td>
+<td>查看隐藏文件以及显示详细</td>
+</tr>
+</tbody>
+</table>
+<h1 id="查看文件">查看文件</h1>
+<h2 id="cat-命令">cat 命令</h2>
+<p>用来查看比较小的文本文件</p>
+<p><code>cat -n</code>  查看文本内容时还想顺便显示行号
+<code>tac</code> 可以倒序输出文件.</p>
+<h2 id="more-命令">more 命令</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">more &lt;文件名&gt;
+</span></span></code></pre></div><p>more更加适合阅读长文件</p>
+<p>可以使用</p>
+<ul>
+<li><!-- raw HTML omitted -->enter<!-- raw HTML omitted --> 向下一行</li>
+<li><!-- raw HTML omitted -->space<!-- raw HTML omitted --> 向下一屏</li>
+</ul>
+<blockquote>
+<p>Less 比more强多了</p>
+</blockquote>
+<h2 id="head-和-tail">head 和 tail</h2>
+<p>默认查看文件头部/尾部的10行。参数 -n 可以控制行数。</p>
+<p>tail可以使用 -f 查看最新一行.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">head -n 1 &lt;文件名&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">tail -f &lt;文件名&gt;
+</span></span></code></pre></div><h2 id="wc-命令">wc 命令</h2>
+<p>wc 命令用于统计指定文本的行数、字数、字节数，格式为“wc [参数] 文本”。</p>
+<p><code> file</code> 命令来查看文件类型</p>
+<h2 id="压缩">压缩</h2>
+<p><code>tar -czvf 压缩包名称.tar.gz 要打包的目录</code></p>
+<ul>
+<li>打包-压缩-显示废话-选择目录</li>
+</ul>
+<p>x：解包</p>
+<p>c：打包</p>
+<h2 id="搜索">搜索</h2>
+<p><code>grep</code> 命令用于在文本中执行关键词搜索，并显示匹配的结果，通常和别的命令结合使用，如cat、ps等</p>
+<table>
+<thead>
+<tr>
+<th>~</th>
+<th>~</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b</td>
+<td>将可执行文件（binary）当作文本文件（text）来搜索</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>仅显示找到的行数</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>忽略大小写</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>显示行号</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>反向选择 — 仅列出没有“关键词”的行</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">root@iZ2ze1hf17j9hv44rdpmaaZ:~# grep -n Jan you
+</span></span><span class="line"><span class="ln">2</span><span class="cl">2:-rw-r--r-- 1 root root   17 Jan 12  2000 kasusa
+</span></span><span class="line"><span class="ln">3</span><span class="cl">3:drwxr-xr-x 2 root root 4096 Jan 30 10:15 mydir
+</span></span><span class="line"><span class="ln">4</span><span class="cl">4:drwxr-xr-x 2 root root 4096 Jan 30 10:16 mydir2
+</span></span><span class="line"><span class="ln">5</span><span class="cl">5:drwxr-xr-x 2 root root 4096 Jan 30 11:47 ooo
+</span></span><span class="line"><span class="ln">6</span><span class="cl">6:-rw-r--r-- 1 root root    0 Jan 30 11:51 you 
+</span></span><span class="line"><span class="ln">7</span><span class="cl">
+</span></span><span class="line"><span class="ln">8</span><span class="cl"># you是一个文件。用显示行号的模式在you里面寻找 Jan 关键字 。在控制台里面会有高亮显示
+</span></span></code></pre></div><h2 id="别名">别名</h2>
+<p>可以用 <code>alias</code> 命令来创建一个属于自己的命令别名，格式为“<code>alias 别名=命令</code>”。</p>
+<p>若要取消一个命令别名，则是用 unalias 命令，格式为“unalias 别名”。</p>
+<p>可以写入.bashrc文件，或者是.zshrc文件，取决于你用的是啥shell，然后就可以永久用这些别名了。</p>
+<p>下面是一个我在macos上面使用的例子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">#显示有颜色的用户（不适合白色背景）
+</span></span><span class="line"><span class="ln">2</span><span class="cl">export PS1=&#34;%10F%m%f:%11F%1~%f \$ &#34;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">#online
+</span></span><span class="line"><span class="ln">4</span><span class="cl">alias f=&#34;top -l 1 | head -n 10 | grep PhysMem&#34; # 查看可用内存
+</span></span><span class="line"><span class="ln">5</span><span class="cl">alias p=&#34;sudo purge&#34; # 整理释放内存
+</span></span><span class="line"><span class="ln">6</span><span class="cl">alias v=&#34;export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890&#34; # 终端设置翻墙
+</span></span><span class="line"><span class="ln">7</span><span class="cl">alias nv=&#34;unset http_proxy; unset https_proxy;&#34; # 终端设置不翻墙
+</span></span><span class="line"><span class="ln">8</span><span class="cl">alias ip=&#34;curl cip.cc&#34; # 查看ip和是否翻墙
+</span></span><span class="line"><span class="ln">9</span><span class="cl">alias py=python3
+</span></span></code></pre></div><h2 id="变量和全局">变量和全局</h2>
+<p>一般来说，变量都是用大写的。</p>
+<table>
+<thead>
+<tr>
+<th>有一些</th>
+<th>常用的全局变量：</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HOME</td>
+<td>用户的主目录（即家目录）</td>
+</tr>
+<tr>
+<td>SHELL</td>
+<td>用户在使用的 Shell 解释器名称</td>
+</tr>
+<tr>
+<td>HISTSIZE</td>
+<td>输出的历史命令记录条数</td>
+</tr>
+<tr>
+<td>HISTFILESIZE</td>
+<td>保存的历史命令记录条数</td>
+</tr>
+<tr>
+<td>MAIL</td>
+<td>邮件保存路径</td>
+</tr>
+<tr>
+<td>LANG</td>
+<td>系统语言、语系名称</td>
+</tr>
+<tr>
+<td>RANDOM</td>
+<td>生成一个随机数字</td>
+</tr>
+<tr>
+<td>PS1 Bash</td>
+<td>解释器的提示符</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>定义解释器搜索用户执行命令的路径</td>
+</tr>
+<tr>
+<td>EDITOR</td>
+<td>用户默认的文本编辑器</td>
+</tr>
+</tbody>
+</table>
+<p>自己创建一个变量/读取它：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">root@iZ2ze1hf17j9hv44rdpmaaZ:~# MYVAR=&#34;hello&#34;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">root@iZ2ze1hf17j9hv44rdpmaaZ:~# echo &#34;$MYVAR&#34;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">hello
+</span></span></code></pre></div><p>提升位全局变量：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">root@iZ2ze1hf17j9hv44rdpmaaZ:~# export MYVAR
+</span></span></code></pre></div><h1 id="vim">VIM</h1>
+<h2 id="vim-中常用的命令">Vim 中常用的命令</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dd</td>
+<td>删除（剪切）光标所在整行</td>
+</tr>
+<tr>
+<td>5dd</td>
+<td>删除（剪切）从光标处开始的 5 行</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制光标所在整行</td>
+</tr>
+<tr>
+<td>5yy</td>
+<td>复制从光标处开始的 5 行</td>
+</tr>
+<tr>
+<td>n</td>
+<td>显示搜索命令定位到的下一个字符串</td>
+</tr>
+<tr>
+<td>N</td>
+<td>显示搜索命令定位到的上一个字符串</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销上一步的操作</td>
+</tr>
+<tr>
+<td>p</td>
+<td>将之前删除（dd）或复制（yy）过的数据粘贴到光标后面</td>
+</tr>
+</tbody>
+</table>
+<h2 id="末行模式中可用的命令">末行模式中可用的命令</h2>
+<p><strong>要想切换到末行模式，在命令模式中输入一个冒号就可以了。</strong>
+末行模式主要用于保存或退出文件，以及设置 Vim 编辑器的工作环境，还可以让用户执
+行外部的 Linux 命令或跳转到所编写文档的特定行数。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:w</td>
+<td>保存</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>强制退出（放弃对文档的修改内容）</td>
+</tr>
+<tr>
+<td>:wq!</td>
+<td>强制保存退出</td>
+</tr>
+<tr>
+<td>:set</td>
+<td>nu 显示行号</td>
+</tr>
+<tr>
+<td>:set</td>
+<td>nonu 不显示行号</td>
+</tr>
+<tr>
+<td>:命令</td>
+<td>执行该命令</td>
+</tr>
+<tr>
+<td>:整数</td>
+<td>跳转到该行</td>
+</tr>
+<tr>
+<td>:s/one/two</td>
+<td>将当前光标所在行的第一个 one 替换成 two</td>
+</tr>
+<tr>
+<td>:s/one/two/g</td>
+<td>将当前光标所在行的所有 one 替换成 two</td>
+</tr>
+<tr>
+<td>:%s/one/two/g</td>
+<td>将全文中的所有 one 替换成 two</td>
+</tr>
+<tr>
+<td>?字符串</td>
+<td>在文本中从下至上搜索该字符串</td>
+</tr>
+<tr>
+<td>/字符串</td>
+<td>在文本中从上至下搜索该字符串</td>
+</tr>
+</tbody>
+</table>
+<h1 id="append">append</h1>
+<p>查看命令的来源：type</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">kasusadeMacBook-Pro:~ $ type who
+</span></span><span class="line"><span class="ln">2</span><span class="cl">who is /usr/bin/who
+</span></span><span class="line"><span class="ln">3</span><span class="cl">kasusadeMacBook-Pro:~ $ type cd
+</span></span><span class="line"><span class="ln">4</span><span class="cl">cd is a shell builtin
+</span></span></code></pre></div><p>输入输出导向：</p>
+<p>其中输出分成 普通输出、错误输出</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl">any <span class="nb">command</span> &lt; infile
+</span></span><span class="line"><span class="ln">2</span><span class="cl">any <span class="nb">command</span> &gt; outfile <span class="c1">#Create/overwrite outfile </span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">any <span class="nb">command</span> &gt;&gt; outfile <span class="c1">#Append to outfile</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">any <span class="nb">command</span> 2&gt; errorfile
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1">#普通输出、错误输出 同时输出到两个文件</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">any <span class="nb">command</span> &gt; outfile 2&gt; errorfile 
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c1">#普通输出、错误输出合并输出到1个文件</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">any <span class="nb">command</span> &gt;<span class="p">&amp;</span> outfile
+</span></span><span class="line"><span class="ln">9</span><span class="cl">any <span class="nb">command</span> <span class="p">&amp;</span>&gt; outfile
+</span></span></code></pre></div><p>一行执行多个命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"># 直接按顺序执行
+</span></span><span class="line"><span class="ln">2</span><span class="cl">command1 ; command2 ; command3
+</span></span><span class="line"><span class="ln">3</span><span class="cl"># 按顺序执行但是如果遇到错误会停止
+</span></span><span class="line"><span class="ln">4</span><span class="cl">command1 &amp;&amp; command2 &amp;&amp; command3
+</span></span><span class="line"><span class="ln">5</span><span class="cl"># 按顺序执行但是如果遇到成功的直接退出
+</span></span><span class="line"><span class="ln">6</span><span class="cl">command1 || command2 || command3
+</span></span></code></pre></div><p>引号</p>
+<blockquote>
+<p>一般来说空格作为分隔符，如果输入中要带空格需要用单or双引号把它扩起来</p>
+</blockquote>
+<ul>
+<li>单引号：原样输出</li>
+<li>双引号：可以在其中加入变量等</li>
+<li>反引号（tilda）：反引号之中的字符串会作为变量来执行</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">→ echo &#39;The variable HOME has value $HOME&#39; 
+</span></span><span class="line"><span class="ln">2</span><span class="cl">The variable HOME has value $HOME
+</span></span><span class="line"><span class="ln">3</span><span class="cl">→ echo &#34;The variable HOME has value $HOME&#34; 
+</span></span><span class="line"><span class="ln">4</span><span class="cl">The variable HOME has value /home/smith
+</span></span><span class="line"><span class="ln">5</span><span class="cl">→ echo This year is `date +%Y` 
+</span></span><span class="line"><span class="ln">6</span><span class="cl">This year is 2021
+</span></span><span class="line"><span class="ln">7</span><span class="cl">→ echo hello `expr $(date +%Y) + 1` # expr可以用来做运算，但是要在运算符号之间加空格
+</span></span><span class="line"><span class="ln">8</span><span class="cl">This year is 2023
+</span></span></code></pre></div></div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://kasusa.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://kasusa.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/">Python Xml和读取excel
+</a>
+  </div><div class="post-nav post-next">
+    <a href="https://kasusa.github.io/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/">传入参数ARGV
+</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://kasusa.github.io/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/">Proxychains 使用教程
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/shell/">Shell
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/ubuntu-install-java/">Ubuntu上安装java
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="kasusa/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Kasusa" src="https://kasusa.github.io/hugo/images/profile.webp" loading="lazy"
+   width="638" height="639"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">Kasusa</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>软测</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>上海</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://kasusa.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://kasusa.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/">Ubuntu设置ssh、修改mac地址(home Pc)
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/">Windows酷命令
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">自定义终端标识符
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/">传入参数ARGV
+</a></li><li><a href="https://kasusa.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/">自学 Linux 命令
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://kasusa.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://kasusa.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://kasusa.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://kasusa.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://kasusa.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://kasusa.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://kasusa.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://kasusa.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://kasusa.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://kasusa.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://kasusa.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://kasusa.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://kasusa.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a><a href="https://kasusa.github.io/hugo/tags/steam/" class="badge bg-primary text-white rounded post-taxonomy" title="steam">
+            steam
+          </a><a href="https://kasusa.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="mailto:kasusaland@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a><a class="nav-link social-link" target="_blank" href="https://github.com/kasusa" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://twitter.com/kasusa6" title="Twitter" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-twitter"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://kasusa.github.io/hugo/js/bundle.min.9709cce2934b34f10e61baee6dd363ccc0c77bbbf5958a961055f1dbf4361bab.js" integrity="sha256-lwnM4pNLNPEOYbrubdNjzMDHe7v1lYqWEFXx2/Q2G6s=" crossorigin="anonymous" defer></script><script defer src="https://kasusa.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+</body>
+</html>

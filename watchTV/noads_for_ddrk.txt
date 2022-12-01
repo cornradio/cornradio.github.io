@@ -1,0 +1,26 @@
+/* 暴力去广告,不会有10秒提示 */
+/*  ddrk是一个好网站,如果可以一定要支持作者(捐助等*/
+a img {
+    opacity: 0;
+	
+}
+.cfa_popup{
+	 opacity: 0;
+}
+
+/* .post-box .post-box-image span{
+    opacity:0;
+} */
+/* .post-box-text{
+    opacity:0;
+} */
+.post-box:hover .post-box-text{
+    opacity:1;
+}
+a picture {
+    display:none;
+}
+
+.hidden-xs{
+	display: none !important;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>steam on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/tags/steam/</link>
+    <description>Recent content in steam on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 05 Mar 2022 11:32:35 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/steam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Steam好友已断开连接修复办法</title>
+      <link>https://kasusa.github.io/hugo/posts/steam%E5%A5%BD%E5%8F%8B%E5%B7%B2%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E4%BF%AE%E5%A4%8D%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Sat, 05 Mar 2022 11:32:35 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/steam%E5%A5%BD%E5%8F%8B%E5%B7%B2%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E4%BF%AE%E5%A4%8D%E5%8A%9E%E6%B3%95/</guid>
+      <description>问题描述 有时候会出现这种情况：像上图一样，steam的好友网络无法访问，更关键的是这个东西会不定期的跳出来，比如，在你和其他敌人激烈对线的时</description>
+    </item>
+    
+    <item>
+      <title>steam如何绕过clash的全局代理</title>
+      <link>https://kasusa.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Tue, 30 Nov 2021 13:11:11 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</guid>
+      <description>我想要默认开启电脑的clash全局代理。但是要求steam这个东东登录和下载（尤其是游戏下载）不要走代理。下载太耗费流量了，还不能跑满网速。</description>
+    </item>
+    
+  </channel>
+</rss>

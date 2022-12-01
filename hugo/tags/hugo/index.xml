@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/tags/hugo/</link>
+    <description>Recent content in hugo on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo博客</title>
+      <link>https://kasusa.github.io/hugo/posts/hugo-newblog/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/hugo-newblog/</guid>
+      <description>剧情介绍 今天yr在我旁边弄新的hugo主题，我感觉他的新主题真的很清新，很不错，然后markdown记录之类的确实要比转化成html再放出来</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>命令行 on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
+    <description>Recent content in 命令行 on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Thu, 18 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自学 linux 命令</title>
+      <link>https://kasusa.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 18 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</guid>
+      <description>官方培训课程 控制台常用快捷键 按键 作用 Ctrl+d 键盘输入结束或退出终端 Ctrl+s 暂停当前程序，暂停后按下任意键恢复运行 Ctrl+z 将当前程序放到后台运行，恢复到前台为命</description>
+    </item>
+    
+    <item>
+      <title>linux fun stuff</title>
+      <link>https://kasusa.github.io/hugo/posts/funstuff/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/funstuff/</guid>
+      <description>cmatrix 黑客帝国命令行 Gow 让win可以用大部分linux常用命令</description>
+    </item>
+    
+    <item>
+      <title>corntab计划任务</title>
+      <link>https://kasusa.github.io/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</guid>
+      <description>corntab 设置corntab任务，使用默认编辑器 1corntab -e 设置默认编辑器 1select-editor 设置任务，每天2：00执行 10 2 * * * /home/saber/DDREPORT/ddrp.sh</description>
+    </item>
+    
+    <item>
+      <title>proxychains 使用教程</title>
+      <link>https://kasusa.github.io/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</guid>
+      <description>安装proxychains sudo apt install proxychains4 配置他的配置文件：sudo vim /etc/proxychains4.conf 取消掉的注释 dynamic_chain 将底部的网络协议和代理端口和ip改成你翻墙软件提供的: 1socks5 127.0.0.1 1089 2http</description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://kasusa.github.io/hugo/posts/shell/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/shell/</guid>
+      <description>菜鸟shell教程 Shell 命令脚本 Shell 脚本文件的名称可以任意，建议将.sh 后缀加上，以表示是一个脚本文件。 创建脚本：vim example.sh 写好脚本的内容（就是连串</description>
+    </item>
+    
+    <item>
+      <title>ubuntu换源</title>
+      <link>https://kasusa.github.io/hugo/posts/%E6%8D%A2%E6%BA%90/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/%E6%8D%A2%E6%BA%90/</guid>
+      <description>ps：也可以通过内置的software &amp;amp; update来测试和更换中国源 清华： https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ 阿里： https://developer.aliyun.com/mirror/ubuntu</description>
+    </item>
+    
+    <item>
+      <title>ubuntu上安装java</title>
+      <link>https://kasusa.github.io/hugo/posts/ubuntu-install-java/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/ubuntu-install-java/</guid>
+      <description>ubuntu 安装 java 最好的教程：https://docs.datastax.com/en/jdk-install/doc/jdk-install/ins</description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://kasusa.github.io/hugo/posts/vim/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/vim/</guid>
+      <description>vimtutor-ch 快速使用vim: 跳转 行之间的跳转 1[n] shift g #跳转到第n行 2gg #跳转到第一行 3shift g #跳转到最后一行 行内的跳转 1~ #切换大小写 2w #到下一个单词头部 30 #到</description>
+    </item>
+    
+    <item>
+      <title>安装zsh和配置主题</title>
+      <link>https://kasusa.github.io/hugo/posts/my-zsh/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/my-zsh/</guid>
+      <description>zsh 有很多实用功能，下面安装和配置ohmyzsh的教程： 安装zsh 1sudo apt install zsh 提前安装所需的字体 1sudo apt-get install fonts-powerline powerline-GitHub 抄国光的作业 1sh -c &amp;#34;$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)&amp;#34; .zshrc配置 打</description>
+    </item>
+    
+    <item>
+      <title>盒盖不关机</title>
+      <link>https://kasusa.github.io/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</guid>
+      <description>1、编辑 logind.conf 文件，命令如下 sudo vim /etc/systemd/logind.conf 2、把所有相关 HandleLidSwitch 的值都改成 ignore 3、执行让修改的内容即时生效，输入命令： systemctl restart systemd-logind (实时生效命令可能不能用，我这边ub</description>
+    </item>
+    
+  </channel>
+</rss>

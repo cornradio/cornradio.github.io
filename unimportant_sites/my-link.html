@@ -1,0 +1,280 @@
+<html>
+
+<head>
+    <title>迷你~ 导航
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="http://ww1.sinaimg.cn/large/006rgJELly1gdju6h3xc4j307h07hjrd.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css">
+    <meta name="referrer" content="no-referrer">
+    <meta charset="UTF-8">
+
+    <style>
+        ul {
+            list-style-type: none;
+            padding-left: 1em;
+        }
+        
+        .tou {
+            border-radius: 5px;
+            color: rgba(0, 0, 0, 0.55);
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.493);
+        }
+        
+        .dot {
+            float: right;
+            border: 3px solid rgba(85, 85, 85, 0.452);
+            height: 0.8em;
+            width: 0.8em;
+            border-radius: 50%;
+        }
+        
+        .sss {
+            background-color: #fff;
+        }
+        
+        .yellow {
+            background-color: rgb(243, 157, 20);
+        }
+        
+        .red {
+            background-color: rgba(243, 56, 56, 0.926);
+        }
+        
+        .blue {
+            background-color: rgb(66, 201, 255);
+        }
+        
+        .green {
+            background-color: rgba(9, 184, 40, 0.926);
+        }
+        
+        .cantsee {
+            opacity: 0;
+            z-index: -10;
+        }
+        
+        footer a:hover {
+            /* font-weight: normal; */
+            color: rgb(255, 255, 255);
+            text-shadow: 0 0 12px rgb(255, 102, 102);
+        }
+        
+        a {
+            font-size: 1.1em;
+            color: black;
+            font-weight: bold;
+            /* text-decoration: none; */
+            transition: 0.2s;
+        }
+        
+        .linkbox {
+            font-size: 16px;
+            background-color: rgba(252, 233, 147, 0.63);
+            padding: 0.2em 0.7em;
+            border: solid 1px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            transition: 0.3s;
+            color: rgb(209, 137, 61);
+        }
+        
+        html {
+            height: 100%;
+            background-color: #FBAB7E;
+            background-image: -webkit-linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+            background-image: -moz-linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+            background-image: -o-linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+            background-attachment: fixed;
+        }
+        
+        .centerscreen {
+            position: fixed;
+            /* or absolute */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .card {
+            padding: 1em;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+            background-color: rgba(255, 255, 255, 0.926);
+            margin-bottom: 2em;
+            margin-top: 2em;
+        }
+        
+        .card:last-child {
+            margin-bottom: 0.3em;
+        }
+        
+        @media only screen and (max-width: 425px) {
+            footer {
+                width: 90%;
+            }
+        }
+        /* 2020-4-6 10:03:27 hover image */
+        
+        img {
+            float: left;
+            display: inline-block;
+            height: 3em;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            box-shadow: 0px 8px 16px 0px rgba(27, 27, 27, 0.37);
+            padding: 10px;
+            z-index: 999;
+            background-color: #fff;
+            border-radius: 1em;
+            transition: 0.21s;
+            display: block;
+            filter: opacity(0);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            margin-left: 50px;
+            filter: opacity(0.9);
+        }
+    </style>
+</head>
+
+
+<body>
+    <center>
+        <br>
+        <h1 class="tou">迷你 🔰 导航</h1>
+        <br>
+    </center>
+
+
+    <!-- BAJI -->
+    <div class="card ">
+        <div class="blue dot" title="大部分时间可用"></div>
+        <h2><a href="https://kasusa.github.io/get%20a%20life2.html">Airport</a></h2>
+    </div>
+
+    <!-- bandzip -->
+    <div class="card dropdown ">
+        <div class="blue dot ">
+            <div class="dropdown-content">
+                <img src="http://ww1.sinaimg.cn/large/006rgJELly1gdjt5yby98j302t02kq2v.jpg" />
+            </div>
+        </div>
+        <h2><a href="https://en.bandisoft.com/bandizip/old/6/">band-zip 6</a></h2>
+    </div>
+
+    <!-- https://telegram.org/ -->
+    <div class="card dropdown ">
+        <div class="blue dot ">
+            <div class="dropdown-content">
+                <img src="http://ww1.sinaimg.cn/large/006rgJELly1gdjtvmg88jj303w03xmx3.jpg" />
+            </div>
+        </div>
+        <h2><a href="https://telegram.org/">telegram</a></h2>
+    </div>
+
+    <!-- https://browsehappy.com/ -->
+    <div class="card dropdown ">
+        <div class="blue dot ">
+            <div style="background-color: #e0d0b1;" class="dropdown-content">
+                <img src="http://ww1.sinaimg.cn/large/006rgJELly1gdjuem1uy0j30va04ote8.jpg" />
+            </div>
+        </div>
+        <h2><a href="https://browsehappy.com/">browse happy</a></h2>
+    </div>
+
+
+    <!-- https://shimo.im/docs/rMv37i1ysSUcALVa -->
+    <div class="card dropdown ">
+        <div class="sss dot ">
+            <div style="background-color: #e0d0b1;" class="dropdown-content">
+                <ul style="text-align: left;">
+                    <li><a href="https://code.visualstudio.com/">vscode</a> (Settings Sync 同步很方便)</li>
+                    <li> <a href="https://visualstudio.microsoft.com/zh-hans/?rr=https%3A%2F%2Fwww.google.com%2F"> visual studio</a></li>
+                    <li><a href="https://www.jetbrains.com/">jetbrains 系列</a> </li>
+                    <li><a href="https://developer.android.com/studio">Android Studio</a>(准备好梯子)
+                    </li>
+                    <li>--------</li>
+                    <li> <a href="https://www.microsoft.com/zh-cn/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab">windows-terminal</a></li>
+                    <li><a href="https://git-scm.com/downloads/guis">Git-gui</a></li>
+                    <li><a href="https://termius.com/">terminus</a> </li>
+                    <li> <a href="https://winscp.net/">winscp</a></li>
+                </ul>
+            </div>
+        </div>
+        <h2>🧰 开发者工具</a>
+        </h2>
+    </div>
+
+    <!-- 国内的常用软件 -->
+    <div class="card dropdown ">
+        <div class="sss dot ">
+            <div style="background-color: #e0d0b1;" class="dropdown-content">
+                <ul style="text-align: left;">
+                    <li><a href="https://im.qq.com/">QQ</a> </li>
+                    <li><a href="https://weixin.qq.com/">微信</a></li>
+                    <li><a href="https://pan.baidu.com/">百度网盘</a> </li>
+                    <li><a href="https://www.xunlei.com/">迅雷</a></li>
+                    <li><a href="https://www.wps.cn/">WPS</a></li>
+                </ul>
+            </div>
+        </div>
+        <h2>🀄 本土软件</a>
+        </h2>
+    </div>
+
+
+    <div class="card dropdown ">
+        <div class="sss dot ">
+            <div style="background-color: #e0d0b1;" class="dropdown-content">
+                <ul style="text-align: left;">
+                    <li>
+                        <a href="https://www.microsoft.com/zh-cn/p/eartrumpet/9nblggh516xp?activetab=pivot:overviewtab">EarTrumpet</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/microsoft/PowerToys/releases">PowerToys</a>
+                    </li>
+                    <li>
+                        <a href="https://zh.snipaste.com/index.html">snipaste</a>
+                    </li>
+                    <li>
+                        <a href="https://www.voidtools.com/zh-cn/">everything</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h2>🎨 小工具</a>
+        </h2>
+    </div>
+
+    <!-- shimo-->
+    <div class="card dropdown ">
+        <div class="blue dot ">
+            <div class="dropdown-content">
+                收集一点好用的软件 (石墨文档)
+            </div>
+        </div>
+        <h2><a href="https://shimo.im/docs/rMv37i1ysSUcALVa">更多软件🍀</a></h2>
+    </div>
+</body>
+
+<footer style="margin-top: 12%;">
+    <center>
+        @kasusa 2020
+        <a style="
+        background-color: rgba(77, 228, 18, 0.774);
+        color: rgba(0, 0, 0, 0.801);
+        font-weight: bold;" href="https://kasusa.github.io/"> blog</a>
+    </center>
+
+</footer>
+
+</html>

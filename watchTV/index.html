@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="https://www.emojiall.com/en/header-svg/%F0%9F%93%BA.svg">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>watch TV</title>
+</head>
+
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(ellipse farthest-corner at center top ,#3b3b3b,#000000);/*#26d6f5,#04506e*/
+    color: #8b9095;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+  }
+  .controlbox{
+    position: absolute ;
+    right: 0;
+    bottom:  0;
+    /* float: right; */
+    z-index: 999;
+  }
+  .controlbox button{
+    background-color: rgba(0, 0, 0, 0.163);
+    color: rgb(218, 215, 215);
+    border: none;
+    padding: 5px;
+    width: 30px;
+    /* border-radius: 5px; */
+  }
+  .controlbox button:hover{
+    background-color: rgba(47, 199, 223, 0.436);
+
+  }
+  .controlbox button:active{
+    background-color: rgba(131, 230, 246, 0.928);
+    color: rgb(131, 130, 130);
+
+  }
+  #pagenum{
+    background-color: transparent;
+
+    border: none;
+  }
+  .hide{
+    opacity: 0;
+    display: none !important;
+  }
+  .room {
+    color: black;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+  }
+
+  .app {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 940px;
+    height: 590px;
+    background: #363535c6;;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  header {
+    padding: 30px;
+    position: relative;
+    height: 70px;
+  }
+
+  header h1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #c0c6d0;
+  }
+
+  header h1 strong {
+    background: #4c524f;
+    color: #fff;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 6px;
+    font-size: 83%;
+    line-height: 1;
+    position: relative;
+    top: -1px;
+    left: 2px;
+  }
+
+  .icon {
+    --iconsize: 124px;
+    --marginsize: 48px;
+    height: var(--iconsize);
+    width: var(--iconsize);
+    margin-left: var(--marginsize);
+    margin-top: var(--marginsize);
+    background-color: #20202031;
+    display: inline-block;
+    transition: 0.22s;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.178), 2px 2px 4px rgba(0, 0, 0, 0.308);
+    border-radius: 30px;
+    background-size: contain;
+
+  }
+
+  .icon:hover {
+    transform: scale(1.2);
+    background-color: #f3f3f3;
+    transition: 0.12s;
+
+  }
+
+  .icon:active {
+    transform: scale(1.1);
+    background-color: #f3f3f3;
+  }
+
+
+  .context-menu {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 10000;
+    width: 150px;
+    background: #ffffff8a;
+    border-radius: 5px;
+    transform-origin: top left;
+    backdrop-filter: blur(20px);
+    transform: scale(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+  }
+
+  .active {
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+
+  }
+
+  .context-menu .item {
+    padding: 8px 10px;
+    font-size: 15px;
+    color: rgb(3, 3, 3);
+    border-left: 2px double rgba(5, 219, 247, 0);
+  }
+
+  .context-menu .item:hover {
+    border-left: 6px solid rgba(1, 9, 10, 0.993);
+    cursor: alias;
+    transition: 0.2s;
+
+  }
+
+  .context-menu hr {
+    margin: 0px 0px;
+    border-color: rgba(7, 7, 7, 0.123);
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  
+  .c1 {
+    background-image: url(https://tva4.sinaimg.cn/large/006rgJELly1h10dd2r019j30ck0ckweu.jpg);
+
+  }
+
+  .c2 {
+    background-image: url(https://tva2.sinaimg.cn/large/006rgJELly1h10ddljsynj3070070wf5.jpg);
+  }
+
+  .c3 {
+    background-image: url(https://tvax2.sinaimg.cn/large/006rgJELly1h10ddz7sp2j307606tt8y.jpg);
+  }
+
+  .c4 {
+    background-image: url(https://tva1.sinaimg.cn/large/006rgJELly1h10denct3mj30cd0cdmyw.jpg);
+  }
+
+  .c5 {
+    background-image: url(https://tva1.sinaimg.cn/large/006rgJELly1h10df0gejij306806774a.jpg);
+  }
+  .c6 {
+    background-image: url(https://tvax3.sinaimg.cn/large/006rgJELly1h10dfkfy9xj30do0dqwf7.jpg);
+  }
+  .c7{
+    background-image: url(https://tva1.sinaimg.cn/large/006rgJELly1h10dfv8ofqj30fp0fr754.jpg);
+  }
+  .c8{
+    background-image: url(https://tvax1.sinaimg.cn/large/006rgJELly1h10dg76mqtj306t074dg4.jpg);
+  }
+  .c9{
+    background-image: url(https://tvax4.sinaimg.cn/large/006rgJELly1h2130vsmb2j304d04d74n.jpg);
+    background-repeat: no-repeat;
+    background-color: #ffffff6c;
+  }
+  .c10{
+    background-image: url(https://tva1.sinaimg.cn/large/006rgJELly1h212zs0ec1j30k70k7gna.jpg);
+    background-repeat: no-repeat;
+  }
+  .c11{
+    background-image: url(https://tvax2.sinaimg.cn/large/006rgJELgy1h2mq1kzup4j3046046dg6.jpg);
+    background-repeat: no-repeat;
+  }
+  .c12{
+    background-image: url(https://tva4.sinaimg.cn/large/006rgJELgy1h2j9ey3fnqj3050050q33.jpg);
+    background-repeat: no-repeat;
+  }
+  .c13{
+    background-image: url(https://tva4.sinaimg.cn/large/006rgJELly1h396ql8ndrj30820823zz.jpg);
+    background-repeat: no-repeat;
+    background-color: #000 !important;
+
+  }
+
+  .mobile {
+    font-size: x-large;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    opacity: 80%;
+  }
+</style>
+<script>
+  var hover_icon_name = ""
+  var onmobile = false
+
+  
+  function switch_onmoble(){
+    if(onmobile ==false){
+      onmobile = true
+      document.querySelector(".mobile").innerHTML = "📱"
+    }
+    else{
+      onmobile = false
+      document.querySelector(".mobile").innerHTML = "💻"
+    } 
+    console.log('onmobile' + onmobile)
+
+  }
+
+  function active_this(strname) {
+    document.querySelector("#" + strname + "-menu").classList.add('active')
+  }
+
+  function go(str) {
+    if (onmobile){
+
+      if(str.startsWith('cctv') ){
+        if( str == 'cctv') active_this(str);
+        else window.open('https://tv.cctv.com/live/' + str);
+      }else
+      active_this(str);
+    } 
+    else{
+      switch (str) {
+        case "youtube": window.open('https://www.youtube.com/'); break;
+        case "bilibili": window.open('https://www.bilibili.com/'); break;
+        case "cctv": window.open('https://tv.cctv.com/live/cctv13'); break;
+        case "xigua": window.open('https://www.ixigua.com/'); break;
+        case "ytmusic": window.open('https://music.youtube.com/'); break;
+        case "NF": window.open('https://netflix.com'); break;
+        case "ddrk": window.open('https://ddys.tv/'); break;
+        case "acfun": window.open('https://www.acfun.cn/'); break;
+        case "ponytown": window.open('https://pony.town/'); break;
+        case "douyin": window.open('https://www.douyin.com/'); break;
+        case "iqiyi": window.open('https://www.iqiyi.com/'); break;
+        case "courseora": window.open('https://www.coursera.org/'); break;
+        case "wallheaven": window.open('https://wallhaven.cc/toplist'); break;
+        default:
+          window.open('https://tv.cctv.com/live/' + str); break;
+          break;
+      }
+    }
+      
+  }
+
+
+
+  // 在这里的所有项目都会被添加menu菜单linstener
+  var menulist = ["cctv", "bilibili"]
+
+  let ele = document.querySelector("#cctv-icon"); // This will not get any element because the page is not even loaded!
+ 
+ 
+  document.addEventListener("readystatechange", function () {
+    if (this.readyState == "interactive") {
+
+
+      var item = "cctv";
+//右键监听
+      document.querySelector("#" + item + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+// 点击空白位置
+      window.addEventListener("click", function () {
+        if (!onmobile) {
+        document.querySelector("#" + item + "-menu").classList.remove("active")
+        }
+      });
+
+
+      var item2 = "bilibili";
+      document.querySelector("#" + item2 + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item2 + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+      window.addEventListener("click", function () {
+        if(!onmobile){
+          document.querySelector("#" + item2 +  "-menu").classList.remove("active")
+        }
+      });
+
+
+      var item3 = "youtube";
+      document.querySelector("#" + item3 + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item3 + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+      window.addEventListener("click", function () {
+        if (!onmobile) {
+        document.querySelector("#" + item3 + "-menu").classList.remove("active")
+        }
+      });
+
+      var item4 = "acfun";
+      document.querySelector("#" + item4 + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item4 + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+      window.addEventListener("click", function () {
+        if (!onmobile) {
+        document.querySelector("#" + item4 + "-menu").classList.remove("active")
+        }
+      });
+
+      var item5 = "ddrk";
+      document.querySelector("#" + item5 + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item5 + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+      window.addEventListener("click", function () {
+        if (!onmobile) {
+        document.querySelector("#" + item5 + "-menu").classList.remove("active")
+        }
+      });
+
+      var item6 = "music";
+      document.querySelector("#" + item6 + "-icon").oncontextmenu = function () {
+        let contextElement = document.getElementById(item6 + "-menu");
+        contextElement.style.top = (event.pageY - 10) + "px";
+        contextElement.style.left = (event.pageX - 10) + "px";
+        contextElement.classList.add("active");
+        event.preventDefault();
+      }
+      window.addEventListener("click", function () {
+        if (!onmobile) {
+        document.querySelector("#" + item6 + "-menu").classList.remove("active")
+        }
+      });
+    }
+  });
+
+  document.onselectstart = function () { return false; };
+  // 增加禁止选择功能希望可以让ipad能够实现右键
+</script>
+
+<body >
+  <div class="app">
+    <header>
+      <h1>watch+ <strong><a href="h.html">🙈</a> <a href="../dengbao/">🛡️</a></strong></h1>
+    </header>
+    <a class="mobile" style="opacity: 0.3;" onclick="switch_onmoble()">💻</a>
+    <div class="page-1">
+      <div id="cctv-icon" class="icon c3" onclick="go('cctv')"></div>
+      <div id="acfun-icon" class="icon c7" onclick="go('acfun')"></div>
+      <div id="ddrk-icon" class="icon c8" onclick="go('ddrk')"></div>
+      <div class="icon c4" onclick="go('xigua')"></div>
+      <div class="icon c9" onclick="go('ponytown')"></div>
+      <div id="music-icon" class="icon c5" onclick="go('ytmusic')"></div>
+      <div id="youtube-icon" class="icon c1" onclick="go('youtube')"></div>
+      <div id="bilibili-icon" class="icon c2" onclick="go('bilibili')"></div>
+      <div class="icon c6" onclick="go('NF')"></div>
+      <div class="icon c10" onclick="go('douyin')"></div>
+    </div>
+
+    <div class="page-2">
+      <div id="iqiyi-icon" class="icon c11" onclick="go('iqiyi')"></div>
+      <div id="courseora-icon" class="icon c12" onclick="go('courseora')"></div>
+      <div id="wallheaven-icon" class="icon c13" onclick="go('wallheaven')"></div>
+      <div id="xxxx-icon" class="icon c14" onclick="go('')"></div>
+      <div id="xxxx-icon" class="icon c15" onclick="go('')"></div>
+      <div id="xxxx-icon" class="icon c16" onclick="go('')"></div>
+      <div id="xxxx-icon" class="icon c17" onclick="go('')"></div>
+      <div id="xxxx-icon" class="icon c18" onclick="go('')"></div>
+      <div id="xxxx-icon" class="icon c19" onclick="go('')"></div>
+      <div id="xxxx-icon" class="icon c20" onclick="go('')"></div>
+    </div>
+
+  </div>
+
+  <div id="cctv-menu" class="context-menu">
+    <div class="item" onclick="go('cctv1')">CCTV 1</div>
+    <div class="item" onclick="go('cctv5')">CCTV 5</div>
+    <div class="item" onclick="go('cctv6')">CCTV 6</div>
+    <div class="item" onclick="go('cctvjilu')">CCTV 9</div>
+    <div class="item" onclick="go('cctv10')">CCTV 10</div>
+    <div class="item" onclick="go('cctv13')">CCTV 13</div>
+  </div>
+
+  <div id="bilibili-menu" class="context-menu">
+    <a target="_blank" href="https://www.bilibili.com/account/history"><div class="item">历史记录</div></a>
+    <a target="_blank" href="https://message.bilibili.com/#/reply"><div class="item">通知中心</div></a>
+    <a target="_blank" href="https://www.bilibili.com/movie/"><div class="item">电影</div></a>
+    <a target="_blank" href="https://www.bilibili.com/documentary"><div class="item">纪录片</div></a>
+    <a target="_blank" href="https://t.bilibili.com/"><div class="item">收藏动态</div></a>
+  </div>
+
+  <div id="youtube-menu" class="context-menu">
+    <a target="_blank" href="https://www.youtube.com/feed/history"><div class="item">历史记录</div></a>
+    <a target="_blank" href="https://www.youtube.com/playlist?list=WL"><div class="item">稍后观看</div></a>
+    <a target="_blank" href="https://www.youtube.com/feed/subscriptions"><div class="item">订阅中心</div></a>
+  </div>
+
+  <div id="music-menu" class="context-menu">
+    <a target="_blank" href="https://soundcloud.com/"><div class="item">Sound cloud</div></a>
+    <a target="_blank" href="https://music.youtube.com/"><div class="item">YouTube music</div></a>
+    <a target="_blank" href="https://music.163.com/"><div class="item">网易云音乐</div></a>
+  </div>
+
+  <div id="acfun-menu" class="context-menu">
+    <a target="_blank" href="https://www.acfun.cn/member/history"><div class="item">历史记录</div></a>
+    <a target="_blank" href="https://www.acfun.cn/u/4075269"><div class="item">交通事故</div></a>
+    <a target="_blank" href="https://www.acfun.cn/bangumi/aa5025117_36188_329272"><div class="item">彩虹小马</div></a>
+  </div>
+
+  <div id="ddrk-menu" class="context-menu">
+    <a target="_blank" href="noads_for_ddrk.txt"><div class="item">ddrk去广告css</div></a>
+    <a target="_blank" href="https://ddys.tv/rick-and-morty/"><div class="item">R&M</div></a>
+    <a target="_blank" href="https://ddys.tv/made-in-abyss/"><div class="item">来自深渊</div></a>
+  </div>
+
+  <div class="controlbox">
+    <button onclick="pageup()">🔺</button>
+    <br>
+    <button id="pagenum" onclick="alert('用W/S、上/下控制翻页(空格关闭我)') ">1</button>
+    <br>
+    <button onclick="pagedown()">🔻</button>
+  </div>
+<script>
+  // 下列代码用于翻页功能
+    function setnum(x){
+    if(x == 1){
+      var a = document.getElementsByClassName("page-1")[0];
+        a.classList.remove('hide')
+      var a = document.getElementsByClassName("page-2")[0];
+      a.classList.add('hide')
+    }
+    if(x == 2){
+      var a = document.getElementsByClassName("page-1")[0];
+        a.classList.add('hide')
+      var a = document.getElementsByClassName("page-2")[0];
+      a.classList.remove('hide')
+    }
+  }
+  // 最大页面数量
+  pagenummax=2;
+  function pageup(){
+        var num = document.getElementById("pagenum").innerHTML;
+        num --;
+        if(num == 0) num = pagenummax;
+        document.getElementById("pagenum").innerHTML = num ;  
+        setnum(num)
+      }
+  function pagedown(){
+        var num = document.getElementById("pagenum").innerHTML;
+        ++num;
+        num = (num % (pagenummax+1));
+        if(num == 0)num ++;
+        document.getElementById("pagenum").innerHTML =  num;
+        setnum(num)
+      }
+// https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes/
+  document.addEventListener("keydown",(event)=>{
+    key = event.key;
+    if(key == "w" || key == "ArrowUp"){
+      pageup()
+    }
+    if(key == "s" || key == "ArrowDown"){
+      pagedown()
+    }
+  })
+  // 滚轮监听（很好玩
+  document.addEventListener('wheel', (event)=>{
+    var whellup = event.deltaY;
+    if(whellup < 0){
+      pageup()
+    }
+    if(whellup > 0){
+      pagedown()
+    }
+  });
+//设定初始页面
+setnum(1);
+</script>
+
+</body>
+
+</html>

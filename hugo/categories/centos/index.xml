@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>centos on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/categories/centos/</link>
+    <description>Recent content in centos on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Mon, 14 Feb 2022 09:56:15 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/categories/centos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Permission Denied (publickey,gssapi-keyex,gssapi-with-mic) 解决办法</title>
+      <link>https://kasusa.github.io/hugo/posts/ssh2/</link>
+      <pubDate>Mon, 14 Feb 2022 09:56:15 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/ssh2/</guid>
+      <description>今天ssh登录阿里云远程的centos，出现了 1Permission denied (publickey,gssapi-keyex,gssapi-with-mic) 尝试使用生成的key（pem文件）没有成功。 1ssh -i myvmubuntu.pem root@123.56.18.36 提示如下错误： 1Permission denied (publickey,gssapi-keyex,gssapi-with-mic) 解决方案 修改这文</description>
+    </item>
+    
+  </channel>
+</rss>

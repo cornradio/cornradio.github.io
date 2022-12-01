@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<head>
+    <title>平 铺 壁 纸</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="buttons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    
+    <style>
+        html{
+            height: 300%;
+
+        }
+        body {
+            background: url(memphis-mini-dark.png);
+            color: rgb(161, 255, 255);
+        }
+        #selected_img{
+            border:4px solid black;
+            border-radius: 7px;
+            background-color: #899c57;
+        }
+        #profile_image{
+            border: 8px solid #b4fffe;
+            box-shadow: 3px 12px 15px 1px #17a2b896;
+            width: 20%;
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        
+    </style>
+
+
+</head>
+
+<html>
+<body id= "backgrrrrrr">
+</br>
+<center>
+    <a href="../../lab.html">
+        <img id="profile_image" src="../../images/me_big.png" alt="我的头像">
+    </a>
+</center>
+</br>
+</br>
+
+
+    <div class="container">
+          <div class="alert alert-info" style="filter: opacity(85%);">
+                This website can help you make a tiled wallpaper!
+                <br>
+                这个网站可以帮助你制作一个平铺壁纸!
+          </div>
+            <div class="alert alert-primary" style="filter: opacity(85%);">
+                  <strong>1.</strong> 选取一张适合平铺的小图片<br>
+                  <strong>2.</strong> 点击GO按钮<br>
+                  <strong>3.</strong> 滑倒下方截图！<br>
+                  <strong>做完啦! yay~</strong> 
+            </div>
+             <div class="alert alert-primary" style="filter: opacity(85%);">
+                除了可以上传图片，您也可以去<b><a href="https://www.toptal.com/designers/subtlepatterns/"target="_blank">这个推荐的网站</a></b>转转找一个自己喜欢的！
+                <br>
+                同时推荐一个全屏壁纸网站
+                <b><a target="blank" href="https://unsplash.com/t/wallpapers">unsplash</a></b>
+            </div>
+
+            <form name="test">
+
+                Your image: <input type="file" name='file'><br><br>
+               
+            </form>
+            
+            <center>
+                <img id="selected_img" src="" alt="">
+                <br><br>
+                <a class="button button-3d button-royal" onclick="openFullscreen();">Fullscreen</a>
+                <a class="button button-3d button-royal" onclick="changebackground()">GO</a>
+            </center>
+            
+    </div>
+
+
+</body>
+    <script>
+        var elem = document.documentElement;
+            function openFullscreen() {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.mozRequestFullScreen) { /* Firefox */
+                    elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                    elem.msRequestFullscreen();
+                }
+            }
+
+    var status = "not uploaded"
+    var img = document.getElementById('selected_img'),
+    preview;
+    document.test.file.addEventListener('change', function() {
+    var fr = new FileReader();
+    fr.onload = function() {
+    preview = this.result;
+    img.src = preview;
+    status = "uploaded";
+    };
+    fr.readAsDataURL(this.files[0]);
+    })
+
+
+        function changebackground() {
+            if (status == "uploaded"){
+                var image = document.getElementById('selected_img');
+                // alert(image.src);
+                document.getElementById('backgrrrrrr').style.backgroundImage = "url(" + image.src + ")"
+            }
+        }
+    </script>
+</html>

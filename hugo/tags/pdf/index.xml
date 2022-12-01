@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDF on kasusa的技术博客</title>
+    <link>https://kasusa.github.io/hugo/tags/pdf/</link>
+    <description>Recent content in PDF on kasusa的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sun, 09 Jan 2022 20:44:16 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Excel转换pdf</title>
+      <link>https://kasusa.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</link>
+      <pubDate>Sun, 09 Jan 2022 20:44:16 +0800</pubDate>
+      
+      <guid>https://kasusa.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</guid>
+      <description>这个函数可是费我老大劲了。 我可以保证，你无法在除了我发的——互联网任何一个地方找到这段代码。 使用的dll需要在安装了ms office的电脑上</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://kasusa.github.io/hugo/sitemap.xml
