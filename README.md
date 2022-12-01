@@ -1,4 +1,4 @@
-# [kasusa.github.io](https://kasusa.github.io/)
+# [cornradio.github.io](https://cornradio.github.io/)
 
 - [x] 博客
 - [ ] awtrix--我的钟表
