@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>归档 on kasusa的技术博客</title>
+    <title>归档 on cornradio的技术博客</title>
     <link>https://kasusa.github.io/hugo/archives/</link>
-    <description>Recent content in 归档 on kasusa的技术博客</description>
+    <description>Recent content in 归档 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright><atom:link href="https://kasusa.github.io/hugo/archives/index.xml" rel="self" type="application/rss+xml" />
   </channel>
