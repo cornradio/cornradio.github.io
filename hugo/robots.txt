@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://kasusa.github.io/hugo/sitemap.xml
+Sitemap: https://cornradio.github.io/hugo/sitemap.xml

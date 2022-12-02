@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docx on cornradio的技术博客</title>
-    <link>https://kasusa.github.io/hugo/tags/docx/</link>
+    <link>https://cornradio.github.io/hugo/tags/docx/</link>
     <description>Recent content in docx on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Thu, 12 May 2022 16:52:49 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/docx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 16:52:49 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/docx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>把doc文件转换成docx</title>
-      <link>https://kasusa.github.io/hugo/posts/%E6%8A%8Adoc%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90docx/</link>
+      <link>https://cornradio.github.io/hugo/posts/%E6%8A%8Adoc%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90docx/</link>
       <pubDate>Thu, 12 May 2022 16:52:49 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/%E6%8A%8Adoc%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90docx/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/%E6%8A%8Adoc%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90docx/</guid>
       <description>因为我之前写了一些docx搜索的工具，但是客户发过来的文件还是doc格式的，导致我的搜索工具不能用，所以我在网上找到了这个！ 在word中开启</description>
     </item>
     
     <item>
       <title>Docx的搜索实现</title>
-      <link>https://kasusa.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://cornradio.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Fri, 07 Jan 2022 22:19:49 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</guid>
       <description>我做了一个c#的docx函数库。 python操作word实在是太垃了，尤其是涉及到多表、页眉页脚，甚至有时候好好的段落硬是搜不到。所以我转向</description>
     </item>
     

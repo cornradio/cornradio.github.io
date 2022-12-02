@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on cornradio的技术博客</title>
-    <link>https://kasusa.github.io/hugo/tags/python/</link>
+    <link>https://cornradio.github.io/hugo/tags/python/</link>
     <description>Recent content in python on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 08 Aug 2022 19:35:59 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Aug 2022 19:35:59 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Xml和读取excel</title>
-      <link>https://kasusa.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</link>
+      <link>https://cornradio.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</link>
       <pubDate>Mon, 08 Aug 2022 19:35:59 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</guid>
       <description>最近我接到了一个工作，就是把一份很长很长的漏洞扫描报告导入到单位的“测评能手”工具中，但是这个工具不支持导入这个excel表格，所以我要艰难</description>
     </item>
     
     <item>
       <title>使用python多线程批量ping</title>
-      <link>https://kasusa.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</link>
+      <link>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</link>
       <pubDate>Sat, 18 Jun 2022 19:53:02 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</guid>
       <description>批量ping是我的工作中常常需要用到的功能了，但是手动好麻烦！我在网上找到了一个脚本，经过了一些改进现在非常好用了，为了方便自己以后复制和互</description>
     </item>
     
     <item>
       <title>pip配置源</title>
-      <link>https://kasusa.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</link>
+      <link>https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</link>
       <pubDate>Thu, 19 May 2022 10:21:58 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</guid>
       <description>国内对于开发人员真的极不友好， 任何东东都要配置下代理或者源才能正常使用 这里教大家如何给pip配置代理； 将pip加入环境变量 在安装了pytho</description>
     </item>
     
     <item>
       <title>Python移动文件、新建目录</title>
-      <link>https://kasusa.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</link>
+      <link>https://cornradio.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</link>
       <pubDate>Sat, 11 Dec 2021 12:23:30 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</guid>
       <description>使用python移动文件和新建目录主要是用于大量的文档分类工作，以下是代码部分: 1import os #新建目录 2import shutil #复制文件 3# 新建一个文件夹out 然后把f.</description>
     </item>
     
     <item>
       <title>Python操作word</title>
-      <link>https://kasusa.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</link>
+      <link>https://cornradio.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</link>
       <pubDate>Tue, 07 Dec 2021 23:12:32 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</guid>
       <description>用python操作word::docx库的使用方法 python-docx这个库，说好用不好用，但是他是python上面唯一的选择，这里我就来</description>
     </item>
     

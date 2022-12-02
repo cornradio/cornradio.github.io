@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cmd on cornradio的技术博客</title>
-    <link>https://kasusa.github.io/hugo/tags/cmd/</link>
+    <link>https://cornradio.github.io/hugo/tags/cmd/</link>
     <description>Recent content in cmd on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 29 Oct 2022 23:00:17 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/cmd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2022 23:00:17 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/cmd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>windows酷命令</title>
-      <link>https://kasusa.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/</link>
+      <link>https://cornradio.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/</link>
       <pubDate>Sat, 29 Oct 2022 23:00:17 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/</guid>
       <description>如果你更喜欢看视频：https://www.youtube.com/watch?v=Jfvg3CS1X3A&amp;amp;t=1s 有些命令需要使用</description>
     </item>
     

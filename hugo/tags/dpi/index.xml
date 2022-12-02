@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dpi on cornradio的技术博客</title>
-    <link>https://kasusa.github.io/hugo/tags/dpi/</link>
+    <link>https://cornradio.github.io/hugo/tags/dpi/</link>
     <description>Recent content in dpi on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/dpi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/dpi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>winform适配dpi</title>
-      <link>https://kasusa.github.io/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</link>
+      <link>https://cornradio.github.io/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</guid>
       <description>https://zhuanlan.zhihu.com/p/128588859 在项目中添加一个：应用程序清单文件 在清单文件app.manifest的 &amp;lt;/assembly&amp;gt; 标签下添加 1&amp;lt;application xmlns=&amp;#34;urn:schemas-microsoft-com:asm.v3&amp;#34;&amp;gt; 2 &amp;lt;windowsSettings&amp;gt; 3 &amp;lt;dpiAware xmlns=&amp;#34;http://schemas.microsoft.com/SMI/2005/WindowsSettings&amp;#34;&amp;gt;true&amp;lt;/dpiAware&amp;gt; 4 &amp;lt;/windowsSettings&amp;gt; 5&amp;lt;/application&amp;gt; 适配DPI之后，即便是电脑dpi为缩</description>
     </item>
     

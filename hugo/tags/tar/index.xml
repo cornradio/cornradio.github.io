@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tar on cornradio的技术博客</title>
-    <link>https://kasusa.github.io/hugo/tags/tar/</link>
+    <link>https://cornradio.github.io/hugo/tags/tar/</link>
     <description>Recent content in tar on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sun, 22 May 2022 16:45:55 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/tar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 May 2022 16:45:55 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/tar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tar的用法</title>
-      <link>https://kasusa.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <link>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 22 May 2022 16:45:55 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>每次在网上搜tar都一堆低质量回答，看的头大，自己写一个 tar的用法 打包 打包（多个文件）： 1tar -cf my.tar 1.txt 2.txt 3.txt 打包（文件夹）： 1tar -cf dir1.tar dir1 看包 看包/预览</description>
     </item>
     

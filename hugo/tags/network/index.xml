@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on cornradio的技术博客</title>
-    <link>https://kasusa.github.io/hugo/tags/network/</link>
+    <link>https://cornradio.github.io/hugo/tags/network/</link>
     <description>Recent content in Network on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 18 Jun 2022 19:53:02 +0800</lastBuildDate><atom:link href="https://kasusa.github.io/hugo/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jun 2022 19:53:02 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用python多线程批量ping</title>
-      <link>https://kasusa.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</link>
+      <link>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</link>
       <pubDate>Sat, 18 Jun 2022 19:53:02 +0800</pubDate>
       
-      <guid>https://kasusa.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</guid>
       <description>批量ping是我的工作中常常需要用到的功能了，但是手动好麻烦！我在网上找到了一个脚本，经过了一些改进现在非常好用了，为了方便自己以后复制和互</description>
     </item>
     
