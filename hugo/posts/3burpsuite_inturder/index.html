@@ -1,0 +1,479 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>burpsuite - 3 - inturder - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="burpsuite - 3 - inturder">
+<meta itemprop="description" content="inturder https://portswigger.net/burp/documentation/desktop/tools/intruder burpsuite的inturder用于自动化攻击web应用，可以更换http请求中指定位置的payload，不停的发送请求。并收集返回"><meta itemprop="datePublished" content="2022-12-21T16:00:59+08:00" />
+<meta itemprop="dateModified" content="2022-12-21T16:00:59+08:00" />
+<meta itemprop="wordCount" content="1101">
+<meta itemprop="keywords" content="burp," /><meta property="og:title" content="burpsuite - 3 - inturder" />
+<meta property="og:description" content="inturder https://portswigger.net/burp/documentation/desktop/tools/intruder burpsuite的inturder用于自动化攻击web应用，可以更换http请求中指定位置的payload，不停的发送请求。并收集返回" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/3burpsuite_inturder/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-21T16:00:59+08:00" />
+<meta property="article:modified_time" content="2022-12-21T16:00:59+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="burpsuite - 3 - inturder"/>
+<meta name="twitter:description" content="inturder https://portswigger.net/burp/documentation/desktop/tools/intruder burpsuite的inturder用于自动化攻击web应用，可以更换http请求中指定位置的payload，不停的发送请求。并收集返回"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.fce1de39497d0bde022704d15eb9f56a91ed8f220c0edb92ae837562b0cc055f.css" integrity="sha256-/OHeOUl9C94CJwTRXrn1apHtjyIMDtuSroN1YrDMBV8=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.fce1de39497d0bde022704d15eb9f56a91ed8f220c0edb92ae837562b0cc055f.css" integrity="sha256-/OHeOUl9C94CJwTRXrn1apHtjyIMDtuSroN1YrDMBV8=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=burpsuite%20-%203%20-%20inturder&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f3burpsuite_inturder%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f3burpsuite_inturder%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="蓝色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="绿色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="红色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="蓝绿色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黄色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">全部博客</a></li><li class="breadcrumb-item active">Burpsuite - 3 - Inturder</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">Burpsuite - 3 - Inturder
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2022-12-21
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>3 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/burp/" class="badge rounded-pill text-white bg-primary post-taxonomy">burp</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#http请求导入intruder">http请求导入intruder</a></li>
+    <li><a href="#破解用户名字段">破解用户名字段</a></li>
+    <li><a href="#破解密码字段">破解密码字段</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><h1 id="inturder">inturder</h1>
+<p><a href="https://portswigger.net/burp/documentation/desktop/tools/intruder" target="_blank" rel="noopener noreferrer">https://portswigger.net/burp/documentation/desktop/tools/intruder</a>
+</p>
+<p>burpsuite的inturder用于自动化攻击web应用，可以更换http请求中指定位置的payload，不停的发送请求。并收集返回的结果。
+inturder 的天生特性可用于以下攻击范围：</p>
+<ul>
+<li>Fuzz 类型的input漏洞</li>
+<li>进行暴力破解攻击</li>
+<li>枚举攻击</li>
+<li>快速收集有用的信息列表</li>
+</ul>
+<blockquote>
+<p>Fuzz 本意是 “羽毛、细小的毛发、使模糊、变得模糊”，在渗透测试中指的是一种基于黑盒或灰盒的测试技术，通过自动化生成并执行大量的随机测试用例来发现产品或协议的未知漏洞</p>
+</blockquote>
+<h1 id="tutorial">tutorial</h1>
+<p>基础教程会教会你怎么用intruder进行简单的，单个位置的payload攻击。
+首先打开实验环境：
+<a href="https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses" target="_blank" rel="noopener noreferrer">https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses</a>
+</p>
+<h2 id="http请求导入intruder">http请求导入intruder</h2>
+<p>然后我们进入lab，点击登陆账户，模拟不知道账户和密码的情况：
+<img class="img-fluid" alt="" src="https://i.imgur.com/7IKv51M.png" loading="lazy"
+  
+   />
+
+</p>
+<p>然后我们找到刚才这条登陆的http请求，发送到intruder：
+<img class="img-fluid" alt="" src="https://i.imgur.com/g80pcXZ.png" loading="lazy"
+  
+   />
+
+</p>
+<p>来到intruder，他会自动标记几个可能是注入点的地方，我们先clear掉。
+<img class="img-fluid" alt="" src="https://i.imgur.com/ACPEE8o.png" loading="lazy"
+  
+   />
+
+</p>
+<p>然后手动选择用户名，添加一个新点位
+<img class="img-fluid" alt="" src="https://i.imgur.com/XZf8hyA.png" loading="lazy"
+  
+   />
+
+</p>
+<p>然后选择模式，我们选择sniper（狙击手）模式。其他模式啥意思我也看不太懂，我感觉就是不同种类的排列组合方法吧。
+<img class="img-fluid" alt="" src="https://i.imgur.com/DVUAsF5.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="破解用户名字段">破解用户名字段</h2>
+<p>然后我们到第二个页面，需要手动添加payload list，也就是字典，burp不提供字典。
+教程可以用这个字典： <a href="https://portswigger.net/web-security/authentication/auth-lab-usernames" target="_blank" rel="noopener noreferrer">https://portswigger.net/web-security/authentication/auth-lab-usernames</a>
+
+复制之后点击paste把我们的字典粘贴进来，然后点击右上角按钮，开始攻击
+<img class="img-fluid" alt="" src="https://i.imgur.com/Aet6Ggx.png" loading="lazy"
+  
+   />
+
+</p>
+<p>攻击过程中可以点击每一行查看发送的http请求，就是把你的标记位置<em>username</em>，变成了payload中的字符串。 通过Length排序，我们可以发现有一个返回值的长度和其他的不同，大家都是2984，他是2986。
+<img class="img-fluid" alt="" src="https://i.imgur.com/xzRmd06.png" loading="lazy"
+  
+   />
+
+</p>
+<p>点开respond发现，这里写着：“密码错误”，其他的请求都写着“用户名错误”，所以我们就找到一个可以用的用户名。用户名：alabama
+<img class="img-fluid" alt="" src="https://i.imgur.com/UBPAiHn.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="破解密码字段">破解密码字段</h2>
+<p>我们通过上面的方法获取到了一个用户名，接下来就需要破解密码字段，首先回到intruder，修改http请求，把用户名换成刚才得到的值，然后开始破解密码位置：
+<img class="img-fluid" alt="" src="https://i.imgur.com/vVXeyCb.png" loading="lazy"
+  
+   />
+
+</p>
+<p>破解密码位置可以用这个字典，字典由burp教学网站提供： <a href="https://portswigger.net/web-security/authentication/auth-lab-passwords" target="_blank" rel="noopener noreferrer">https://portswigger.net/web-security/authentication/auth-lab-passwords</a>
+</p>
+<p>破解过程很奇怪，有三种长度的返回值，2986 3073 170 ，2986和3073都是错误的，然后我就找到了密码：biteme
+<img class="img-fluid" alt="" src="https://i.imgur.com/7rj0j1C.png" loading="lazy"
+  
+   />
+
+</p>
+<p>最后就登陆成功，解决了这个lab。
+<img class="img-fluid" alt="" src="https://i.imgur.com/bJHjLGR.png" loading="lazy"
+  
+   />
+
+</p>
+<h1 id="结尾">结尾</h1>
+<p>虽然破解成功了，不过很明显重要的是字典。首先用户名的字典，然后就是密码字典，我觉得现实中的网站密码绝对不会设置的这么简单。跑字典估计还没跑100个，我的ip就要被封禁了。</p>
+<p>但是这个课程的重点是教你如何使用inturder工具，通过课程我觉得还是看的很清楚的。后续使用的话主要需要关注这几点：</p>
+<ul>
+<li>自己搞一份好用的字典</li>
+<li>后续可以研究一下不同的模式都是啥样的有什么特点，现在只用了sniper模式。</li>
+</ul>
+</div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://cornradio.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/">Burpsuite（入门教学课程）
+</a>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/">Burpsuite（入门教学课程）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2burponmac_cracked/">在macos上面安装burpsuite（crackverison）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/">Sed Linux命令
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/1%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E6%96%87%E4%BB%B6/">如何删除git中的所有历史文件
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/">Ubuntu设置ssh、修改mac地址(home Pc)
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="corn radio" src="https://cornradio.github.io/hugo/images/profile.webp" loading="lazy"
+   width="638" height="639"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">corn radio</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>玉米电台</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>河南</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite_inturder/">Burpsuite - 3 - Inturder
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/">Burpsuite（入门教学课程）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2burponmac_cracked/">在macos上面安装burpsuite（crackverison）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/">Sed Linux命令
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/1%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E6%96%87%E4%BB%B6/">如何删除git中的所有历史文件
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a><a href="https://cornradio.github.io/hugo/tags/git/" class="badge bg-primary text-white rounded post-taxonomy" title="git">
+            git
+          </a><a href="https://cornradio.github.io/hugo/tags/steam/" class="badge bg-primary text-white rounded post-taxonomy" title="steam">
+            steam
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.9709cce2934b34f10e61baee6dd363ccc0c77bbbf5958a961055f1dbf4361bab.js" integrity="sha256-lwnM4pNLNPEOYbrubdNjzMDHe7v1lYqWEFXx2/Q2G6s=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+</body>
+</html>
