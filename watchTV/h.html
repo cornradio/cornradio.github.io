@@ -3,11 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" href="https://www.emojiall.com/en/header-svg/%F0%9F%94%9E.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>uwu</title>
   
+
 </head>
 
 <style>
@@ -40,6 +42,25 @@
     border-radius: 15px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   }
+  @media screen and (max-width: 425px) {
+  body{
+    background:#500387;
+  }
+  .app {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    top: 0px;
+    left: 0px;
+    transform: none;
+    padding-bottom: 30px;
+  }
+  .app div{
+    width: 70%;
+    object-fit: contain;
+    background-position: center;
+  }
+}
 
   header {
     padding: 30px;
@@ -151,14 +172,23 @@
 
   .c2 {
     background-image: url('https://tva4.sinaimg.cn/large/006rgJELgy1h2j9r6cxn7j30gs0gstde.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:rgb(174 149 162) !important;
   }
 
   .c3 {
     background-image: url('https://tvax2.sinaimg.cn/large/006rgJELgy1h2j9qqgsfyj30p30p3ao5.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #d58a67 !important;
   }
 
   .c4 {
     background-image: url('https://tva2.sinaimg.cn/large/006rgJELgy1h2j9q8105kj30il0ilafw.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white !important;
   }
 
   .c5 {
@@ -189,6 +219,12 @@
     background-position: center;
     background-color: rgb(246, 246, 246) !important;
     background-size: 100px;  }
+  .c9 {
+    background-image: url("https://raw.githubusercontent.com/cornradio/imgs/main/20221223115905.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(243 124 149 / 99%) !important;
+   }
 
 </style>
 <script>
@@ -203,6 +239,7 @@
       case "pornhub": window.open('https://pornhub.com/'); break;
       case "xvideos": window.open('https://www.xvideos.com/'); break;
       case "chaturbate": window.open('https://chaturbate.com/discover/?g=f'); break;
+      case "bika": window.open('https://manhuabika.com/'); break;
       default: 
         window.open('https://tv.cctv.com/live/' + str); break;
       break;
@@ -253,7 +290,8 @@
     <div class="icon c6" onclick="go('pornhub')"></div>
     <div class="icon c7" onclick="go('xvideos')"></div>
     <div class="icon c8" onclick="go('chaturbate')"></div>
-    <div id="coub-icon" class="icon c1" onclick="go('coub')"></div>
+    <div class="icon c9" onclick="go('bika')"></div>
+    <!-- <div id="coub-icon" class="icon c1" onclick="go('coub')"></div> -->
     <div class="icon"></div>
     <div class="icon"></div>
   </div>

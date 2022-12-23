@@ -20,10 +20,9 @@
     font-family: "Roboto", sans-serif;
   }
   .controlbox{
-    position: absolute ;
-    right: 0;
-    bottom:  0;
-    /* float: right; */
+    position: absolute;
+    top: 90%;
+    left: 94%;
     z-index: 999;
   }
   .controlbox button{
@@ -70,7 +69,27 @@
     border-radius: 15px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   }
-
+  @media screen and (max-width: 425px) {
+  body{
+    background:#333334;
+  }
+  .app {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    top: 0px;
+    left: 0px;
+    transform: none;
+    padding-bottom: 30px;
+  }
+  .app div div{
+    width: 70%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(255, 255, 255);
+  }
+}
   header {
     padding: 30px;
     position: relative;
@@ -206,7 +225,6 @@
   .c9{
     background-image: url(https://tvax4.sinaimg.cn/large/006rgJELly1h2130vsmb2j304d04d74n.jpg);
     background-repeat: no-repeat;
-    background-color: #ffffff6c;
   }
   .c10{
     background-image: url(https://tva1.sinaimg.cn/large/006rgJELly1h212zs0ec1j30k70k7gna.jpg);
@@ -223,7 +241,6 @@
   .c13{
     background-image: url(https://tva4.sinaimg.cn/large/006rgJELly1h396ql8ndrj30820823zz.jpg);
     background-repeat: no-repeat;
-    background-color: #000 !important;
 
   }
 
