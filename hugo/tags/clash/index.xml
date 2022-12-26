@@ -6,7 +6,16 @@
     <description>Recent content in clash on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 30 Nov 2021 13:11:11 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/clash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 22:57:21 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/clash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clash 中的 minxin 使用教程</title>
+      <link>https://cornradio.github.io/hugo/posts/4minxin-howtouse/</link>
+      <pubDate>Mon, 26 Dec 2022 22:57:21 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/4minxin-howtouse/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>steam如何绕过clash的全局代理</title>
       <link>https://cornradio.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</link>

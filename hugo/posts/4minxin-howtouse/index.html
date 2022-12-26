@@ -1,0 +1,509 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>clash 中的 minxin 使用教程 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="简单说，mixin是一种混合配置的方式，你可以把自己的配置注入到“配置文件”中 " /><meta itemprop="name" content="clash 中的 minxin 使用教程">
+<meta itemprop="description" content="简单说，mixin是一种混合配置的方式，你可以把自己的配置注入到“配置文件”中 "><meta itemprop="datePublished" content="2022-12-26T22:57:21+08:00" />
+<meta itemprop="dateModified" content="2022-12-26T22:57:21+08:00" />
+<meta itemprop="wordCount" content="1244">
+<meta itemprop="keywords" content="clash," /><meta property="og:title" content="clash 中的 minxin 使用教程" />
+<meta property="og:description" content="简单说，mixin是一种混合配置的方式，你可以把自己的配置注入到“配置文件”中 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/4minxin-howtouse/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-26T22:57:21+08:00" />
+<meta property="article:modified_time" content="2022-12-26T22:57:21+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="clash 中的 minxin 使用教程"/>
+<meta name="twitter:description" content="简单说，mixin是一种混合配置的方式，你可以把自己的配置注入到“配置文件”中 "/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.fce1de39497d0bde022704d15eb9f56a91ed8f220c0edb92ae837562b0cc055f.css" integrity="sha256-/OHeOUl9C94CJwTRXrn1apHtjyIMDtuSroN1YrDMBV8=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.fce1de39497d0bde022704d15eb9f56a91ed8f220c0edb92ae837562b0cc055f.css" integrity="sha256-/OHeOUl9C94CJwTRXrn1apHtjyIMDtuSroN1YrDMBV8=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=clash%20%e4%b8%ad%e7%9a%84%20minxin%20%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f4minxin-howtouse%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f4minxin-howtouse%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="蓝色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="绿色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="红色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="蓝绿色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黄色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">全部博客</a></li><li class="breadcrumb-item active">Clash 中的 Minxin 使用教程</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">Clash 中的 Minxin 使用教程
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2022-12-26
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>3 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge rounded-pill text-white bg-primary post-taxonomy">clash</a></div>
+<div class="post-content mb-3"><h1 id="什么是mixin">什么是mixin</h1>
+<p>mixin就是这个按钮，简单说，mixin是一种混合配置的方式，你可以把自己的配置注入到“配置文件”中，这样就可以在一定程度上的自定义配置了，比如加入一些你自己的规则之类的。
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20221226230540.png" loading="lazy"
+  
+   />
+
+
+为了理解mixin，我们需要先了解什么是“配置文件”，clash的配置文件一般可以通过下面的方法查看
+一般来说，从机场下载过来的配置中包含了规则相关内容，你可以通过下面的方式检视机场提供给你的配置。
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20221226230817.png" loading="lazy"
+  
+   />
+
+
+除了检查配置之外，你还可以做出修改，diff功能：比如原来“漏网之鱼”都是走proxy的，我把这条标记为删除之后，clash在每次下载这个配置之后，都会删除这条。这样我所有的“漏网之鱼”都会走direct了。
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20221226230927.png" loading="lazy"
+  
+   />
+
+</p>
+<h1 id="使用mixin">使用mixin</h1>
+<p>我这里举例我自己的使用办法,我比较喜欢让网络默认走直连,如果直连不上的网站再走代理。所以，我在上面的步骤中先删除了“漏网之鱼”全部走proxy的配置。</p>
+<p>这个取决于个人习惯，如果你日常上的网站都是没有办法直连的那么我推荐你直接默认代理，然后加一些直连规则</p>
+<p>mixin的设置位置在这里。
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20221226231515.png" loading="lazy"
+  
+   />
+
+
+他会默认使用自带的编辑器打开，我不喜欢，可以用外置vscode打开，使用外置编辑器的功能在这里开启：
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20221226231635.png" loading="lazy"
+  
+   />
+
+</p>
+<p>配置文件的默认格式我建议直接删除，因为我到现在也看不出来它到底是做什么的…… 你可以参考我现在的配置来建立自己的mixin配置。mixin是有JavaScript和yaml两种版本的，我使用的是yaml，yaml要注意缩进，我是用它是因为比js要简单一点，尤其是你有vscode的时候对齐很简单。</p>
+<p>简单解释两条：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="ln">1</span><span class="cl">- <span class="s1">&#39;DOMAIN-SUFFIX,redditstatic.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="w">  </span><span class="l">全域名匹配模式，域名，走proxy    </span><span class="w">
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="w"></span>- <span class="s1">&#39;DOMAIN-SUFFIX,edu.tw,DIRECT&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="w">  </span><span class="l">域名后缀匹配模式，域名，走direct</span><span class="w">
+</span></span></span></code></pre></div><h1 id="关于国内是否能够访问">关于国内是否能够访问</h1>
+<p>我这里推荐使用站长工具：多地ping，可以看到国内的ping值，如果ping值很高，那么就说明国内访问不了，就得加进代理。
+<a href="https://ping.chinaz.com/baidu.com" target="_blank" rel="noopener noreferrer">https://ping.chinaz.com/baidu.com</a>
+</p>
+<h1 id="通过chrome网络工具查看需要添加规则的域名">通过chrome网络工具查看需要添加规则的域名</h1>
+<p>一般来说，很大型的网站往往都有好多不一样的子域名，有的是站点内容，有的是图片存储。对于这种我们需要把所有的子域名都加进去，这个时候就需要用到chrome的网络工具了。</p>
+<p>如果你想要添加一个网站的规则，可以通过chrome的网络工具来查看这个网站的所有建立的连接，有连接不上的域名加入mixin配置中即可。</p>
+<h1 id="我的例子">我的例子</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">    </span><span class="c"># direct:</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,sub.godetia.xyz,DIRECT&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,vpsgongyi.com,DIRECT&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,edu.tw,DIRECT&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">    </span><span class="c">#steam direct</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,steampowered.com,DIRECT&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,steamcommunity.com,DIRECT&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">    </span><span class="c">#derpi</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,derpibooru.org,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,derpicdn.net,DIRECT&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">    </span><span class="c"># proxy:</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,docs.cfw.lbyczf.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,patreon.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,outlook.live.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,pony.town,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,gamepad-tester.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,stackoverflow.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,services.gradle.org,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,openuserjs.org,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,stackoverflow.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,gamepadviewer.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,go.microsoft.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,nginx.org,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,marketplace.visualstudio.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,musicnotes.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,fimfiction.net,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,softonic.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,zh.wikipedia.org,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,nordvpn.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,w3schools.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,cdn.jsdelivr.net,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,www.patreon.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,getrolan.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,cdnjs.cloudflare.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,cdn.jsdelivr.net,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,fonts.googleapis.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,hugothemesfree.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,ssltd.xyz,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">40</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,forums.terraria.org,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">41</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,c.biancheng.net,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">42</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,alcorart.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">43</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,uso.kkx.one,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">44</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,grabient.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">45</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,dollarexcel.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">46</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,vscode.dev,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">47</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,userstyles.world,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">48</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,npmjs.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,hath.network,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">50</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,www.emojiall.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,go.ezodn.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">52</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,cd.connatix.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,itch.io,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">54</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,coub.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">55</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,chaturbate.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">56</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,highwebmedia.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">57</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,diygod.me,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">58</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,*.fandom.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,www.dogfight360.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">60</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,www.screentogif.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">61</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,www.techworld-with-nana.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">62</span><span class="cl"><span class="w">    </span><span class="c"># 开卡车游戏\openai</span><span class="w">
+</span></span></span><span class="line"><span class="ln">63</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,slowroads.io,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">64</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,openai.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">65</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,sentry.io,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">66</span><span class="cl"><span class="w">    </span><span class="c"># reddit</span><span class="w">
+</span></span></span><span class="line"><span class="ln">67</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,redditstatic.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">68</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,redd.it,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">69</span><span class="cl"><span class="w">    </span><span class="c"># from rocket</span><span class="w">
+</span></span></span><span class="line"><span class="ln">70</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,nhentai.to,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">71</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,chaturbate.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">72</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,xvideos.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">73</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,derpibooru.org,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">74</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,pornhub.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">75</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,sex.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">76</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,www.sex.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">77</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,equestria.social,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">78</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,openai.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">79</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,redditmedia.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">80</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,chat.openai.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">81</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,redd.it,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">82</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,reddit.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">83</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,netlify.app,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">84</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,patreon.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">85</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,sickipedia.net,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">86</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,naver.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">87</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,pstatic.net,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">88</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,tenable.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">89</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,e-hentai.org,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">90</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,v2ex.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">91</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN,www.ihezu.cn,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">92</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,www.ihezu.cn,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">93</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,mixkit.co,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">94</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,tunemymusic.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">95</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,soundcloud.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">96</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,*.github.io,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">97</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,*.github.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">98</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,netflix.com,PROXY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="ln">99</span><span class="cl"><span class="w">    </span>- <span class="s1">&#39;DOMAIN-SUFFIX,nflximg.net,PROXY&#39;</span><span class="w">
+</span></span></span></code></pre></div></div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://cornradio.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/3burpsuite_inturder/">Burpsuite - 3 - Inturder
+</a>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/">Steam如何绕过clash的全局代理
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite_inturder/">Burpsuite - 3 - Inturder
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/">Burpsuite（入门教学课程）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2burponmac_cracked/">在macos上面安装burpsuite（crackverison）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/">Sed Linux命令
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="corn radio" src="https://cornradio.github.io/hugo/images/profile.webp" loading="lazy"
+   width="638" height="639"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">corn radio</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>玉米电台</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>河南</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/4minxin-howtouse/">Clash 中的 Minxin 使用教程
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite_inturder/">Burpsuite - 3 - Inturder
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/">Burpsuite（入门教学课程）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2burponmac_cracked/">在macos上面安装burpsuite（crackverison）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/">Sed Linux命令
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a><a href="https://cornradio.github.io/hugo/tags/git/" class="badge bg-primary text-white rounded post-taxonomy" title="git">
+            git
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.c75ab8be31acbac5b09748df95c26c89a42c45e3cf10b5eb9da9181b7bb4afeb.js" integrity="sha256-x1q4vjGsusWwl0jflcJsiaQsRePPELXrnakYG3u0r&#43;s=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.c7d80bcbb67ca1cf05edc7a16b9f91fcbca3bcbc16e52f0117b583439e5e1102.js" integrity="sha256-x9gLy7Z8oc8F7ceha5&#43;R/LyjvLwW5S8BF7WDQ55eEQI=" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cornradio.github.io/hugo/tags/clash/</loc>
+    <lastmod>2022-12-26T22:57:21+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/4minxin-howtouse/</loc>
+    <lastmod>2022-12-26T22:57:21+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/</loc>
+    <lastmod>2022-12-26T22:57:21+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/</loc>
+    <lastmod>2022-12-26T22:57:21+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/</loc>
+    <lastmod>2022-12-26T22:57:21+08:00</lastmod>
+  </url><url>
     <loc>https://cornradio.github.io/hugo/tags/burp/</loc>
     <lastmod>2022-12-21T16:00:59+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/3burpsuite_inturder/</loc>
-    <lastmod>2022-12-21T16:00:59+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/</loc>
-    <lastmod>2022-12-21T16:00:59+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/</loc>
-    <lastmod>2022-12-21T16:00:59+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/posts/</loc>
     <lastmod>2022-12-21T16:00:59+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</loc>
@@ -253,9 +259,6 @@
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</loc>
     <lastmod>2021-11-30T22:42:30+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/clash/</loc>
-    <lastmod>2021-11-30T13:11:11+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2021-11-30T13:11:11+08:00</lastmod>
