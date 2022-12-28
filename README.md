@@ -25,8 +25,8 @@ git config --global --unset https.proxy
 仅仅给github上代理
 ```
 git config --global http.https://github.com.proxy https://127.0.0.1:7890
-git config --global https.https://github.com.proxy https://127.0.0.1:7890
 ```
+-- git config --global https.https://github.com.proxy https://127.0.0.1:7890
 把上面的only github 代理下了
 ```
 git config --global --unset http.https://github.com.proxy 
