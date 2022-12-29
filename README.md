@@ -1,35 +1,41 @@
 # [cornradio.github.io](https://cornradio.github.io/)
-
-- [x] 博客
-参考链接（一些）
+参考：
 [html can do that？](https://dev.to/ananyaneogi/html-can-do-that-c0n)
-用了里面的`Expand/collapse details`来做`get a life2`的下拉菜单
 
+## github代理设置：
 
-## github拉取代理设置：
-克隆本项目
-```
-git clone https://github.com/kasusa/java-installation.git
-```
+```shell
+# 查看所有的gitconfig
+git config --global -l
+# 解决报错 http2
+git config --global http.version HTTP/1.1
 
-上代理（github）
-```
-git config --global http.proxy http://127.0.0.1:7890
-git config --global https.proxy https://127.0.0.1:7890
-```
-消除代理（国内）
-```
+# 全局代理
+git config --global http.proxy 127.0.0.1:7890
+git config --global https.proxy 127.0.0.1:7890
+# 全局取消代理
 git config --global --unset http.proxy
 git config --global --unset https.proxy
-```
-仅仅给github上代理
-```
-git config --global http.https://github.com.proxy https://127.0.0.1:7890
-git config --global https.https://github.com.proxy https://127.0.0.1:7890
-```
 
-把上面的only github 代理下了
-```
-git config --global --unset http.https://github.com.proxy 
-git config --global --unset https.https://github.com.proxy
+# 一次性代理
+git config http.proxy 127.0.0.1:7890
+git config https.proxy 127.0.0.1:7890
+git config http.version HTTP/1.1
+
+#git pull
+cd C:\Users\J\Documents\GitHub\cornradio.github.io
+git pull
+cd C:\Users\J\Documents\GitHub\cornBlog-bootstraptheme
+git pull
+
+#git push
+cd C:\Users\J\Documents\GitHub\cornradio.github.io
+git add .
+git commit -m "auto commit"
+git push --verbose
+
+cd C:\Users\J\Documents\GitHub\cornBlog-bootstraptheme
+git add .
+git commit -m "auto commit" --verbose
+git push --verbose
 ```
