@@ -11,22 +11,27 @@
     <title>BLOG NAV →</title>
     <style>
         html {
-            background-color: #1b2127;
+            background-color: #232323;
             color: #e2f7ff;
             font-size: 1.3em;
             font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-            /* background-image: url('https://tva3.sinaimg.cn/large/0083vuQJgy1h5e759ysfej30120120sh.jpg'); */
-            background-image: url('https://tva4.sinaimg.cn/large/0083vuQJgy1h5e7682bluj300z00y0sh.jpg');
-            /* background-image: url('https://tva3.sinaimg.cn/large/0083vuQJgy1h5e73e8x8kj30b40b4ju3.jpg'); */
-            /* background-image: url('https://tvax2.sinaimg.cn/large/0083vuQJgy1h5e779jrpej305k05kt8u.jpg');  */
+      
         }
 
         .messages {
             position: fixed;
             top: 50%;
             left: 50%;
+            padding: 3em;
+            padding-left: 4em;
             /* bring your own prefixes */
             transform: translate(-50%, -50%);
+            border-radius: 50px;
+            background: #171515;
+            box-shadow: inset .8em .8em 3em #eb3dce,
+                        inset -.8em -.8em 3em #17dab3,
+                        -.2em -.2em 2em #e513f0,
+                        .2em .2em 2em #17dab3;
         }
 
         .new::after {
@@ -45,9 +50,12 @@
         }
 
         a:hover {
-            color: #000000 !important;
+            color: #f3efef !important;
+            text-shadow: 2px 1px 1px rgb(0, 186, 243),
+                         -1px -1px 1px rgb(172, 1, 210);
             text-decoration: underline;
-            background-color: rgba(144, 242, 74, 0.893);
+            /* background-color: rgba(144, 242, 74, 0.893); */
+            transition: .1s;
         }
 
         .emo {
@@ -71,8 +79,9 @@
         }
 
         .comment {
-            color: #0cce0967;
+            color: #c9d2c967;
             font-size: small;
+            margin-bottom: .5em;
         }
 
         .comment:hover {
@@ -102,7 +111,7 @@
 
 <div class="messages">
     <div class="messages-content">
-        <a href="daysleft/" class="comment">//TODO Show Time</a></li><br>
+        <a href="daysleft/" class="comment">//2023 新年霓虹装扮！</a></li><br>
 
         <div class="message new">
             <div class="emo" style="--i:0">🎬 </div>
