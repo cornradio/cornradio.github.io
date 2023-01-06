@@ -12,7 +12,7 @@
 <meta name="description" content="" /><meta itemprop="name" content="Regex 101">
 <meta itemprop="description" content="最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。 Regex 101 - ZH-CN (regexlearn.com) Regex Learn - 练习场 Regex Learn - cheatsheet 简单 匹配单"><meta itemprop="datePublished" content="2023-01-06T16:10:14+08:00" />
 <meta itemprop="dateModified" content="2023-01-06T16:10:14+08:00" />
-<meta itemprop="wordCount" content="734">
+<meta itemprop="wordCount" content="820">
 <meta itemprop="keywords" content="regex," /><meta property="og:title" content="Regex 101" />
 <meta property="og:description" content="最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。 Regex 101 - ZH-CN (regexlearn.com) Regex Learn - 练习场 Regex Learn - cheatsheet 简单 匹配单" />
 <meta property="og:type" content="article" />
@@ -212,9 +212,7 @@
   </span><span class="post-reading-time" title="reading time">
     <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
   </span><a href="https://cornradio.github.io/hugo/tags/regex/" class="badge rounded-pill text-white bg-primary post-taxonomy">regex</a></div>
-<div class="post-content mb-3"><blockquote>
-<p>最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。</p>
-</blockquote>
+<div class="post-content mb-3"><p>最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。</p>
 <p><a href="https://regexlearn.com/zh-cn/learn/regex101" target="_blank" rel="noopener noreferrer">Regex 101 - ZH-CN (regexlearn.com)</a>
 </p>
 <p><a href="https://regexlearn.com/zh-cn/playground" target="_blank" rel="noopener noreferrer">Regex Learn - 练习场</a>
@@ -273,12 +271,13 @@
 <p>html.html.html-da-sdf<code>html</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">html$
 </span></span></code></pre></div><h1 id="匹配字符-w">匹配字符 <code>\w</code></h1>
-<p>字母、数字和下划线 <code>\w</code>，其他各种不在这范围内的 <code>\W</code></p>
+<p>字母、数字和下划线 <code>\w</code>，其他各种不在这范围内的 <code>\W</code> (匹配中文和中文标点可以使用<code>\W</code>)</p>
 <p>数字<code>\d</code>,非数字<code>\D</code></p>
 <p>空白符<code>\s</code>,非空白<code>\S</code></p>
 <h1 id="lookarounds">Lookarounds</h1>
 <p>官方中文翻译：零宽断言，我觉得这个翻译真的是误导人，“断言”：极其肯定地说，断言你妈，还零宽，就不说人话是吧。
 应该叫：附近匹配/左右匹配。</p>
+<p>其实我觉得如果后缀前缀不变的话，可以吧这段比如<code>3PM</code>一起给match出来，然后再replace <code>PM</code> 就可以了，比这个奇怪的语法看起来要好一些。</p>
 <p>看看后面(指定尾缀)</p>
 <p>Date: 4 Aug <code>3</code>PM</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">\d+(?=PM)
