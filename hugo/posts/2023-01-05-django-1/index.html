@@ -1,0 +1,696 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django-1 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="Django-1">
+<meta itemprop="description" content="安装 https://docs.djangoproject.com/zh-hans/4.1/intro/install/ 如果在系统范围安装，安装前需要先装好python3.x。 官方教程还建议使用venv虚拟环境的方式，不过我一直弄不太懂venv，就不尝试"><meta itemprop="datePublished" content="2023-01-05T16:51:26+08:00" />
+<meta itemprop="dateModified" content="2023-01-05T16:51:26+08:00" />
+<meta itemprop="wordCount" content="3327">
+<meta itemprop="keywords" content="python,django," /><meta property="og:title" content="Django-1" />
+<meta property="og:description" content="安装 https://docs.djangoproject.com/zh-hans/4.1/intro/install/ 如果在系统范围安装，安装前需要先装好python3.x。 官方教程还建议使用venv虚拟环境的方式，不过我一直弄不太懂venv，就不尝试" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-01-05-django-1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-05T16:51:26+08:00" />
+<meta property="article:modified_time" content="2023-01-05T16:51:26+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Django-1"/>
+<meta name="twitter:description" content="安装 https://docs.djangoproject.com/zh-hans/4.1/intro/install/ 如果在系统范围安装，安装前需要先装好python3.x。 官方教程还建议使用venv虚拟环境的方式，不过我一直弄不太懂venv，就不尝试"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.92bf48390d3d0884a2a5a31e2d39b798bb0b252b08fcfba5658c543ac8c84b5b.css" integrity="sha256-kr9IOQ09CISipaMeLTm3mLsLJSsI/PulZYxUOsjIS1s=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.92bf48390d3d0884a2a5a31e2d39b798bb0b252b08fcfba5658c543ac8c84b5b.css" integrity="sha256-kr9IOQ09CISipaMeLTm3mLsLJSsI/PulZYxUOsjIS1s=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=Django-1&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-01-05-django-1%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-01-05-django-1%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="蓝色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="绿色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="红色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="蓝绿色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黄色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">Django-1</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">Django-1
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-01-05
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>7 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/python/" class="badge rounded-pill text-white bg-primary post-taxonomy">python</a><a href="https://cornradio.github.io/hugo/tags/django/" class="badge rounded-pill text-white bg-primary post-taxonomy">django</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#创建">创建</a></li>
+    <li><a href="#启动">启动</a></li>
+    <li><a href="#创建投票应用">创建投票应用</a></li>
+    <li><a href="#创建视图">创建视图</a></li>
+    <li><a href="#path函数">path函数</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#创建模型">创建模型</a></li>
+    <li><a href="#数据库迁移">数据库迁移</a></li>
+    <li><a href="#创建表">创建表</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#增加条目">增加条目</a></li>
+    <li><a href="#更多的增加条目">更多的增加条目</a></li>
+    <li><a href="#删除条目">删除条目</a></li>
+    <li><a href="#查看和修改条目">查看和修改条目</a></li>
+    <li><a href="#更多的查询api">更多的查询API</a></li>
+    <li><a href="#models-的--__str__函数">models 的  <code>__str__</code>函数</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><h1 id="安装">安装</h1>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.1/intro/install/" target="_blank" rel="noopener noreferrer">https://docs.djangoproject.com/zh-hans/4.1/intro/install/</a>
+
+如果在系统范围安装，安装前需要先装好python3.x。
+官方教程还建议使用venv虚拟环境的方式，不过我一直弄不太懂venv，就不尝试了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python -m pip install Django
+</span></span></code></pre></div><p>检查是否安装成功：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python -m django --version
+</span></span></code></pre></div><h1 id="页面链接">页面链接</h1>
+<h2 id="创建">创建</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">django-admin startproject mysite
+</span></span></code></pre></div><p>项目会创建一个如下图的目录，关于这些文件都是干啥的：
+对于我来说 只有urls、settings两个文件大概会用到
+<a href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial01/" target="_blank" rel="noopener noreferrer">https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial01/</a>
+</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230101185434.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="启动">启动</h2>
+<p>启动项目，我们只要运行刚才生成的<code>manage.py</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py runserver
+</span></span></code></pre></div><p><a href="http://127.0.0.1:8000/" target="_blank" rel="noopener noreferrer">http://127.0.0.1:8000/</a>
+ 这是默认端口，可以通过下面的命令来自定义端口</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py runserver 8080
+</span></span></code></pre></div><p>注意官网说 已经存在的py文件，如果你修改了，将会在请求的时候按照最新的版本运行，但是如果添加新文件，就要重新启动了。</p>
+<h2 id="创建投票应用">创建投票应用</h2>
+<p>官网说一个“项目”要包含多个“应用”，我现在姑且认为mysite算是一个项目，里面两个文件夹就代表两个app&ndash;应用了mysite应该算是主要应用？毕竟有一个管理员控制台。
+投票应用算是一个普通应用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py startapp polls
+</span></span></code></pre></div><p>创建好了之后，我们这里会多一个文件夹。</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230101193612.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="创建视图">创建视图</h2>
+<p>视图是啥啊，根本不懂啊！
+总之 在<code>views.py</code>粘贴一下吧……</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&#34;Hello, world. You&#39;re at the polls index.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230101194119.png" loading="lazy"
+  
+   />
+
+</p>
+<p>视图好了，但是还不能访问，需要再弄一个urls.py来映射它。
+<code>polls/urls.py</code>还不存在，新建一个<code>urls.py</code>如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">]</span>
+</span></span></code></pre></div><p>然后我们还要去<code>mysite/urls.py</code>，指向一下这个新建的<code>polls/urls.py</code>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">path</span><span class="p">(</span><span class="s1">&#39;polls/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;polls.urls&#39;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">]</span>
+</span></span></code></pre></div><p>然后访问： http://127.0.0.1:8000/polls/ 就可以。</p>
+<h2 id="path函数">path函数</h2>
+<p>我们上面配置url主要操作就是往<code>url.py</code>文件中加入<code>path</code>。
+函数 <a href="https://docs.djangoproject.com/zh-hans/4.1/ref/urls/#django.urls.path" title="django.urls.path" target="_blank" rel="noopener noreferrer"><code>path()</code></a>
+ 具有四个参数，两个必须参数：<code>route</code> 和 <code>view</code>，两个可选参数：<code>kwargs</code> 和 <code>name</code>。这部分我觉得官网讲的非常清晰简洁： <a href="https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial01/" target="_blank" rel="noopener noreferrer">https://docs.djangoproject.com/zh-hans/4.1/intro/tutorial01/</a>
+</p>
+<h1 id="设置-时区">设置-时区</h1>
+<p>设置参考（这个网站还有别的东西的设置） <a href="https://docs.djangoproject.com/zh-hans/4.1/ref/settings/#std-setting-TIME_ZONE" target="_blank" rel="noopener noreferrer">https://docs.djangoproject.com/zh-hans/4.1/ref/settings/#std-setting-TIME_ZONE</a>
+</p>
+<p>在settings.py 中修改这个</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">TIME_ZONE = &#39;UTC&#39; #美国时间
+</span></span><span class="line"><span class="ln">2</span><span class="cl"># 改成
+</span></span><span class="line"><span class="ln">3</span><span class="cl">TIME_ZONE = &#39;Asia/Shanghai&#39; #中国时间
+</span></span></code></pre></div><h1 id="设置-数据库">设置-数据库</h1>
+<p>数据库的配置在<code>mysite/settings.py</code>中，如下所示，可以使用各种数据库：
+可选值有 <code>'django.db.backends.sqlite3'</code>，<code>'django.db.backends.postgresql'</code>，<code>'django.db.backends.mysql'</code>，或 <code>'django.db.backends.oracle'</code>，如果不用sqlite要配置起来貌似比较麻烦，可以看官方文档： <a href="https://docs.djangoproject.com/zh-hans/4.1/ref/settings/#std-setting-DATABASES" target="_blank" rel="noopener noreferrer">https://docs.djangoproject.com/zh-hans/4.1/ref/settings/#std-setting-DATABASES</a>
+</p>
+<p>下面是默认配置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">	<span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">		<span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.sqlite3&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">		<span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s1">&#39;db.sqlite3&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>django提供一些默认功能，可以在settings.py里面看到：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">]</span>
+</span></span></code></pre></div><p>用这个 语句自动创建所有上面自带应用需要的表。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py migrate
+</span></span></code></pre></div><h2 id="创建模型">创建模型</h2>
+<p>所以我想，这又是和数据库杠上了。我好讨厌数据库，因为数据库这东西真的好麻烦……
+需要创建两个模型：问题 <code>Question</code> 和选项 <code>Choice</code>。</p>
+<ul>
+<li><code>Question</code> 模型包括问题描述和发布时间。</li>
+<li><code>Choice</code> 模型有两个字段，选项描述和当前得票数，还要连接到<code>Question</code></li>
+</ul>
+<p>总之，我们要给polls造一个数据库，先写好<code>polls/models.py</code>，内容如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">question_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="n">choice_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span></code></pre></div><p>这个写法应该比较重点（但是文档里面没强调），因为是使用models.py自动生成建表语句，后续操作相关类等东西，。我们尽量模仿吧。表名是首字母大写，字段中间下划线相连。</p>
+<p>左边变量名就是字段名，右边xxxField就是字段类型， 有的有必填参数，比如<code>Char</code>需要<code>max_length</code>，<code>Integer</code>默认为0。这里还写了一个外键和cascade删除。</p>
+<p>主键(IDs)会被自动创建。</p>
+<p>通过这个<code>polls/models.py</code>，django可以得到创建数据库的信息，但是让他创建之前，我们需要把自己的app加入<code>mysite/settings.py</code>的<code>INSTALLED_APPS</code>列表中：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="s1">&#39;polls.apps.PollsConfig&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">]</span>
+</span></span></code></pre></div><h2 id="数据库迁移">数据库迁移</h2>
+<p>这个步骤是下面的创建表的前置步骤，所以必须要做！</p>
+<p>然后执行这个语句生成你的app的数据库迁移文件：</p>
+<blockquote>
+<p>运行 <code>makemigrations</code> 命令，Django 会检测你对模型文件的修改，我们刚才修改了<code>polls/models.py</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"> python manage.py makemigrations polls
+</span></span></code></pre></div><p>创建如果成功的话，他会在migrations文件夹放一个<code>0001_initial.py</code>后面迁移可以用到。</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230101210424.png" loading="lazy"
+  
+   />
+
+</p>
+<p>执行这个，他会读取这个<code>0001_initial</code> 文件，并且输出一些数据库用的建表语句，你在<code>mysite/settings.py</code>中配置的你用的是什么数据库，他就会输出对应的建表语句：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py sqlmigrate polls 0001
+</span></span></code></pre></div><p>这是我这边的输出：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">BEGIN;
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">--
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">-- Create model Question
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">--
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">CREATE TABLE &#34;polls_question&#34; (&#34;id&#34; integer NOT NULL PRIMARY KEY AUTOINCREMENT, &#34;question_text&#34; varchar(200) NOT NULL, &#34;pub_date&#34; datetime NOT NULL);
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">--
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">-- Create model Choice
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">--
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">CREATE TABLE &#34;polls_choice&#34; (&#34;id&#34; integer NOT NULL PRIMARY KEY AUTOINCREMENT, &#34;choice_text&#34; varchar(200) NOT NULL, &#34;votes&#34; integer NOT NULL, &#34;question_id&#34; bigint NOT NULL REFERENCES &#34;polls_question&#34; (&#34;id&#34;) DEFERRABLE INITIALLY DEFERRED);
+</span></span><span class="line"><span class="ln">10</span><span class="cl">CREATE INDEX &#34;polls_choice_question_id_c5b4b260&#34; ON &#34;polls_choice&#34; (&#34;question_id&#34;);
+</span></span><span class="line"><span class="ln">11</span><span class="cl">COMMIT;
+</span></span></code></pre></div><h2 id="创建表">创建表</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py migrate
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Operations to perform:
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  Apply all migrations: admin, auth, contenttypes, polls, sessions
+</span></span><span class="line"><span class="ln">3</span><span class="cl">Running migrations:
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  Applying polls.0001_initial... OK
+</span></span></code></pre></div><h1 id="尝试数据库api">尝试数据库API</h1>
+<p>下面的语句都是在py shell中执行的，我猜，应该也完全可以写成py脚本来执行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py shell
+</span></span></code></pre></div><p> <code>manage.py</code> 会设置 <a href="https://docs.djangoproject.com/zh-hans/4.1/topics/settings/#envvar-DJANGO_SETTINGS_MODULE" target="_blank" rel="noopener noreferrer"><code>DJANGO_SETTINGS_MODULE</code></a>
+ 环境变量，这个变量会让 Django 根据 <code>mysite/settings.py</code> 文件来设置 Python 包的导入路径,(我发现这个python shell 有补全功能)</p>
+<h2 id="增加条目">增加条目</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 引入我们刚才写的models ，两个表 选项、问题</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Choice</span><span class="p">,</span> <span class="n">Question</span>  
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># 获取问题表中所有数据</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1"># &lt;QuerySet []&gt; # 目前表空的里面啥也没有</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c1"># 因为默认开启了对多时区的支持（settings.py里面能设置)</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="c1"># 所以他要的时间格式比较特殊，import timezone</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"> <span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+</span></span></code></pre></div><p>插入语句：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"> <span class="n">q</span> <span class="o">=</span> <span class="n">Question</span><span class="p">(</span><span class="n">question_text</span><span class="o">=</span><span class="s2">&#34;What&#39;s new?&#34;</span><span class="p">,</span><span class="n">pub_date</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span> 
+</span></span><span class="line"><span class="ln">2</span><span class="cl"> <span class="n">q</span><span class="o">.</span><span class="n">save</span><span class="p">()</span> <span class="c1">#一定要保存！</span>
+</span></span></code></pre></div><h2 id="更多的增加条目">更多的增加条目</h2>
+<p>给问题增加几个选项</p>
+<p>django 可以处理外键的关联，可以直接通过<code>q.choice_set.create</code>创建<code>choice</code>。而不是在<code>choice</code>表中创建并设置<code>question</code>链接谁。</p>
+<p>取出创建的问题，问题id=1</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">q</span> <span class="o">=</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></div><p>查看目前关联的所有choice</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">q</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span></span></code></pre></div><p>增加一些choice</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">q</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">choice_text</span><span class="o">=</span><span class="s1">&#39;choice 1&#39;</span><span class="p">,</span> <span class="n">votes</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">q</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">choice_text</span><span class="o">=</span><span class="s1">&#39;choice 2&#39;</span><span class="p">,</span> <span class="n">votes</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">choice_text</span><span class="o">=</span><span class="s1">&#39;Just hacking again&#39;</span><span class="p">,</span> <span class="n">votes</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span></code></pre></div><p>关联的表（1 - 多）可以互相查找， 比如可以通过问题查找到选项，能找到选项集；</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">c</span><span class="o">.</span><span class="n">question</span> 
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># &lt;Question: What&#39;s up?&gt;</span>
+</span></span></code></pre></div><p>或者通过选项查询他所属的问题。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">q</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> 
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># &lt;QuerySet [&lt;Choice: Not much&gt;, &lt;Choice: The sky&gt;, &lt;Choice: Just hacking again&gt;]&gt;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">q</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="c1"># 3</span>
+</span></span></code></pre></div><h2 id="删除条目">删除条目</h2>
+<p>删除好像不用保存</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">choice_text__startswith</span><span class="o">=</span><span class="s1">&#39;Just hacking&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">c</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="查看和修改条目">查看和修改条目</h2>
+<p>一般来说应该先讲查询的，但是这个示例代码和上面是连起来的……，查询在后面也有写。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 默认给了个id（我猜测是自增）</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"># 可以直接在python语句中访问他的内容字段。</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"> <span class="n">q</span><span class="o">.</span><span class="n">id</span> <span class="c1"># 1</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"> <span class="n">q</span><span class="o">.</span><span class="n">question_text</span><span class="c1"># &#34;What&#39;s new?&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"> <span class="n">q</span><span class="o">.</span><span class="n">pub_date</span><span class="c1"># datetime.datetime(2012, 2, 26, 13, 0, 0, 775217,tzinfo=datetime.timezone.utc)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1">#通过py修改数据和保存</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"> <span class="n">q</span><span class="o">.</span><span class="n">question_text</span> <span class="o">=</span> <span class="s2">&#34;What&#39;s up?&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"> <span class="n">q</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># 获取问题表中所有数据，有一条了</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"># &lt;QuerySet [&lt;Question: Question object (1)&gt;]&gt; #返回了一个看不懂的玩意</span>
+</span></span></code></pre></div><p>鉴于返回的这个玩意我们看不懂，可以去<code>models.py</code>里面给每个<code>class</code>增加一个<code> __str__()</code>函数，就能显示些有用的东西了。</p>
+<h2 id="更多的查询api">更多的查询API</h2>
+<p><code>all</code>、<code>filter</code>  返回列表、 <code>get</code> 返回一条</p>
+<p>all 查看表中所有项目</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span></span></code></pre></div><p>filter 获取指定id的</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></div><p>filter 通过前缀过滤</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">question_text__startswith</span><span class="o">=</span><span class="s1">&#39;What&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>filter 查询深层级（查询最近一年的）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 用双下划线链接，过滤choice.question.pub_date.year</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">current_year</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">Choice</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">question__pub_date__year</span><span class="o">=</span><span class="n">current_year</span><span class="p">)</span>
+</span></span></code></pre></div><p>get 快速查询主键</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></div><p>get 比较内容过滤（查询最近一年的）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">current_year</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pub_date__year</span><span class="o">=</span><span class="n">current_year</span><span class="p">)</span>
+</span></span></code></pre></div><p>get 访问不存在的元素报错</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1">#DoesNotExist: Question matching query does not exist.</span>
+</span></span></code></pre></div><h2 id="models-的--__str__函数">models 的  <code>__str__</code>函数</h2>
+<blockquote>
+<p>鉴于返回的这个玩意我们看不懂，可以去<code>models.py</code>里面给每个<code>class</code>增加一个<code> __str__()</code>函数，就能显示些有用的东西了。</p>
+</blockquote>
+<p>给<code>polls/models.py</code>新增两个<code>def __str__(self):</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># Create your models here.</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	<span class="o">...</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">question_text</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="o">...</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">choice_text</span>
+</span></span></code></pre></div><p>再添加一个<code>was_published_recently(self)</code>函数，可以给Question增加一个“最近发布”的功能：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">	<span class="o">...</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">def</span> <span class="nf">was_published_recently</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pub_date</span> <span class="o">&gt;=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></div><p>去py shell里面看一下，刚刚写的函数有没有效果</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Choice</span><span class="p">,</span> <span class="n">Question</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># 看看__str__() 有没有效果</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1">#&lt;QuerySet [&lt;Question: What&#39;s up?&gt;]&gt;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"># 试试刚才写的“最近发布？”功能</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">q</span><span class="o">.</span><span class="n">was_published_recently</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="c1"># True</span>
+</span></span></code></pre></div><h1 id="django-管理页面">Django 管理页面</h1>
+<p>django 可以给数据库自动生成管理页面（太棒啦！）虽然生成的很简陋，还增加了被攻击的安全隐患，但是比没有强不是吗！</p>
+<p>创建一个用户 ， 用于登陆管理页面</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py createsuperuser
+</span></span></code></pre></div><p>启动dj</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">python manage.py runserver
+</span></span></code></pre></div><p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230101231702.png" loading="lazy"
+  
+   />
+
+</p>
+<p>但是里面没有我们创建的polls 应用！需要修改<code>polls/admin.py</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Question</span><span class="p">)</span>
+</span></span></code></pre></div><p>不知道为啥教程不吧choice也放进来……，他不放我们自己来，加完了之后我知道了，可能是因为choice和Question不能联动所以…… 就感觉不是很舒服。像是问卷星的话应该是能在问题下面添加选项的诶。这个只能添加了选项之后手动关联问题。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span><span class="p">,</span><span class="n">Choice</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Choice</span><span class="p">)</span>
+</span></span></code></pre></div><p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230101233249.png" loading="lazy"
+  
+   />
+
+</p>
+</div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://cornradio.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/">Vscode技巧
+</a>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/">Python Xml和读取excel
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/">使用python多线程批量ping
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/">Pip配置源
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/">Python移动文件、新建目录
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/">Python操作word
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="corn radio" src="https://cornradio.github.io/hugo/images/profile.webp" loading="lazy"
+   width="638" height="639"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">corn radio</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>玉米电台</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>我在这里</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05-django-1/">Django-1
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/">Vscode技巧
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05epplus/">Csharp 使用 Epplus 读写 Excel表格
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/">Python_beautiful_soup
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/4clash-minxin-howtouse/">Clash 中的 Minxin 使用教程
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a><a href="https://cornradio.github.io/hugo/tags/excel/" class="badge bg-primary text-white rounded post-taxonomy" title="excel">
+            excel
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.9709cce2934b34f10e61baee6dd363ccc0c77bbbf5958a961055f1dbf4361bab.js" integrity="sha256-lwnM4pNLNPEOYbrubdNjzMDHe7v1lYqWEFXx2/Q2G6s=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+</body>
+</html>

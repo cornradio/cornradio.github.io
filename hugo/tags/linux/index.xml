@@ -13,7 +13,7 @@
       <pubDate>Tue, 20 Dec 2022 16:14:59 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</guid>
-      <description></description>
+      <description>burpsuite（入门教学课程） Intercept and modify HTTP traffic with Burp Proxy. Set the target scope to focus your work on interesting content. Probe for vulnerabilities by reissuing requests with Burp Repeater. Run automated vulnerability scans and generate reports with Burp Scanner. intercept （拦截）流量 https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic 拦截请求（in</description>
     </item>
     
     <item>

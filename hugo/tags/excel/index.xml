@@ -6,7 +6,16 @@
     <description>Recent content in excel on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sun, 09 Jan 2022 20:44:16 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Jan 2023 16:33:34 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>csharp 使用 Epplus 读写 excel表格</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</link>
+      <pubDate>Thu, 05 Jan 2023 16:33:34 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</guid>
+      <description>epplus是一个读写xlsx的csharp库。官网教程 https://epplussoftware.com/zh/Developers/ 官方教程中使用和很多using 我不喜欢多层级括号，using不使用多层级括号参考：</description>
+    </item>
+    
     <item>
       <title>Excel转换pdf</title>
       <link>https://cornradio.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</link>

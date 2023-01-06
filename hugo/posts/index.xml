@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>全部博客 on cornradio的技术博客</title>
+    <title>Posts on cornradio的技术博客</title>
     <link>https://cornradio.github.io/hugo/posts/</link>
-    <description>Recent content in 全部博客 on cornradio的技术博客</description>
+    <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 26 Dec 2022 22:57:21 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Jan 2023 16:51:26 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django-1</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</link>
+      <pubDate>Thu, 05 Jan 2023 16:51:26 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</guid>
+      <description>安装 https://docs.djangoproject.com/zh-hans/4.1/intro/install/ 如果在系统范围安装，安装前需要先装好python3.x。 官方教程还建议使用venv虚拟环境的方式，不过我一直弄不太懂venv，就不尝试</description>
+    </item>
+    
+    <item>
+      <title>vscode技巧</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Thu, 05 Jan 2023 16:38:27 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/</guid>
+      <description>csharp 程序不能输入 用vscode运行csharp默认使用的terminal是不支持输入的，输入没反应 需要修改 launch.json 增加这两行我估计是关闭了什么东西，</description>
+    </item>
+    
+    <item>
+      <title>csharp 使用 Epplus 读写 excel表格</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</link>
+      <pubDate>Thu, 05 Jan 2023 16:33:34 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</guid>
+      <description>epplus是一个读写xlsx的csharp库。官网教程 https://epplussoftware.com/zh/Developers/ 官方教程中使用和很多using 我不喜欢多层级括号，using不使用多层级括号参考：</description>
+    </item>
+    
+    <item>
+      <title>python_beautiful_soup</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</link>
+      <pubDate>Thu, 29 Dec 2022 15:50:22 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</guid>
+      <description>还没写，先留着空位</description>
+    </item>
+    
     <item>
       <title>clash 中的 minxin 使用教程</title>
-      <link>https://cornradio.github.io/hugo/posts/4minxin-howtouse/</link>
+      <link>https://cornradio.github.io/hugo/posts/4clash-minxin-howtouse/</link>
       <pubDate>Mon, 26 Dec 2022 22:57:21 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/4minxin-howtouse/</guid>
-      <description></description>
+      <guid>https://cornradio.github.io/hugo/posts/4clash-minxin-howtouse/</guid>
+      <description>什么是mixin mixin就是这个按钮，简单说，mixin是一种混合配置的方式，你可以把自己的配置注入到“配置文件”中，这样就可以在一定程度</description>
     </item>
     
     <item>
@@ -31,7 +67,7 @@
       <pubDate>Tue, 20 Dec 2022 16:14:59 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</guid>
-      <description></description>
+      <description>burpsuite（入门教学课程） Intercept and modify HTTP traffic with Burp Proxy. Set the target scope to focus your work on interesting content. Probe for vulnerabilities by reissuing requests with Burp Repeater. Run automated vulnerability scans and generate reports with Burp Scanner. intercept （拦截）流量 https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic 拦截请求（in</description>
     </item>
     
     <item>
