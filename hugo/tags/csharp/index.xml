@@ -6,7 +6,16 @@
     <description>Recent content in csharp on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Thu, 05 Jan 2023 16:33:34 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jan 2023 16:10:14 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>c# 的打包技巧（打包成singlefile)</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</link>
+      <pubDate>Tue, 10 Jan 2023 16:10:14 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</guid>
+      <description>我已经想要把我的小工具打包成单个程序很久了。但是一直不知道怎么操作 今天看到reddit里面给我推送：how_to_build_my_cons</description>
+    </item>
+    
     <item>
       <title>csharp 使用 Epplus 读写 excel表格</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</link>

@@ -3,22 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>cmd - 标签 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+    <title>c# 的打包技巧（打包成singlefile) - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
-<meta name="keywords" content="Hugo, Bootstrap, 博客主题" />
-<meta name="description" content="一个极快、响应式和功能丰富的 Hugo 博客主题" /><meta itemprop="name" content="cmd">
-<meta itemprop="description" content="一个极快、响应式和功能丰富的 Hugo 博客主题"><meta property="og:title" content="cmd" />
-<meta property="og:description" content="一个极快、响应式和功能丰富的 Hugo 博客主题" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://cornradio.github.io/hugo/tags/cmd/" /><meta property="og:site_name" content="cornradio的技术博客" />
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="c# 的打包技巧（打包成singlefile)">
+<meta itemprop="description" content="我已经想要把我的小工具打包成单个程序很久了。但是一直不知道怎么操作 今天看到reddit里面给我推送：how_to_build_my_cons"><meta itemprop="datePublished" content="2023-01-10T16:10:14+08:00" />
+<meta itemprop="dateModified" content="2023-01-10T16:10:14+08:00" />
+<meta itemprop="wordCount" content="409">
+<meta itemprop="keywords" content="csharp," /><meta property="og:title" content="c# 的打包技巧（打包成singlefile)" />
+<meta property="og:description" content="我已经想要把我的小工具打包成单个程序很久了。但是一直不知道怎么操作 今天看到reddit里面给我推送：how_to_build_my_cons" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-10T16:10:14+08:00" />
+<meta property="article:modified_time" content="2023-01-10T16:10:14+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="cmd"/>
-<meta name="twitter:description" content="一个极快、响应式和功能丰富的 Hugo 博客主题"/>
-<link rel="alternate" type="application/rss+xml" href="https://cornradio.github.io/hugo/tags/cmd/index.xml" title="cornradio的技术博客" /><link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0de33eb307c150e7a61b4fbbee71822c91fe42634b8dfa1b299fd696cc1ce2d9.css" integrity="sha256-DeM&#43;swfBUOemG0&#43;77nGCLJH&#43;QmNLjfobKZ/Wlswc4tk=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<meta name="twitter:title" content="c# 的打包技巧（打包成singlefile)"/>
+<meta name="twitter:description" content="我已经想要把我的小工具打包成单个程序很久了。但是一直不知道怎么操作 今天看到reddit里面给我推送：how_to_build_my_cons"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0de33eb307c150e7a61b4fbbee71822c91fe42634b8dfa1b299fd696cc1ce2d9.css" integrity="sha256-DeM&#43;swfBUOemG0&#43;77nGCLJH&#43;QmNLjfobKZ/Wlswc4tk=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.0de33eb307c150e7a61b4fbbee71822c91fe42634b8dfa1b299fd696cc1ce2d9.css" integrity="sha256-DeM&#43;swfBUOemG0&#43;77nGCLJH&#43;QmNLjfobKZ/Wlswc4tk=" crossorigin="anonymous"></noscript></head>
   <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
   <div class="container">
@@ -41,11 +46,11 @@
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=cmd&url=https%3a%2f%2fcornradio.github.io%2fhugo%2ftags%2fcmd%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=c%23%20%e7%9a%84%e6%89%93%e5%8c%85%e6%8a%80%e5%b7%a7%ef%bc%88%e6%89%93%e5%8c%85%e6%88%90singlefile%29&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-01-10csharp%25E7%259A%2584%25E6%2589%2593%25E5%258C%2585%25E6%258A%2580%25E5%25B7%25A7singlefile%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2ftags%2fcmd%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-01-10csharp%25E7%259A%2584%25E6%2589%2593%25E5%258C%2585%25E6%258A%2580%25E5%25B7%25A7singlefile%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -176,24 +181,112 @@
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/tags/">标签</a></li><li class="breadcrumb-item active">Cmd</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">C# 的打包技巧（打包成singlefile)</li></ol>
   </div>
-</nav><div class="posts mb-4"><article class="row card post component">
-      <div class="card-body">
-        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/">Windows酷命令
-</a></h2><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2022-10-29
-  </span><span class="post-reading-time" title="reading time">
-    <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
-  </span><a href="https://cornradio.github.io/hugo/tags/cmd/" class="badge rounded-pill text-white bg-primary post-taxonomy">cmd</a></div>
-<div class="post-summary">
-          
-          如果你更喜欢看视频：https://www.youtube.com/watch?v=Jfvg3CS1X3A&amp;t=1s 有些命令需要使用
-        </div>
-      </div>
-    </article></div><div class="row table-responsive mb-3"></div>
-</div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
 
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">C# 的打包技巧（打包成singlefile)
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-01-10
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge rounded-pill text-white bg-primary post-taxonomy">csharp</a></div>
+<div class="post-content mb-3"><blockquote>
+<p>我已经想要把我的小工具打包成单个程序很久了。但是一直不知道怎么操作</p>
+<p>今天看到reddit里面给我推送：<a href="https://www.reddit.com/r/csharp/comments/107juxi/how_to_build_my_console_app_as_single_exe_file/" target="_blank" rel="noopener noreferrer">how_to_build_my_console_app_as_single_exe_file</a>
+</p>
+<p>但是进去看了一圈都是垃圾回答，所以我自己研究了一下（因为也确实需要）</p>
+<p>最后在youtube视频评论里找到了答案。</p>
+<p>使用了 dotnet 命令行，官方文档在这里：
+<a href="https://learn.microsoft.com/zh-cn/dotnet/core/tools/dotnet-publish" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/zh-cn/dotnet/core/tools/dotnet-publish</a>
+</p>
+</blockquote>
+<h1 id="打包方法">打包方法</h1>
+<ol>
+<li>用vs2019 + 打开你的项目</li>
+<li>打开视图 - 终端</li>
+<li>输入需要的命令，有两种</li>
+</ol>
+<p>打包成单个文件的命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dotnet publish -r win-x64 -p:PublishSingleFile=True --self-contained false --output &#34;C:\abc&#34;
+</span></span></code></pre></div><p>打包成单个文件（带.net core环境）的命令：</p>
+<blockquote>
+<p>包比较大，但是兼容性会好，因为不需要客户端安装环境
+我没有测试过.net frame work的打包功能，据说那个不能连同环境一起打包</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dotnet publish -r win-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=true --output &#34;C:\abc&#34;
+</span></span></code></pre></div><hr>
+<p>打包这里面的 pdb 文件可以删除，他是用来调试的</p>
+<p>可以看出来那个带了环境的的打包文件就大很多。</p>
+<p>我用 windows sandbox 测试了，真的有用，sandbox 里面没有安装过.net环境也可以运行那个带环境的打包版本。</p>
+<p><img class="img-fluid" alt="示例图" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230110174158.png" loading="lazy"
+  
+   />
+
+</p>
+</div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://cornradio.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/2023-01-06-regex/">Regex 101
+</a>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05epplus/">Csharp 使用 Epplus 读写 Excel表格
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/">C#文件管理器、读取文件列表
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/">Linkedlist删除指定值
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/">保存object到xml
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-06-regex/">Regex 101
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
 </div><aside class="col-lg-4 sidebar d-flex">
   <div class="container">
     
@@ -273,9 +366,7 @@
         <i class="fa-fw fa-2x fab fa-github"></i>
       </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
         <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
-      </a><a class="nav-link social-link" target="_blank" href="https://cornradio.github.io/hugo/tags/cmd/index.xml" title="RSS" rel="noopener noreferrer">
-      <i class="fas fa-fw fa-2x fa-rss"></i>
-    </a></nav>
+      </a></nav>
 <div class="copyright mb-2">
   Free To Share.
 </div>

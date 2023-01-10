@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Fri, 06 Jan 2023 16:10:14 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jan 2023 16:10:14 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>c# 的打包技巧（打包成singlefile)</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</link>
+      <pubDate>Tue, 10 Jan 2023 16:10:14 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</guid>
+      <description>我已经想要把我的小工具打包成单个程序很久了。但是一直不知道怎么操作 今天看到reddit里面给我推送：how_to_build_my_cons</description>
+    </item>
+    
     <item>
       <title>Regex 101</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-06-regex/</link>
@@ -94,7 +103,7 @@
       <pubDate>Tue, 06 Dec 2022 20:14:59 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</guid>
-      <description></description>
+      <description>参考链接： https://www.youtube.com/watch?v=nXLnx8ncZyE sed命令 sed据我了解是linux中用于替换的一个命令。 使用方法 1# 把a.txt中的 abc 换成 def 并打印出来。 2sed &amp;#39;s/abc/def/&amp;#39; a.txt 3 4# 把a.txt中</description>
     </item>
     
     <item>
