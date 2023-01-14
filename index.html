@@ -15,7 +15,7 @@
             color: #e2f7ff;
             font-size: 1.3em;
             font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-      
+            
         }
 
         .messages {
@@ -32,6 +32,7 @@
                         inset -.8em -.8em 3em #17dab3,
                         -.2em -.2em 2em #e513f0,
                         .2em .2em 2em #17dab3;
+            z-index: 1;
         }
 
         .new::after {
@@ -99,19 +100,37 @@
         .bet:hover{
             opacity: 1;
         }
+        .neteast-container{
+            max-width: fit-content;
+            padding: 30px;
+            background-color: transparent;
+            transform: translateX(-90%);
+            transition: .5s;
+        }
+        .neteast-container:hover{
+            transform: none;
+        }
     </style>
 </head>
+<body>
+    
 <center>
     <div class="bet">
-        <!-- <script async src="https://telegram.org/js/telegram-widget.js?1" 
-        data-telegram-post="kasusaland/221"data-width="30%"></script> -->
+
         <!-- <iframe src="daysleft/index2.html" height="182" width="100%" style="max-width: 670px;" title="Iframe Example"></iframe> -->
     </div>
 </center>
 
+<div class="neteast-container">
+    <script id="tg" async src="https://telegram.org/js/telegram-widget.js?1" data-telegram-post="kasusaland/221"data-width="30%"></script>
+    <br>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=4&id=795090399&auto=1&height=430"></iframe>
+</div>
+
+
 <div class="messages">
     <div class="messages-content">
-        <a href="daysleft/" class="comment">//2023 新年霓虹装扮！</a></li><br>
+        <a href="daysleft/" class="comment">//新年快乐！</a></li><br>
 
         <div class="message new">
             <div class="emo" style="--i:0">🎬 </div>
@@ -141,8 +160,15 @@
         </div>
     </div>
 </div>
+
+
+</body>
+
 <script>
-    var myobj = document.getElementById("bet")
-    // myobj.innerHTML ='<AD>'
+    var tg = document.getElementById('tg')
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    tg.setAttribute('data-telegram-post', 'kasusaland/' + getRandomInt(4000+1))
 </script>
 </html>
