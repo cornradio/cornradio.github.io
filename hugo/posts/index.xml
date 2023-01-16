@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 10 Jan 2023 16:10:14 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Jan 2023 14:25:02 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-16-docker/</link>
+      <pubDate>Mon, 16 Jan 2023 14:25:02 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-16-docker/</guid>
+      <description>要想使用docker，需要正确的了解一些基础信息，比如 image 是啥、容器是啥、 docker hub 是啥 、 为什么pull等等，我这里先给出一些简单的解释，但是详细可</description>
+    </item>
+    
     <item>
       <title>c# 的打包技巧（打包成singlefile)</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</link>
@@ -41,24 +50,6 @@
       
       <guid>https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/</guid>
       <description>csharp 程序不能输入 用vscode运行csharp默认使用的terminal是不支持输入的，输入没反应 需要修改 launch.json 增加这两行我估计是关闭了什么东西，</description>
-    </item>
-    
-    <item>
-      <title>csharp 使用 Epplus 读写 excel表格</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</link>
-      <pubDate>Thu, 05 Jan 2023 16:33:34 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</guid>
-      <description>epplus是一个读写xlsx的csharp库。官网教程 https://epplussoftware.com/zh/Developers/ 官方教程中使用和很多using 我不喜欢多层级括号，using不使用多层级括号参考：</description>
-    </item>
-    
-    <item>
-      <title>python_beautiful_soup</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</link>
-      <pubDate>Thu, 29 Dec 2022 15:50:22 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</guid>
-      <description>还没写，先留着空位</description>
     </item>
     
     <item>

@@ -201,7 +201,9 @@
 ">
   <i class="fas fa-fw fa-copyright"></i>
 </a>
-    
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
     
   </div>
 </div>
@@ -212,14 +214,38 @@
   </span><span class="post-reading-time" title="reading time">
     <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
   </span><a href="https://cornradio.github.io/hugo/tags/regex/" class="badge rounded-pill text-white bg-primary post-taxonomy">regex</a></div>
-<div class="post-content mb-3"><p>最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。</p>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简单">简单</a></li>
+    <li><a href="#重复--">重复<code>? + *</code></a></li>
+    <li><a href="#大括号">大括号</a></li>
+    <li><a href="#分组">分组<code>()</code></a></li>
+    <li><a href="#转义字符">转义字符 \</a></li>
+    <li><a href="#匹配开头">匹配开头 <code>^</code></a></li>
+    <li><a href="#匹配尾巴-">匹配尾巴 <code>$</code> </a></li>
+    <li><a href="#匹配字符-w">匹配字符 <code>\w</code></a></li>
+    <li><a href="#lookarounds">Lookarounds</a></li>
+    <li><a href="#全局标志gmi">全局标志<code>/gmi</code></a></li>
+    <li><a href="#贪婪匹配">贪婪匹配</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。</p>
 <p><a href="https://regexlearn.com/zh-cn/learn/regex101" target="_blank" rel="noopener noreferrer">Regex 101 - ZH-CN (regexlearn.com)</a>
 </p>
 <p><a href="https://regexlearn.com/zh-cn/playground" target="_blank" rel="noopener noreferrer">Regex Learn - 练习场</a>
 </p>
 <p><a href="https://regexlearn.com/zh-cn/cheatsheet" target="_blank" rel="noopener noreferrer">Regex Learn - cheatsheet</a>
 </p>
-<h1 id="简单">简单</h1>
+<h2 id="简单">简单</h2>
 <p>匹配单词</p>
 <p>he is in <code>black</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">black
@@ -233,7 +259,7 @@
 <p><code>bar</code> ber bir <code>bor</code> <code>bur</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">b[^ei]r
 </span></span></code></pre></div><p>字母范围<code>[a-z]</code></p>
-<h1 id="重复--">重复<code>? + *</code></h1>
+<h2 id="重复--">重复<code>? + *</code></h2>
 <p><code>?</code> 加在字母后代表出现0次或1次</p>
 <p><code>color</code>, <code>colour</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">colou?r
@@ -243,14 +269,14 @@
 </span></span></code></pre></div><p> <code>*</code> 加在字母后代表出现0次或多次</p>
 <p><code>br</code> <code>ber</code> <code>beer</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">be*r
-</span></span></code></pre></div><h1 id="大括号">大括号</h1>
+</span></span></code></pre></div><h2 id="大括号">大括号</h2>
 <p><code>{x}</code>加在字母后代表出现x次</p>
 <p>ber <code>beer</code> beeer beeeer</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">be{2}r
 </span></span></code></pre></div><p><code>{n, }</code>加在字母后代表出现n到正无穷次，类似集合，<code>[n，∞）</code></p>
 <p>ber beer <code>beeer</code> <code>beeeer</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">be{3,}r
-</span></span></code></pre></div><h1 id="分组">分组<code>()</code></h1>
+</span></span></code></pre></div><h2 id="分组">分组<code>()</code></h2>
 <p><code>()</code> 分组可以把上面的重复符号给组用。而不只是一个字母。</p>
 <p><code>\1</code>,<code>\2</code> 分组引用，可以把组像变量一样引用。第一组就是<code>\1</code></p>
 <p><code>ha-ha,haa-haa</code></p>
@@ -260,21 +286,21 @@
 </span></span></code></pre></div><p><code>(?: )</code>: 非捕获分组 (不能被引用)</p>
 <p><code>ha-ha,haa-haa</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">(?:ha)-ha,(haa)-/1
-</span></span></code></pre></div><h1 id="转义字符">转义字符 \</h1>
+</span></span></code></pre></div><h2 id="转义字符">转义字符 \</h2>
 <p><code>{ } [ ] / \ + * . $^ | ?</code> 如果要这些特殊字符，需要在前面加上反斜杠匹配</p>
-<h1 id="匹配开头">匹配开头 <code>^</code></h1>
+<h2 id="匹配开头">匹配开头 <code>^</code></h2>
 <p><code>1</code>. 3 eggs, beaten</p>
 <p><code>2</code>. 1 tsp sunflower oil</p>
 <p><code>3</code>. 1 tsp butter</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">^[0-9]
-</span></span></code></pre></div><h1 id="匹配尾巴-">匹配尾巴 <code>$</code> </h1>
+</span></span></code></pre></div><h2 id="匹配尾巴-">匹配尾巴 <code>$</code> </h2>
 <p>html.html.html-da-sdf<code>html</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">html$
-</span></span></code></pre></div><h1 id="匹配字符-w">匹配字符 <code>\w</code></h1>
+</span></span></code></pre></div><h2 id="匹配字符-w">匹配字符 <code>\w</code></h2>
 <p>字母、数字和下划线 <code>\w</code>，其他各种不在这范围内的 <code>\W</code> (匹配中文和中文标点可以使用<code>\W</code>)</p>
 <p>数字<code>\d</code>,非数字<code>\D</code></p>
 <p>空白符<code>\s</code>,非空白<code>\S</code></p>
-<h1 id="lookarounds">Lookarounds</h1>
+<h2 id="lookarounds">Lookarounds</h2>
 <p>官方中文翻译：零宽断言，我觉得这个翻译真的是误导人，“断言”：极其肯定地说，断言你妈，还零宽，就不说人话是吧。
 应该叫：附近匹配/左右匹配。</p>
 <p>其实我觉得如果后缀前缀不变的话，可以吧这段比如<code>3PM</code>一起给match出来，然后再replace <code>PM</code> 就可以了，比这个奇怪的语法看起来要好一些。</p>
@@ -290,11 +316,11 @@
 </span></span></code></pre></div><p>前面不要！</p>
 <p>Product Code: <code>1064</code> Price: $5</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">(?&lt;!\$)\d+
-</span></span></code></pre></div><h1 id="全局标志gmi">全局标志<code>/gmi</code></h1>
-<p>g - 获取全部，不加上只获取第一个
-m - 多行，如果不开启则全部文本视作一行，对于有匹配文本末端<code>$</code>的有影响
-i - 大小写不在意，不加上则大小写敏感</p>
-<h1 id="贪婪匹配">贪婪匹配</h1>
+</span></span></code></pre></div><h2 id="全局标志gmi">全局标志<code>/gmi</code></h2>
+<p>g - 获取全部，不加上只获取第一个</p>
+<p>m - 多行，如果不开启则全部文本视作一行，对于有匹配文本末端<code>$</code>的有影响</p>
+<p>i - 大小写不在意，不加上则大小写敏感</p>
+<h2 id="贪婪匹配">贪婪匹配</h2>
 <p>正则表达式默认执行贪婪匹配，能要长的就不要短的</p>
 <p><code>ber beer beeer beeeer</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">.*r
@@ -332,9 +358,9 @@ i - 大小写不在意，不加上则大小写敏感</p>
     <h3>相关文章</h3>
     <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05-django-1/">Django-1
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/">Vscode技巧
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05epplus/">Csharp 使用 Epplus 读写 Excel表格
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/">Python_beautiful_soup
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/4clash-minxin-howtouse/">Clash 中的 Minxin 使用教程
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite_inturder/">Burpsuite - 3 - Inturder
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/">Burpsuite（入门教学课程）
 </a></li></ul>
   </section></div>
     </article><div class="card component row post-comments">
@@ -370,11 +396,11 @@ i - 大小写不在意，不加上则大小写敏感</p>
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/">C# 的打包技巧（打包成singlefile)
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-01-16-docker/">Docker
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/">C# 的打包技巧（打包成singlefile)
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-06-regex/">Regex 101
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05-django-1/">Django-1
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/">Vscode技巧
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05epplus/">Csharp 使用 Epplus 读写 Excel表格
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">
@@ -413,8 +439,8 @@ i - 大小写不在意，不加上则大小写敏感</p>
             clash
           </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
             docx
-          </a><a href="https://cornradio.github.io/hugo/tags/excel/" class="badge bg-primary text-white rounded post-taxonomy" title="excel">
-            excel
+          </a><a href="https://cornradio.github.io/hugo/tags/git/" class="badge bg-primary text-white rounded post-taxonomy" title="git">
+            git
           </a></div>
       </div>
     </section>
@@ -431,6 +457,6 @@ i - 大小写不在意，不加上则大小写敏感</p>
   Free To Share.
 </div>
 </footer>
-<script src="https://cornradio.github.io/hugo/js/bundle.min.463de12199b3dbf6cb3731d4de7df0a29e7e1a0273c3cd61cc1de42645c83802.js" integrity="sha256-Rj3hIZmz2/bLNzHU3n3wop5&#43;GgJzw81hzB3kJkXIOAI=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.c7d80bcbb67ca1cf05edc7a16b9f91fcbca3bcbc16e52f0117b583439e5e1102.js" integrity="sha256-x9gLy7Z8oc8F7ceha5&#43;R/LyjvLwW5S8BF7WDQ55eEQI=" crossorigin="anonymous"></script>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.4d59473bc4ae78c7c53278cd61e647d0a1f3ae978dd6aabf2b4c63639d99ebbe.js" integrity="sha256-TVlHO8SueMfFMnjNYeZH0KHzrpeN1qq/K0xjY52Z674=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
 </body>
 </html>
