@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>csharp 使用 Epplus 读写 excel表格</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</link>
+      <pubDate>Fri, 06 Jan 2023 16:33:34 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</guid>
+      <description>epplus是一个读写xlsx的csharp库。官网教程 https://epplussoftware.com/zh/Developers/ 官方教程中使用和很多using 我不喜欢多层级括号，using不使用多层级括号参考：</description>
+    </item>
+    
+    <item>
       <title>c#文件管理器、读取文件列表</title>
       <link>https://cornradio.github.io/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>

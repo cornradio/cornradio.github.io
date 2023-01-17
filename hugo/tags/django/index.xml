@@ -6,14 +6,14 @@
     <description>Recent content in django on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Thu, 05 Jan 2023 16:51:26 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Jan 2023 16:51:26 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Django-1</title>
+      <title>Django-tutorial 1</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</link>
-      <pubDate>Thu, 05 Jan 2023 16:51:26 +0800</pubDate>
+      <pubDate>Mon, 16 Jan 2023 16:51:26 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</guid>
-      <description>安装 https://docs.djangoproject.com/zh-hans/4.1/intro/install/ 如果在系统范围安装，安装前需要先装好python3.x。 官方教程还建议使用venv虚拟环境的方式，不过我一直弄不太懂venv，就不尝试</description>
+      <description>Django 是一个 使用python作为后端语言的框架。 学习 Django 源于我想要让我的 jandan 脚本可以提供在线服务…… 没想到这个东东这么复杂， 亏了呀！ 安装Django</description>
     </item>
     
   </channel>

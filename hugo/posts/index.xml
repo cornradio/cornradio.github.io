@@ -6,7 +6,25 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 16 Jan 2023 14:25:02 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Jan 2023 16:51:26 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django-tutorial 1</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</link>
+      <pubDate>Mon, 16 Jan 2023 16:51:26 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</guid>
+      <description>Django 是一个 使用python作为后端语言的框架。 学习 Django 源于我想要让我的 jandan 脚本可以提供在线服务…… 没想到这个东东这么复杂， 亏了呀！ 安装Django</description>
+    </item>
+    
+    <item>
+      <title>python_beautiful_soup</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</link>
+      <pubDate>Mon, 16 Jan 2023 15:50:22 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</guid>
+      <description>还没写，先留着空位</description>
+    </item>
+    
     <item>
       <title>Docker</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-16-docker/</link>
@@ -26,21 +44,21 @@
     </item>
     
     <item>
+      <title>csharp 使用 Epplus 读写 excel表格</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</link>
+      <pubDate>Fri, 06 Jan 2023 16:33:34 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</guid>
+      <description>epplus是一个读写xlsx的csharp库。官网教程 https://epplussoftware.com/zh/Developers/ 官方教程中使用和很多using 我不喜欢多层级括号，using不使用多层级括号参考：</description>
+    </item>
+    
+    <item>
       <title>Regex 101</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-06-regex/</link>
       <pubDate>Fri, 06 Jan 2023 16:10:14 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-01-06-regex/</guid>
       <description>最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。 Regex 101 - ZH-CN (regexlearn.com) Regex Learn - 练习场 Regex Learn - cheatsheet 简单 匹配单</description>
-    </item>
-    
-    <item>
-      <title>Django-1</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</link>
-      <pubDate>Thu, 05 Jan 2023 16:51:26 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</guid>
-      <description>安装 https://docs.djangoproject.com/zh-hans/4.1/intro/install/ 如果在系统范围安装，安装前需要先装好python3.x。 官方教程还建议使用venv虚拟环境的方式，不过我一直弄不太懂venv，就不尝试</description>
     </item>
     
     <item>
