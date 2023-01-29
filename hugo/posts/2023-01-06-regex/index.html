@@ -12,7 +12,7 @@
 <meta name="description" content="" /><meta itemprop="name" content="Regex 101">
 <meta itemprop="description" content="最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。 Regex 101 - ZH-CN (regexlearn.com) Regex Learn - 练习场 Regex Learn - cheatsheet 练习题 简单"><meta itemprop="datePublished" content="2023-01-06T16:10:14+08:00" />
 <meta itemprop="dateModified" content="2023-01-06T16:10:14+08:00" />
-<meta itemprop="wordCount" content="823">
+<meta itemprop="wordCount" content="897">
 <meta itemprop="keywords" content="regex," /><meta property="og:title" content="Regex 101" />
 <meta property="og:description" content="最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。 Regex 101 - ZH-CN (regexlearn.com) Regex Learn - 练习场 Regex Learn - cheatsheet 练习题 简单" />
 <meta property="og:type" content="article" />
@@ -279,6 +279,16 @@
 <p>ber beer <code>beeer</code> <code>beeeer</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">be{3,}r
 </span></span></code></pre></div><h2 id="分组">分组<code>()</code></h2>
+<p>分组可以只抓取匹配到的字符中的一部分。（通常也可以全都获取到再replace）</p>
+<p><code>file_record_transcript</code>.pdf</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">(.*).pdf$
+</span></span></code></pre></div><p>在python种可以这样使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">import</span> <span class="nn">re</span>  
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">txt</span> <span class="o">=</span> <span class="s2">&#34;The rain in Spain.pdf&#34;</span>  
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;(^The.*).(pdf)$&#34;</span><span class="p">,</span> <span class="n">txt</span><span class="p">)</span>  
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1">#The rain in Spain  </span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#pdf</span>
+</span></span></code></pre></div><hr>
 <p><code>()</code> 分组可以把上面的重复符号给组用。而不只是一个字母。</p>
 <p><code>\1</code>,<code>\2</code> 分组引用，可以把组像变量一样引用。第一组就是<code>\1</code></p>
 <p><code>ha-ha,haa-haa</code></p>
