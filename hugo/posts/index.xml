@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 16 Jan 2023 16:51:26 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Jan 2023 13:24:03 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>zlibrary</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-29zlib/</link>
+      <pubDate>Sun, 29 Jan 2023 13:24:03 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-29zlib/</guid>
+      <description>&lt;p&gt;关于如何在2023年使用zlibrary，可以下载很多小说、电子书、期刊等等。（我以前以为只能下载学术论文啥的所以从来没有关注过！）&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Django-tutorial 1</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</link>
