@@ -6,7 +6,16 @@
     <description>Recent content on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 31 Jan 2023 15:26:05 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Jan 2023 15:34:37 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Json读写（Python）</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-31python-json/</link>
+      <pubDate>Tue, 31 Jan 2023 15:34:37 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-31python-json/</guid>
+      <description>&lt;p&gt;使用 python 读写 json，或者使用 json5 处理一些格式“不太正确”的 json string，比如js代码的格式。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>使用标准的path处理方法 (Python)</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</link>
