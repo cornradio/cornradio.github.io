@@ -6,7 +6,23 @@
     <description>Recent content in python on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 16 Jan 2023 16:51:26 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Jan 2023 15:26:05 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用标准的path处理方法 (Python)</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</link>
+      <pubDate>Tue, 31 Jan 2023 15:26:05 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</guid>
+      <description>&lt;p&gt;标准方法可以兼容不同系统，并且有一定的容错性（比如在目录末尾写不写/）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;os.path.split(path)&lt;/code&gt; 分割路径和文件名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;os.path.join()&lt;/code&gt; 合并路径和文件名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;os.path.dirname()&lt;/code&gt; 方法可以获取目录名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;os.path.basename()&lt;/code&gt; 方法可以获取文件名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;os.path.splitext()&lt;/code&gt; 方法可以分离文件名和扩展名&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Django-tutorial 1</title>
       <link>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</link>
