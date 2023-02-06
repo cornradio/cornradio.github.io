@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-cn"
   >
   <head>
-	<meta name="generator" content="Hugo 0.101.0" />
+	<meta name="generator" content="Hugo 0.108.0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
@@ -177,6 +177,70 @@
 <div class="col-lg-8">
   <div class="container"><div class="posts mb-4"><article class="row card post component">
       <div class="card-body">
+        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/">Fix Dual System Time Problem
+</a></h2><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-06
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge rounded-pill text-white bg-primary post-taxonomy">ubuntu</a></div>
+<div class="post-summary">
+          
+          Fix dual system time problem fix a dual system bug : windows time not right everytime after using ubuntu.
+run this in ubuntu
+1sudo timedatectl set-local-rtc 1 --adjust-system-clock why having this problem there a hardware called RTC in your computer:
+if RTC time is 00:00 , and you are in UTC+8:00 time zone ,
+windows …
+        </div>
+      </div>
+    </article><article class="row card post component">
+      <div class="card-body">
+        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-02-06grub/">Grub Settings for Noobies
+</a></h2><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-06
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge rounded-pill text-white bg-primary post-taxonomy">ubuntu</a></div>
+<div class="post-summary">
+          
+          turn on grub menu if your grub menu don&rsquo;t show when you boot up your system , you can follow this :
+edit grub config
+1sudo vim /etc/default/grub 1# GRUB_TIMEOUT_STYLE=hidden 2GRUB_TIMEOUT=10 commit
+1sudo update-grub get a theme gnome grub themes storedeadsec themechange some grub settings edit grub config
+1sudo …
+        </div>
+      </div>
+    </article><article class="row card post component">
+      <div class="card-body">
+        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/">Install Qv2ray on Ubuntu
+</a></h2><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-06
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge rounded-pill text-white bg-primary post-taxonomy">ubuntu</a></div>
+<div class="post-summary">
+          
+          install Qv2ray install qv2ray in snap store.
+get core of Qv2ray go to this link on git hub to download &gt;this link&lt;unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&rsquo;s all done!
+use your phone as a proxy router , speed up download process.
+settings after you …
+        </div>
+      </div>
+    </article><article class="row card post component">
+      <div class="card-body">
+        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/">Install Sougou for Ubuntu
+</a></h2><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-06
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge rounded-pill text-white bg-primary post-taxonomy">ubuntu</a></div>
+<div class="post-summary">
+          
+          install sougou for ubuntu you can follow this guidedownload and install download sougou herefix every thing sougou need
+1sudo apt install fcitx 2sudo cp /usr/share/applications/fcitx.desktop /etc/xdg/autostart/ 3sudo apt purge ibus 4sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 …
+        </div>
+      </div>
+    </article><article class="row card post component">
+      <div class="card-body">
         <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-01-31python-json/">Json读写（Python）
 </a></h2><div class="post-meta"><span class="post-date" title="created on">
     <i class="fas fa-fw fa-calendar-alt"></i>2023-01-31
@@ -221,58 +285,6 @@
           <p><a href="https://www.youtube.com/@laogao" target="_blank" rel="noopener noreferrer">老高與小茉 Mr &amp; Mrs Gao</a>
  在我感觉人生无聊的时候给了我新的观点和信念！</p>
 <p>我还记得我第一个看到的是“29号宇宙”，讲述的是一个养老鼠实验模拟人类社会。</p>
-        </div>
-      </div>
-    </article><article class="row card post component">
-      <div class="card-body">
-        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-01-29zlib/">Zlibrary
-</a></h2><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2023-01-29
-  </span><span class="post-reading-time" title="reading time">
-    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
-  </span><a href="https://cornradio.github.io/hugo/tags/books/" class="badge rounded-pill text-white bg-primary post-taxonomy">books</a></div>
-<div class="post-summary">
-          
-          <p>关于如何在2023年使用zlibrary，可以下载很多小说、电子书、期刊等等。（我以前以为只能下载学术论文啥的所以从来没有关注过！）</p>
-        </div>
-      </div>
-    </article><article class="row card post component">
-      <div class="card-body">
-        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-01-05-django-1/">Django-Tutorial 1
-</a></h2><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2023-01-16
-  </span><span class="post-reading-time" title="reading time">
-    <i class="fas fa-fw fa-coffee"></i>6 分钟阅读
-  </span><a href="https://cornradio.github.io/hugo/tags/python/" class="badge rounded-pill text-white bg-primary post-taxonomy">python</a><a href="https://cornradio.github.io/hugo/tags/django/" class="badge rounded-pill text-white bg-primary post-taxonomy">django</a></div>
-<div class="post-summary">
-          
-          Django 是一个 使用python作为后端语言的框架。 学习 Django 源于我想要让我的 jandan 脚本可以提供在线服务…… 没想到这个东东这么复杂， 亏了呀！ 安装Django
-        </div>
-      </div>
-    </article><article class="row card post component">
-      <div class="card-body">
-        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/">Python_beautiful_soup
-</a></h2><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2023-01-16
-  </span><span class="post-reading-time" title="reading time">
-    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
-  </span></div>
-<div class="post-summary">
-          
-          还没写，先留着空位
-        </div>
-      </div>
-    </article><article class="row card post component">
-      <div class="card-body">
-        <h2 class="card-title post-title"><a href="https://cornradio.github.io/hugo/posts/2023-01-16-docker/">Docker
-</a></h2><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2023-01-16
-  </span><span class="post-reading-time" title="reading time">
-    <i class="fas fa-fw fa-coffee"></i>3 分钟阅读
-  </span><a href="https://cornradio.github.io/hugo/tags/docker/" class="badge rounded-pill text-white bg-primary post-taxonomy">Docker</a></div>
-<div class="post-summary">
-          
-          要想使用docker，需要正确的了解一些基础信息，比如 image 是啥、容器是啥、 docker hub 是啥 、 为什么pull等等，我这里先给出一些简单的解释，但是详细可
         </div>
       </div>
     </article></div><div class="row table-responsive mb-3">
@@ -330,11 +342,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-01-31python-json/">Json读写（Python）
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-31python-path/">使用标准的path处理方法 (Python)
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-29mrgaomsmo/">喜欢的老高视频|老高與小茉视频推荐
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-29zlib/">Zlibrary
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05-django-1/">Django-Tutorial 1
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/">Fix Dual System Time Problem
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06grub/">Grub Settings for Noobies
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/">Install Qv2ray on Ubuntu
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/">Install Sougou for Ubuntu
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-31python-json/">Json读写（Python）
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">
@@ -393,6 +405,6 @@
   Free To Share.
 </div>
 </footer>
-<script src="https://cornradio.github.io/hugo/js/bundle.min.4d59473bc4ae78c7c53278cd61e647d0a1f3ae978dd6aabf2b4c63639d99ebbe.js" integrity="sha256-TVlHO8SueMfFMnjNYeZH0KHzrpeN1qq/K0xjY52Z674=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.463de12199b3dbf6cb3731d4de7df0a29e7e1a0273c3cd61cc1de42645c83802.js" integrity="sha256-Rj3hIZmz2/bLNzHU3n3wop5&#43;GgJzw81hzB3kJkXIOAI=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.c7d80bcbb67ca1cf05edc7a16b9f91fcbca3bcbc16e52f0117b583439e5e1102.js" integrity="sha256-x9gLy7Z8oc8F7ceha5&#43;R/LyjvLwW5S8BF7WDQ55eEQI=" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -3,18 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cornradio.github.io/hugo/</loc>
-    <lastmod>2023-01-31T15:34:37+08:00</lastmod>
+    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</loc>
+    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-02-06grub/</loc>
+    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/</loc>
+    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/</loc>
+    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/</loc>
+    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/ubuntu/</loc>
+    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/</loc>
+    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-01-31python-json/</loc>
     <lastmod>2023-01-31T15:34:37+08:00</lastmod>
   </url><url>
-    <loc>https://cornradio.github.io/hugo/posts/</loc>
-    <lastmod>2023-01-31T15:34:37+08:00</lastmod>
-  </url><url>
     <loc>https://cornradio.github.io/hugo/tags/python/</loc>
-    <lastmod>2023-01-31T15:26:05+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/</loc>
     <lastmod>2023-01-31T15:26:05+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</loc>
@@ -102,9 +117,6 @@
     <lastmod>2022-11-22T22:03:01+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/tags/ssh/</loc>
-    <lastmod>2022-11-22T22:03:01+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/ubuntu/</loc>
     <lastmod>2022-11-22T22:03:01+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</loc>
