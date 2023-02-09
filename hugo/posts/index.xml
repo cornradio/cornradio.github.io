@@ -6,7 +6,27 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 06 Feb 2023 14:21:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 16:25:24 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 simple_term_menu 创建更好的python菜单</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</link>
+      <pubDate>Thu, 09 Feb 2023 16:25:24 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</guid>
+      <description>安装 1pip install simple_term_menu 这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。 支持J K/⬆️ ⬇️ 键移动 支持/斜杠搜</description>
+    </item>
+    
+    <item>
+      <title>Dbdiagram.io,数据库设计的好选择</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</link>
+      <pubDate>Thu, 09 Feb 2023 16:01:23 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</guid>
+      <description>&lt;p&gt;说到数据库设计软件，之前上学的时候用过 powerdesigener 、 navicat设计数据库。&lt;/p&gt;
+&lt;p&gt;但是都是付费软件，今天找到了一个免费的数据库设计工具 &lt;a href=&#34;https://dbdiagram.io&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;dbdiagram.io&lt;/a&gt;
+。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Fix dual system time problem</title>
       <link>https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</link>
@@ -30,7 +50,7 @@ ubuntu think : RTC time is UTC+0:00 so i have to add 8 hours and now is 08:00</d
       <description>turn on grub menu if your grub menu don&amp;rsquo;t show when you boot up your system , you can follow this :
 edit grub config
 1sudo vim /etc/default/grub 1# GRUB_TIMEOUT_STYLE=hidden 2GRUB_TIMEOUT=10 commit
-1sudo update-grub get a theme gnome grub themes storedeadsec themechange some grub settings edit grub config
+1sudo update-grub get a theme gnome grub themes store deadsec theme change some grub settings edit grub config
 1sudo vim /etc/default/grub find and change:
 1GRUB_DEFAULT=saved add this line
 1GRUB_SAVEDEFAULT=true this 2 line make grub rember your choice
@@ -44,7 +64,7 @@ commit</description>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/</guid>
       <description>install Qv2ray install qv2ray in snap store.
-get core of Qv2ray go to this link on git hub to download &amp;gt;this link&amp;lt;unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&amp;rsquo;s all done!
+get core of Qv2ray go to this link on git hub to download &amp;gt;this link&amp;lt; unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&amp;rsquo;s all done!
 use your phone as a proxy router , speed up download process.
 settings after you get your servers into Qv2ray , you have to goto ubuntu settings and set upsystem proxy to make it work</description>
     </item>
@@ -55,7 +75,7 @@ settings after you get your servers into Qv2ray , you have to goto ubuntu settin
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/</guid>
-      <description>install sougou for ubuntu you can follow this guidedownload and install download sougou herefix every thing sougou need
+      <description>install sougou for ubuntu you can follow this guide download and install download sougou here fix every thing sougou need
 1sudo apt install fcitx 2sudo cp /usr/share/applications/fcitx.desktop /etc/xdg/autostart/ 3sudo apt purge ibus 4sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 5sudo apt install libgsettings-qt1 install the package again
 1sudo dpkg -i sougou...deb reboot
 settings and stuff gotoubuntu settings - Region &amp;amp; Language - Manage installed Languages

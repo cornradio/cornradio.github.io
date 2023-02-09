@@ -1,0 +1,400 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用 simple_term_menu 创建更好的python菜单 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="用 simple_term_menu 创建更好的python菜单">
+<meta itemprop="description" content="安装 1pip install simple_term_menu 这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。 支持J K/⬆️ ⬇️ 键移动 支持/斜杠搜"><meta itemprop="datePublished" content="2023-02-09T16:25:24+08:00" />
+<meta itemprop="dateModified" content="2023-02-09T16:25:24+08:00" />
+<meta itemprop="wordCount" content="499">
+<meta itemprop="keywords" content="python,menu," /><meta property="og:title" content="用 simple_term_menu 创建更好的python菜单" />
+<meta property="og:description" content="安装 1pip install simple_term_menu 这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。 支持J K/⬆️ ⬇️ 键移动 支持/斜杠搜" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-09T16:25:24+08:00" />
+<meta property="article:modified_time" content="2023-02-09T16:25:24+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用 simple_term_menu 创建更好的python菜单"/>
+<meta name="twitter:description" content="安装 1pip install simple_term_menu 这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。 支持J K/⬆️ ⬇️ 键移动 支持/斜杠搜"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0de33eb307c150e7a61b4fbbee71822c91fe42634b8dfa1b299fd696cc1ce2d9.css" integrity="sha256-DeM&#43;swfBUOemG0&#43;77nGCLJH&#43;QmNLjfobKZ/Wlswc4tk=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.0de33eb307c150e7a61b4fbbee71822c91fe42634b8dfa1b299fd696cc1ce2d9.css" integrity="sha256-DeM&#43;swfBUOemG0&#43;77nGCLJH&#43;QmNLjfobKZ/Wlswc4tk=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=%e7%94%a8%20simple_term_menu%20%e5%88%9b%e5%bb%ba%e6%9b%b4%e5%a5%bd%e7%9a%84python%e8%8f%9c%e5%8d%95&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-02-09-%25E4%25BD%25BF%25E7%2594%25A8simple_term_menu%25E5%2588%259B%25E5%25BB%25BA%25E6%259B%25B4%25E5%25A5%25BD%25E7%259A%2584python%25E8%258F%259C%25E5%258D%2595%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-02-09-%25E4%25BD%25BF%25E7%2594%25A8simple_term_menu%25E5%2588%259B%25E5%25BB%25BA%25E6%259B%25B4%25E5%25A5%25BD%25E7%259A%2584python%25E8%258F%259C%25E5%258D%2595%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">用 Simple_term_menu 创建更好的python菜单</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">用 Simple_term_menu 创建更好的python菜单
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-09
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/python/" class="badge rounded-pill text-white bg-primary post-taxonomy">python</a><a href="https://cornradio.github.io/hugo/tags/menu/" class="badge rounded-pill text-white bg-primary post-taxonomy">menu</a></div>
+<div class="post-content mb-3"><p>安装</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl">pip install simple_term_menu
+</span></span></code></pre></div><p>这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。</p>
+<ul>
+<li>支持<code>J</code> <code>K</code>/⬆️ ⬇️ 键移动</li>
+<li>支持<code>/</code>斜杠搜索</li>
+<li>支持快捷键（传入的 string 如 <code>[q] 退出</code> ,q 就变成快捷键了）</li>
+<li>好看！</li>
+<li>还有更多功能，我没有仔细研究，参考<a href="https://github.com/IngoMeyer441/simple-term-menu" target="_blank" rel="noopener noreferrer">&gt;这里&lt;</a>
+</li>
+</ul>
+<p>封装成函数，方便调用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">from</span> <span class="nn">simple_term_menu</span> <span class="kn">import</span> <span class="n">TerminalMenu</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">def</span> <span class="nf">menu</span><span class="p">(</span><span class="n">choices</span><span class="p">:</span><span class="nb">list</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">terminal_menu</span> <span class="o">=</span> <span class="n">TerminalMenu</span><span class="p">(</span><span class="n">choices</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s2">&#34;扫描结果转换XML工具 v1.0 (230208)</span><span class="se">\n</span><span class="s2">---&#34;</span><span class="p">,</span><span class="n">show_search_hint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">index</span> <span class="o">=</span> <span class="n">terminal_menu</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;执行&#34;</span><span class="p">,</span> <span class="n">choices</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">if</span> <span class="n">choices</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;[h] 文档&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="kn">import</span> <span class="nn">webbrowser</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">if</span> <span class="n">choices</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;[q] 退出&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="n">exit</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="k">return</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># 返回结果，从1开始</span>
+</span></span></code></pre></div><p>main 函数调用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="c1"># 获取功能列表，显示菜单</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">        <span class="n">choices_str</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;menu.md&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">        <span class="n">choices</span> <span class="o">=</span><span class="n">choices_str</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">        <span class="n">choice_index</span> <span class="o">=</span> <span class="n">menu</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>其实一开始选择用md是因为写序号的话可以自动排序，但是加了序号和快捷键之后，就不美观了，所以把序号删除了。</p>
+</blockquote>
+<p>加载菜单 menu.md</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="ln">1</span><span class="cl">长亭xray（主机+应用） html 1-&gt;1
+</span></span><span class="line"><span class="ln">2</span><span class="cl">长亭xray（主机+应用） html 多-&gt;1
+</span></span><span class="line"><span class="ln">3</span><span class="cl">绿盟（主机） <span class="p">&lt;</span><span class="nt">ip</span><span class="p">&gt;</span>.html 1-&gt;1
+</span></span><span class="line"><span class="ln">4</span><span class="cl">绿盟（主机） <span class="p">&lt;</span><span class="nt">ip</span><span class="p">&gt;</span>.html 多-&gt;1
+</span></span><span class="line"><span class="ln">5</span><span class="cl">安恒新版 (应用) html 1-&gt;1
+</span></span><span class="line"><span class="ln">6</span><span class="cl">Nessus csv(utf-8) 1-&gt;1
+</span></span><span class="line"><span class="ln">7</span><span class="cl">Nessus csv(gb18030) 1-&gt;1
+</span></span><span class="line"><span class="ln">8</span><span class="cl">[h] 文档
+</span></span><span class="line"><span class="ln">9</span><span class="cl">[q] 退出
+</span></span></code></pre></div><p>效果图：
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230209163535.png" loading="lazy"
+  
+   />
+
+</p>
+<p>对了这个东西还有个坑的地方，在pycharm运行的时候需要设置一下才能正常使用（要开启模拟终端）：
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230209163631.png" loading="lazy"
+  
+   />
+
+</p>
+</div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://cornradio.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/">Dbdiagram.io,数据库设计的好选择
+</a>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-01-31python-path/">使用标准的path处理方法 (Python)
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-05-django-1/">Django-Tutorial 1
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/">Python Xml和读取excel
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/">使用python多线程批量ping
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/">Pip配置源
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="corn radio" src="https://cornradio.github.io/hugo/images/profile.webp" loading="lazy"
+   width="638" height="639"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">corn radio</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>玉米电台</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>我在这里</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/">用 Simple_term_menu 创建更好的python菜单
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/">Dbdiagram.io,数据库设计的好选择
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/">Fix Dual System Time Problem
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06grub/">Grub Settings for Noobies
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/">Install Qv2ray on Ubuntu
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a><a href="https://cornradio.github.io/hugo/tags/excel/" class="badge bg-primary text-white rounded post-taxonomy" title="excel">
+            excel
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.4d59473bc4ae78c7c53278cd61e647d0a1f3ae978dd6aabf2b4c63639d99ebbe.js" integrity="sha256-TVlHO8SueMfFMnjNYeZH0KHzrpeN1qq/K0xjY52Z674=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+</body>
+</html>

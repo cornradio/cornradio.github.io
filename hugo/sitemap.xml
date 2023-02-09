@@ -3,7 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cornradio.github.io/hugo/</loc>
-    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
+    <lastmod>2023-02-09T16:25:24+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/menu/</loc>
+    <lastmod>2023-02-09T16:25:24+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/</loc>
+    <lastmod>2023-02-09T16:25:24+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/python/</loc>
+    <lastmod>2023-02-09T16:25:24+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/</loc>
+    <lastmod>2023-02-09T16:25:24+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</loc>
+    <lastmod>2023-02-09T16:25:24+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/database/</loc>
+    <lastmod>2023-02-09T16:01:23+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</loc>
+    <lastmod>2023-02-09T16:01:23+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/free/</loc>
+    <lastmod>2023-02-09T16:01:23+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</loc>
     <lastmod>2023-02-06T14:21:50+08:00</lastmod>
@@ -17,20 +41,11 @@
     <loc>https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/</loc>
     <lastmod>2023-02-06T14:21:50+08:00</lastmod>
   </url><url>
-    <loc>https://cornradio.github.io/hugo/posts/</loc>
-    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
-  </url><url>
     <loc>https://cornradio.github.io/hugo/tags/ubuntu/</loc>
-    <lastmod>2023-02-06T14:21:50+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/</loc>
     <lastmod>2023-02-06T14:21:50+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-01-31python-json/</loc>
     <lastmod>2023-01-31T15:34:37+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/python/</loc>
-    <lastmod>2023-01-31T15:26:05+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</loc>
     <lastmod>2023-01-31T15:26:05+08:00</lastmod>

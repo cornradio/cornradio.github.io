@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/database/</link>
+    <description>Recent content in database on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Thu, 09 Feb 2023 16:01:23 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dbdiagram.io,数据库设计的好选择</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</link>
+      <pubDate>Thu, 09 Feb 2023 16:01:23 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</guid>
+      <description>&lt;p&gt;说到数据库设计软件，之前上学的时候用过 powerdesigener 、 navicat设计数据库。&lt;/p&gt;
+&lt;p&gt;但是都是付费软件，今天找到了一个免费的数据库设计工具 &lt;a href=&#34;https://dbdiagram.io&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;dbdiagram.io&lt;/a&gt;
+。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
