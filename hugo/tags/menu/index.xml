@@ -13,7 +13,7 @@
       <pubDate>Thu, 09 Feb 2023 16:25:24 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</guid>
-      <description>安装 1pip install simple_term_menu 这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。 支持J K/⬆️ ⬇️ 键移动 支持/斜杠搜</description>
+      <description>安装 1pip install simple_term_menu ⚠️ 不支持windows 这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。 支持J K/⬆</description>
     </item>
     
   </channel>
