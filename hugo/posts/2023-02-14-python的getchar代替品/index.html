@@ -3,26 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Python的getchar代替品 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+    <title>我写了一个python库：dumb_meun - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="Python的getchar代替品">
-<meta itemprop="description" content="simple_term_menu 坑人啊，他不支持 windows！（用了 termios ，这个库不支持 windows ） simple_term_menu不支持windows这个问题，我在网上搜，好多年"><meta itemprop="datePublished" content="2023-02-14T16:19:07+08:00" />
-<meta itemprop="dateModified" content="2023-02-14T16:19:07+08:00" />
-<meta itemprop="wordCount" content="990">
-<meta itemprop="keywords" content="python," /><meta property="og:title" content="Python的getchar代替品" />
-<meta property="og:description" content="simple_term_menu 坑人啊，他不支持 windows！（用了 termios ，这个库不支持 windows ） simple_term_menu不支持windows这个问题，我在网上搜，好多年" />
+<meta name="description" content="" /><meta itemprop="name" content="我写了一个python库：dumb_meun">
+<meta itemprop="description" content="我之前再我的程序里面 用了一个第三方库：simple_term_menu，提供菜单功能。但是当我再windows上尝试跑一下终于写好的程序时，"><meta itemprop="datePublished" content="2023-02-18T16:19:07+08:00" />
+<meta itemprop="dateModified" content="2023-02-18T16:19:07+08:00" />
+<meta itemprop="wordCount" content="880">
+<meta itemprop="keywords" content="python," /><meta property="og:title" content="我写了一个python库：dumb_meun" />
+<meta property="og:description" content="我之前再我的程序里面 用了一个第三方库：simple_term_menu，提供菜单功能。但是当我再windows上尝试跑一下终于写好的程序时，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-02-14-python%E7%9A%84getchar%E4%BB%A3%E6%9B%BF%E5%93%81/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-02-14T16:19:07+08:00" />
-<meta property="article:modified_time" content="2023-02-14T16:19:07+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+<meta property="article:published_time" content="2023-02-18T16:19:07+08:00" />
+<meta property="article:modified_time" content="2023-02-18T16:19:07+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Python的getchar代替品"/>
-<meta name="twitter:description" content="simple_term_menu 坑人啊，他不支持 windows！（用了 termios ，这个库不支持 windows ） simple_term_menu不支持windows这个问题，我在网上搜，好多年"/>
+<meta name="twitter:title" content="我写了一个python库：dumb_meun"/>
+<meta name="twitter:description" content="我之前再我的程序里面 用了一个第三方库：simple_term_menu，提供菜单功能。但是当我再windows上尝试跑一下终于写好的程序时，"/>
 <link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0de33eb307c150e7a61b4fbbee71822c91fe42634b8dfa1b299fd696cc1ce2d9.css" integrity="sha256-DeM&#43;swfBUOemG0&#43;77nGCLJH&#43;QmNLjfobKZ/Wlswc4tk=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.0de33eb307c150e7a61b4fbbee71822c91fe42634b8dfa1b299fd696cc1ce2d9.css" integrity="sha256-DeM&#43;swfBUOemG0&#43;77nGCLJH&#43;QmNLjfobKZ/Wlswc4tk=" crossorigin="anonymous"></noscript></head>
   <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -46,7 +46,7 @@
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=Python%e7%9a%84getchar%e4%bb%a3%e6%9b%bf%e5%93%81&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-02-14-python%25E7%259A%2584getchar%25E4%25BB%25A3%25E6%259B%25BF%25E5%2593%2581%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=%e6%88%91%e5%86%99%e4%ba%86%e4%b8%80%e4%b8%aapython%e5%ba%93%ef%bc%9adumb_meun&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-02-14-python%25E7%259A%2584getchar%25E4%25BB%25A3%25E6%259B%25BF%25E5%2593%2581%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
@@ -181,7 +181,7 @@
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">Python的getchar代替品</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">我写了一个python库：dumb_meun</li></ol>
   </div>
 </nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -208,9 +208,9 @@
   </div>
 </div>
 <div class="card-body">
-        <h1 class="card-title my-3">Python的getchar代替品
+        <h1 class="card-title my-3">我写了一个python库：dumb_meun
 </h1><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-14
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-18
   </span><span class="post-reading-time" title="reading time">
     <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
   </span><a href="https://cornradio.github.io/hugo/tags/python/" class="badge rounded-pill text-white bg-primary post-taxonomy">python</a></div>
@@ -225,65 +225,100 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#menu代码">menu代码</a></li>
-    <li><a href="#思路">思路</a></li>
+    <li><a href="#代码地址">代码地址</a></li>
   </ul>
 </nav>
   </div>
 </div><div class="post-content mb-3"><blockquote>
-<p>simple_term_menu 坑人啊，他不支持 windows！（用了 termios ，这个库不支持 windows ）</p>
+<p>我之前再我的程序里面 用了一个第三方库：<code>simple_term_menu</code>，提供菜单功能。但是当我再windows上尝试跑一下终于写好的程序时，竟然不能用。原因是它依赖于 <code>termios</code> 库， 不支持 win 。
+因为我的功能需求比较简单，我决定自己下一个代替品，就是这个 <code>dumb_meun</code> 了。</p>
 </blockquote>
-<blockquote>
-<p>simple_term_menu不支持windows这个问题，我在网上搜，好多年之前就有人提出这个问题了，但是作者有回应，但也没有修复这个问题。
-下面展示，这个，能够在 windows 上运行的 meun 函数，同时兼容 windows 和 macos ！</p>
-</blockquote>
-<p>为此，我需要研究一下如何获取键盘输入，然后自己写一个简单的 menu 函数。然后又踩坑了，有用上了智能适配windows的 <code>msvcrt.getch()</code>
-最终我弄出来了这个函数：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">get_key</span><span class="p">():</span> <span class="c1">#get keypress using getch , not support F1-F10 and esc and tab and so on ....</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="n">first_char</span> <span class="o">=</span> <span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="k">if</span> <span class="n">first_char</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\x1b</span><span class="s1">&#39;</span><span class="p">:</span> <span class="c1">#arrow keys</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">        <span class="n">a</span><span class="o">=</span><span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="n">b</span><span class="o">=</span><span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;[A&#39;</span><span class="p">:</span> <span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;[B&#39;</span><span class="p">:</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;[C&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;[D&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span> <span class="p">}[</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_char</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="k">return</span>  <span class="s1">&#39;enter&#39;</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_char</span><span class="p">)</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">return</span>  <span class="s1">&#39;space&#39;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">return</span> <span class="n">first_char</span> <span class="c1">#normal keys like abcd 1234</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">
-</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="n">key</span> <span class="o">=</span> <span class="n">get_key</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;You pressed: &#34;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-</span></span></code></pre></div><p>这个函数可以获取键盘输入，返回值是一个字符串，比如<code>up</code> <code>down</code> <code>left</code> <code>right</code> <code>enter</code> <code>space</code> <code>a</code> <code>b</code> <code>c</code> <code>d</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code>等等。</p>
+<p>主要要实现的功能：</p>
+<ul>
+<li>传入一个 list ，显示菜单， 返回选中的 index
+<ul>
+<li>上下键选择</li>
+<li>enter建确认</li>
+<li>*支持快捷键</li>
+</ul>
+</li>
+</ul>
+<p>因为python没有提供类似于c语言中的<code>getchar</code>函数，再 linux 上用 <code>termios</code> 库可以实现，但是在windows上使用的是 <code>msvcrt</code> 库。所以实际上在 python 中实现起来不是很容易。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">def</span> <span class="nf">get_key</span><span class="p">():</span> <span class="c1">#get keypress using getch , msvcrt = windows or termios = linux</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">try</span> <span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="kn">import</span> <span class="nn">getch</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">        <span class="n">first_char</span> <span class="o">=</span> <span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="k">if</span> <span class="n">first_char</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\x1b</span><span class="s1">&#39;</span><span class="p">:</span> <span class="c1">#arrow keys</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            <span class="n">a</span><span class="o">=</span><span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="n">b</span><span class="o">=</span><span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;[A&#39;</span><span class="p">:</span> <span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;[B&#39;</span><span class="p">:</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;[C&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;[D&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span> <span class="p">}[</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_char</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="k">return</span>  <span class="s1">&#39;enter&#39;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_char</span><span class="p">)</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="k">return</span>  <span class="s1">&#39;space&#39;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="k">return</span> <span class="n">first_char</span> <span class="c1">#normal keys like abcd 1234</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="k">except</span> <span class="p">:</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="k">pass</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="kn">import</span> <span class="nn">msvcrt</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="n">key</span> <span class="o">=</span> <span class="n">msvcrt</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>  <span class="c1"># get keypress</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x1b</span><span class="s1">&#39;</span><span class="p">:</span>  <span class="c1"># Esc key to exit</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="k">return</span> <span class="s1">&#39;esc&#39;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">:</span>  <span class="c1"># Enter key to select</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="k">return</span> <span class="s1">&#39;enter&#39;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x48</span><span class="s1">&#39;</span><span class="p">:</span>  <span class="c1"># Up or Down arrow</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">            <span class="k">return</span>  <span class="s1">&#39;up&#39;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x50</span><span class="s1">&#39;</span><span class="p">:</span>  <span class="c1"># Up or Down arrow</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">            <span class="k">return</span> <span class="s1">&#39;down&#39;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">            <span class="k">return</span> <span class="n">key</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">        <span class="k">pass</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    <span class="n">key</span> <span class="o">=</span> <span class="n">get_key</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;You pressed: &#34;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</span></span></code></pre></div><p>这个函数可以获取键盘输入，返回值是一个字符串，比如<code>up</code> <code>down</code> / <code>enter</code> / <code>a</code> <code>b</code> <code>c</code> / <code>1</code> <code>2</code> <code>3</code>，这样统一一下，可以兼容linux 和 win。</p>
 <p>测试结果：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Press a key to test out!
 </span></span><span class="line"><span class="ln">2</span><span class="cl">You pressed:  down
 </span></span><span class="line"><span class="ln">3</span><span class="cl">You pressed:  up
-</span></span><span class="line"><span class="ln">4</span><span class="cl">You pressed:  down
-</span></span><span class="line"><span class="ln">5</span><span class="cl">You pressed:  up
-</span></span><span class="line"><span class="ln">6</span><span class="cl">You pressed:  right
-</span></span><span class="line"><span class="ln">7</span><span class="cl">You pressed:  down
-</span></span><span class="line"><span class="ln">8</span><span class="cl">You pressed:  left
-</span></span><span class="line"><span class="ln">9</span><span class="cl">You pressed:  right
+</span></span><span class="line"><span class="ln">4</span><span class="cl">You pressed:  a
+</span></span><span class="line"><span class="ln">5</span><span class="cl">...
 </span></span></code></pre></div><h2 id="menu代码">menu代码</h2>
-<p>当然写这个meun我觉得还是挺难的）我拷问了chatgpt老半天，他才给我编好（最后的输入编码还是我自己解决的，不过这个快捷键识别功能是他写好的）</p>
-<p>使用方法：传入otpions（一个list），可以在里面加入快捷键，比如<code>[1]Option 1</code>，然后就可以通过<code>1</code>来选择这个选项。也可以通过键盘上下来控制选择的项目。</p>
+<blockquote>
+<p>我拷问了chatgpt老半天，他才给我编好</p>
+</blockquote>
+<p><img class="img-fluid" alt="后补充的流程图" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230218215102.png" loading="lazy"
+  
+   />
+
+</p>
+<ul>
+<li>
+<p>提取快捷键是用 <code>re</code> 库的正则表达式</p>
+</li>
+<li>
+<p>显示菜单通过 <code>os.system(&quot;cls&quot; if os.name == &quot;nt&quot; else &quot;clear&quot;)</code> 清屏，再打印出来，每次给菜单传入 list 和选中的 index ，这样用户可以看到自己正在选择哪个。</p>
+</li>
+</ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">import</span> <span class="nn">getch</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">def</span> <span class="nf">get_key</span><span class="p">():</span> <span class="c1">#get keypress using getch , not support F1-F10 and esc and tab and so on ....</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">first_char</span> <span class="o">=</span> <span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">if</span> <span class="n">first_char</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\x1b</span><span class="s1">&#39;</span><span class="p">:</span> <span class="c1">#arrow keys</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="n">a</span><span class="o">=</span><span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="n">b</span><span class="o">=</span><span class="n">getch</span><span class="o">.</span><span class="n">getch</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;[A&#39;</span><span class="p">:</span> <span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;[B&#39;</span><span class="p">:</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;[C&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;[D&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span> <span class="p">}[</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">]</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_char</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">return</span>  <span class="s1">&#39;enter&#39;</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">first_char</span><span class="p">)</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="k">return</span>  <span class="s1">&#39;space&#39;</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="k">return</span> <span class="n">first_char</span> <span class="c1">#normal keys like abcd 1234</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">def</span> <span class="nf">get_menu_choice</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">shortcuts</span> <span class="o">=</span> <span class="n">scan_short_cuts</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># scan for shortcuts</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="n">selected_index</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">shortcuts</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="n">show_menu</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">selected_index</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="n">key</span> <span class="o">=</span> <span class="n">get_key</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;enter&#39;</span><span class="p">:</span>  <span class="c1"># Enter key to select</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="k">return</span> <span class="n">selected_index</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;up&#39;</span><span class="p">,</span><span class="s1">&#39;down&#39;</span><span class="p">):</span>  <span class="c1"># Up or Down arrow</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="n">selected_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">selected_index</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">options</span><span class="p">))</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">shortcuts</span><span class="p">:</span>  <span class="c1"># Shortcut key</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="n">show_menu</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">shortcuts</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="c1">#show selected option when using shortcut</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="k">return</span> <span class="n">shortcuts</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">
 </span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">def</span> <span class="nf">scan_short_cuts</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="n">shortcuts</span> <span class="o">=</span> <span class="p">{}</span>
@@ -291,52 +326,37 @@
 </span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\[(.*)\](.*)&#34;</span><span class="p">,</span> <span class="n">option</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="n">shortcut</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">24</span><span class="cl">            <span class="c1"># shortcuts[bytes(shortcut,&#39;utf-8&#39;)] = i</span>
-</span></span><span class="line"><span class="ln">25</span><span class="cl">            <span class="n">shortcuts</span><span class="p">[</span><span class="n">shortcut</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="k">return</span> <span class="n">shortcuts</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">            <span class="n">shortcuts</span><span class="p">[</span><span class="n">shortcut</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="k">return</span> <span class="n">shortcuts</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">
 </span></span><span class="line"><span class="ln">27</span><span class="cl">
-</span></span><span class="line"><span class="ln">28</span><span class="cl">
-</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="k">def</span> <span class="nf">show_menu</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">selected_index</span><span class="p">):</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;cls&#34;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;nt&#34;</span> <span class="k">else</span> <span class="s2">&#34;clear&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Menu&#34;</span><span class="p">,</span><span class="s2">&#34;current option:&#34;</span><span class="p">,</span><span class="n">selected_index</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">option</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
-</span></span><span class="line"><span class="ln">33</span><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">selected_index</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">34</span><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;&gt; </span><span class="si">{</span><span class="n">option</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">35</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">36</span><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;  </span><span class="si">{</span><span class="n">option</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">37</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Use the arrow keys to move, Enter to select, and Esc to exit.&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">38</span><span class="cl">
-</span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="k">def</span> <span class="nf">get_menu_choice</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
-</span></span><span class="line"><span class="ln">40</span><span class="cl">    <span class="n">shortcuts</span> <span class="o">=</span> <span class="n">scan_short_cuts</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># scan for shortcuts</span>
-</span></span><span class="line"><span class="ln">41</span><span class="cl">    <span class="n">selected_index</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="ln">42</span><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">43</span><span class="cl">        <span class="n">show_menu</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">selected_index</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">44</span><span class="cl">        <span class="n">key</span> <span class="o">=</span> <span class="n">get_key</span><span class="p">()</span>
-</span></span><span class="line"><span class="ln">45</span><span class="cl">        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;enter&#39;</span><span class="p">:</span>  <span class="c1"># Enter key to select</span>
-</span></span><span class="line"><span class="ln">46</span><span class="cl">            <span class="k">return</span> <span class="n">selected_index</span>
-</span></span><span class="line"><span class="ln">47</span><span class="cl">        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;up&#39;</span><span class="p">,</span><span class="s1">&#39;down&#39;</span><span class="p">):</span>  <span class="c1"># Up or Down arrow</span>
-</span></span><span class="line"><span class="ln">48</span><span class="cl">            <span class="n">selected_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">selected_index</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">options</span><span class="p">))</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">49</span><span class="cl">        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">shortcuts</span><span class="p">:</span>  <span class="c1"># Shortcut key</span>
-</span></span><span class="line"><span class="ln">50</span><span class="cl">            <span class="k">return</span> <span class="n">shortcuts</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> 
-</span></span></code></pre></div><p>使用的话，只需要：</p>
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="k">def</span> <span class="nf">show_menu</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">selected_index</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;cls&#34;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;nt&#34;</span> <span class="k">else</span> <span class="s2">&#34;clear&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Menu&#34;</span><span class="p">,</span><span class="s2">&#34;current option:&#34;</span><span class="p">,</span><span class="n">selected_index</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">option</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">selected_index</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;&gt; </span><span class="si">{</span><span class="n">option</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;  </span><span class="si">{</span><span class="n">option</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Use the arrow keys to move, Enter/Hotkey to select.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>使用方法非常直白：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;[1]Option 1&#34;</span><span class="p">,</span> <span class="s2">&#34;[2]Option 2&#34;</span><span class="p">,</span> <span class="s2">&#34;[3]Option 3&#34;</span><span class="p">,</span><span class="s2">&#34;[q]quit&#34;</span><span class="p">]</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">index</span> <span class="o">=</span> <span class="n">get_menu_choice</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl">
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">if</span> <span class="n">index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;You selected option </span><span class="si">{</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">options</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;You selected option </span><span class="si">{</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">options</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>看看效果：</p>
 <p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230214163952.png" loading="lazy"
   
    />
 
 </p>
-<h2 id="思路">思路</h2>
+<h2 id="代码地址">代码地址</h2>
 <blockquote>
-<p>其实我一开始想要参考一下 simple_term_menu 的源码，但是我发现我太菜了，根本看不懂他们的乱七八糟，贼复杂的源代码，所以我就自己写了一个简单的。</p>
+<p>其实我一开始想要参考一下 <code>simple_term_menu</code> 的源码，但是我发现我太菜了，根本看不懂他们的贼复杂的源代码（还用了信号啥的，我都不会），所以我就自己写了一个简单的。</p>
 </blockquote>
-<p>传入一个list，<code>get_menu_choice(options)</code> ,通过正则表达式识别快捷键存储到字典里，然后通过 <code>show_menu(options, selected_index)</code> 循环打印出来(每次打印之前清屏)。</p>
-<p>然后通过<code>get_key()</code>获取键盘输入，不断循环！ ok。</p>
-<p>反正这可能是我最近几个月写的逻辑最复杂的代码了……</p>
+<p>使用的话就：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">pip install dumb-menu
+</span></span></code></pre></div><p>可以看看我在 pypi 写的<a href="https://pypi.org/project/dumb-menu/" target="_blank" rel="noopener noreferrer">简明教程</a>
+</p>
 </div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content surface">
@@ -402,7 +422,7 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-02-14-python%E7%9A%84getchar%E4%BB%A3%E6%9B%BF%E5%93%81/">Python的getchar代替品
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-02-14-python%E7%9A%84getchar%E4%BB%A3%E6%9B%BF%E5%93%81/">我写了一个python库：dumb_meun
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/">用 Simple_term_menu 创建更好的python菜单
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/">Dbdiagram.io,数据库设计的好选择
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/">Fix Dual System Time Problem
@@ -463,6 +483,6 @@
   Free To Share.
 </div>
 </footer>
-<script src="https://cornradio.github.io/hugo/js/bundle.min.4d59473bc4ae78c7c53278cd61e647d0a1f3ae978dd6aabf2b4c63639d99ebbe.js" integrity="sha256-TVlHO8SueMfFMnjNYeZH0KHzrpeN1qq/K0xjY52Z674=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.463de12199b3dbf6cb3731d4de7df0a29e7e1a0273c3cd61cc1de42645c83802.js" integrity="sha256-Rj3hIZmz2/bLNzHU3n3wop5&#43;GgJzw81hzB3kJkXIOAI=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.c7d80bcbb67ca1cf05edc7a16b9f91fcbca3bcbc16e52f0117b583439e5e1102.js" integrity="sha256-x9gLy7Z8oc8F7ceha5&#43;R/LyjvLwW5S8BF7WDQ55eEQI=" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -6,14 +6,32 @@
     <description>Recent content in python on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 14 Feb 2023 16:19:07 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Feb 2023 22:27:09 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Python的getchar代替品</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-14-python%E7%9A%84getchar%E4%BB%A3%E6%9B%BF%E5%93%81/</link>
-      <pubDate>Tue, 14 Feb 2023 16:19:07 +0800</pubDate>
+      <title>如何把 Python 程序打包成 exe</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</link>
+      <pubDate>Sat, 18 Feb 2023 22:27:09 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-14-python%E7%9A%84getchar%E4%BB%A3%E6%9B%BF%E5%93%81/</guid>
-      <description>simple_term_menu 坑人啊，他不支持 windows！（用了 termios ，这个库不支持 windows ） simple_term_menu不支持windows这个问题，我在网上搜，好多年</description>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</guid>
+      <description>我需要把我写的程序分给很多没有装 python 环境的人用（即使撞上了 python 环境，也会因为网络原因无法 pip 下载依赖），所以我需要把它打包成 exe ，这样使用门槛就可以</description>
+    </item>
+    
+    <item>
+      <title>Python打包和上传到pypi</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</link>
+      <pubDate>Sat, 18 Feb 2023 21:59:09 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</guid>
+      <description>教程 用 python 的人都用 pip 安装过包。那么有着开源精神的你，是否也想把自己写的包上传到 pypi 呢？ 官方中文教程地址 一个视频教程 更新/发布步骤： 修改完善 setup.py 进行</description>
+    </item>
+    
+    <item>
+      <title>我写了一个python库：dumb_meun</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</link>
+      <pubDate>Sat, 18 Feb 2023 16:19:07 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</guid>
+      <description>我之前再我的程序里面 用了一个第三方库：simple_term_menu，提供菜单功能。但是当我再windows上尝试跑一下终于写好的程序时，</description>
     </item>
     
     <item>
