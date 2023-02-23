@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mac on cornradio的技术博客</title>
+    <title>mac on cornradio的技术博客</title>
     <link>https://cornradio.github.io/hugo/tags/mac/</link>
-    <description>Recent content in Mac on cornradio的技术博客</description>
+    <description>Recent content in mac on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 06 Aug 2022 10:00:00 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2023 20:03:07 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mac essencials 2</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-23macos_essencials2/</link>
+      <pubDate>Thu, 23 Feb 2023 20:03:07 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-23macos_essencials2/</guid>
+      <description>经过了半年的使用，这是最新的软件推荐列表！ PS：最近在装机（mac mini），正好整理一下。 mac必装软件 解压软件 fastzip 滚轮和鼠标优化软件 Mos 视频</description>
+    </item>
+    
     <item>
       <title>ssh to parallels （kali）</title>
       <link>https://cornradio.github.io/hugo/posts/sshtoparallels/</link>
