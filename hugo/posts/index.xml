@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Fri, 24 Feb 2023 19:56:44 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 16:47:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何避免timemachine占用宝贵的mac磁盘空间</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-28-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8Dtimemachine%E5%8D%A0%E7%94%A8%E5%AE%9D%E8%B4%B5%E7%9A%84mac%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Tue, 28 Feb 2023 16:47:50 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-28-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8Dtimemachine%E5%8D%A0%E7%94%A8%E5%AE%9D%E8%B4%B5%E7%9A%84mac%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</guid>
+      <description>因为我买的MacBook只有512G的容量，所以我一直对容量使用比较在意，今天打开磁盘工具，发现我的MacBook的磁盘空间已经不足了。 我一</description>
+    </item>
+    
     <item>
       <title>windows开启WebDAV</title>
       <link>https://cornradio.github.io/hugo/posts/2023-02-24windows%E5%BC%80%E5%90%AFwebdav/</link>

@@ -3,35 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>install Qv2ray on ubuntu - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+    <title>如何避免timemachine占用宝贵的mac磁盘空间 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="install Qv2ray on ubuntu">
-<meta itemprop="description" content="install Qv2ray install qv2ray in snap store.
-get core of Qv2ray go to this link on git hub to download &gt;this link&lt; unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&rsquo;s all done!
-use your phone as a proxy router , speed up download process.
-settings after you get your servers into Qv2ray , you have to goto ubuntu settings and set upsystem proxy to make it work"><meta itemprop="datePublished" content="2023-02-06T14:21:50+08:00" />
-<meta itemprop="dateModified" content="2023-02-06T14:21:50+08:00" />
-<meta itemprop="wordCount" content="103">
-<meta itemprop="keywords" content="ubuntu," /><meta property="og:title" content="install Qv2ray on ubuntu" />
-<meta property="og:description" content="install Qv2ray install qv2ray in snap store.
-get core of Qv2ray go to this link on git hub to download &gt;this link&lt; unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&rsquo;s all done!
-use your phone as a proxy router , speed up download process.
-settings after you get your servers into Qv2ray , you have to goto ubuntu settings and set upsystem proxy to make it work" />
+<meta name="description" content="" /><meta itemprop="name" content="如何避免timemachine占用宝贵的mac磁盘空间">
+<meta itemprop="description" content="因为我买的MacBook只有512G的容量，所以我一直对容量使用比较在意，今天打开磁盘工具，发现我的MacBook的磁盘空间已经不足了。 我一"><meta itemprop="datePublished" content="2023-02-28T16:47:50+08:00" />
+<meta itemprop="dateModified" content="2023-02-28T16:47:50+08:00" />
+<meta itemprop="wordCount" content="633">
+<meta itemprop="keywords" content="," /><meta property="og:title" content="如何避免timemachine占用宝贵的mac磁盘空间" />
+<meta property="og:description" content="因为我买的MacBook只有512G的容量，所以我一直对容量使用比较在意，今天打开磁盘工具，发现我的MacBook的磁盘空间已经不足了。 我一" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-02-06T14:21:50+08:00" />
-<meta property="article:modified_time" content="2023-02-06T14:21:50+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-02-28-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8Dtimemachine%E5%8D%A0%E7%94%A8%E5%AE%9D%E8%B4%B5%E7%9A%84mac%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-28T16:47:50+08:00" />
+<meta property="article:modified_time" content="2023-02-28T16:47:50+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="install Qv2ray on ubuntu"/>
-<meta name="twitter:description" content="install Qv2ray install qv2ray in snap store.
-get core of Qv2ray go to this link on git hub to download &gt;this link&lt; unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&rsquo;s all done!
-use your phone as a proxy router , speed up download process.
-settings after you get your servers into Qv2ray , you have to goto ubuntu settings and set upsystem proxy to make it work"/>
+<meta name="twitter:title" content="如何避免timemachine占用宝贵的mac磁盘空间"/>
+<meta name="twitter:description" content="因为我买的MacBook只有512G的容量，所以我一直对容量使用比较在意，今天打开磁盘工具，发现我的MacBook的磁盘空间已经不足了。 我一"/>
 <link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.12410705cfb325fd2112e4fb3ca809c46dd8a60834957c2c6f58612ceea6a1f0.css" integrity="sha256-EkEHBc&#43;zJf0hEuT7PKgJxG3Ypgg0lXwsb1hhLO6mofA=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.12410705cfb325fd2112e4fb3ca809c46dd8a60834957c2c6f58612ceea6a1f0.css" integrity="sha256-EkEHBc&#43;zJf0hEuT7PKgJxG3Ypgg0lXwsb1hhLO6mofA=" crossorigin="anonymous"></noscript></head>
   <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -55,11 +46,11 @@ settings after you get your servers into Qv2ray , you have to goto ubuntu settin
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=install%20Qv2ray%20on%20ubuntu&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-02-06qv2ray-on-ubuntu%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=%e5%a6%82%e4%bd%95%e9%81%bf%e5%85%8dtimemachine%e5%8d%a0%e7%94%a8%e5%ae%9d%e8%b4%b5%e7%9a%84mac%e7%a3%81%e7%9b%98%e7%a9%ba%e9%97%b4&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-02-28-%25E5%25A6%2582%25E4%25BD%2595%25E9%2581%25BF%25E5%2585%258Dtimemachine%25E5%258D%25A0%25E7%2594%25A8%25E5%25AE%259D%25E8%25B4%25B5%25E7%259A%2584mac%25E7%25A3%2581%25E7%259B%2598%25E7%25A9%25BA%25E9%2597%25B4%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-02-06qv2ray-on-ubuntu%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-02-28-%25E5%25A6%2582%25E4%25BD%2595%25E9%2581%25BF%25E5%2585%258Dtimemachine%25E5%258D%25A0%25E7%2594%25A8%25E5%25AE%259D%25E8%25B4%25B5%25E7%259A%2584mac%25E7%25A3%2581%25E7%259B%2598%25E7%25A9%25BA%25E9%2597%25B4%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -190,7 +181,7 @@ settings after you get your servers into Qv2ray , you have to goto ubuntu settin
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">Install Qv2ray on Ubuntu</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">如何避免timemachine占用宝贵的mac磁盘空间</li></ol>
   </div>
 </nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -210,32 +201,79 @@ settings after you get your servers into Qv2ray , you have to goto ubuntu settin
 ">
   <i class="fas fa-fw fa-copyright"></i>
 </a>
-    
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
     
   </div>
 </div>
 <div class="card-body">
-        <h1 class="card-title my-3">Install Qv2ray on Ubuntu
+        <h1 class="card-title my-3">如何避免timemachine占用宝贵的mac磁盘空间
 </h1><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-06
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-02-28
   </span><span class="post-reading-time" title="reading time">
-    <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
-  </span><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge rounded-pill text-white bg-primary post-taxonomy">ubuntu</a></div>
-<div class="post-content mb-3"><h2 id="install-qv2ray">install Qv2ray</h2>
-<p>install <code>qv2ray</code> in snap store.</p>
-<h2 id="get-core-of-qv2ray">get core of Qv2ray</h2>
-<p>go to this link on git hub to download  <a href="https://github.com/v2fly/v2ray-core/releases/tag/v4.31.0" target="_blank" rel="noopener noreferrer">&gt;this link&lt;</a>
+    <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
+  </span></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#时间机器">时间机器</a></li>
+    <li><a href="#如何避免">如何避免</a></li>
+    <li><a href="#如何删除正在占用磁盘空间的快照">如何删除正在占用磁盘空间的快照</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>因为我买的MacBook只有512G的容量，所以我一直对容量使用比较在意，今天打开磁盘工具，发现我的MacBook的磁盘空间已经不足了。</p>
+<p><img class="img-fluid" alt="" src="https://i.imgur.com/vqpRmHX.png" loading="lazy"
+  
+   />
+
 </p>
-<p>unzip core to whatever floder, set up the core path in <code>Qv2ray - Preferences - Kernel Settings</code> and it&rsquo;s all done!</p>
-<blockquote>
-<p>use your phone as a proxy router , speed up download process.</p>
-</blockquote>
-<h2 id="settings">settings</h2>
-<p>after you get your servers into  Qv2ray , you have to goto ubuntu settings and set up<code>system proxy</code> to make it work</p>
-<p>go to <code>system proxy - Network Proxy</code> set <code>127.0.0.1:1089</code> for socks(this is default port), then it will work.</p>
-<blockquote>
-<p>rember some application doesn&rsquo;t follow this setting.</p>
-</blockquote>
+<p>我一直使用 OmniDiskSweeper 来清理空间，他能直接显示你所有文件夹占用的空间，一层一层的往下看，并手动删除不需要的文件是我的清理方式 （比用清理工具比如CleanMyMac要好用多了）。</p>
+<p>但是今天在清理之后发现，mac的磁盘空间还是不足，我感到非常奇怪。。。因为系统的磁盘管理工具和 OmniDiskSweeper 的磁盘空间使用数据对不上，差了几百G，经过一些搜索发现是因为：TimeMachine（时间机器）。</p>
+<h2 id="时间机器">时间机器</h2>
+<p>时间机器除了在插上硬盘的时候备份到外置硬盘，还会平常偷偷摸摸的自动备份，在Mac内置存储空间里存放快照，并且他会在空间不足时自动删除最旧的快照。</p>
+<p>其实合理的使用时间机器，不会占用太多的空间（因为他是增量保存，仅记录修改，不是复制整个文件），但是如果你使用了虚拟机软件，你在虚拟机里面修改了内容之后，整个虚拟机映像都会被重新备份一遍，，这是非常不合理的。</p>
+<h2 id="如何避免">如何避免</h2>
+<p>把虚拟机文件之类的排除time machine 备份。至于虚拟机备份的话，PD本身就有照功能，vmware之类的也有类似的功能提供，不需要借助 timemachine。</p>
+<p><img class="img-fluid" alt="" src="https://i.imgur.com/sQHzg8x.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="如何删除正在占用磁盘空间的快照">如何删除正在占用磁盘空间的快照</h2>
+<p>我们需要使用时间机器的命令行工具，打开终端，输入以下命令：</p>
+<p>推荐用vscode之类的可以多光标编辑的软件，这样可以一次性写好多条命令！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">tmutil listlocalsnapshots / 
+</span></span></code></pre></div><p>Snapshots for disk /:
+com.apple.TimeMachine.2023-02-11-102036.local
+com.apple.TimeMachine.2023-02-28-092630.local
+com.apple.TimeMachine.2023-02-28-102633.local
+com.apple.TimeMachine.2023-02-28-143433.local</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">sudo tmutil deletelocalsnapshots 2023-02-11-102036
+</span></span><span class="line"><span class="ln">2</span><span class="cl">sudo tmutil deletelocalsnapshots 2023-02-28-092630
+</span></span><span class="line"><span class="ln">3</span><span class="cl">sudo tmutil deletelocalsnapshots 2023-02-28-102633
+</span></span><span class="line"><span class="ln">4</span><span class="cl">sudo tmutil deletelocalsnapshots 2023-02-28-143433
+</span></span></code></pre></div><p>Deleted local snapshot &lsquo;2023-02-11-102036&rsquo;
+Deleted local snapshot &lsquo;2023-02-28-092630&rsquo;
+Deleted local snapshot &lsquo;2023-02-28-102633&rsquo;
+Deleted local snapshot &lsquo;2023-02-28-143433&rsquo;</p>
+<p><img class="img-fluid" alt="删除之后" src="https://i.imgur.com/nfVWYE9.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://appleinsider.com/articles/21/06/26/how-to-delete-time-machine-local-snapshots-in-macos" target="_blank" rel="noopener noreferrer">https://appleinsider.com/articles/21/06/26/how-to-delete-time-machine-local-snapshots-in-macos</a>
+</p>
 </div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content surface">
@@ -257,19 +295,15 @@ settings after you get your servers into Qv2ray , you have to goto ubuntu settin
   </div>
 </div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/">Install Sougou for Ubuntu
+    <a href="https://cornradio.github.io/hugo/posts/2023-02-24windows%E5%BC%80%E5%90%AFwebdav/">Windows开启WebDAV
 </a>
-  </div><div class="post-nav post-next">
-    <a href="https://cornradio.github.io/hugo/posts/2023-02-06grub/">Grub Settings for Noobies
-</a>
-    <i class="fas fa-fw fa-chevron-right"></i>
   </div></div><section class="related-posts-wrapper">
     <h3>相关文章</h3>
-    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/">Fix Dual System Time Problem
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06grub/">Grub Settings for Noobies
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/">Install Sougou for Ubuntu
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/">Ubuntu设置ssh、修改mac地址(home Pc)
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-31python-json/">Json读写（Python）
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-01-31python-json/">Json读写（Python）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-29mrgaomsmo/">喜欢的老高视频|老高與小茉视频推荐
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/">Python_beautiful_soup
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/">传入参数ARGV
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/collionsdictformac/">柯林斯词典 on MAC
 </a></li></ul>
   </section></div>
     </article><div class="card component row post-comments">
