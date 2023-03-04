@@ -22,7 +22,7 @@
       <pubDate>Tue, 06 Dec 2022 20:14:59 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</guid>
-      <description>参考链接： https://www.youtube.com/watch?v=nXLnx8ncZyE sed命令 sed据我了解是linux中用于替换的一个命令。 使用方法 1# 把a.txt中的 abc 换成 def 并打印出来。 2sed &amp;#39;s/abc/def/&amp;#39; a.txt 3 4# 把a.txt中</description>
+      <description>参考链接： https://www.youtube.com/watch?v=nXLnx8ncZyE sed命令 sed据我了解是linux中用于替换的一个命令。 使用方法 仅替换第一次出现的： 1# 把a.txt中的 abc 换成 def 并打印出来。 2sed &amp;#39;s/abc/def/&amp;#39;</description>
     </item>
     
     <item>
