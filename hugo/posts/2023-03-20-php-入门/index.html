@@ -1,0 +1,584 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PHP 入门 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="PHP 入门">
+<meta itemprop="description" content="学习一下上古语言，
+据说渗透测试用得到。"><meta itemprop="datePublished" content="2023-03-20T22:02:18+08:00" />
+<meta itemprop="dateModified" content="2023-03-20T22:02:18+08:00" />
+<meta itemprop="wordCount" content="1871">
+<meta itemprop="keywords" content="php," /><meta property="og:title" content="PHP 入门" />
+<meta property="og:description" content="学习一下上古语言，
+据说渗透测试用得到。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-03-20-php-%E5%85%A5%E9%97%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-20T22:02:18+08:00" />
+<meta property="article:modified_time" content="2023-03-20T22:02:18+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP 入门"/>
+<meta name="twitter:description" content="学习一下上古语言，
+据说渗透测试用得到。"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.12410705cfb325fd2112e4fb3ca809c46dd8a60834957c2c6f58612ceea6a1f0.css" integrity="sha256-EkEHBc&#43;zJf0hEuT7PKgJxG3Ypgg0lXwsb1hhLO6mofA=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.12410705cfb325fd2112e4fb3ca809c46dd8a60834957c2c6f58612ceea6a1f0.css" integrity="sha256-EkEHBc&#43;zJf0hEuT7PKgJxG3Ypgg0lXwsb1hhLO6mofA=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=PHP%20%e5%85%a5%e9%97%a8&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-03-20-php-%25E5%2585%25A5%25E9%2597%25A8%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-03-20-php-%25E5%2585%25A5%25E9%2597%25A8%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">PHP 入门</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">PHP 入门
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-03-20
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>4 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/php/" class="badge rounded-pill text-white bg-primary post-taxonomy">php</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#环境搭建">环境搭建</a></li>
+    <li><a href="#php介绍">php介绍</a></li>
+    <li><a href="#php的语法">php的语法</a>
+      <ul>
+        <li><a href="#php-数据类型">php 数据类型</a></li>
+        <li><a href="#php的类">php的类</a></li>
+        <li><a href="#php-的-预定义常量">php 的 预定义常量</a></li>
+        <li><a href="#php-的数字">php 的数字</a></li>
+        <li><a href="#php的字符串">php的字符串</a></li>
+        <li><a href="#循环">循环</a></li>
+      </ul>
+    </li>
+    <li><a href="#php特有的">php特有的</a>
+      <ul>
+        <li><a href="#抑制符">抑制符</a></li>
+        <li><a href="#static关键字">static关键字:</a></li>
+        <li><a href="#php的常量">php的常量</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>学习一下上古语言，
+据说渗透测试用得到。</p>
+<h2 id="环境搭建">环境搭建</h2>
+<p>环境搭建推荐用这个：
+<a href="https://www.xp.cn" target="_blank" rel="noopener noreferrer">php study(一件配环境)</a>
+ ，这个东西支持macos，windows，linux，还有php的版本管理，很方便。</p>
+<p>写代码的话就vscode吧，简单写点不用复杂的ide。</p>
+<blockquote>
+<p>修改了php代码，网页没有实时效果的话，要在phpstudy环境中关闭”缓存插件“</p>
+<p>选择apache 和 nginx 做中间件效果都差不多。</p>
+</blockquote>
+<h2 id="php介绍">php介绍</h2>
+<p>PHP（全称：PHP：Hypertext Preprocessor，即&quot;PHP：超文本预处理器&quot;）是一种通用开源脚本语言。
+在一个php文件中可以包括以下内容：
+	PHP 文件可包含文本、HTML、JavaScript代码和 PHP 代码
+	PHP 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器
+	PHP 文件的默认文件扩展名是 &ldquo;.php&rdquo;
+php的使用：</p>
+<ol>
+<li>PHP 可以生成动态页面内容</li>
+<li>PHP 可以创建、打开、读取、写入、关闭服务器上的文件</li>
+<li>PHP 可以收集表单数据</li>
+<li>PHP 可以发送和接收 cookies</li>
+<li>PHP 可以添加、删除、修改您的数据库中的数据</li>
+<li>PHP 可以限制用户访问您的网站上的一些页面</li>
+<li>PHP 可以加密数据</li>
+</ol>
+<h2 id="php的语法">php的语法</h2>
+<p>后面的<code>?&gt;</code>据说可以不用写。
+php每行结束都要加<code>;</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">your</span> <span class="nx">code</span> <span class="nx">here</span> <span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><p>php的变量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$x</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nv">$y</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nv">$z</span><span class="o">=</span><span class="nv">$x</span><span class="o">+</span><span class="nv">$y</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">echo</span> <span class="nv">$z</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><h3 id="php-数据类型">php 数据类型</h3>
+<p>php中的数据类型有以下几种：
+（变量前面的<code>$</code>符号是必须的）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> 
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;字符串类型&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">$b</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span><span class="c1">//整形
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span><span class="nv">$c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.1415</span><span class="p">;</span><span class="c1">//浮点型
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span><span class="nv">$d</span> <span class="o">=</span> <span class="mf">8E-3</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nv">$e</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span><span class="c1">//boolean类型
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"></span><span class="nv">$f</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">,</span><span class="s2">&#34;B&#34;</span><span class="p">,</span><span class="s2">&#34;C&#34;</span><span class="p">);</span><span class="c1">//数组类型
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="nv">$g</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span><span class="c1">//NULL
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"></span><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$b</span><span class="p">);</span><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$d</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$f</span><span class="p">);</span><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$o</span><span class="p">);</span><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$g</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><h3 id="php的类">php的类</h3>
+<p>(<code>-&gt;</code> 相当于 其他语言的 <code>.</code>)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">class</span> <span class="nc">obj</span><span class="p">{</span><span class="c1">//php对象的声明
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"></span>    <span class="k">var</span> <span class="nv">$num</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="k">function</span> <span class="nf">name</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nv">$o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">obj</span><span class="p">();</span><span class="c1">//对象实例化类型
+</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1"></span><span class="nv">$o</span><span class="o">-&gt;</span><span class="na">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="c1">//对象的属性赋值
+</span></span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c1"></span><span class="nv">$o</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">();</span><span class="c1">//对象的方法调用
+</span></span></span></code></pre></div><h3 id="php-的-预定义常量">php 的 预定义常量</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">echo</span> <span class="no">__FILE__</span><span class="p">;</span><span class="c1">// D:\phpstudy_pro\WWW\k.co\1.php
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">echo</span> <span class="no">__LINE__</span><span class="p">;</span><span class="c1">// 3(当前代码所在行的行号)
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">echo</span> <span class="k">PHP_VERSION</span><span class="p">;</span><span class="c1">// 7.2.10
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">echo</span> <span class="k">PHP_OS</span><span class="p">;</span> <span class="c1">//WINNT Linux Darwin
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">echo</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">;</span><span class="c1">// win\  lin/
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"></span><span class="nv">$mydir</span> <span class="o">=</span> <span class="s1">&#39;path&#39;</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span> <span class="o">.</span> <span class="s1">&#39;to&#39;</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span> <span class="o">.</span> <span class="s1">&#39;my&#39;</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span> <span class="o">.</span> <span class="s1">&#39;directory&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="k">echo</span> <span class="nv">$mydir</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><h3 id="php-的数字">php 的数字</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$a</span> <span class="o">=</span> <span class="mi">120</span> <span class="c1">//十进制
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"></span><span class="nv">$a</span> <span class="o">=</span> <span class="mi">0</span><span class="nx">b110</span> <span class="c1">//二进制
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"></span><span class="nv">$a</span> <span class="o">=</span> <span class="mo">0120</span> 	<span class="c1">//八进制
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span><span class="nv">$a</span> <span class="o">=</span> <span class="mh">0x120</span>	<span class="c1">//十六进制
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1">// 使用echo输出时。默认输出为十进制
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"></span><span class="nx">decbin</span><span class="p">()</span> <span class="c1">// 十进制转二进制
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span><span class="nx">decoct</span><span class="p">()</span> <span class="c1">// 十进制转八进制
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span><span class="nx">dechex</span><span class="p">()</span> <span class="c1">// 十进制转十六进制
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nx">bindec</span><span class="p">()</span> <span class="c1">// 二进制转十进制
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"></span><span class="nx">bin2hex</span><span class="p">()</span> <span class="c1">//二进制转十六进制    
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="nx">octdec</span><span class="p">()</span> <span class="c1">// 八进制转十进制
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c1"></span><span class="nx">hexdec</span><span class="p">()</span> <span class="c1">// 十六进制转十进制
+</span></span></span></code></pre></div><h3 id="php的字符串">php的字符串</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">echo</span> <span class="nv">$str</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">echo</span> <span class="nv">$str</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">echo</span> <span class="nx">strlen</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span><span class="c1">//字符串长度
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1">//indexof
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="nx">strpos</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="s2">&#34;World&#34;</span><span class="p">);</span><span class="c1">//字符串中的位置
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c1">//split
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c1"></span><span class="nv">$arr</span> <span class="o">=</span> <span class="nx">explode</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="nx">print_r</span><span class="p">(</span><span class="nv">$arr</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1">//str1 + str2
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="nv">$str</span><span class="o">.</span><span class="s2">&#34; love &#34;</span><span class="o">.</span><span class="nv">$str</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;love </span><span class="si">$str</span><span class="s2">&#34;</span><span class="p">;</span><span class="c1">//变量解析
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="k">echo</span> <span class="s1">&#39;love $str&#39;</span><span class="p">;</span><span class="c1">//变量不解析
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c1">//split
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="c1"></span><span class="nv">$arr</span> <span class="o">=</span> <span class="nx">explode</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="nx">print_r</span><span class="p">(</span><span class="nv">$arr</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="c1">//substr
+</span></span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">strpos</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="s2">&#34;orld&#34;</span><span class="p">));</span><span class="c1">//Hello W
+</span></span></span></code></pre></div><h4 id="字符串-常用的函数">字符串 常用的函数</h4>
+<p>strlen()：此函数用于返回字符串的长度。例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="nx">strlen</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span> <span class="c1">// 输出 11
+</span></span></span></code></pre></div><p>strpos()：此函数在字符串中查找第一次出现指定字符或字符串的位置。例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="nx">strpos</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="s2">&#34;World&#34;</span><span class="p">);</span> <span class="c1">// 输出 6
+</span></span></span></code></pre></div><p>substr()：此函数返回字符串的子串。例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// 输出 Hello
+</span></span></span></code></pre></div><p>str_replace()：此函数用于替换字符串中的某些字符。例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="nx">str_replace</span><span class="p">(</span><span class="s2">&#34;World&#34;</span><span class="p">,</span> <span class="s2">&#34;PHP&#34;</span><span class="p">,</span> <span class="nv">$str</span><span class="p">);</span> <span class="c1">// 输出 Hello PHP
+</span></span></span></code></pre></div><h4 id="加密函数">加密函数</h4>
+<p>好的，下面举例说明一下这几种加密函数的用法：</p>
+<p>md5()函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$encrypted_str</span> <span class="o">=</span> <span class="nx">md5</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">echo</span> <span class="nv">$encrypted_str</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1">// 输出结果：b10a8db164e0754105b7a99be72e3fe5
+</span></span></span></code></pre></div><p>sha1()函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$encrypted_str</span> <span class="o">=</span> <span class="nx">sha1</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">echo</span> <span class="nv">$encrypted_str</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1">// 输出结果：0a4d55a8d778e5022fab701977c5d840bbc486d0
+</span></span></span></code></pre></div><p>base64_encode()函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$encoded_str</span> <span class="o">=</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">echo</span> <span class="nv">$encoded_str</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1">// 输出结果：SGVsbG8gV29ybGQh
+</span></span></span></code></pre></div><p>password_hash()和password_verify()函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$password</span> <span class="o">=</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nv">$hashed_password</span> <span class="o">=</span> <span class="nx">password_hash</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">echo</span> <span class="nv">$hashed_password</span><span class="p">;</span> <span class="c1">// 输出生成的哈希值
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1">// 验证输入密码是否与哈希值匹配
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nv">$input_password</span> <span class="o">=</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">password_verify</span><span class="p">(</span><span class="nv">$input_password</span><span class="p">,</span> <span class="nv">$hashed_password</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;Password is valid!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;Invalid password.&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>关于对称加密算法和非对称加密算法，它们的用法相对复杂，需要使用特定的算法和密钥进行加密和解密。</p>
+<h3 id="循环">循环</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nx">strlen</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">echo</span> <span class="nv">$i</span><span class="o">.</span><span class="s2">&#34;:&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="k">echo</span> <span class="nv">$str</span><span class="p">[</span><span class="nv">$i</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="php特有的">php特有的</h2>
+<h3 id="抑制符">抑制符</h3>
+<p>@ 符号是一个错误控制运算符，可以用来抑制代码中的错误或警告信息。使用 @ 符号会使 PHP 引擎忽略后面的表达式中的任何错误提示，并且不会将这些错误信息输出到浏览器端。</p>
+<p>@ 符号并不能完全屏蔽所有的错误提示，一些致命错误依然会导致 PHP 引擎停止执行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="o">@</span><span class="k">print</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><h3 id="static关键字">static关键字:</h3>
+<p>static关键字用于函数内部，你可以在函数内部定义全局变量。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">function</span> <span class="nf">myTest</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="k">static</span> <span class="nv">$x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">echo</span> <span class="nv">$x</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="nv">$x</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nx">myTest</span><span class="p">();</span><span class="c1">//0
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span><span class="nx">myTest</span><span class="p">();</span><span class="c1">//1
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span><span class="nx">myTest</span><span class="p">();</span><span class="c1">//2
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"></span><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><h3 id="php的常量">php的常量</h3>
+<p>php 使用 define() 函数来定义常量。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nx">define</span><span class="p">(</span><span class="s2">&#34;GREETING&#34;</span><span class="p">,</span> <span class="s2">&#34;欢迎访问 k.com&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">function</span> <span class="nf">myTest</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="nv">$GREETING</span> <span class="o">=</span> <span class="s2">&#34;Hello world!&#34;</span><span class="p">;</span><span class="c1">//修改失败
+</span></span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1"></span>    <span class="k">echo</span> <span class="nx">GREETING</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="nx">myTest</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div></div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://cornradio.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/">Javascript 入门-for Pentest
+</a>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/">Javascript 入门-for Pentest
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/">Javascript 入门-DOM
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Javascript 入门-常用操作
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/">Csharp 使用 Epplus 读写 Excel表格
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/">Python_beautiful_soup
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="corn radio" src="https://cornradio.github.io/hugo/images/profile.webp" loading="lazy"
+   width="192" height="192"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">corn radio</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>玉米电台</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>我在这里</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-php-%E5%85%A5%E9%97%A8/">PHP 入门
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/">Javascript 入门-for Pentest
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/">Javascript 入门-DOM
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Javascript 入门-常用操作
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/">Csharp 使用 Epplus 读写 Excel表格
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/js/" class="badge bg-primary text-white rounded post-taxonomy" title="js">
+            js
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.4d59473bc4ae78c7c53278cd61e647d0a1f3ae978dd6aabf2b4c63639d99ebbe.js" integrity="sha256-TVlHO8SueMfFMnjNYeZH0KHzrpeN1qq/K0xjY52Z674=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+</body>
+</html>

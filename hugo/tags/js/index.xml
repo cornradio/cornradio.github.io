@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>js on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/js/</link>
+    <description>Recent content in js on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Mon, 20 Mar 2023 21:53:22 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript 入门-for Pentest</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/</link>
+      <pubDate>Mon, 20 Mar 2023 21:53:22 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/</guid>
+      <description>&lt;p&gt;js基础（for pentest） 真的很基础。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Javascript 入门-DOM</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/</link>
+      <pubDate>Mon, 20 Mar 2023 21:50:30 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/</guid>
+      <description>&lt;p&gt;dom 元素的定位、修改、创建、删除、指定位置插入等操作&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Javascript 入门-常用操作</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 20 Mar 2023 21:49:07 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <description>&lt;p&gt;console.log 、 alert 、 prompt 、 confirm 、 location.href 、 setinterval 、 settimeout 、addEventListener&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

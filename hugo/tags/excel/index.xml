@@ -6,14 +6,14 @@
     <description>Recent content in excel on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Fri, 06 Jan 2023 16:33:34 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Mar 2023 16:33:34 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/excel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>csharp 使用 Epplus 读写 excel表格</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</link>
-      <pubDate>Fri, 06 Jan 2023 16:33:34 +0800</pubDate>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</link>
+      <pubDate>Mon, 20 Mar 2023 16:33:34 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-05epplus/</guid>
-      <description>epplus是一个读写xlsx的csharp库。官网教程 https://epplussoftware.com/zh/Developers/ 官方教程中使用和很多using 我不喜欢多层级括号，using不使用多层级括号参考：</description>
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</guid>
+      <description>epplus是一个读写excel表格的 csharp库。官网教程 官方教程中使用 using 语法，我不喜欢多层级括号，using不使用多层级括号参考 ⭐️t</description>
     </item>
     
     <item>
