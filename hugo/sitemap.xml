@@ -3,18 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cornradio.github.io/hugo/</loc>
-    <lastmod>2023-03-20T22:02:18+08:00</lastmod>
+    <lastmod>2023-03-22T09:42:16+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/pip/</loc>
+    <lastmod>2023-03-22T09:42:16+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/</loc>
+    <lastmod>2023-03-22T09:42:16+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/python/</loc>
+    <lastmod>2023-03-22T09:42:16+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/</loc>
+    <lastmod>2023-03-22T09:42:16+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</loc>
+    <lastmod>2023-03-22T09:42:16+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/tags/php/</loc>
     <lastmod>2023-03-20T22:02:18+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-03-20-php-%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2023-03-20T22:02:18+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/posts/</loc>
-    <lastmod>2023-03-20T22:02:18+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/</loc>
     <lastmod>2023-03-20T22:02:18+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/</loc>
@@ -61,9 +70,6 @@
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-02-23macos_essencials2/</loc>
     <lastmod>2023-02-23T20:03:07+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/python/</loc>
-    <lastmod>2023-02-18T22:27:09+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</loc>
     <lastmod>2023-02-18T22:27:09+08:00</lastmod>

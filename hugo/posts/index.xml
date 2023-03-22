@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 20 Mar 2023 22:02:18 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 09:42:16 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何一键安装和更新pip包</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</link>
+      <pubDate>Wed, 22 Mar 2023 09:42:16 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</guid>
+      <description>&lt;p&gt;在把自己的项目分享给别人的时候，对方需要安装一些依赖包，但是每次等待报错然后手动 pip install 太麻烦了（尤其是包比较多的情况下），可以使用这种方式来一键安装和更新pip包。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>PHP 入门</title>
       <link>https://cornradio.github.io/hugo/posts/2023-03-20-php-%E5%85%A5%E9%97%A8/</link>
