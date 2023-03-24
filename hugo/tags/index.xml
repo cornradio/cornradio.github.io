@@ -6,7 +6,25 @@
     <description>Recent content in 标签 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Wed, 22 Mar 2023 09:42:16 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Mar 2023 14:33:32 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>speed test</title>
+      <link>https://cornradio.github.io/hugo/tags/speed-test/</link>
+      <pubDate>Fri, 24 Mar 2023 14:33:32 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/speed-test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://cornradio.github.io/hugo/tags/php/</link>
+      <pubDate>Thu, 23 Mar 2023 14:02:18 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/php/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>pip</title>
       <link>https://cornradio.github.io/hugo/tags/pip/</link>
@@ -22,15 +40,6 @@
       <pubDate>Wed, 22 Mar 2023 09:42:16 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>php</title>
-      <link>https://cornradio.github.io/hugo/tags/php/</link>
-      <pubDate>Mon, 20 Mar 2023 22:02:18 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/tags/php/</guid>
       <description></description>
     </item>
     

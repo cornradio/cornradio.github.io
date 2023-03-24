@@ -1,0 +1,891 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PHP - 2  - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="PHP - 2 ">
+<meta itemprop="description" content="学习一下上古语言，
+据说渗透测试用得到。"><meta itemprop="datePublished" content="2023-03-23T14:02:18+08:00" />
+<meta itemprop="dateModified" content="2023-03-23T14:02:18+08:00" />
+<meta itemprop="wordCount" content="4381">
+<meta itemprop="keywords" content="php," /><meta property="og:title" content="PHP - 2 " />
+<meta property="og:description" content="学习一下上古语言，
+据说渗透测试用得到。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-03-20-php-2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-23T14:02:18+08:00" />
+<meta property="article:modified_time" content="2023-03-23T14:02:18+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP - 2 "/>
+<meta name="twitter:description" content="学习一下上古语言，
+据说渗透测试用得到。"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.12410705cfb325fd2112e4fb3ca809c46dd8a60834957c2c6f58612ceea6a1f0.css" integrity="sha256-EkEHBc&#43;zJf0hEuT7PKgJxG3Ypgg0lXwsb1hhLO6mofA=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.12410705cfb325fd2112e4fb3ca809c46dd8a60834957c2c6f58612ceea6a1f0.css" integrity="sha256-EkEHBc&#43;zJf0hEuT7PKgJxG3Ypgg0lXwsb1hhLO6mofA=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=PHP%20-%202%20&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-03-20-php-2%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-03-20-php-2%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">PHP - 2 </li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">PHP - 2 
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-03-23
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>9 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/php/" class="badge rounded-pill text-white bg-primary post-taxonomy">php</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#字符串加密函数">字符串加密函数</a></li>
+    <li><a href="#php正则表达式">php正则表达式</a>
+      <ul>
+        <li><a href="#preg_match_all-函数">preg_match_all() 函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#php文件操作">php文件操作</a>
+      <ul>
+        <li><a href="#读取文件">读取文件</a></li>
+        <li><a href="#写入文件">写入文件</a></li>
+        <li><a href="#复制删除重命名文件">复制、删除、重命名文件</a></li>
+        <li><a href="#其他常用文件操作函数">其他常用文件操作函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#php超级全局变量---以及表单">PHP超级全局变量 - 以及表单</a>
+      <ul>
+        <li><a href="#print_r函数">print_r函数：</a></li>
+        <li><a href="#-globals">* <code>$GLOBALS</code>：</a></li>
+        <li><a href="#-_server">* <code>$_SERVER</code>：</a></li>
+        <li><a href="#-_request-_post-_get">* <code>$_REQUEST</code> 、<code>$_POST</code> 、<code>$_GET</code></a></li>
+        <li><a href="#-_files-">* <code>$_FILES</code> ：</a></li>
+        <li><a href="#-_env-">* <code>$_ENV</code> ：</a></li>
+        <li><a href="#-_cookie-">* <code>$_COOKIE</code> ：</a></li>
+        <li><a href="#-_session-">* <code>$_SESSION</code> ：</a></li>
+      </ul>
+    </li>
+    <li><a href="#php-目录操作">php 目录操作</a>
+      <ul>
+        <li><a href="#创建目录mkdir">创建目录mkdir()</a></li>
+        <li><a href="#删除目录rmdir">删除目录rmdir()</a></li>
+        <li><a href="#遍历目录">遍历目录</a></li>
+        <li><a href="#demo-php文件浏览器">demo php文件浏览器：</a></li>
+      </ul>
+    </li>
+    <li><a href="#php链接mysql数据库">php链接mysql数据库</a>
+      <ul>
+        <li><a href="#面向过程方式">面向过程方式</a></li>
+        <li><a href="#面向对象方式">面向对象方式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>学习一下上古语言，
+据说渗透测试用得到。</p>
+<h2 id="字符串加密函数">字符串加密函数</h2>
+<p>好的，下面举例说明一下这几种加密函数的用法：</p>
+<p>md5()函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$encrypted_str</span> <span class="o">=</span> <span class="nx">md5</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">echo</span> <span class="nv">$encrypted_str</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1">// 输出结果：b10a8db164e0754105b7a99be72e3fe5
+</span></span></span></code></pre></div><p>sha1()函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$encrypted_str</span> <span class="o">=</span> <span class="nx">sha1</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">echo</span> <span class="nv">$encrypted_str</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1">// 输出结果：0a4d55a8d778e5022fab701977c5d840bbc486d0
+</span></span></span></code></pre></div><p>base64_encode()函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$encoded_str</span> <span class="o">=</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">echo</span> <span class="nv">$encoded_str</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1">// 输出结果：SGVsbG8gV29ybGQh
+</span></span></span></code></pre></div><p>password_hash()和password_verify()函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$password</span> <span class="o">=</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nv">$hashed_password</span> <span class="o">=</span> <span class="nx">password_hash</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">echo</span> <span class="nv">$hashed_password</span><span class="p">;</span> <span class="c1">// 输出生成的哈希值
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1">// 验证输入密码是否与哈希值匹配
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nv">$input_password</span> <span class="o">=</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">password_verify</span><span class="p">(</span><span class="nv">$input_password</span><span class="p">,</span> <span class="nv">$hashed_password</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;Password is valid!&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;Invalid password.&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>关于对称加密算法和非对称加密算法，它们的用法相对复杂，需要使用特定的算法和密钥进行加密和解密。</p>
+<h2 id="php正则表达式">php正则表达式</h2>
+<p>//preg_match_all() 函数返回所有匹配的数组
+//preg_match() 函数返回第一个匹配的数组
+//preg_replace() 函数返回替换后的字符串
+//preg_split() 函数返回分割后的数组
+//preg_grep() 函数返回匹配的数组
+//preg_quote() 函数返回转义后的字符串
+//preg_last_error() 函数返回最后一个错误代码
+//preg_filter() 函数返回过滤后的数组</p>
+<p>//preg_match_all() 函数返回所有匹配的数组
+//preg_match() 函数返回第一个匹配的数组
+//preg_replace() 函数返回替换后的字符串
+//preg_split() 函数返回分割后的数组
+//preg_grep() 函数返回匹配的数组
+//preg_quote() 函数返回转义后的字符串
+//preg_last_error() 函数返回最后一个错误代码
+//preg_filter() 函数返回过滤后的数组</p>
+<h3 id="preg_match_all-函数">preg_match_all() 函数</h3>
+<p>在双斜杠之间的内容是正则表达式模式，</p>
+<ul>
+<li>i 修饰符用于执行不区分大小写的搜索。</li>
+<li>g 用于执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。</li>
+<li>括号是分组标记，用于在匹配中捕获子模式。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&#34;Apples and bananas.&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nv">$pattern</span> <span class="o">=</span> <span class="s2">&#34;/ba(na){2}/i&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nx">preg_match_all</span><span class="p">(</span><span class="nv">$pattern</span><span class="p">,</span> <span class="nv">$str</span><span class="p">,</span> <span class="nv">$matches</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nx">print_r</span><span class="p">(</span><span class="nv">$matches</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><h2 id="php文件操作">php文件操作</h2>
+<h3 id="读取文件">读取文件</h3>
+<h4 id="php-打开并读取文件">php 打开并读取文件</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$fp</span> <span class="o">=</span> <span class="nx">fopen</span><span class="p">(</span><span class="s2">&#34;test.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="nx">fread</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="nx">filesize</span><span class="p">(</span><span class="s2">&#34;test.txt&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nx">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span>
+</span></span></code></pre></div><h4 id="单行读取文件---fgets">单行读取文件 - fgets()</h4>
+<p>可以接受两个参数，文件指针，最大长度，如果不指定最大长度，将读取整行。</p>
+<blockquote>
+<p>下面例子中</p>
+<ul>
+<li>使用 fgets() 函数来读取文件中的单行</li>
+<li>使用 feof() 函数来检查是否已到达文件末尾</li>
+<li>每一行都采用 md5() 函数进行加密，然后输出到浏览器中。</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$fp</span> <span class="o">=</span> <span class="nx">fopen</span><span class="p">(</span><span class="s2">&#34;test.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="nx">feof</span><span class="p">(</span><span class="nv">$fp</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="c1">// echo fgets($fp). &#34;&lt;br /&gt;&#34;;
+</span></span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1"></span>    <span class="k">echo</span> <span class="nx">md5</span><span class="p">(</span><span class="nx">fgets</span><span class="p">(</span><span class="nv">$fp</span><span class="p">))</span><span class="o">.</span> <span class="s2">&#34;&lt;br /&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="nx">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="写入文件">写入文件</h3>
+<h4 id="php-打开并写入文件">php 打开并写入文件</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$fp</span> <span class="o">=</span> <span class="nx">fopen</span><span class="p">(</span><span class="s2">&#34;test.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nx">fwrite</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="s2">&#34;Hello World. Testing!</span><span class="se">\r\n</span><span class="s2">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nx">fwrite</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="s2">&#34;Hello World. Testing!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nx">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;写入成功&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="复制删除重命名文件">复制、删除、重命名文件</h3>
+<h4 id="复制文件---copy">复制文件 - copy()</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">copy</span><span class="p">(</span><span class="s2">&#34;test.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;test2.txt&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;复制成功&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h4 id="删除文件---unlink">删除文件 - unlink()</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">unlink</span><span class="p">(</span><span class="s2">&#34;test2.txt&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;删除成功&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h4 id="重命名文件---rename">重命名文件 - rename()</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">rename</span><span class="p">(</span><span class="s2">&#34;test.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;test3.txt&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;重命名成功&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="其他常用文件操作函数">其他常用文件操作函数</h3>
+<p>is_readable、is_writable、is_executable</p>
+<p>filectime、filemtime、fileatime
+（create、modify、access）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$file</span> <span class="o">=</span> <span class="s1">&#39;test.txt&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nx">file_exists</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s1">&#39;文件不存在，程序退出！&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; 文件大小是：&#39;</span><span class="o">.</span><span class="nx">filesize</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39; 个字节&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">is_readable</span><span class="p">(</span><span class="nv">$file</span><span class="p">)){</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; 文件是可读的。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; 文件是不可读的。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">is_writable</span><span class="p">(</span><span class="nv">$file</span><span class="p">)){</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; 文件是可写的。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; 文件是不可写的。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">is_executable</span><span class="p">(</span><span class="nv">$file</span><span class="p">)){</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; 文件是可执行的。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; 文件是不可执行的。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="k">echo</span> <span class="s1">&#39;文件的创建时间是：&#39;</span><span class="o">.</span><span class="nx">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">,</span><span class="nx">filectime</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span><span class="o">.</span><span class="s1">&#39;。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="k">echo</span> <span class="s1">&#39;文件的修改时间是：&#39;</span><span class="o">.</span><span class="nx">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">,</span><span class="nx">filemtime</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span><span class="o">.</span><span class="s1">&#39;。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">echo</span> <span class="s1">&#39;文件上次的访问时间是：&#39;</span><span class="o">.</span><span class="nx">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">,</span><span class="nx">fileatime</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span><span class="o">.</span><span class="s1">&#39;。&lt;br&gt;&#39;</span><span class="p">;</span>
+</span></span></code></pre></div><h2 id="php超级全局变量---以及表单">PHP超级全局变量 - 以及表单</h2>
+<h3 id="print_r函数">print_r函数：</h3>
+<p>print_r 函数是 PHP 中一个功能强大的函数，可用于打印变量的易读信息。它对于调试代码、理解复杂的数据结构以及查找代码中的错误非常有用。</p>
+<p>如果要显示带有换行的内容，需要在输出的 HTML 代码中添加 <code>&lt;pre&gt;</code> 标签</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1">// 定义一个对象
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Person</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="k">public</span> <span class="nv">$age</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">public</span> <span class="nv">$email</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="p">,</span> <span class="nv">$email</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">age</span> <span class="o">=</span> <span class="nv">$age</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">      <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  
+</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="c1">// 创建一个 Person 对象并打印信息
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"></span>  <span class="nv">$person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;john@example.com&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="nx">print_r</span><span class="p">(</span><span class="nv">$person</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl">  <span class="cp">?&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="err">&lt;pre/&gt;
+</span></span></span></code></pre></div><ul>
+<li>PHP超级全局变量主要有：</li>
+</ul>
+<h3 id="-globals">* <code>$GLOBALS</code>：</h3>
+<p>该变量用于引用脚本中的全局变量，在函数或方法中使用时非常有用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nv">$var</span> <span class="o">=</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nx">print_r</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="err">&lt;pre/&gt;
+</span></span></span></code></pre></div><h3 id="-_server">* <code>$_SERVER</code>：</h3>
+<p>该变量包含与当前运行 PHP 的服务器相关的信息，例如 URL、文件路径、HTTP 头等。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">Array
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">(
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    [USER] =&gt; kasusa
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    [COMMAND_MODE] =&gt; unix2003
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    [__CFBundleIdentifier] =&gt; com.yourcompany.phpstudy-pro
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    [PATH] =&gt; /usr/bin:/bin:/usr/sbin:/sbin
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    [LOGNAME] =&gt; kasusa
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    [SSH_AUTH_SOCK] =&gt; /private/tmp/com.apple.launchd.hCvBqjuPFw/Listeners
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    [HOME] =&gt; /Users/kasusa
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    [SHELL] =&gt; /bin/zsh
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    [TMPDIR] =&gt; /var/folders/yr/zk0mghjs43l7b8qz_4mbdy480000gn/T/
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    [__CF_USER_TEXT_ENCODING] =&gt; 0x1F5:0x19:0x34
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    [XPC_SERVICE_NAME] =&gt; 0
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    [XPC_FLAGS] =&gt; 0x0
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    [HTTP_CONNECTION] =&gt; keep-alive
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    [HTTP_ACCEPT_ENCODING] =&gt; gzip, deflate
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    [HTTP_ACCEPT_LANGUAGE] =&gt; zh-CN,zh-Hans;q=0.9
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    [HTTP_USER_AGENT] =&gt; Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    [HTTP_ACCEPT] =&gt; text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    [HTTP_UPGRADE_INSECURE_REQUESTS] =&gt; 1
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    [HTTP_HOST] =&gt; localhost
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    [REDIRECT_STATUS] =&gt; 200
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    [SERVER_NAME] =&gt; localhost
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    [SERVER_PORT] =&gt; 80
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    [SERVER_ADDR] =&gt; 127.0.0.1
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    [REMOTE_PORT] =&gt; 49565
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    [REMOTE_ADDR] =&gt; 127.0.0.1
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    [SERVER_SOFTWARE] =&gt; nginx/1.16.1
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    [GATEWAY_INTERFACE] =&gt; CGI/1.1
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    [REQUEST_SCHEME] =&gt; http
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    [SERVER_PROTOCOL] =&gt; HTTP/1.1
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    [DOCUMENT_ROOT] =&gt; /Applications/phpstudy/WWW
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    [DOCUMENT_URI] =&gt; /1.php
+</span></span><span class="line"><span class="ln">34</span><span class="cl">    [REQUEST_URI] =&gt; /1.php
+</span></span><span class="line"><span class="ln">35</span><span class="cl">    [SCRIPT_NAME] =&gt; /1.php
+</span></span><span class="line"><span class="ln">36</span><span class="cl">    [CONTENT_LENGTH] =&gt; 
+</span></span><span class="line"><span class="ln">37</span><span class="cl">    [CONTENT_TYPE] =&gt; 
+</span></span><span class="line"><span class="ln">38</span><span class="cl">    [REQUEST_METHOD] =&gt; GET
+</span></span><span class="line"><span class="ln">39</span><span class="cl">    [QUERY_STRING] =&gt; 
+</span></span><span class="line"><span class="ln">40</span><span class="cl">    [PATH_TRANSLATED] =&gt; /Applications/phpstudy/WWW
+</span></span><span class="line"><span class="ln">41</span><span class="cl">    [PATH_INFO] =&gt; 
+</span></span><span class="line"><span class="ln">42</span><span class="cl">    [SCRIPT_FILENAME] =&gt; /Applications/phpstudy/WWW/1.php
+</span></span><span class="line"><span class="ln">43</span><span class="cl">    [FCGI_ROLE] =&gt; RESPONDER
+</span></span><span class="line"><span class="ln">44</span><span class="cl">    [PHP_SELF] =&gt; /1.php
+</span></span><span class="line"><span class="ln">45</span><span class="cl">    [REQUEST_TIME_FLOAT] =&gt; 1679464788.7792
+</span></span><span class="line"><span class="ln">46</span><span class="cl">    [REQUEST_TIME] =&gt; 1679464788
+</span></span><span class="line"><span class="ln">47</span><span class="cl">)
+</span></span></code></pre></div><h3 id="-_request-_post-_get">* <code>$_REQUEST</code> 、<code>$_POST</code> 、<code>$_GET</code></h3>
+<p>该变量包含了从 GET、POST 和 COOKIE 中收集到的用户提交的数据。它可以轻松地访问所有 HTTP 请求变量。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&#34;1.php&#34;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&#34;post&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">post</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;name&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;John&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;age&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;30&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;submit&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;Submit&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="o">&lt;/</span><span class="nx">form</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&#34;1.php&#34;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&#34;get&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">get</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;name&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;John&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;age&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;30&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;submit&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;Submit&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="o">&lt;/</span><span class="nx">form</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;_REQUEST:&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="nx">print_r</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;_POST:&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="nx">print_r</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;_GET:&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="nx">print_r</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="k">echo</span> <span class="s1">&#39;Hello &#39;</span> <span class="o">.</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39; you are &#39;</span> <span class="o">.</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39; years old.&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="cp">?&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="err">&lt;/pre&gt;
+</span></span></span></code></pre></div><blockquote>
+<p>Post 和 Get 是 HTTP 协议中的两种常见请求方法，用于向服务器发送请求并获取响应。</p>
+<p>Get 请求通常用于从服务器获取资源，如 Web 页面、图片、视频等。它通过 &gt;URL 参数将数据传递给服务器，因此在浏览器地址栏中可以看到请求的参数。</p>
+<p>Post 请求则通常用于将数据发送给服务器，比如提交表单数据、上传文件等。
+Post 请求将数据包含在请求体中，并且不会在 URL 中暴露数据，因此更安全。</p>
+<p>总体来说，Get 和 Post 的主要区别在于数据传输方式和用途。Get 请求适合请求少量数据，Post 请求适合传输大量数据和敏感数据。</p>
+</blockquote>
+<h3 id="-_files-">* <code>$_FILES</code> ：</h3>
+<p>该变量用于上传文件类型的表单数据。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&#34;1.php&#34;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&#34;post&#34;</span> <span class="nx">enctype</span><span class="o">=</span><span class="s2">&#34;multipart/form-data&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">file</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;file&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;file&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;submit&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;Submit&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="o">&lt;/</span><span class="nx">form</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;文件名：&#34;</span><span class="o">.</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="nx">print_r</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="cp">?&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="err">&lt;/pre&gt;
+</span></span></span></code></pre></div><p>返回值示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">(
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    [file] =&gt; Array
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        (
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">            [name] =&gt; 52.jpg
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            [type] =&gt; image/jpeg
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">            [tmp_name] =&gt; /private/var/folders/yr/zk0mghjs43l7b8qz_4mbdy480000gn/T/phpzC0q0A
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            [error] =&gt; 0
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            [size] =&gt; 1032252
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        )
+</span></span><span class="line"><span class="ln">10</span><span class="cl">)
+</span></span></code></pre></div><ul>
+<li>$_FILES[&rsquo;name&rsquo;]：上传文件的原始名称。</li>
+<li>$_FILES[&rsquo;type&rsquo;]：上传文件的 MIME 类型。</li>
+<li>$_FILES[&lsquo;size&rsquo;]：上传文件的大小（以字节为单位）。</li>
+<li>$_FILES[&rsquo;tmp_name&rsquo;]：上传文件的临时存储路径，通常在服务器的临时目录中。</li>
+<li>$_FILES[&rsquo;error&rsquo;]：上传文件时可能发生的错误代码，例如文件过大或文件类型不支持等。如果没有发生错误，则该变量值为 0。</li>
+</ul>
+<h3 id="-_env-">* <code>$_ENV</code> ：</h3>
+<p>$_ENV 变量是在服务器端设置的，通常由操作系统或 Web 服务器配置文件中的设置传递给 PHP 的。</p>
+<p>在 Linux 系统中，你可以使用 export 命令来设置环境变量。例如，要将名为 API_KEY 的环境变量设置为一个 API 密钥值，可以执行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">export API_KEY=your_api_key_value
+</span></span></code></pre></div><p>在 Windows 系统中，可以通过控制面板的&quot;系统&quot;-&gt;&ldquo;高级系统设置&rdquo;-&gt;&ldquo;环境变量&quot;来设置环境变量。</p>
+<p>在 PHP 脚本中，你可以使用 $_ENV 数组来访问这些设置的变量。例如，要获取上面设置的 API 密钥，你可以使用以下代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">Copy</span> <span class="nx">Code</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">$apiKey</span> <span class="o">=</span> <span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;API_KEY&#39;</span><span class="p">];</span>
+</span></span></code></pre></div><p>需要注意的是，不同的 Web 服务器和操作系统可能有不同的方法来设置环境变量。</p>
+<h3 id="-_cookie-">* <code>$_COOKIE</code> ：</h3>
+<p>该变量可用于读取用户在浏览器中存储的 cookie 数据。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="c1">// do something with the cookie value
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"></span>    <span class="nx">print_r</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="-_session-">* <code>$_SESSION</code> ：</h3>
+<p>该变量可用于存储并访问会话数据，直到用户关闭浏览器为止。</p>
+<h2 id="php-目录操作">php 目录操作</h2>
+<h3 id="创建目录mkdir">创建目录mkdir()</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">mkdir</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;创建成功&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="删除目录rmdir">删除目录rmdir()</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">rmdir</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;删除成功&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="遍历目录">遍历目录</h3>
+<p><code>opendir</code> 打开目录
+<code>is_dir()</code> 判断是否是目录
+<code>readdir()</code> 读取目录
+<code>closedir()</code> 关闭目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$dir</span> <span class="o">=</span> <span class="nx">opendir</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">while</span><span class="p">(</span><span class="nv">$file</span> <span class="o">=</span> <span class="nx">readdir</span><span class="p">(</span><span class="nv">$dir</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nv">$fullpath</span> <span class="o">=</span> <span class="s2">&#34;/&#34;</span><span class="o">.</span><span class="nv">$file</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="c1">//输出是目录还是文件
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="nx">is_dir</span><span class="p">(</span><span class="nv">$fullpath</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;📁dir: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;file: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="c1">//输出文件名
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"></span>    <span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span> <span class="s2">&#34;&lt;br /&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nx">closedir</span><span class="p">(</span><span class="nv">$dir</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="demo-php文件浏览器">demo php文件浏览器：</h3>
+<p>我让chatgpt帮我写的</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">// 设置要浏览的目录路径
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"></span><span class="nv">$dir_path</span> <span class="o">=</span> <span class="s2">&#34;/&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1">// 如果有文件夹名称参数，更新要浏览的目录路径
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;folder&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nv">$folder_path</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;folder&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="c1">// 将相对路径转换成绝对路径
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span>    <span class="nv">$dir_path</span> <span class="o">.=</span> <span class="s2">&#34;/&#34;</span><span class="o">.</span> <span class="p">(</span><span class="nv">$folder_path</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span> <span class="o">?</span> <span class="s1">&#39;&#39;</span> <span class="o">:</span> <span class="nv">$folder_path</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1">// 遍历目录并获取文件名和大小
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"></span><span class="nv">$files</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$handle</span> <span class="o">=</span> <span class="nx">opendir</span><span class="p">(</span><span class="nv">$dir_path</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="k">false</span> <span class="o">!==</span> <span class="p">(</span><span class="nv">$entry</span> <span class="o">=</span> <span class="nx">readdir</span><span class="p">(</span><span class="nv">$handle</span><span class="p">)))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$entry</span> <span class="o">!=</span> <span class="s2">&#34;.&#34;</span> <span class="o">&amp;&amp;</span> <span class="nv">$entry</span> <span class="o">!=</span> <span class="s2">&#34;..&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="nv">$fullpath</span> <span class="o">=</span> <span class="nv">$dir_path</span> <span class="o">.</span> <span class="s2">&#34;/&#34;</span> <span class="o">.</span> <span class="nv">$entry</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">is_dir</span><span class="p">(</span><span class="nv">$fullpath</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">                <span class="nv">$files</span><span class="p">[]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">                    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$entry</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">                    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;dir&#39;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="p">);</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">                <span class="nv">$files</span><span class="p">[]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">                    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$entry</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">                    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="nx">pathinfo</span><span class="p">(</span><span class="nv">$fullpath</span><span class="p">,</span> <span class="nx">PATHINFO_EXTENSION</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">                <span class="p">);</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="nx">closedir</span><span class="p">(</span><span class="nv">$handle</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="c1">// 输出文件列表
+</span></span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="s2">&#34;&lt;ul&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;&lt;p&gt;pwd：</span><span class="si">$folder_path</span><span class="s2">&lt;/p&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$folder_path</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">    <span class="c1">// 添加返回上一级目录链接（除了根目录）
+</span></span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="c1"></span>    <span class="k">echo</span> <span class="s2">&#34;&lt;li&gt;&lt;a href=</span><span class="se">\&#34;</span><span class="s2">?folder=&#34;</span><span class="o">.</span><span class="nx">dirname</span><span class="p">(</span><span class="nv">$folder_path</span><span class="p">)</span><span class="o">.</span><span class="s2">&#34;</span><span class="se">\&#34;</span><span class="s2">&gt;..&lt;/a&gt;&lt;/li&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$files</span> <span class="k">as</span> <span class="nv">$file</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$file</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;dir&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;&lt;li&gt;&lt;a href=</span><span class="se">\&#34;</span><span class="s2">?folder=&#34;</span> <span class="o">.</span> <span class="nv">$folder_path</span> <span class="o">.</span> <span class="s2">&#34;/&#34;</span> <span class="o">.</span> <span class="nv">$file</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;</span><span class="se">\&#34;</span><span class="s2">&gt;&#34;</span> <span class="o">.</span> <span class="nv">$file</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;&lt;/a&gt;&lt;/li&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;&lt;li&gt;&#34;</span> <span class="o">.</span> <span class="nv">$file</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">.</span><span class="s2">&#34;&lt;/li&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl"><span class="k">echo</span> <span class="s2">&#34;&lt;/ul&gt;&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h2 id="php链接mysql数据库">php链接mysql数据库</h2>
+<p>mysqli 和 mysql</p>
+<ul>
+<li>从 PHP 5.5.0 版本开始，mysql 扩展已经废弃，从 PHP 7.0.0 版本开始，mysql 扩展已被移除</li>
+<li>mysqli 则是 MySQLi（MySQL improved）的缩写，是官方推荐的用于连接 MySQL 数据库的扩展</li>
+</ul>
+<h3 id="面向过程方式">面向过程方式</h3>
+<p>面向过程方式下，连接 MySQL 数据库通常使用 mysqli_connect() 函数，该函数的参数分别为数据库服务器的地址、用户名、密码和数据库名，返回一个 MySQL 连接标识符，如果连接失败则返回 FALSE。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nv">$host</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">$user</span> <span class="o">=</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">$password</span> <span class="o">=</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nv">$database</span> <span class="o">=</span> <span class="s2">&#34;mysql&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nv">$conn</span> <span class="o">=</span> <span class="nx">mysqli_connect</span><span class="p">(</span><span class="nv">$host</span><span class="p">,</span> <span class="nv">$user</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="nv">$database</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1">// 检查连接是否成功
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conn</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="k">die</span><span class="p">(</span><span class="s2">&#34;Connection failed: &#34;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">());</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1">// 执行查询语句
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c1"></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;SELECT User FROM user&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">echo</span> <span class="nv">$sql</span> <span class="o">.</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="nv">$result</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$conn</span><span class="p">,</span> <span class="nv">$sql</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1">// 处理查询结果
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c1"></span><span class="k">while</span> <span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nx">mysqli_fetch_assoc</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;User: &#34;</span> <span class="o">.</span> <span class="nv">$row</span><span class="p">[</span><span class="s2">&#34;User&#34;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="c1">// 关闭数据库连接
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="c1"></span><span class="nx">mysqli_close</span><span class="p">(</span><span class="nv">$conn</span><span class="p">);</span>
+</span></span></code></pre></div><blockquote>
+<p>使用 <code>fetch_assoc</code> 方法从 $result 结果集中获取一行数据，并将其赋值给 $row 变量，如果没有数据了，则返回 FALSE。(一行一行的获取，直到没有数据为止)</p>
+<p>如果使用 <code>fetch_row</code> 方法，则返回的是一个索引数组，如果使用 <code>fetch_array</code> 方法，则返回的是一个关联数组和索引数组的结合</p>
+</blockquote>
+<h3 id="面向对象方式">面向对象方式</h3>
+<p>面向对象方式下，连接 MySQL 数据库通常使用 mysqli 或者 PDO 类。这些类封装了数据库连接和操作，更加易于维护和扩展</p>
+<p>基本上就是，全都是调用属性和方法。</p>
+<h4 id="连接数据库查询">连接数据库，查询</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1">// 使用 mysqli_connect() 函数连接 MySQL 数据库
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"></span><span class="nv">$host</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">$user</span> <span class="o">=</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nv">$password</span> <span class="o">=</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nv">$database</span> <span class="o">=</span> <span class="s2">&#34;mysql&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$host</span><span class="p">,</span> <span class="nv">$user</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="nv">$database</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1">// 检查连接是否成功
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">die</span><span class="p">(</span><span class="s2">&#34;Connection failed: &#34;</span> <span class="o">.</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c1">// 执行查询语句
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c1"></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;SELECT * FROM user&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1">// 处理查询结果
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c1"></span><span class="k">while</span> <span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fetch_assoc</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;User: &#34;</span> <span class="o">.</span> <span class="nv">$row</span><span class="p">[</span><span class="s2">&#34;User&#34;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="c1">// 关闭数据库连接
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="c1"></span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+</span></span></code></pre></div><h4 id="建表">建表</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$host</span><span class="p">,</span> <span class="nv">$user</span><span class="p">,</span> <span class="nv">$password</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">select_db</span><span class="p">(</span><span class="nv">$database</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1">// 执行查询语句
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;CREATE TABLE MyGuests (
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="s2">    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="s2">    firstname VARCHAR(30) NOT NULL,
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="s2">    lastname VARCHAR(30) NOT NULL,
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="s2">    email VARCHAR(50),
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="s2">    reg_date TIMESTAMP
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="s2">    )&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+</span></span></code></pre></div><h4 id="与表单form联动">与表单form联动</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&#34;1.php&#34;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&#34;get&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nx">firstname</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;name&#34;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&#34;firstname&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;submit&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;search&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="o">&lt;/</span><span class="nx">form</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1">// 使用 mysqli_connect() 函数连接 MySQL 数据库
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span><span class="nv">$host</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="nv">$user</span> <span class="o">=</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nv">$password</span> <span class="o">=</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nv">$database</span> <span class="o">=</span> <span class="s2">&#34;test&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$host</span><span class="p">,</span> <span class="nv">$user</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="nv">$database</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c1">// 检查连接是否成功
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="k">die</span><span class="p">(</span><span class="s2">&#34;Connection failed: &#34;</span> <span class="o">.</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c1">//if isset post
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="c1">// 执行查询语句
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="c1"></span>    <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">select_db</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;select * from MyGuests where firstname = &#39;&#34;</span> <span class="o">.</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="s2">&#34;&#39;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;sql:&#34;</span><span class="o">.</span><span class="nv">$sql</span><span class="o">.</span><span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="nv">$result</span><span class="o">=</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="c1">// // 处理查询结果
+</span></span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="c1"></span>    <span class="k">while</span> <span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fetch_assoc</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">        <span class="c1">//id firstname lastname email
+</span></span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="c1"></span>        <span class="k">echo</span> <span class="s2">&#34;id: &#34;</span> <span class="o">.</span> <span class="nv">$row</span><span class="p">[</span><span class="s2">&#34;id&#34;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;; Name: &#34;</span> <span class="o">.</span> <span class="nv">$row</span><span class="p">[</span><span class="s2">&#34;firstname&#34;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34; &#34;</span> <span class="o">.</span> <span class="nv">$row</span><span class="p">[</span><span class="s2">&#34;lastname&#34;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="c1">// 关闭数据库连接
+</span></span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="c1"></span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+</span></span></code></pre></div></div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://cornradio.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/">如何一键安装和更新pip包
+</a>
+  </div><div class="post-nav post-next">
+    <a href="https://cornradio.github.io/hugo/posts/2023-03-20-php-1/">PHP - 1 
+</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-php-1/">PHP - 1 
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/">如何一键安装和更新pip包
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/">Javascript 入门-for Pentest
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/">Javascript 入门-DOM
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Javascript 入门-常用操作
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="corn radio" src="https://cornradio.github.io/hugo/images/profile.webp" loading="lazy"
+   width="192" height="192"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">corn radio</div><div class="profile-bio">真我不拘于形</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>玉米电台</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>我在这里</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-03-24-%E5%9B%BD%E5%86%85%E6%B5%8B%E9%80%9F%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/">国内测速网站推荐
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-php-1/">PHP - 1 
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-php-2/">PHP - 2 
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/">如何一键安装和更新pip包
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/">Javascript 入门-for Pentest
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/js/" class="badge bg-primary text-white rounded post-taxonomy" title="js">
+            js
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.4d59473bc4ae78c7c53278cd61e647d0a1f3ae978dd6aabf2b4c63639d99ebbe.js" integrity="sha256-TVlHO8SueMfFMnjNYeZH0KHzrpeN1qq/K0xjY52Z674=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
+</body>
+</html>

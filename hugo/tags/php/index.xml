@@ -6,13 +6,23 @@
     <description>Recent content in php on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 20 Mar 2023 22:02:18 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Mar 2023 14:02:18 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>PHP 入门</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20-php-%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Mon, 20 Mar 2023 22:02:18 +0800</pubDate>
+      <title>PHP - 1 </title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-20-php-1/</link>
+      <pubDate>Thu, 23 Mar 2023 14:02:18 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-php-%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-php-1/</guid>
+      <description>&lt;p&gt;学习一下上古语言，
+据说渗透测试用得到。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP - 2 </title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-20-php-2/</link>
+      <pubDate>Thu, 23 Mar 2023 14:02:18 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-php-2/</guid>
       <description>&lt;p&gt;学习一下上古语言，
 据说渗透测试用得到。&lt;/p&gt;</description>
     </item>
