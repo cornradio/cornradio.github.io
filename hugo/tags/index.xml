@@ -6,7 +6,52 @@
     <description>Recent content in 标签 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Fri, 24 Mar 2023 14:33:32 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Mar 2023 11:28:25 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iterm</title>
+      <link>https://cornradio.github.io/hugo/tags/iterm/</link>
+      <pubDate>Sat, 25 Mar 2023 11:28:25 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/iterm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://cornradio.github.io/hugo/tags/tools/</link>
+      <pubDate>Sat, 25 Mar 2023 11:28:25 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csharp</title>
+      <link>https://cornradio.github.io/hugo/tags/csharp/</link>
+      <pubDate>Sat, 25 Mar 2023 00:06:47 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dotnet</title>
+      <link>https://cornradio.github.io/hugo/tags/dotnet/</link>
+      <pubDate>Sat, 25 Mar 2023 00:06:47 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/dotnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://cornradio.github.io/hugo/tags/vscode/</link>
+      <pubDate>Sat, 25 Mar 2023 00:06:47 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>speed test</title>
       <link>https://cornradio.github.io/hugo/tags/speed-test/</link>
@@ -49,15 +94,6 @@
       <pubDate>Mon, 20 Mar 2023 21:53:22 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/tags/js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>csharp</title>
-      <link>https://cornradio.github.io/hugo/tags/csharp/</link>
-      <pubDate>Mon, 20 Mar 2023 16:33:34 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/tags/csharp/</guid>
       <description></description>
     </item>
     
@@ -166,15 +202,6 @@
       <pubDate>Fri, 06 Jan 2023 16:10:14 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/tags/regex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vscode</title>
-      <link>https://cornradio.github.io/hugo/tags/vscode/</link>
-      <pubDate>Thu, 05 Jan 2023 16:38:27 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/tags/vscode/</guid>
       <description></description>
     </item>
     

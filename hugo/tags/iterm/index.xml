@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iterm on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/iterm/</link>
+    <description>Recent content in iterm on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 25 Mar 2023 11:28:25 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/iterm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Iterm 调教（快捷键和主题）</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98/</link>
+      <pubDate>Sat, 25 Mar 2023 11:28:25 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98/</guid>
+      <description>&lt;p&gt;Iterm 是广为流传的mac超强终端模拟器，
+下载 &lt;a href=&#34;https://iterm2.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;iterm2&lt;/a&gt;
+｜
+&lt;a href=&#34;https://iterm2colorschemes.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;iterm2colorschemes&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;本篇主要包括 常用操作、分屏模式、快捷键配置、主题下载和安装&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
