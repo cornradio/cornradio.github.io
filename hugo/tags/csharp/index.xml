@@ -6,7 +6,18 @@
     <description>Recent content in csharp on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 25 Mar 2023 00:06:47 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Mar 2023 11:28:25 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何拷贝一个对象</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Sun, 26 Mar 2023 11:28:25 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</guid>
+      <description>&lt;p&gt;这是我工作中遇到的一个bug，困扰了我一个下午。&lt;/p&gt;
+&lt;p&gt;但是我会用一个好理解的例子来说明。&lt;/p&gt;
+&lt;p&gt;应该在所有面向对象编程语言中是通用的，这是关于”克隆一个实体“的问题。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>如何使用vscode新建一个donet（csharp）项目</title>
       <link>https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</link>

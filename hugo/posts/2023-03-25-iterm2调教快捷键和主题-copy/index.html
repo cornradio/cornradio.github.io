@@ -1,0 +1,496 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iterm 调教（快捷键和主题） - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="Iterm 调教（快捷键和主题）">
+<meta itemprop="description" content="Iterm 是广为流传的mac超强终端模拟器，
+下载 iterm2
+｜
+iterm2colorschemes
+
+本篇主要包括 常用操作、分屏模式、快捷键配置、主题下载和安装"><meta itemprop="datePublished" content="2023-03-25T11:28:25+08:00" />
+<meta itemprop="dateModified" content="2023-03-25T11:28:25+08:00" />
+<meta itemprop="wordCount" content="639"><meta itemprop="image" content="https://raw.githubusercontent.com/cornradio/imgs/main/20230325133822.png">
+<meta itemprop="keywords" content="iterm,tools," /><meta property="og:title" content="Iterm 调教（快捷键和主题）" />
+<meta property="og:description" content="Iterm 是广为流传的mac超强终端模拟器，
+下载 iterm2
+｜
+iterm2colorschemes
+
+本篇主要包括 常用操作、分屏模式、快捷键配置、主题下载和安装" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98-copy/" /><meta property="og:image" content="https://raw.githubusercontent.com/cornradio/imgs/main/20230325133822.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-25T11:28:25+08:00" />
+<meta property="article:modified_time" content="2023-03-25T11:28:25+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cornradio/imgs/main/20230325133822.png"/>
+
+<meta name="twitter:title" content="Iterm 调教（快捷键和主题）"/>
+<meta name="twitter:description" content="Iterm 是广为流传的mac超强终端模拟器，
+下载 iterm2
+｜
+iterm2colorschemes
+
+本篇主要包括 常用操作、分屏模式、快捷键配置、主题下载和安装"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.b9d6605c0c2b969520b17ffddecc2545ebba172b234dfd89d36e579116c34228.css" integrity="sha256-udZgXAwrlpUgsX/93swlReu6FysjTf2J025XkRbDQig=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.b9d6605c0c2b969520b17ffddecc2545ebba172b234dfd89d36e579116c34228.css" integrity="sha256-udZgXAwrlpUgsX/93swlReu6FysjTf2J025XkRbDQig=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=Iterm%20%e8%b0%83%e6%95%99%ef%bc%88%e5%bf%ab%e6%8d%b7%e9%94%ae%e5%92%8c%e4%b8%bb%e9%a2%98%ef%bc%89&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-03-25-iterm2%25E8%25B0%2583%25E6%2595%2599%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%25E5%2592%258C%25E4%25B8%25BB%25E9%25A2%2598-copy%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-03-25-iterm2%25E8%25B0%2583%25E6%2595%2599%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%25E5%2592%258C%25E4%25B8%25BB%25E9%25A2%2598-copy%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">Iterm 调教（快捷键和主题）</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">Iterm 调教（快捷键和主题）
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-03-25
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/iterm/" class="badge rounded-pill text-white bg-primary post-taxonomy">iterm</a><a href="https://cornradio.github.io/hugo/tags/tools/" class="badge rounded-pill text-white bg-primary post-taxonomy">tools</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-iterm2">why iterm2</a></li>
+    <li><a href="#设置">设置</a>
+      <ul>
+        <li><a href="#opt--方向键">opt + 方向键</a></li>
+        <li><a href="#雷电命令行">雷电命令行</a></li>
+      </ul>
+    </li>
+    <li><a href="#主题">主题</a></li>
+    <li><a href="#分屏模式">分屏模式</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>Iterm 是广为流传的mac超强终端模拟器，
+下载 <a href="https://iterm2.com/" target="_blank" rel="noopener noreferrer">iterm2</a>
+｜
+<a href="https://iterm2colorschemes.com/" target="_blank" rel="noopener noreferrer">iterm2colorschemes</a>
+</p>
+<p>本篇主要包括 常用操作、分屏模式、快捷键配置、主题下载和安装</p>
+<blockquote>
+<p>快捷键提示</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">终端常见的导航快捷键
+</span></span><span class="line"><span class="ln">2</span><span class="cl">ctrl + e 到行末尾
+</span></span><span class="line"><span class="ln">3</span><span class="cl">ctrl + a 到行首
+</span></span><span class="line"><span class="ln">4</span><span class="cl">ctrl + u 删除到行首
+</span></span><span class="line"><span class="ln">5</span><span class="cl">ctrl + k 删除到行末
+</span></span><span class="line"><span class="ln">6</span><span class="cl">ctrl + w 删除到单词首
+</span></span></code></pre></div><h2 id="why-iterm2">why iterm2</h2>
+<p>看看官方推荐自己的理由： <a href="https://iterm2.com/features.html" target="_blank" rel="noopener noreferrer">https://iterm2.com/features.html</a>
+</p>
+<ul>
+<li>opt + 点击 移动到指定光标位置</li>
+<li>esc + 退格键 = 删除整个单词</li>
+<li>有 雷电模式(自定义shortcut)</li>
+<li>有 分屏模式（cmd + d 纵向 / cmd + shift + d 横向 / cmd + w 关闭分屏）</li>
+<li>补全功能（cmd + ;）</li>
+<li>搜索功能（cmd + f 大多数终端模拟器都不能搜索………）</li>
+<li>replay 功能 (可以回去找之前错过的输出 opt + cmd + b)</li>
+</ul>
+<h2 id="设置">设置</h2>
+<h3 id="opt--方向键">opt + 方向键</h3>
+<blockquote>
+<p>打错命令和修改命令非常常见，如果不能以单词为单位来移动那可太慢了。</p>
+</blockquote>
+<ul>
+<li>目标是： opt + 左右 = 移动光标一个单词的距离</li>
+</ul>
+<p>这个功能在mac的terminal可以这样打开：</p>
+<h4 id="terminal中打开httpsrawgithubusercontentcomcornradioimgsmain20230325115105png"><img class="img-fluid" alt="terminal中打开" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325115105.png" loading="lazy"
+  
+   />
+
+</h4>
+<blockquote>
+<p>为了使用这个功能，我已经看了很多的教程，但是他们大部分都有问题。</p>
+</blockquote>
+<p>在<code>iterm</code>中按下 cmd + i ，打开“迷你版”偏好设置，然后选择 Keys -&gt; Presets ， 选择 <code>Terminal.app Compatiblility</code></p>
+<p><img class="img-fluid" alt="选择preset" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325114647.png" loading="lazy"
+  
+   />
+
+</p>
+<h3 id="雷电命令行">雷电命令行</h3>
+<p>效果图
+<img class="img-fluid" alt="效果图" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325113854.png" loading="lazy"
+  
+   />
+
+</p>
+<p>点击 Create a dedicated Hotkey Window…</p>
+<p>我设置成了 ctrl + cmd + shift + T</p>
+<p><img class="img-fluid" alt="kuaijiejian" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325113800.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="主题">主题</h2>
+<p>首先，解决他的不协调的标题栏。</p>
+<blockquote>
+<p>默认的标题栏是和系统颜色一致的，iterm还提供了一个自动匹配主题背景的minimal标题栏</p>
+</blockquote>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325120537.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325120007.png" loading="lazy"
+  
+   />
+
+</p>
+<p>主题 下载地址在这里,
+<a href="https://iterm2colorschemes.com/" target="_blank" rel="noopener noreferrer">iterm2colorschemes</a>
+</p>
+<p>下载之后解压，里面只有一个文件夹（schemes）是相关的：其他文件夹里面都是很奇怪的东西。
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325115451.png" loading="lazy"
+  
+   />
+
+</p>
+<p>打开iterm2，点击 Preferences -&gt; Profiles -&gt; Colors -&gt; Color Presets -&gt; Import （可以全选导入）</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325121228.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="分屏模式">分屏模式</h2>
+<p>（cmd + d 纵向 / cmd + shift + d 横向 / cmd + w 关闭分屏）
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325123036.png" loading="lazy"
+  
+   />
+
+</p>
+<ul>
+<li>分屏模式可以设置“不活跃”pane的变暗程度
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230325123446.png" loading="lazy"
+  
+   />
+
+</li>
+</ul></div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="https://cornradio.github.io/hugo/images/reward/alipay.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/">如何使用vscode新建一个donet（csharp）项目
+</a>
+  </div><div class="post-nav post-next">
+    <a href="https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">如何拷贝一个对象
+</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/">如何使用vscode新建一个donet（csharp）项目
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-24-%E5%9B%BD%E5%86%85%E6%B5%8B%E9%80%9F%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/">国内测速网站推荐
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-php-1/">PHP - 1 
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-php-2/">PHP - 2 
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/">如何一键安装和更新pip包
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="corn radio" src="https://cornradio.github.io/hugo/images/profile.webp" loading="lazy"
+   width="192" height="192"
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">corn radio</div><div class="profile-bio">你好，有什么能帮到你的吗？</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>不想上班</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>地球，中国，北京</div><div class="profile-about"><i class="fas fa-fw fa-user"></i><a target="_blank" rel="noopener noreferrer" href="https://domain.tld">关于我</a></div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">如何拷贝一个对象
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98-copy/">Iterm 调教（快捷键和主题）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/">如何使用vscode新建一个donet（csharp）项目
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-24-%E5%9B%BD%E5%86%85%E6%B5%8B%E9%80%9F%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/">国内测速网站推荐
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20-php-1/">PHP - 1 
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/js/" class="badge bg-primary text-white rounded post-taxonomy" title="js">
+            js
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+</footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.463de12199b3dbf6cb3731d4de7df0a29e7e1a0273c3cd61cc1de42645c83802.js" integrity="sha256-Rj3hIZmz2/bLNzHU3n3wop5&#43;GgJzw81hzB3kJkXIOAI=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.c7d80bcbb67ca1cf05edc7a16b9f91fcbca3bcbc16e52f0117b583439e5e1102.js" integrity="sha256-x9gLy7Z8oc8F7ceha5&#43;R/LyjvLwW5S8BF7WDQ55eEQI=" crossorigin="anonymous"></script>
+</body>
+</html>

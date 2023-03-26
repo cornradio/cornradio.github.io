@@ -6,13 +6,24 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 25 Mar 2023 11:28:25 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Mar 2023 11:28:25 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何拷贝一个对象</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Sun, 26 Mar 2023 11:28:25 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</guid>
+      <description>&lt;p&gt;这是我工作中遇到的一个bug，困扰了我一个下午。&lt;/p&gt;
+&lt;p&gt;但是我会用一个好理解的例子来说明。&lt;/p&gt;
+&lt;p&gt;应该在所有面向对象编程语言中是通用的，这是关于”克隆一个实体“的问题。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Iterm 调教（快捷键和主题）</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98-copy/</link>
       <pubDate>Sat, 25 Mar 2023 11:28:25 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98-copy/</guid>
       <description>&lt;p&gt;Iterm 是广为流传的mac超强终端模拟器，
 下载 &lt;a href=&#34;https://iterm2.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;iterm2&lt;/a&gt;
 ｜
