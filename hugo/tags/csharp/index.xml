@@ -24,7 +24,11 @@
       <pubDate>Sat, 25 Mar 2023 00:06:47 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</guid>
-      <description>&lt;p&gt;通常情况下，使用 Visual Studio 来编写 C# 代码创建项目和管理非常的简单。但是，Visual Studio 是一个非常大的 IDE（而且mac版不好用），如果您只是想编写一些简单的 C# 代码，那么它可能会显得有些笨蛋。&lt;/p&gt;</description>
+      <description>&lt;p&gt;通常情况下，使用 Visual Studio 来编写 C# 代码创建项目和管理非常的简单。但是，Visual Studio 是一个非常大的 IDE（而且visual studio mac版与win版并非同根同源，mac版本比较难用），如果您只是想编写一些简单的 C# 代码，安装一个巨大的vs是不适合的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;visual studio 来写c#（常规选择）&lt;/li&gt;
+&lt;li&gt;vs code + dotnet sdk （推荐选择）&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
