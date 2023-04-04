@@ -10,11 +10,11 @@
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
 <meta name="description" content="" /><meta itemprop="name" content="ssh to parallels （kali）">
-<meta itemprop="description" content="参考： https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/ https://blog.csdn.net/m0_46982383/article/details/125863742 使用ssh链接parallels虚拟机的kali linux系统 本教程基于PD17，m1 MacBook。 首先你也直接在pd虚拟机中直"><meta itemprop="datePublished" content="2022-08-06T10:00:00+08:00" />
+<meta itemprop="description" content="参考： https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/ 使用ssh链接 parallels 虚拟机的 kali linux系统 本教程基于PD17，m1 MacBook。 首先你也直接在pd虚拟机中直接下载和安装kali，而"><meta itemprop="datePublished" content="2022-08-06T10:00:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-06T10:00:00+08:00" />
-<meta itemprop="wordCount" content="289">
-<meta itemprop="keywords" content="Mac," /><meta property="og:title" content="ssh to parallels （kali）" />
-<meta property="og:description" content="参考： https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/ https://blog.csdn.net/m0_46982383/article/details/125863742 使用ssh链接parallels虚拟机的kali linux系统 本教程基于PD17，m1 MacBook。 首先你也直接在pd虚拟机中直" />
+<meta itemprop="wordCount" content="297">
+<meta itemprop="keywords" content="Mac,kali," /><meta property="og:title" content="ssh to parallels （kali）" />
+<meta property="og:description" content="参考： https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/ 使用ssh链接 parallels 虚拟机的 kali linux系统 本教程基于PD17，m1 MacBook。 首先你也直接在pd虚拟机中直接下载和安装kali，而" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cornradio.github.io/hugo/posts/sshtoparallels/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-06T10:00:00+08:00" />
@@ -22,7 +22,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ssh to parallels （kali）"/>
-<meta name="twitter:description" content="参考： https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/ https://blog.csdn.net/m0_46982383/article/details/125863742 使用ssh链接parallels虚拟机的kali linux系统 本教程基于PD17，m1 MacBook。 首先你也直接在pd虚拟机中直"/>
+<meta name="twitter:description" content="参考： https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/ 使用ssh链接 parallels 虚拟机的 kali linux系统 本教程基于PD17，m1 MacBook。 首先你也直接在pd虚拟机中直接下载和安装kali，而"/>
 <link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0f88583c7f30bf4c56e86ca3ffd2f842236c71281d8221bfec10e2179697bf7c.css" integrity="sha256-D4hYPH8wv0xW6Gyj/9L4QiNscSgdgiG/7BDiF5aXv3w=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.0f88583c7f30bf4c56e86ca3ffd2f842236c71281d8221bfec10e2179697bf7c.css" integrity="sha256-D4hYPH8wv0xW6Gyj/9L4QiNscSgdgiG/7BDiF5aXv3w=" crossorigin="anonymous"></noscript></head>
   <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -229,7 +229,7 @@
     <i class="fas fa-fw fa-calendar-alt"></i>2022-08-06
   </span><span class="post-reading-time" title="reading time">
     <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
-  </span><a href="https://cornradio.github.io/hugo/tags/mac/" class="badge rounded-pill text-white bg-primary post-taxonomy">mac</a></div>
+  </span><a href="https://cornradio.github.io/hugo/tags/mac/" class="badge rounded-pill text-white bg-primary post-taxonomy">mac</a><a href="https://cornradio.github.io/hugo/tags/kali/" class="badge rounded-pill text-white bg-primary post-taxonomy">kali</a></div>
 <div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
   <div class="offcanvas-header">
     <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
@@ -240,7 +240,7 @@
   <div class="offcanvas-body">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#使用ssh链接parallels虚拟机的kali-linux系统">使用ssh链接parallels虚拟机的kali linux系统</a></li>
+    <li><a href="#使用ssh链接-parallels-虚拟机的-kali-linux系统">使用ssh链接 parallels 虚拟机的 kali linux系统</a></li>
     <li><a href="#修改sshd配置">修改sshd配置</a></li>
     <li><a href="#查看虚拟机的ip">查看虚拟机的ip</a></li>
     <li><a href="#使用ssh工具链接虚拟机">使用ssh工具链接虚拟机</a></li>
@@ -250,12 +250,10 @@
 </div><div class="post-content mb-3"><p>参考：</p>
 <p><a href="https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/" target="_blank" rel="noopener noreferrer">https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/</a>
 </p>
-<p><a href="https://blog.csdn.net/m0_46982383/article/details/125863742" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/m0_46982383/article/details/125863742</a>
-</p>
-<h2 id="使用ssh链接parallels虚拟机的kali-linux系统">使用ssh链接parallels虚拟机的kali linux系统</h2>
+<h2 id="使用ssh链接-parallels-虚拟机的-kali-linux系统">使用ssh链接 parallels 虚拟机的 kali linux系统</h2>
 <p>本教程基于PD17，m1 MacBook。</p>
 <p>首先你也直接在pd虚拟机中直接下载和安装kali，而不用自己下载镜像来安装。</p>
-<p><img class="img-fluid" alt="image" src="https://tva4.sinaimg.cn/large/0083vuQJly1h4wuo9p15bj31cg0wggu8.jpg" loading="lazy"
+<p><img class="img-fluid" alt="安装助手" src="https://i.imgur.com/122vaYp.png" loading="lazy"
   
    />
 
@@ -268,9 +266,11 @@
 </span></span><span class="line"><span class="ln">4</span><span class="cl">PasswordAuthentication yes
 </span></span></code></pre></div><p>修改后需要重启服务，加载刚更新配置：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">/etc/init.d/ssh restart 
+</span></span></code></pre></div><p>增加开机自启动ssh的一个服务：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo update-rc.d ssh enable
 </span></span></code></pre></div><h2 id="查看虚拟机的ip">查看虚拟机的ip</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">ifconfig
-</span></span></code></pre></div><p><img class="img-fluid" alt="image" src="https://tva2.sinaimg.cn/large/0083vuQJly1h4wuupi6iyj31240bmqe7.jpg" loading="lazy"
+</span></span></code></pre></div><p><img class="img-fluid" alt="查看虚拟机的ip" src="https://i.imgur.com/aHsiG9S.png" loading="lazy"
   
    />
 
@@ -281,7 +281,7 @@
 <li>parallels 是通过pd安装虚拟机自己创建的用户名，有root权限</li>
 </ul>
 <p>接下来你就可以正常远程进入虚拟机了，这样可以使用macOS的cmd+v粘贴之类的快捷键。</p>
-<p><img class="img-fluid" alt="image" src="https://tva3.sinaimg.cn/large/0083vuQJly1h4wv0khxz6j31gi0yqaqe.jpg" loading="lazy"
+<p><img class="img-fluid" alt="ssh工具链接虚拟机" src="https://i.imgur.com/bT52A7j.png" loading="lazy"
   
    />
 
@@ -399,6 +399,6 @@
 <div class="powered-by mb-2">
   Powered by <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">Bootstrap</a> theme.
 </div></footer>
-<script src="https://cornradio.github.io/hugo/js/bundle.min.d09a155a67acde7c98ded699a2ecd7f0ed89b5198cbfc833557a969155fdff8f.js" integrity="sha256-0JoVWmes3nyY3taZouzX8O2JtRmMv8gzVXqWkVX9/48=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.c7d80bcbb67ca1cf05edc7a16b9f91fcbca3bcbc16e52f0117b583439e5e1102.js" integrity="sha256-x9gLy7Z8oc8F7ceha5&#43;R/LyjvLwW5S8BF7WDQ55eEQI=" crossorigin="anonymous"></script>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.80f014eb3da60dcb520dc10ba89c29bcd59c199b81f39c0044a6ccb8d80e3853.js" integrity="sha256-gPAU6z2mDctSDcELqJwpvNWcGZuB85wARKbMuNgOOFM=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.0e47930598f5c26cc600d1ce2e5c6b00c95a83a0383e6a645cb9c23d29070de7.js" integrity="sha256-DkeTBZj1wmzGANHOLlxrAMlag6A4PmpkXLnCPSkHDec=" crossorigin="anonymous"></script>
 </body>
 </html>

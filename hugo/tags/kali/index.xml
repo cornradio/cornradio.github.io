@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kali on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/kali/</link>
+    <description>Recent content in kali on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 06 Aug 2022 10:00:00 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/kali/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ssh to parallels （kali）</title>
+      <link>https://cornradio.github.io/hugo/posts/sshtoparallels/</link>
+      <pubDate>Sat, 06 Aug 2022 10:00:00 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/sshtoparallels/</guid>
+      <description>参考： https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/ 使用ssh链接 parallels 虚拟机的 kali linux系统 本教程基于PD17，m1 MacBook。 首先你也直接在pd虚拟机中直接下载和安装kali，而</description>
+    </item>
+    
+  </channel>
+</rss>

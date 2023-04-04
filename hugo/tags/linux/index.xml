@@ -26,12 +26,12 @@
     </item>
     
     <item>
-      <title>Tar的用法</title>
+      <title>Tar的用法、常见的linux压缩解包方法</title>
       <link>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 22 May 2022 16:45:55 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
-      <description>每次在网上搜tar都一堆低质量回答，看的头大，自己写一个 tar的用法 打包 打包（多个文件）： 1tar -cf my.tar 1.txt 2.txt 3.txt 打包（文件夹）： 1tar -cf dir1.tar dir1 看包 看包/预览</description>
+      <description>常见的linux 压缩解包方法 1gzip xxx 2gunzip xxx 3 4tar zcvf 压缩文件名 压缩文件 5tar zxvf 解压包名 解压文件 6 7tar jcvf renwolesshel.tar.bz2 打包 8tar jxvf renwolesshel.tar.bz2 解压 9 10zip -q a.zip a.txt 11unzip a.zip 12 -q “安静模式” tar的</description>
     </item>
     
     <item>
