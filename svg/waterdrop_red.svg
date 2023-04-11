@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-5 -2 24 24">   
-    <path fill="red" stroke="#000" stroke-width="1" d="M2 13a5 5 0 0 0 10 0c0-1.726-1.66-5.031-5-9.653C3.66 7.969 2 11.274 2 13z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-5 -2 24 24">
+    <path fill="rgb(209 1 1 / 93%)" stroke="#ff0" stroke-width="1" d="M2 13a5 5 0 0 0 10 0c0-1.726-1.66-5.031-5-9.653C3.66 7.969 2 11.274 2 13z"/>
 </svg>
