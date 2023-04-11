@@ -33,9 +33,10 @@
         .blue {
             background-color: rgb(66, 201, 255);
         }
+
         .superblue {
             background-color: #0093E9;
-background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
+            background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
 
         }
 
@@ -48,15 +49,7 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
             z-index: -10;
         }
 
-        footer a {
-            font-size: 16px;
-        }
 
-        footer a:hover {
-            /* font-weight: normal; */
-            color: rgb(1, 48, 159);
-
-        }
 
         a {
             font-size: 1.1em;
@@ -141,31 +134,6 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
             font-size: 18px;
         }
 
-        footer {
-            position: fixed;
-            width: 40%;
-            top: 96%;
-            left: 50%;
-            transform: translate(-50%, 0);
-            color: #000000ea;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13);
-            max-width: 300px;
-            text-align: center;
-            font-family: arial;
-            margin: auto;
-            padding: 2em 0.4em;
-            border-radius: 400px;
-            background-color: rgb(255, 255, 255);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
-            /* position: -webkit-sticky; */
-            transition: 0.3s;
-            height: 999px;
-        }
-
-        footer:hover {
-
-            transform: translate(-50%, -30%);
-        }
 
         @media only screen and (max-width: 425px) {
             footer {
@@ -188,6 +156,7 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
             height: 15px;
             border-radius: 50%;
         }
+
 
         .invite a {
             display: inline-block;
@@ -220,7 +189,6 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
             color: #838383;
             margin-top: 10px;
         }
-
     </style>
 </head>
 
@@ -231,38 +199,40 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
         <h1 class="tou">⌦ 飞行跑道 ⌫</h1>
         <br>
     </center>
-    <div class="card fastlink ">
 
-        <div class=" dot green" title="是赞助商，速度也还行"></div>
-        <a target="_blank" href="https://web01.fastlink.la/user">
-            <h1>FastLink</h1>
+
+    <div class="card Glados">
+        <div class="blue dot" title="还在实验中">
+            <img style="filter:grayscale(0.3)" src="svg/waterdrop_blue.svg" alt="污染级别">
+        </div>
+        <a target="_blank" href="https://glados.network/console">
+            <h1>GLaDOS</h1>
         </a>
         <div class="invite">
-            <a class="" href="https://v02.fl-aff.com/auth/register?code=gkij">invite link ➡️</a>
+            <a class="" href="https://glados.network/console/checkin">check in ➡️</a>
         </div>
-        <p class="hint">20￥/mo <br> 100G <br> 4x倍率 （有1x的节点，速度也快）
-            <br>
-            </p>
+        <p class="hint">15￥ or 30￥/mo <br> 200G or 500G <br> 1x倍率</p>
     </div>
 
-
-
-    <div class="card yuyanyun">
-
-        <div class="blue dot" title="好鸡巴便宜,但是晚上慢"></div>
-        <a target="_blank" href="https://yuyan.online">
-            <h1>Yuyan</h1>
+    <div class="card godeta">
+        <div class="blue dot" title="快又贵">
+            <img style="filter:grayscale(0.3)" src="svg/waterdrop_red.svg" alt="污染级别">
+        </div>
+        <a target="_blank" href="https://ssltd.club/">
+            <h1>Godetia</h1>
         </a>
         <div class="invite">
-            <a class="" href="https://yuyan.online/#/register?code=T7YIfBI5">invite link ➡️</a>
+            <a class="" href="https://ssltd.club/#/register?code=e2IMsog6">invite link ➡️</a>
         </div>
-        <p class="hint">18.80￥/mo <br> 256G <br> 1x倍率</p>
+        <p class="hint">50￥/mo（太贵了） <br> 150G <br> 1x倍率</p>
     </div>
-
 
     <div class="card starlink">
 
-        <div class="blue dot" title="备用，主打价格"></div>
+        <div class="blue dot" title="备用，主打价格">
+            <img style="filter:grayscale(0)" src="svg/waterdrop_blue.svg" alt="污染级别">
+        </div>
+
         <a target="_blank" href="https://spacex2045.com/#/dashboard">
             <h1>star link</h1>
         </a>
@@ -280,9 +250,41 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
         <details>
             <summary>还有其他能用的</summary>
             <!-- 放在这里！put link here！ -->
+
+            <div class="card fastlink ">
+                <div class="blue dot " title="是赞助商，速度也还行">
+                    <img style="filter:grayscale(0.4)" src="svg/waterdrop_red.svg" alt="污染级别">
+                </div>
+                <a target="_blank" href="https://web01.fastlink.la/user">
+                    <h1>FastLink</h1>
+                </a>
+                <div class="invite">
+                    <a class="" href="https://v02.fl-aff.com/auth/register?code=gkij">invite link ➡️</a>
+                </div>
+                <p class="hint">20￥/mo <br> 100G <br> 4x倍率 （有1x的节点，速度也快）
+                    <br>
+                </p>
+            </div>
+        
+        
+        
+            <div class="card yuyanyun">
+        
+                <div class="blue dot" title="好鸡巴便宜,但是晚上慢">
+                    <img style="filter:grayscale(0.3)" src="svg/waterdrop_yellow.svg" alt="污染级别">
+                </div>
+                <a target="_blank" href="https://yuyan.online">
+                    <h1>Yuyan</h1>
+                </a>
+                <div class="invite">
+                    <a class="" href="https://yuyan.online/#/register?code=T7YIfBI5">invite link ➡️</a>
+                </div>
+                <p class="hint">18.80￥/mo <br> 256G <br> 1x倍率</p>
+            </div>
+
             <div class="card pyai">
                 <div class="yellow dot" title="有段时间没用了"></div>
-        
+
                 <a target="_blank" href="https://www.xueshujsq.com/">
                     <h1>xueshujsq</h1>
                 </a>
@@ -292,16 +294,7 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
                 <p class="hint"> 15￥/mo <br> 100G <br> 4x倍率</p>
             </div>
 
-            <div class="card godeta">
-                <div class="blue dot" title="快又贵"></div>
-                <a target="_blank" href="https://ssltd.club/">
-                    <h1>Godetia</h1>
-                </a>
-                <div class="invite">
-                    <a class="" href="https://ssltd.club/#/register?code=e2IMsog6">invite link ➡️</a>
-                </div>
-                <p class="hint">50￥/mo（太贵了） <br> 150G <br> 1x倍率</p>
-            </div>
+
 
             <div class="card ">
                 <div class="blue dot" title="好久没用了 他们自己有了客户端 /我室友在用他家"></div>
@@ -414,6 +407,41 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
     <div style="height: 90px;"></div>
     <footer>
         <style>
+            footer a {
+                font-size: 16px;
+            }
+
+            footer a:hover {
+                /* font-weight: normal; */
+                color: rgb(1, 48, 159);
+
+            }
+
+            footer {
+                position: fixed;
+                width: 40%;
+                top: 96%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                color: #000000ea;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13);
+                max-width: 300px;
+                text-align: center;
+                font-family: arial;
+                margin: auto;
+                padding: 2em 0.4em;
+                border-radius: 400px;
+                background-color: rgb(255, 255, 255);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
+                /* position: -webkit-sticky; */
+                transition: 0.3s;
+                height: 999px;
+            }
+
+            footer:hover {
+                transform: translate(-50%, -60%);
+            }
+
             .bar {
                 background: #0000003b;
                 width: 3em;
@@ -425,21 +453,32 @@ background-image: linear-gradient(160deg, #61f2ff 0%, #0050fc 100%);
             }
         </style>
         <div class="bar"></div>
+
         <b>软件下载</b> <br>
         <a href="https://github.com/2dust/v2rayN">Windows</a><br>
         <a href="https://github.com/2dust/v2rayNG">Andorid</a><br>
         <a href="https://github.com/yichengchen/clashX">MacOS</a><br>
-        <a href="https://github.com/kasusa/linux_stuff/blob/master/linux-v2ray%20setup.md">Linux</a><br>
         <br>
+
+        <b>污染级别</b> <br> 
+        <img style="filter:grayscale(0.3)" src="svg/waterdrop_red.svg" alt="污染级别">
+        <img style="filter:grayscale(0.3)" src="svg/waterdrop_yellow.svg" alt="污染级别">
+        <img style="filter:grayscale(0.3)" src="svg/waterdrop_blue.svg" alt="污染级别">
+        <p class="mute">
+            污染级别严重可能无法正常 <br>
+            访问如chatgpt等网站
+            <br>
+        </p>
+        <br><br>
 
         <b>频道推荐</b> <br>
         <a href="https://t.me/askahh">机场测速频道</a>
         <br><br>
 
         <b>免责声明</b> <br>
-        <p class="mute">本平台仅为自用机场记录 <br> 不对您在任何机场的消费负责</p></code>
+        <p class="mute">本平台仅为自用机场记录 <br> 不对您在任何机场的消费负责</p>
         <br>
-        <p style=" color: #ffb700;">copyright© 2019-2022</p>
+        <p style=" color: #ffb700;">copyright© 2019-2023</p>
     </footer>
 </body>
 
