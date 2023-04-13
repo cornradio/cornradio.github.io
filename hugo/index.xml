@@ -6,7 +6,16 @@
     <description>Recent content on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Thu, 30 Mar 2023 22:23:15 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Apr 2023 14:57:51 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win切换java版本</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Thu, 13 Apr 2023 14:57:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>代码审计-Java</title>
       <link>https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-java/</link>
