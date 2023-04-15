@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>youtube on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/youtube/</link>
+    <description>Recent content in youtube on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 15 Apr 2023 12:17:42 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/youtube/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mp3tag--给下载的无图音乐增加专辑图</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-04-15-mp3tag/</link>
+      <pubDate>Sat, 15 Apr 2023 12:17:42 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-04-15-mp3tag/</guid>
+      <description>yt-dlp 下载 youtube 的命令行工具有：you-get， youtube-dl, yt-dlp yt-dlp 是目前最好用的。 1yt-dlp --extract-audio --audio-format mp3 &amp;lt;video-url&amp;gt; 但是下载的源文件咩有专辑封面图（都是无图mp3） mp3tag https://www.mp3tag.de/en/download.html mp3tag 是一个用于编辑</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,498 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>使用Azure自建节点 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="使用Azure自建节点">
+<meta itemprop="description" content="Azure注册新账户，会赠送一个月的 200USD 免费额度，如果升级成“即用即付”，则这 200USD 可以延长使用期限到一年。（需要填写自己的信用卡信息）
+除此之外，还有至少有免费 1个月 的免费 vm 用。 可以在这里查看：Azure免费服务
+"><meta itemprop="datePublished" content="2023-04-15T12:31:55+08:00" />
+<meta itemprop="dateModified" content="2023-04-15T12:31:55+08:00" />
+<meta itemprop="wordCount" content="1049">
+<meta itemprop="keywords" content="Azure,云服务,v2ray," /><meta property="og:title" content="使用Azure自建节点" />
+<meta property="og:description" content="Azure注册新账户，会赠送一个月的 200USD 免费额度，如果升级成“即用即付”，则这 200USD 可以延长使用期限到一年。（需要填写自己的信用卡信息）
+除此之外，还有至少有免费 1个月 的免费 vm 用。 可以在这里查看：Azure免费服务
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-15T12:31:55+08:00" />
+<meta property="article:modified_time" content="2023-04-15T12:31:55+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Azure自建节点"/>
+<meta name="twitter:description" content="Azure注册新账户，会赠送一个月的 200USD 免费额度，如果升级成“即用即付”，则这 200USD 可以延长使用期限到一年。（需要填写自己的信用卡信息）
+除此之外，还有至少有免费 1个月 的免费 vm 用。 可以在这里查看：Azure免费服务
+"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0f88583c7f30bf4c56e86ca3ffd2f842236c71281d8221bfec10e2179697bf7c.css" integrity="sha256-D4hYPH8wv0xW6Gyj/9L4QiNscSgdgiG/7BDiF5aXv3w=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.0f88583c7f30bf4c56e86ca3ffd2f842236c71281d8221bfec10e2179697bf7c.css" integrity="sha256-D4hYPH8wv0xW6Gyj/9L4QiNscSgdgiG/7BDiF5aXv3w=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=%e4%bd%bf%e7%94%a8Azure%e8%87%aa%e5%bb%ba%e8%8a%82%e7%82%b9&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-04-15-%25E4%25BD%25BF%25E7%2594%25A8azure%25E8%2587%25AA%25E5%25BB%25BA%25E8%258A%2582%25E7%2582%25B9%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-04-15-%25E4%25BD%25BF%25E7%2594%25A8azure%25E8%2587%25AA%25E5%25BB%25BA%25E8%258A%2582%25E7%2582%25B9%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="蓝色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="绿色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="红色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="蓝绿色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黄色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">使用Azure自建节点</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">使用Azure自建节点
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-04-15
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>3 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/azure/" class="badge rounded-pill text-white bg-primary post-taxonomy">Azure</a><a href="https://cornradio.github.io/hugo/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/" class="badge rounded-pill text-white bg-primary post-taxonomy">云服务</a><a href="https://cornradio.github.io/hugo/tags/v2ray/" class="badge rounded-pill text-white bg-primary post-taxonomy">v2ray</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#创建虚拟机">创建虚拟机</a></li>
+    <li><a href="#开启安全组">开启安全组</a></li>
+    <li><a href="#远程登录vm">远程登录vm</a>
+      <ul>
+        <li><a href="#ssh">ssh</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>Azure注册新账户，会赠送一个月的 200USD 免费额度，如果升级成“即用即付”，则这 200USD 可以延长使用期限到一年。（需要填写自己的信用卡信息）</p>
+<p>除此之外，还有至少有免费 1个月 的免费 vm 用。 可以在这里查看：<a href="https://portal.azure.com/#view/Microsoft_Azure_Billing/FreeServicesBlade" target="_blank" rel="noopener noreferrer">Azure免费服务</a>
+</p>
+<p><a href="https://portal.azure.com/" target="_blank" rel="noopener noreferrer">注册</a>
+，可以用假名字，地址的话选择中国就可以（这个是账单地址，你还是可以用全世界的服务器可用区），但是信用卡是必须的，他会从信用卡里取两次 1$ 来验证你是不是真人。</p>
+<p>注意别搞错了 <code>Azure</code> 和 <code>Azure 世纪互联运营 </code> 第二个是国内专版的……</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415133957.png" loading="lazy"
+  
+   />
+
+</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415133859.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="创建虚拟机">创建虚拟机</h2>
+<p>随便创建一个先：
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415124249.png" loading="lazy"
+  
+   />
+
+</p>
+<p>这里决定你的 vm ip 位置
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415124356.png" loading="lazy"
+  
+   />
+
+</p>
+<p>这里要选B1s，它有一个月免费额度。并且是最便宜的，而且足够了。</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415124505.png" loading="lazy"
+  
+   />
+
+</p>
+<p>起一个用户名，还有密钥文件名，这个密钥是用来登录 vm 的（用户名 + pem文件登陆，不用密码），一会儿创建的时候Azure会让你下载。</p>
+<p>保存好，这个文件只能下载一次。</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415124622.png" loading="lazy"
+  
+   />
+
+</p>
+<p>磁盘选64G，因为30G收费，64有两块的免费额度。
+<img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415124813.png" loading="lazy"
+  
+   />
+
+</p>
+<p>网络方面保持默认设置，但是这里要打勾，方便到时候删除vm的时候把相关的资源一同删除。Azure的ip、磁盘、网络等都是分开收费的，删除时候记得检查。</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415124906.png" loading="lazy"
+  
+   />
+
+</p>
+<p>最后就是创建了，看看价格大概是 1 CNY / h，但是不用担心，我们还有 200 USD 免费额度呢。</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415125123.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="开启安全组">开启安全组</h2>
+<p>服务器安全组是一种在服务器外部的防火墙，可以控制服务器的入站和出站流量。</p>
+<p>默认情况下，azure仅开启22端口，只有在安全组中打开端口后，才能访问其他端口。</p>
+<blockquote>
+<p>在这里添加一个入站规则，允许所有端口的流量进入（源端口和目标端口都设置<code>*</code>）。</p>
+<p>（这不安全，但是这很简单）</p>
+</blockquote>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415132408.png" loading="lazy"
+  
+   />
+
+</p>
+<h2 id="远程登录vm">远程登录vm</h2>
+<p>在Azure虚拟机管理找到vm的ip</p>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415130912.png" loading="lazy"
+  
+   />
+
+</p>
+<p>如过是mac系统下载的key，权限会不对，需要修改一下，让group 和 other 没有读取的权限，否则无法远程到服务器。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">13:01 ~/remote-ssh $ ll           
+</span></span><span class="line"><span class="ln">2</span><span class="cl">-rw-r--r--@ <span class="m">1</span> kasusa  staff   2.4K Apr <span class="m">15</span> 12:52 myub2_key.pem
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">13:01 ~/remote-ssh $ chmod <span class="m">600</span> myub2_key.pem 
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl">13:01 ~/remote-ssh $ ll           
+</span></span><span class="line"><span class="ln">7</span><span class="cl">-rw-------@ <span class="m">1</span> kasusa  staff   2.4K Apr <span class="m">15</span> 12:52 myub2_key.pem
+</span></span></code></pre></div><h3 id="ssh">ssh</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">ssh -i myub2_key.pem azureuser@&lt;your_ip&gt;
+</span></span></code></pre></div><p>用root权限 跑一键脚本（会自动安装v2ray、关闭防火墙、配置好然后给你一个 vmess link）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo -i
+</span></span><span class="line"><span class="ln">2</span><span class="cl">bash &lt;(curl -s -L https://git.io/v2ray-setup.sh)
+</span></span></code></pre></div><hr>
+<p>跑好了一件脚本，会自动开始运行，可以：</p>
+<ul>
+<li>
+<p><code>v2ray status</code> 确认状态</p>
+</li>
+<li>
+<p><code>v2ray start</code> 启动一下</p>
+</li>
+</ul>
+<p>按照下面的例子找一个自己能导入的链接：</p>
+<ul>
+<li>
+<p><code>v2ray link</code> 生成一个json格式的东东</p>
+</li>
+<li>
+<p><code>v2ray qr</code> 生成 vmess 二维码、链接</p>
+</li>
+<li>
+<p><code>v2ray ssqr</code> 生成 ss 二维码、链接</p>
+</li>
+</ul>
+<p>对于ios用户：小火箭能导入单个vmess节点，Qx不支持vmess，需要生成一个ss节点再导入。</p>
+<hr>
+<p>v2ray ssqr 命令执行结果如下。</p>
+<blockquote>
+<p>二维码可以直接扫一扫（我这个缺失定位点你扫不了的），然后下面的 link 前半部份是他们的网址，后半部份 <code>ss://</code> 开头的就是你的节点了(他们是指 <a href="https://git.io/v2ray-setup.sh" target="_blank" rel="noopener noreferrer">一键脚本</a>
+ 的作者)</p>
+</blockquote>
+<p><img class="img-fluid" alt="" src="https://raw.githubusercontent.com/cornradio/imgs/main/20230415133228.png" loading="lazy"
+  
+   />
+
+</p>
+<p>可以通过下面的网址，把ss节点连接转换成 clash 的 yaml 文件。</p>
+<p>转换订阅链接 <a href="https://v2rayse.com/node-convert/" target="_blank" rel="noopener noreferrer">https://v2rayse.com/node-convert/</a>
+ （他声称自己采用纯前段转换）</p></div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/2023-04-15-mp3tag/">Mp3tag--给下载的无图音乐增加专辑图
+</a>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-04-15-mp3tag/">Mp3tag--给下载的无图音乐增加专辑图
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/">Win切换java版本
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-java/">代码审计-Java
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">代码审计 基础概念
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-30-mysql%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80/">Mysql渗透基础
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Cartman" src="https://raw.githubusercontent.com/cornradio/imgs/main/sticker2.webp" loading="lazy"
+  
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">Cartman</div><div class="profile-bio">Hey guys, this is Cartman here. I know you&#39;re probably thinking, what the hell is Cartman doing writing a blog bio? Well, let me tell you something – I&#39;m not just some fat kid from South Park anymore. I&#39;ve got opinions, ideas, and thoughts that I need to get out there. So, who am I? My name is Eric Theodore Cartman, and I&#39;m a fourth grader at South Park Elementary School. But don&#39;t let my age fool you – I&#39;m wise beyond my years. I mean, have you seen some of the crazy shit I&#39;ve been through? From fighting hippies to battling gingers, I&#39;ve seen it all. But it&#39;s not just about the battles I&#39;ve fought or the enemies I&#39;ve made. It&#39;s about the lessons I&#39;ve learned along the way. Like how sometimes, being an asshole is the only way to get what you want. Or how sometimes, even your closest friends will betray you. Anyway, enough about me. This blog is about you, the reader. I want to hear your thoughts, your ideas, your questions. So, drop me a line and let&#39;s chat. And remember – respect my authoritah!</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>A hotdog</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/">使用Azure自建节点
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-04-15-mp3tag/">Mp3tag--给下载的无图音乐增加专辑图
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/">Win切换java版本
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-java/">代码审计-Java
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">代码审计 基础概念
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/js/" class="badge bg-primary text-white rounded post-taxonomy" title="js">
+            js
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a><a href="https://cornradio.github.io/hugo/tags/docx/" class="badge bg-primary text-white rounded post-taxonomy" title="docx">
+            docx
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+<div class="powered-by mb-2">
+  Powered by <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">Bootstrap</a> theme.
+</div></footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.d09a155a67acde7c98ded699a2ecd7f0ed89b5198cbfc833557a969155fdff8f.js" integrity="sha256-0JoVWmes3nyY3taZouzX8O2JtRmMv8gzVXqWkVX9/48=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.c7d80bcbb67ca1cf05edc7a16b9f91fcbca3bcbc16e52f0117b583439e5e1102.js" integrity="sha256-x9gLy7Z8oc8F7ceha5&#43;R/LyjvLwW5S8BF7WDQ55eEQI=" crossorigin="anonymous"></script>
+</body>
+</html>
