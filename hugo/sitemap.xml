@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cornradio.github.io/hugo/</loc>
+    <lastmod>2023-04-21T16:56:54+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/ipad/</loc>
+    <lastmod>2023-04-21T16:56:54+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/</loc>
+    <lastmod>2023-04-21T16:56:54+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/</loc>
+    <lastmod>2023-04-21T16:56:54+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/</loc>
+    <lastmod>2023-04-21T16:56:54+08:00</lastmod>
+  </url><url>
     <loc>https://cornradio.github.io/hugo/tags/azure/</loc>
     <lastmod>2023-04-15T12:31:55+08:00</lastmod>
   </url><url>
-    <loc>https://cornradio.github.io/hugo/</loc>
-    <lastmod>2023-04-15T12:31:55+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/posts/</loc>
-    <lastmod>2023-04-15T12:31:55+08:00</lastmod>
-  </url><url>
     <loc>https://cornradio.github.io/hugo/tags/v2ray/</loc>
-    <lastmod>2023-04-15T12:31:55+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/</loc>
     <lastmod>2023-04-15T12:31:55+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</loc>
@@ -382,12 +388,6 @@
   </url><url>
     <loc>https://cornradio.github.io/hugo/tags/%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2022-03-31T15:44:16+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/ipad/</loc>
-    <lastmod>2022-03-30T18:56:54+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/</loc>
-    <lastmod>2022-03-30T18:56:54+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/ipad%E7%9C%8Btiktok/</loc>
     <lastmod>2022-03-30T18:51:07+08:00</lastmod>

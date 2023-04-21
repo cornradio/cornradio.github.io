@@ -280,8 +280,8 @@
 <p>sql注入通常是因为使用了  <code>String sql = &quot;select * from user where username = '&quot; + username + &quot;' and password = '&quot; + password + &quot;'&quot;;</code>这种拼接sql语句的方式，我们可以使用预编译的方式来防范sql注入，如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&#34;select * from user where username = ? and password = ?&#34;</span><span class="o">;</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">username</span><span class="o">);</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">password</span><span class="o">);</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">username</span><span class="o">);</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">password</span><span class="o">);</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();</span>
 </span></span></code></pre></div><p>这样预编译会把 <code>?</code> 位置的参数当成字符串来处理，而不是当成sql语句的一部分，所以就不会出现sql注入的问题了。</p>
 <h2 id="xss的防范">xss的防范</h2>
@@ -303,14 +303,14 @@
 </span></span></code></pre></div><h2 id="文件上传的防范">文件上传的防范</h2>
 <p>文件上传漏洞是： 上传文件时，如果没有正确限制文件类型、大小和内容，则可能会导致恶意用户上传包含恶意代码的文件，例如web shell，实现远程命令执行攻击。
 通常是因为没有限制文件的大小和类型，我们可以通过 <code>file.getSize()</code> 和 <code>file.getContentType()</code> 来限制文件的大小和类型，如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">getSize</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">1024</span> <span class="o">*</span> <span class="n">1024</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">return</span> <span class="s">&#34;文件大小不能超过1M&#34;</span><span class="o">;</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">if</span> <span class="o">(!</span><span class="n">file</span><span class="o">.</span><span class="na">getContentType</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;image/jpeg&#34;</span><span class="o">))</span> <span class="o">{</span>
 </span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">return</span> <span class="s">&#34;文件类型只能是jpg&#34;</span><span class="o">;</span>
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">bytes</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">!=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="mh">0xFF</span> <span class="o">||</span> <span class="n">bytes</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">!=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="mh">0xD8</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">bytes</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">!=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="n">0xFF</span> <span class="o">||</span> <span class="n">bytes</span><span class="o">[</span><span class="n">1</span><span class="o">]</span> <span class="o">!=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="n">0xD8</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">return</span> <span class="s">&#34;文件内容不是jpg&#34;</span><span class="o">;</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>这样就可以限制文件的内容了。</p>
@@ -374,11 +374,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/">使用Azure自建节点
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/">Ipad看哔咔哔咔
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/">使用Azure自建节点
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-04-15-mp3tag/">Mp3tag--给下载的无图音乐增加专辑图
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/">Win切换java版本
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-java/">代码审计-Java
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">代码审计 基础概念
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">
