@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 13 Jun 2023 09:22:06 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 10:41:53 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>csharp 字典 key 不区分大小写</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-06-13-csharp_dict_ignorecase/</link>
+      <pubDate>Tue, 13 Jun 2023 10:41:53 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-06-13-csharp_dict_ignorecase/</guid>
+      <description>Csharp_dict_ignorecase 参考链接： https://www.tutorialspoint.com/case-insensitive-dictionary-in-chash?ranMID=49144&amp;ranEAID=mP6UMnc5Ozo&amp;ranSITEID=mP6UMnc5Ozo-0dXMNkfvS087.74Ygvbi7Q 今天遇到一个问题，需要在C#中使用字典，但是字典的key是不区分大小写的，所以需要自己实现一个不区分大小写的字典，好在 c# 提供这</description>
+    </item>
+    
     <item>
       <title>Parallels crack</title>
       <link>https://cornradio.github.io/hugo/posts/2023-06-13-parallels_crack/</link>
