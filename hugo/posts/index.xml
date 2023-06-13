@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 13 Jun 2023 10:41:53 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 22:18:58 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Commands</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-06-13-hugo-commands/</link>
+      <pubDate>Tue, 13 Jun 2023 22:18:58 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-06-13-hugo-commands/</guid>
+      <description>我写了一些 hugo 脚本，包括 win 和 mac（linux） 平台。 方便写博客。 下载： hugo-commands 吐槽一下这个power shell的command我是真的不会写基本上</description>
+    </item>
+    
     <item>
       <title>csharp 字典 key 不区分大小写</title>
       <link>https://cornradio.github.io/hugo/posts/2023-06-13-csharp_dict_ignorecase/</link>
