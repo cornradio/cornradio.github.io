@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>命令行参数 on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0/</link>
+    <description>Recent content in 命令行参数 on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Wed, 28 Jun 2023 12:00:40 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Csahrp Arg Test</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/</link>
+      <pubDate>Wed, 28 Jun 2023 12:00:40 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/</guid>
+      <description>前言 命令行参数在csharp中有专门的类库，https://github.com/commandlineparser/commandline</description>
+    </item>
+    
+  </channel>
+</rss>
