@@ -6,7 +6,16 @@
     <description>Recent content in csharp on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Wed, 28 Jun 2023 12:00:40 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jul 2023 10:13:05 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在csharp程序中获取当前目录</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Mon, 03 Jul 2023 10:13:05 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</guid>
+      <description>在csharp程序中获取当前目录 1string exeDirectory = AppDomain.CurrentDomain.BaseDirectory; 返回的是当前应用程序域的基目录，它通常是可执行文件所在的目录。 通过这个方法获取到的路径可以用于加载资</description>
+    </item>
+    
     <item>
       <title>Csahrp Arg Test</title>
       <link>https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/</link>
