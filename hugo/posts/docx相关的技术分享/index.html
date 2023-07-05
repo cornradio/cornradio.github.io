@@ -580,11 +580,11 @@
 <p>然后我们只需要把【xxx公司】、【xxx系统】等内容替换为提取到的信息即可。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">//a是提取到的内容字符串，tempo是读进来的模板文档</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">a</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">table_Get_cell_text</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">tables</span><span class="p">[</span><span class="m">2</span><span class="p">],</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">str_</span><span class="err">公司</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">str_公司</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">tempo</span><span class="p">.</span><span class="n">write_dictionary</span><span class="p">(</span><span class="s">&#34;xxx公司&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln"> 5</span><span class="cl">
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">a</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">table_Get_cell_text</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">tables</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">str_</span><span class="err">系统</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">str_系统</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="n">tempo</span><span class="p">.</span><span class="n">write_dictionary</span><span class="p">(</span><span class="s">&#34;xxx系统&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl"> <span class="c1">//写入</span>
@@ -647,11 +647,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">在csharp程序中获取当前目录
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-05-get-office/">Get Office / Windows and Crack It
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">在csharp程序中获取当前目录
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-28-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/">Windows 右键菜单管理
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/">Csahrp Arg Test
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-13-hugo-commands/">Hugo Commands
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-13-csharp_dict_ignorecase/">Csharp 字典 Key 不区分大小写
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">
