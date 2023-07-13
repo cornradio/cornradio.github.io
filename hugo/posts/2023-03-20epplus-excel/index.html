@@ -10,15 +10,15 @@
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
 <meta name="description" content="epplus是一个读写xlsx的csharp库" /><meta itemprop="name" content="csharp 使用 Epplus 读写 excel表格">
-<meta itemprop="description" content="epplus是一个读写xlsx的csharp库"><meta itemprop="datePublished" content="2023-03-20T16:33:34+08:00" />
-<meta itemprop="dateModified" content="2023-03-20T16:33:34+08:00" />
-<meta itemprop="wordCount" content="805">
+<meta itemprop="description" content="epplus是一个读写xlsx的csharp库"><meta itemprop="datePublished" content="2023-07-11T16:33:34+08:00" />
+<meta itemprop="dateModified" content="2023-07-11T16:33:34+08:00" />
+<meta itemprop="wordCount" content="2705">
 <meta itemprop="keywords" content="csharp,excel," /><meta property="og:title" content="csharp 使用 Epplus 读写 excel表格" />
 <meta property="og:description" content="epplus是一个读写xlsx的csharp库" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-03-20T16:33:34+08:00" />
-<meta property="article:modified_time" content="2023-03-20T16:33:34+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+<meta property="article:published_time" content="2023-07-11T16:33:34+08:00" />
+<meta property="article:modified_time" content="2023-07-11T16:33:34+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="csharp 使用 Epplus 读写 excel表格"/>
@@ -226,9 +226,9 @@
 <div class="card-body">
         <h1 class="card-title my-3">Csharp 使用 Epplus 读写 Excel表格
 </h1><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2023-03-20
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-07-11
   </span><span class="post-reading-time" title="reading time">
-    <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
+    <i class="fas fa-fw fa-coffee"></i>6 分钟阅读
   </span><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge rounded-pill text-white bg-primary post-taxonomy">csharp</a><a href="https://cornradio.github.io/hugo/tags/excel/" class="badge rounded-pill text-white bg-primary post-taxonomy">excel</a></div>
 <div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
   <div class="offcanvas-header">
@@ -240,7 +240,6 @@
   <div class="offcanvas-body">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#todo反序列化excel到内存">⭐️todo:反序列化excel到内存</a></li>
     <li><a href="#基础写文件">基础（写文件）</a>
       <ul>
         <li><a href="#新建excel">新建excel</a></li>
@@ -253,21 +252,26 @@
     <li><a href="#序列化和反序列化">序列化和反序列化</a>
       <ul>
         <li><a href="#把collectionlistt-存储到-excel">把collection（<code>List&lt;T&gt;</code>） 存储到 excel</a></li>
+        <li><a href="#反序列化excel到内存">反序列化excel到内存</a></li>
       </ul>
     </li>
     <li><a href="#exportdata">ExportData</a></li>
     <li><a href="#encryption">Encryption</a></li>
+    <li><a href="#myexcelcs">myExcel.cs</a></li>
   </ul>
 </nav>
   </div>
-</div><div class="post-content mb-3"><p>epplus是一个读写excel表格的 csharp库。<a href="https://epplussoftware.com/zh/Developers/" target="_blank" rel="noopener noreferrer">官网教程</a>
+</div><div class="post-content mb-3"><blockquote>
+<p>📅 2023-03-20 首发</p>
+<p>📅 2023-07-11 更新 - 从excel反序列化到内存 //</p>
+</blockquote>
+<p>epplus是一个读写excel表格的 csharp库。<a href="https://epplussoftware.com/zh/Developers/" target="_blank" rel="noopener noreferrer">官网教程</a>
 </p>
 <p>官方教程中使用 using 语法，我不喜欢多层级括号，<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/using-statement" target="_blank" rel="noopener noreferrer">using不使用多层级括号参考</a>
 </p>
-<h2 id="todo反序列化excel到内存">⭐️todo:反序列化excel到内存</h2>
 <h2 id="基础写文件">基础（写文件）</h2>
 <blockquote>
-<p>基础的方法我已经提取成了库文件：
+<p>基础的方法我已经提取成了库文件 myExcel.cs 放在最后面：
 包括读取excel、新建excel、新建sheet、修改cell内容、保存collectionx</p>
 </blockquote>
 <h3 id="新建excel">新建excel</h3>
@@ -340,27 +344,220 @@
 </span></span><span class="line"><span class="ln">7</span><span class="cl">        <span class="n">t</span><span class="p">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s">&#34;Name&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><h3 id="反序列化excel到内存">反序列化excel到内存</h3>
+<p>可以把指定sheet 的数据反序列化到内存中（表格数据 -&gt; <code>list&lt;Vulnerability&gt;</code>）。</p>
+<blockquote>
+<p>为了正常识别，需要在excel中顶着左上角开始写表格。</p>
+<p>常见错误是表格中有空行，会造成读取失败，程序闪退。 所以一定要保证xlsx内容正确。</p>
+</blockquote>
+<h4 id="例表漏洞名称和简述">例表（漏洞名称和简述）</h4>
+<table>
+<thead>
+<tr>
+<th>漏洞名称</th>
+<th>漏洞类型</th>
+<th>漏洞危害</th>
+<th>修复方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQL注入</td>
+<td>注入攻击</td>
+<td>数据泄露、数据篡改</td>
+<td>使用参数化查询或ORM框架，避免直接拼接SQL语句</td>
+</tr>
+<tr>
+<td>跨站脚本攻击（XSS）</td>
+<td>跨站攻击</td>
+<td>窃取用户Cookie、会话劫持</td>
+<td>过滤特殊字符，使用CSP、HttpOnly等安全头部，对用户输入进行转义</td>
+</tr>
+<tr>
+<td>文件包含漏洞</td>
+<td>访问控制</td>
+<td>读取任意文件、执行任意命令</td>
+<td>对用户输入的路径进行限制，并增加白名单过滤，避免使用动态文件包含</td>
+</tr>
+<tr>
+<td>未授权访问漏洞</td>
+<td>访问控制</td>
+<td>窃取数据、篡改数据</td>
+<td>对所有敏感操作进行身份验证与授权，禁止使用默认密码</td>
+</tr>
+</tbody>
+</table>
+<h4 id="创建数据结构class">创建数据结构class</h4>
+<p>我创建了  <code>Vulnerability</code> class，包含了漏洞的信息。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Vulnerability</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// 漏洞名称</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Type</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span><span class="c1">// 漏洞类型</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Impact</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span><span class="c1">// 漏洞危害</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="k">public</span> <span class="kt">string</span> <span class="n">Fix</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span><span class="c1">// 修复方案</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="遍历excel把数据存储到list中">遍历excel，把数据存储到list中</h4>
+<p>注释位置的内容按照需要修改即可。
+<code>//修改下面，改成自己的类，赋值自己的数据。</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">public</span> <span class="n">list</span><span class="p">&lt;</span><span class="n">Vulnerability</span><span class="p">&gt;</span> <span class="n">vulDB_list</span> <span class="p">;</span> <span class="c1">//数据会存储到这个外部list中</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="cs">/// 从指定路径初始化漏洞数据库，将漏洞信息添加到vulDB_list中</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="cs">/// &lt;param name=&#34;filePath&#34;&gt;&lt;/param&gt;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">vulDB_init</span><span class="p">(</span><span class="n">String</span> <span class="n">filePath</span> <span class="p">=</span> <span class="s">&#34;漏洞数据库.xlsx&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="kt">var</span> <span class="err">漏洞数据库</span><span class="n">xls</span> <span class="p">=</span> <span class="k">new</span> <span class="n">myExcel</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span><span class="c1">//使用了我的myExcel 库，获取package</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="kt">var</span> <span class="n">worksheet</span> <span class="p">=</span> <span class="err">漏洞数据库</span><span class="n">xls</span><span class="p">.</span><span class="n">ReadSheet</span><span class="p">(</span><span class="s">&#34;Sheet1&#34;</span><span class="p">);</span><span class="c1">//使用了我的myExcel 库，获取sheet</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">worksheet</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="n">worksheet</span><span class="p">.</span><span class="n">Dimension</span><span class="p">.</span><span class="n">Start</span><span class="p">.</span><span class="n">Row</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;=</span> <span class="n">worksheet</span><span class="p">.</span><span class="n">Dimension</span><span class="p">.</span><span class="n">End</span><span class="p">.</span><span class="n">Row</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="c1">//修改下面，改成自己的类，赋值自己的数据。</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">            <span class="n">vulDB_list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">Vulnerability</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">                <span class="n">Type</span> <span class="p">=</span> <span class="n">worksheet</span><span class="p">.</span><span class="n">Cells</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="m">1</span><span class="p">].</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">                <span class="n">Name</span> <span class="p">=</span> <span class="n">worksheet</span><span class="p">.</span><span class="n">Cells</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="m">2</span><span class="p">].</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="n">Impact</span> <span class="p">=</span> <span class="n">worksheet</span><span class="p">.</span><span class="n">Cells</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="m">3</span><span class="p">].</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">                <span class="n">Fix</span> <span class="p">=</span> <span class="n">worksheet</span><span class="p">.</span><span class="n">Cells</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="m">4</span><span class="p">].</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">vulDB_list</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">        <span class="n">ConsoleWriter</span><span class="p">.</span><span class="n">WriteRed</span><span class="p">(</span><span class="s">&#34;漏洞数据库为空，请检查漏洞数据库文件是否存在,请放在和exe同一目录下&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="exportdata">ExportData</h2>
 <p>支持把<code>ExcelPackage</code>保存成csv、Datatable、json、html格式。</p>
 <h2 id="encryption">Encryption</h2>
 <p>可以给文件加密！</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//Set a password for the workbookprotection </span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">workbook</span><span class="p">.</span><span class="n">Protection</span><span class="p">.</span><span class="n">SetPassword</span><span class="p">(</span><span class="s">&#34;EPPlus&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><h2 id="myexcelcs">myExcel.cs</h2>
+<p>这个类库可以方便我以后使用！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln">  1</span><span class="cl"><span class="nx">using</span> <span class="nx">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl"><span class="nx">using</span> <span class="nx">OfficeOpenXml</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">  3</span><span class="cl">
+</span></span><span class="line"><span class="ln">  4</span><span class="cl"><span class="nx">namespace</span> <span class="nx">reformat_report_console</span><span class="p">.</span><span class="nx">mylibs</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">  6</span><span class="cl">    <span class="nx">public</span> <span class="nx">class</span> <span class="nx">myExcel</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">        <span class="nx">ExcelPackage</span> <span class="kn">package</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl">        <span class="nx">ExcelWorksheets</span><span class="err">?</span> <span class="nx">worksheets</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">        <span class="c1">/// &lt;summary&gt;
+</span></span></span><span class="line"><span class="ln"> 12</span><span class="cl"><span class="c1"></span>        <span class="c1">/// 输入url，读取 excel，返回 ExcelPackage
+</span></span></span><span class="line"><span class="ln"> 13</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;/summary&gt;
+</span></span></span><span class="line"><span class="ln"> 14</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;filepath&#34;&gt;&lt;/param&gt;
+</span></span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="c1"></span>        <span class="nx">public</span> <span class="nf">myExcel</span><span class="p">(</span><span class="kt">string</span> <span class="nx">filepath</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">            <span class="nx">ExcelPackage</span><span class="p">.</span><span class="nx">LicenseContext</span> <span class="p">=</span> <span class="nx">LicenseContext</span><span class="p">.</span><span class="nx">NonCommercial</span><span class="p">;</span><span class="c1">//设置为非商业使用
+</span></span></span><span class="line"><span class="ln"> 18</span><span class="cl"><span class="c1"></span>            <span class="nx">this</span><span class="p">.</span><span class="kn">package</span> <span class="p">=</span> <span class="nx">new</span> <span class="nf">ExcelPackage</span><span class="p">(</span><span class="nx">filepath</span><span class="p">);</span><span class="c1">//读取文件
+</span></span></span><span class="line"><span class="ln"> 19</span><span class="cl"><span class="c1"></span>            <span class="nx">this</span><span class="p">.</span><span class="nx">worksheets</span> <span class="p">=</span> <span class="kn">package</span><span class="p">.</span><span class="nx">Workbook</span><span class="p">.</span><span class="nx">Worksheets</span><span class="p">;</span><span class="c1">//获取工作表
+</span></span></span><span class="line"><span class="ln"> 20</span><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="nx">worksheets</span><span class="p">.</span><span class="nx">Count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">ConsoleWriter</span><span class="p">.</span><span class="nf">Writedebug</span><span class="p">(</span><span class="err">$</span><span class="s">&#34;这是一个空excel:{filepath}&#34;</span><span class="p">);</span>	<span class="c1">//如果工作表为空，输出提示
+</span></span></span><span class="line"><span class="ln"> 21</span><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">        <span class="c1">// 读取excel指定sheet到内存
+</span></span></span><span class="line"><span class="ln"> 23</span><span class="cl"><span class="c1"></span>        <span class="nx">public</span> <span class="nx">ExcelWorksheet</span> <span class="nf">ReadSheet</span><span class="p">(</span><span class="kt">string</span> <span class="nx">sheetname</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">            <span class="nx">ExcelWorksheet</span> <span class="nx">sheet</span> <span class="p">=</span> <span class="kn">package</span><span class="p">.</span><span class="nx">Workbook</span><span class="p">.</span><span class="nx">Worksheets</span><span class="p">[</span><span class="nx">sheetname</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">            <span class="k">return</span> <span class="nx">sheet</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">        <span class="c1">/// &lt;summary&gt;
+</span></span></span><span class="line"><span class="ln"> 29</span><span class="cl"><span class="c1"></span>        <span class="c1">/// 添加一个sheet（输入sheet名）
+</span></span></span><span class="line"><span class="ln"> 30</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;/summary&gt;
+</span></span></span><span class="line"><span class="ln"> 31</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;sheetname&#34;&gt;&lt;/param&gt;
+</span></span></span><span class="line"><span class="ln"> 32</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;returns&gt;&lt;/returns&gt;
+</span></span></span><span class="line"><span class="ln"> 33</span><span class="cl"><span class="c1"></span>        <span class="nx">public</span> <span class="nx">ExcelWorksheet</span> <span class="nf">Addsheet</span><span class="p">(</span><span class="kt">string</span> <span class="nx">sheetname</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">            <span class="nx">ExcelWorksheet</span> <span class="nx">sheet</span> <span class="p">=</span> <span class="kn">package</span><span class="p">.</span><span class="nx">Workbook</span><span class="p">.</span><span class="nx">Worksheets</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="nx">sheetname</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">            <span class="k">return</span> <span class="nx">sheet</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">        <span class="c1">/// &lt;summary&gt;
+</span></span></span><span class="line"><span class="ln"> 39</span><span class="cl"><span class="c1"></span>        <span class="c1">/// 写入collection数据 到指定sheet
+</span></span></span><span class="line"><span class="ln"> 40</span><span class="cl"><span class="c1"></span>        <span class="c1">/// 同时展示表头，表头是类的属性名
+</span></span></span><span class="line"><span class="ln"> 41</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;/summary&gt;
+</span></span></span><span class="line"><span class="ln"> 42</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;sheet&#34;&gt;&lt;/param&gt;
+</span></span></span><span class="line"><span class="ln"> 43</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;items&#34;&gt;&lt;/param&gt;
+</span></span></span><span class="line"><span class="ln"> 44</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;typeparam name=&#34;T&#34;&gt;&lt;/typeparam&gt;
+</span></span></span><span class="line"><span class="ln"> 45</span><span class="cl"><span class="c1"></span>        <span class="nx">public</span> <span class="nx">void</span> <span class="nx">WriteCollectionToSheet</span><span class="p">&lt;</span><span class="nx">T</span><span class="p">&gt;(</span><span class="nx">ExcelWorksheet</span> <span class="nx">sheet</span><span class="p">,</span> <span class="nx">IEnumerable</span><span class="p">&lt;</span><span class="nx">T</span><span class="p">&gt;</span> <span class="nx">items</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">            <span class="kd">var</span> <span class="k">range</span> <span class="p">=</span> <span class="nx">sheet</span><span class="p">.</span><span class="nx">Cells</span><span class="p">[</span><span class="s">&#34;A1&#34;</span><span class="p">].</span><span class="nf">LoadFromCollection</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span> <span class="nx">c</span> <span class="p">=&gt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">PrintHeaders</span> <span class="p">=</span> <span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">        <span class="c1">/// &lt;summary&gt;
+</span></span></span><span class="line"><span class="ln"> 51</span><span class="cl"><span class="c1"></span>        <span class="c1">/// 检查out文件夹是否存在，out用于输出
+</span></span></span><span class="line"><span class="ln"> 52</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;/summary&gt;
+</span></span></span><span class="line"><span class="ln"> 53</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;returns&gt;&lt;/returns&gt;
+</span></span></span><span class="line"><span class="ln"> 54</span><span class="cl"><span class="c1"></span>        <span class="nx">private</span> <span class="kt">string</span> <span class="nf">checkoutdir</span><span class="p">()</span><span class="c1">//检查out文件夹是否存在，不存在则创建
+</span></span></span><span class="line"><span class="ln"> 55</span><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">            <span class="kt">string</span> <span class="nx">outpath</span> <span class="p">=</span> <span class="nx">Environment</span><span class="p">.</span><span class="nf">GetFolderPath</span><span class="p">(</span><span class="nx">Environment</span><span class="p">.</span><span class="nx">SpecialFolder</span><span class="p">.</span><span class="nx">Desktop</span><span class="p">)</span> <span class="o">+</span> <span class="sc">&#39;/&#39;</span> <span class="o">+</span> <span class="s">&#34;out&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">            <span class="k">if</span> <span class="p">(!</span><span class="nx">Directory</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="nx">outpath</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">                <span class="nx">Directory</span><span class="p">.</span><span class="nf">CreateDirectory</span><span class="p">(</span><span class="nx">outpath</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">            <span class="k">return</span> <span class="nx">outpath</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">        <span class="c1">/// &lt;summary&gt;
+</span></span></span><span class="line"><span class="ln"> 62</span><span class="cl"><span class="c1"></span>        <span class="c1">/// excel保存到桌面out文件夹下
+</span></span></span><span class="line"><span class="ln"> 63</span><span class="cl"><span class="c1"></span>        <span class="c1">/// 默认指定保存到 out/finlename
+</span></span></span><span class="line"><span class="ln"> 64</span><span class="cl"><span class="c1"></span>        <span class="c1">/// 否则以filename为路径保存
+</span></span></span><span class="line"><span class="ln"> 65</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;/summary&gt;
+</span></span></span><span class="line"><span class="ln"> 66</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;filename&#34;&gt;xxx.xlsx&lt;/param&gt;
+</span></span></span><span class="line"><span class="ln"> 67</span><span class="cl"><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;savetype&#34;&gt;url / file&lt;/param&gt;
+</span></span></span><span class="line"><span class="ln"> 68</span><span class="cl"><span class="c1"></span>        <span class="nx">public</span> <span class="nx">void</span> <span class="nf">Save</span><span class="p">(</span><span class="kt">string</span> <span class="nx">filename</span><span class="p">,</span> <span class="kt">string</span> <span class="nx">savetype</span> <span class="p">=</span> <span class="s">&#34;file&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">            <span class="nx">try</span>
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">savetype</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">&#34;file&#34;</span><span class="p">))</span><span class="c1">//file类型保存，保存到out文件夹下
+</span></span></span><span class="line"><span class="ln"> 73</span><span class="cl"><span class="c1"></span>                <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">                    <span class="kt">string</span> <span class="nx">savepath</span> <span class="p">=</span> <span class="nf">checkoutdir</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#34;/&#34;</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">;</span><span class="c1">//获得保存路径，如果已经存在则提示是否保存以防工作丢失
+</span></span></span><span class="line"><span class="ln"> 75</span><span class="cl"><span class="c1"></span>                    <span class="k">if</span> <span class="p">(</span><span class="nx">File</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="nx">savepath</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">                    <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">                        <span class="nx">ConsoleWriter</span><span class="p">.</span><span class="nf">WriteCyan</span><span class="p">(</span><span class="err">$</span><span class="s">&#34;已经存在相同文件，{filename}，确认要覆盖？(Y/n)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">                        <span class="k">if</span> <span class="p">(</span><span class="nx">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#34;n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">                        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">                            <span class="nx">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">&#34;已经取消保存&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">                            <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">                        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">                        <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">                        <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">                            <span class="nx">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">&#34;已经覆盖保存&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">                        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">                    <span class="kd">var</span> <span class="nx">desktopurl</span> <span class="p">=</span> <span class="nx">Environment</span><span class="p">.</span><span class="nf">GetFolderPath</span><span class="p">(</span><span class="nx">Environment</span><span class="p">.</span><span class="nx">SpecialFolder</span><span class="p">.</span><span class="nx">Desktop</span><span class="p">)</span> <span class="o">+</span> <span class="sc">&#39;/&#39;</span> <span class="o">+</span> <span class="s">&#34;out&#34;</span> <span class="o">+</span> <span class="sc">&#39;/&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">                    <span class="nx">this</span><span class="p">.</span><span class="kn">package</span><span class="p">.</span><span class="nf">SaveAs</span><span class="p">(</span><span class="nx">desktopurl</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">                    <span class="nx">ConsoleWriter</span><span class="p">.</span><span class="nf">WriteGreen</span><span class="p">(</span><span class="s">&#34;[ok] 保存到桌面out文件夹/&#34;</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">savetype</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">&#34;url&#34;</span><span class="p">))</span><span class="c1">//url类型保存，保存到指定路径
+</span></span></span><span class="line"><span class="ln"> 93</span><span class="cl"><span class="c1"></span>                <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">                    <span class="nx">this</span><span class="p">.</span><span class="kn">package</span><span class="p">.</span><span class="nf">SaveAs</span><span class="p">(</span><span class="nx">filename</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">                    <span class="nx">ConsoleWriter</span><span class="p">.</span><span class="nf">WriteGreen</span><span class="p">(</span><span class="s">&#34;[ok] 保存到:&#34;</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">            <span class="nf">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nx">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl">                <span class="nx">ConsoleWriter</span><span class="p">.</span><span class="nf">WriteRed</span><span class="p">(</span><span class="err">$</span><span class="s">&#34;[-] 无法保存：{e}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">101</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln">102</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">103</span><span class="cl">
+</span></span><span class="line"><span class="ln">104</span><span class="cl">        
+</span></span><span class="line"><span class="ln">105</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">106</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/">Python_beautiful_soup
+    <a href="https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/">制作一个2G大的dummy文件
 </a>
   </div><div class="post-nav post-next">
-    <a href="https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Javascript 入门-常用操作
+    <a href="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/">CopyQ
 </a>
     <i class="fas fa-fw fa-chevron-right"></i>
   </div></div><section class="related-posts-wrapper">
     <h3>相关文章</h3>
-    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/">C# 的打包技巧（打包成singlefile)
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/">Excel转换pdf
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/">C#文件管理器、读取文件列表
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/">Linkedlist删除指定值
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/">保存object到xml
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">在csharp程序中获取当前目录
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/">Csahrp Arg Test
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">如何拷贝一个对象
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/">如何使用vscode新建一个donet（csharp）项目
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/">C# 的打包技巧（打包成singlefile)
 </a></li></ul>
   </section></div>
     </article><div class="card component row post-comments">
@@ -396,11 +593,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/">制作一个2G大的dummy文件
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/">CopyQ
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/">Csharp 使用 Epplus 读写 Excel表格
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/">制作一个2G大的dummy文件
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-05-get-office/">Get Office / Windows and Crack It
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">在csharp程序中获取当前目录
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-28-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/">Windows 右键菜单管理
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/">Csahrp Arg Test
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">

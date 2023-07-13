@@ -6,7 +6,25 @@
     <description>Recent content on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Wed, 05 Jul 2023 22:27:20 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jul 2023 15:47:10 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CopyQ</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-07-13-copyq/</link>
+      <pubDate>Thu, 13 Jul 2023 15:47:10 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-07-13-copyq/</guid>
+      <description>最近再寻找一个好用的clipboard manager软件，copyQ是一个选择。 再windows上面的copyQ 界面非常古董，功能也不是那么</description>
+    </item>
+    
+    <item>
+      <title>csharp 使用 Epplus 读写 excel表格</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</link>
+      <pubDate>Tue, 11 Jul 2023 16:33:34 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</guid>
+      <description>📅 2023-03-20 首发 📅 2023-07-11 更新 - 从excel反序列化到内存 // epplus是一个读写excel表格的 csharp库。官网教程 官方教程中使用 using 语法，我不喜欢多</description>
+    </item>
+    
     <item>
       <title>制作一个2G大的dummy文件</title>
       <link>https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/</link>
@@ -276,15 +294,6 @@
     </item>
     
     <item>
-      <title>csharp 使用 Epplus 读写 excel表格</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</link>
-      <pubDate>Mon, 20 Mar 2023 16:33:34 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</guid>
-      <description>epplus是一个读写excel表格的 csharp库。官网教程 官方教程中使用 using 语法，我不喜欢多层级括号，using不使用多层级括号参考 ⭐️t</description>
-    </item>
-    
-    <item>
       <title>python_beautiful_soup</title>
       <link>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</link>
       <pubDate>Mon, 20 Mar 2023 15:50:22 +0800</pubDate>
@@ -399,7 +408,7 @@ ubuntu think : RTC time is UTC+0:00 so i have to add 8 hours and now is 08:00</d
       <description>turn on grub menu if your grub menu don&amp;rsquo;t show when you boot up your system , you can follow this :
 edit grub config
 1sudo vim /etc/default/grub 1# GRUB_TIMEOUT_STYLE=hidden 2GRUB_TIMEOUT=10 commit
-1sudo update-grub get a theme gnome grub themes store deadsec theme change some grub settings edit grub config
+1sudo update-grub get a theme gnome grub themes storedeadsec themechange some grub settings edit grub config
 1sudo vim /etc/default/grub find and change:
 1GRUB_DEFAULT=saved add this line
 1GRUB_SAVEDEFAULT=true this 2 line make grub rember your choice
@@ -413,7 +422,7 @@ commit</description>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/</guid>
       <description>install Qv2ray install qv2ray in snap store.
-get core of Qv2ray go to this link on git hub to download &amp;gt;this link&amp;lt; unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&amp;rsquo;s all done!
+get core of Qv2ray go to this link on git hub to download &amp;gt;this link&amp;lt;unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&amp;rsquo;s all done!
 use your phone as a proxy router , speed up download process.
 settings after you get your servers into Qv2ray , you have to goto ubuntu settings and set upsystem proxy to make it work</description>
     </item>
@@ -424,7 +433,7 @@ settings after you get your servers into Qv2ray , you have to goto ubuntu settin
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/</guid>
-      <description>install sougou for ubuntu you can follow this guide download and install download sougou here fix every thing sougou need
+      <description>install sougou for ubuntu you can follow this guidedownload and install download sougou herefix every thing sougou need
 1sudo apt install fcitx 2sudo cp /usr/share/applications/fcitx.desktop /etc/xdg/autostart/ 3sudo apt purge ibus 4sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 5sudo apt install libgsettings-qt1 install the package again
 1sudo dpkg -i sougou...deb reboot
 settings and stuff gotoubuntu settings - Region &amp;amp; Language - Manage installed Languages
