@@ -10,11 +10,11 @@
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
 <meta name="description" content="" /><meta itemprop="name" content="pip配置源">
-<meta itemprop="description" content="国内对于开发人员真的极不友好， 任何东东都要配置下代理或者源才能正常使用 这里教大家如何给pip配置代理； 将pip加入环境变量 在安装了pytho"><meta itemprop="datePublished" content="2022-05-19T10:21:58+08:00" />
+<meta itemprop="description" content="如何给pip配置代理； 将pip加入环境变量 可以通过下面的指令来查看自己的python安装在什么位置： 1python -c &#34;import sys; print(sys.executable)&#34; 应该会存在这样一个目录：..."><meta itemprop="datePublished" content="2022-05-19T10:21:58+08:00" />
 <meta itemprop="dateModified" content="2022-05-19T10:21:58+08:00" />
-<meta itemprop="wordCount" content="378">
+<meta itemprop="wordCount" content="264">
 <meta itemprop="keywords" content="python," /><meta property="og:title" content="pip配置源" />
-<meta property="og:description" content="国内对于开发人员真的极不友好， 任何东东都要配置下代理或者源才能正常使用 这里教大家如何给pip配置代理； 将pip加入环境变量 在安装了pytho" />
+<meta property="og:description" content="如何给pip配置代理； 将pip加入环境变量 可以通过下面的指令来查看自己的python安装在什么位置： 1python -c &#34;import sys; print(sys.executable)&#34; 应该会存在这样一个目录：..." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-19T10:21:58+08:00" />
@@ -22,7 +22,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="pip配置源"/>
-<meta name="twitter:description" content="国内对于开发人员真的极不友好， 任何东东都要配置下代理或者源才能正常使用 这里教大家如何给pip配置代理； 将pip加入环境变量 在安装了pytho"/>
+<meta name="twitter:description" content="如何给pip配置代理； 将pip加入环境变量 可以通过下面的指令来查看自己的python安装在什么位置： 1python -c &#34;import sys; print(sys.executable)&#34; 应该会存在这样一个目录：..."/>
 <link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0f88583c7f30bf4c56e86ca3ffd2f842236c71281d8221bfec10e2179697bf7c.css" integrity="sha256-D4hYPH8wv0xW6Gyj/9L4QiNscSgdgiG/7BDiF5aXv3w=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.0f88583c7f30bf4c56e86ca3ffd2f842236c71281d8221bfec10e2179697bf7c.css" integrity="sha256-D4hYPH8wv0xW6Gyj/9L4QiNscSgdgiG/7BDiF5aXv3w=" crossorigin="anonymous"></noscript></head>
   <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -228,20 +228,16 @@
   </span><span class="post-reading-time" title="reading time">
     <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
   </span><a href="https://cornradio.github.io/hugo/tags/python/" class="badge rounded-pill text-white bg-primary post-taxonomy">python</a></div>
-<div class="post-content mb-3"><p>国内对于开发人员真的极不友好，</p>
-<p>任何东东都要配置下代理或者源才能正常使用</p>
-<p>这里教大家如何给pip配置代理；</p>
+<div class="post-content mb-3"><p>如何给pip配置代理；</p>
 <h1 id="将pip加入环境变量">将pip加入环境变量</h1>
-<p>在安装了python之后，这里举例子用的是py官方的3.10安装包，安装后一定要选择上<code>disable path length limit</code>,否则windows默认是不能把太长路径加入path的。</p>
 <p>可以通过下面的指令来查看自己的python安装在什么位置：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">&gt;&gt;&gt; import os
-</span></span><span class="line"><span class="ln">2</span><span class="cl">&gt;&gt;&gt; os.path
-</span></span></code></pre></div><p><img class="img-fluid" alt="image" src="https://tva1.sinaimg.cn/large/006rgJELly1h2di42uwzmj30ux0heah6.jpg" loading="lazy"
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">python -c <span class="s2">&#34;import sys; print(sys.executable)&#34;</span>
+</span></span></code></pre></div><p><img class="img-fluid" alt="image" src="https://image.baidu.com/search/down?url=https://tva1.sinaimg.cn/large/006rgJELly1h2di42uwzmj30ux0heah6.jpg" loading="lazy"
   
    />
 
 </p>
-<p>应该会存在这样一个目录：<code>...\Python310\Scripts</code>，里面会有好多pip相关的exe，我们要把这script加到<code>环境变量</code>里面去就好了！</p>
+<p>应该会存在这样一个目录：<code>...\Python310\Scripts\</code>，里面会有好多pip相关的exe，我们要把这scripts文件夹加到<code>环境变量（user）</code>里面去就好了！</p>
 <h1 id="pip-配置源">pip 配置源</h1>
 <p>你需要进入用户目录，然后建立一个pip文件夹，例如这样：<code>C:\Users\kasusa\pip</code></p>
 <p>这个目录下，需要新建一个<code>pip.ini</code>文件，ini文件的内容可以照抄我的，在中国大陆区域用着应该都没有问题，感谢豆瓣）</p>
@@ -250,7 +246,7 @@
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">[install]</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="na">trusted-host</span><span class="o">=</span><span class="s">pypi.douban.com</span>
 </span></span></code></pre></div><h1 id="速度测试">速度测试</h1>
-<p><img class="img-fluid" alt="image" src="https://tva4.sinaimg.cn/large/006rgJELgy1h2dic1br59j30ux0dp49t.jpg" loading="lazy"
+<p><img class="img-fluid" alt="image" src="https://image.baidu.com/search/down?url=https://tva4.sinaimg.cn/large/006rgJELgy1h2dic1br59j30ux0dp49t.jpg" loading="lazy"
   
    />
 
@@ -306,11 +302,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/">CopyQ
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/">Python Win 安装
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/">CopyQ
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/">Csharp 使用 Epplus 读写 Excel表格
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/">制作一个2G大的dummy文件
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-05-get-office/">Get Office / Windows and Crack It
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/">在csharp程序中获取当前目录
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">

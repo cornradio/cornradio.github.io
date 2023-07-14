@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Thu, 13 Jul 2023 15:47:10 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jul 2023 15:12:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Win 安装</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 14 Jul 2023 15:12:50 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CopyQ</title>
       <link>https://cornradio.github.io/hugo/posts/2023-07-13-copyq/</link>
@@ -753,7 +762,7 @@ goto fcitx configuration , search for sougoupinyin and add it</description>
       <pubDate>Thu, 19 May 2022 10:21:58 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</guid>
-      <description>国内对于开发人员真的极不友好， 任何东东都要配置下代理或者源才能正常使用 这里教大家如何给pip配置代理； 将pip加入环境变量 在安装了pytho</description>
+      <description>如何给pip配置代理； 将pip加入环境变量 可以通过下面的指令来查看自己的python安装在什么位置： 1python -c &amp;#34;import sys; print(sys.executable)&amp;#34; 应该会存在这样一个目录：...</description>
     </item>
     
     <item>
