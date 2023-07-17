@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/docker/</link>
+    <link>https://cornradio.github.io/hugo/tags/docker/</link>
     <description>Recent content in Docker on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 16 Jan 2023 14:25:02 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Jan 2023 14:25:02 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-01-16-docker/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-16-docker/</link>
       <pubDate>Mon, 16 Jan 2023 14:25:02 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-16-docker/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-16-docker/</guid>
       <description>要想使用docker，需要正确的了解一些基础信息，比如 image 是啥、容器是啥、 docker hub 是啥 、 为什么pull等等，我这里先给出一些简单的解释，但是详细可</description>
     </item>
     

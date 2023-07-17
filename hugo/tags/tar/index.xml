@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tar on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/tar/</link>
+    <link>https://cornradio.github.io/hugo/tags/tar/</link>
     <description>Recent content in tar on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sun, 22 May 2022 16:45:55 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/tar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 May 2022 16:45:55 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/tar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tar的用法、常见的linux压缩解包方法</title>
-      <link>https://blog.kill9pid.top/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <link>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 22 May 2022 16:45:55 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>常见的linux 压缩解包方法 1gzip xxx 2gunzip xxx 3 4tar zcvf 压缩文件名 压缩文件 5tar zxvf 解压包名 解压文件 6 7tar jcvf renwolesshel.tar.bz2 打包 8tar jxvf renwolesshel.tar.bz2 解压 9 10zip -q a.zip a.txt 11unzip a.zip 12 -q “安静模式” tar的</description>
     </item>
     

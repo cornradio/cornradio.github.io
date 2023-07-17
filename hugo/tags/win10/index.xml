@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>win10 on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/win10/</link>
+    <link>https://cornradio.github.io/hugo/tags/win10/</link>
     <description>Recent content in win10 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 22 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/win10/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/win10/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>win10 DPI FIX</title>
-      <link>https://blog.kill9pid.top/hugo/posts/windows10dpifix/</link>
+      <link>https://cornradio.github.io/hugo/posts/windows10dpifix/</link>
       <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/windows10dpifix/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/windows10dpifix/</guid>
       <description>Windows10 DPI Fix http://windows10-dpi-fix.xpexplorer.com/ 这个软件的功能是修复win10在缩放125%的情况下产生的字体模糊。 他的原理是调用win7/8.1的缩放DPI，这个老的DPI是专门</description>
     </item>
     

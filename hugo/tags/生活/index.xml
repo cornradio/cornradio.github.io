@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>生活 on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/%E7%94%9F%E6%B4%BB/</link>
+    <link>https://cornradio.github.io/hugo/tags/%E7%94%9F%E6%B4%BB/</link>
     <description>Recent content in 生活 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 15 Nov 2021 23:24:17 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Nov 2021 23:24:17 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2021/</link>
+      <link>https://cornradio.github.io/hugo/posts/2021/</link>
       <pubDate>Mon, 15 Nov 2021 23:24:17 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2021/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2021/</guid>
       <description>毕业 2021年是我毕业的一年。也是我做了很多事情都失败了的一年。 失败事项： 考研 考公 出国做交换项目 考研和考公我可以认为是准备不充分所以失败了，</description>
     </item>
     

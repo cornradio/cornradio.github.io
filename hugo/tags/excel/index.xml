@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>excel on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/excel/</link>
+    <link>https://cornradio.github.io/hugo/tags/excel/</link>
     <description>Recent content in excel on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 11 Jul 2023 16:33:34 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jul 2023 16:33:34 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/excel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>csharp 使用 Epplus 读写 excel表格</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-03-20epplus-excel/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</link>
       <pubDate>Tue, 11 Jul 2023 16:33:34 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-20epplus-excel/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</guid>
       <description>📅 2023-03-20 首发 📅 2023-07-11 更新 - 从excel反序列化到内存 // epplus是一个读写excel表格的 csharp库。官网教程 官方教程中使用 using 语法，我不喜欢多</description>
     </item>
     
     <item>
       <title>Excel转换pdf</title>
-      <link>https://blog.kill9pid.top/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</link>
+      <link>https://cornradio.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</link>
       <pubDate>Sun, 09 Jan 2022 20:44:16 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</guid>
       <description>这个函数可是费我老大劲了。 我可以保证，你无法在除了我发的——互联网任何一个地方找到这段代码。 使用的dll需要在安装了ms office的电脑上</description>
     </item>
     

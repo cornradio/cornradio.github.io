@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>专栏 on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/series/</link>
+    <link>https://cornradio.github.io/hugo/series/</link>
     <description>Recent content in 专栏 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>友链</title>
-      <link>https://blog.kill9pid.top/hugo/series/%E5%8F%8B%E9%93%BE/</link>
+      <link>https://cornradio.github.io/hugo/series/%E5%8F%8B%E9%93%BE/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/series/%E5%8F%8B%E9%93%BE/</guid>
+      <guid>https://cornradio.github.io/hugo/series/%E5%8F%8B%E9%93%BE/</guid>
       <description></description>
     </item>
     

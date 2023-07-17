@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>c# on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/c#/</link>
+    <link>https://cornradio.github.io/hugo/tags/c#/</link>
     <description>Recent content in c# on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Thu, 31 Mar 2022 15:44:16 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Mar 2022 15:44:16 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>word小工具开发</title>
-      <link>https://blog.kill9pid.top/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
+      <link>https://cornradio.github.io/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
       <pubDate>Thu, 31 Mar 2022 15:44:16 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
       <description>本期是发到公众号上的技术分享，分享的内容就是之前我的Docx相关东东，但是本篇除了介绍代码方便、会更加全面的讲解程序搭建的思路、以及myut</description>
     </item>
     
     <item>
       <title>Excel转换pdf</title>
-      <link>https://blog.kill9pid.top/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</link>
+      <link>https://cornradio.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</link>
       <pubDate>Sun, 09 Jan 2022 20:44:16 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</guid>
       <description>这个函数可是费我老大劲了。 我可以保证，你无法在除了我发的——互联网任何一个地方找到这段代码。 使用的dll需要在安装了ms office的电脑上</description>
     </item>
     
     <item>
       <title>Docx的搜索实现</title>
-      <link>https://blog.kill9pid.top/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://cornradio.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Fri, 07 Jan 2022 22:19:49 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</guid>
       <description>我做了一个c#的docx函数库。 python操作word实在是太垃了，尤其是涉及到多表、页眉页脚，甚至有时候好好的段落硬是搜不到。所以我转向</description>
     </item>
     
     <item>
       <title>C# 保存程序设置</title>
-      <link>https://blog.kill9pid.top/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://cornradio.github.io/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Tue, 30 Nov 2021 22:42:30 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</guid>
       <description>一个可视化应用程序难免要保存一些数据，保存数据如果要自己手动操作文件的话就感觉很麻烦，好在微软提供一个很好用的保存功能，这就让我给你讲一下：</description>
     </item>
     
     <item>
       <title>C#执行命令</title>
-      <link>https://blog.kill9pid.top/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</link>
+      <link>https://cornradio.github.io/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</guid>
       <description>1using System.Diagnostics; 2 3private void runincmd(string yourcommand) 4{ 5string strCmdText; 6strCmdText = $&amp;#34;/C {yourcommand}&amp;#34;; 7Process.Start(&amp;#34;CMD.exe&amp;#34;, strCmdText); 8} Process.Start(string 程序, string 参数); 程序最好是有完整的地址，如果不需要传入参数的话可以只传入一个参数。 上面这个语句启动一个程</description>
     </item>
     

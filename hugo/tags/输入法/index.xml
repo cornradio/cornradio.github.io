@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>输入法 on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+    <link>https://cornradio.github.io/hugo/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
     <description>Recent content in 输入法 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 24 May 2022 20:50:59 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 20:50:59 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何打造最好用的微软输入法</title>
-      <link>https://blog.kill9pid.top/hugo/posts/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <link>https://cornradio.github.io/hugo/posts/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/</link>
       <pubDate>Tue, 24 May 2022 20:50:59 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
       <description>很多人都用搜狗输入法，但是在win11上面他显然不是一个最好的选择。 在windows11上面，微软对中文输入发进行了全新的设计，支持了黑色模</description>
     </item>
     

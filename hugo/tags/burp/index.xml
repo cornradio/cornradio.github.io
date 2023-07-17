@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>burp on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/burp/</link>
+    <link>https://cornradio.github.io/hugo/tags/burp/</link>
     <description>Recent content in burp on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Wed, 21 Dec 2022 16:00:59 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/burp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Dec 2022 16:00:59 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/burp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>burpsuite - 3 - inturder</title>
-      <link>https://blog.kill9pid.top/hugo/posts/3burpsuite_inturder/</link>
+      <link>https://cornradio.github.io/hugo/posts/3burpsuite_inturder/</link>
       <pubDate>Wed, 21 Dec 2022 16:00:59 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/3burpsuite_inturder/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/3burpsuite_inturder/</guid>
       <description>inturder https://portswigger.net/burp/documentation/desktop/tools/intruder burpsuite的inturder用于自动化攻击web应用，可以更换http请求中指定位置的payload，不停的发送请求。并收集返回</description>
     </item>
     

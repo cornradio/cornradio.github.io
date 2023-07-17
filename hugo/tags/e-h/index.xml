@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>e-h on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/e-h/</link>
+    <link>https://cornradio.github.io/hugo/tags/e-h/</link>
     <description>Recent content in e-h on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 28 Mar 2023 08:03:32 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/e-h/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Mar 2023 08:03:32 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/e-h/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>e-H阅读插件/e-h下载插件</title>
-      <link>https://blog.kill9pid.top/hugo/posts/e-h%E6%8F%92%E4%BB%B6/</link>
+      <link>https://cornradio.github.io/hugo/posts/e-h%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Tue, 28 Mar 2023 08:03:32 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/e-h%E6%8F%92%E4%BB%B6/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/e-h%E6%8F%92%E4%BB%B6/</guid>
       <description>e-h是一个广为人知的网站，但是他的阅读体验很糟糕。 这里有一个油猴脚本，名字叫做eHunter，可以让你的阅读体验究极升级！ ehunter-openuserjs e-hunter-github (作者还提供</description>
     </item>
     

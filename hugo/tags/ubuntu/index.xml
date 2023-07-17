@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/ubuntu/</link>
+    <link>https://cornradio.github.io/hugo/tags/ubuntu/</link>
     <description>Recent content in ubuntu on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 06 Feb 2023 14:21:50 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Feb 2023 14:21:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fix dual system time problem</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</link>
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</guid>
       <description>Fix dual system time problem fix a dual system bug : windows time not right everytime after using ubuntu.
 run this in ubuntu
 1sudo timedatectl set-local-rtc 1 --adjust-system-clock why having this problem there a hardware called RTC in your computer:
@@ -23,10 +23,10 @@ ubuntu think : RTC time is UTC+0:00 so i have to add 8 hours and now is 08:00</d
     
     <item>
       <title>grub settings for noobies</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-02-06grub/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-06grub/</link>
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-06grub/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-06grub/</guid>
       <description>turn on grub menu if your grub menu don&amp;rsquo;t show when you boot up your system , you can follow this :
 edit grub config
 1sudo vim /etc/default/grub 1# GRUB_TIMEOUT_STYLE=hidden 2GRUB_TIMEOUT=10 commit
@@ -39,10 +39,10 @@ commit</description>
     
     <item>
       <title>install Qv2ray on ubuntu</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-02-06qv2ray-on-ubuntu/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/</link>
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-06qv2ray-on-ubuntu/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/</guid>
       <description>install Qv2ray install qv2ray in snap store.
 get core of Qv2ray go to this link on git hub to download &amp;gt;this link&amp;lt; unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&amp;rsquo;s all done!
 use your phone as a proxy router , speed up download process.
@@ -51,10 +51,10 @@ settings after you get your servers into Qv2ray , you have to goto ubuntu settin
     
     <item>
       <title>install sougou for ubuntu</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-02-06sougouforubuntu-copy/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/</link>
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-06sougouforubuntu-copy/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/</guid>
       <description>install sougou for ubuntu you can follow this guide download and install download sougou here fix every thing sougou need
 1sudo apt install fcitx 2sudo cp /usr/share/applications/fcitx.desktop /etc/xdg/autostart/ 3sudo apt purge ibus 4sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 5sudo apt install libgsettings-qt1 install the package again
 1sudo dpkg -i sougou...deb reboot
@@ -65,109 +65,109 @@ goto fcitx configuration , search for sougoupinyin and add it</description>
     
     <item>
       <title>ubuntu设置ssh、修改mac地址(home pc)</title>
-      <link>https://blog.kill9pid.top/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</link>
+      <link>https://cornradio.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</link>
       <pubDate>Tue, 22 Nov 2022 22:03:01 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</guid>
       <description>本教程包含：开启ubuntu ssh server 功能（可以被远程）\修改ubuntu 的 网卡mac地址 安装ssh服务器 1sudo apt update 2sudo apt install openssh-server 查看ssh服务器启动状态 1sudo</description>
     </item>
     
     <item>
       <title>自学 linux 命令</title>
-      <link>https://blog.kill9pid.top/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</link>
+      <link>https://cornradio.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 18 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</guid>
       <description>官方培训课程 控制台常用快捷键 按键 作用 Ctrl+d 键盘输入结束或退出终端 Ctrl+s 暂停当前程序，暂停后按下任意键恢复运行 Ctrl+z 将当前程序放到后台运行，恢复到前台为命</description>
     </item>
     
     <item>
       <title>linux fun stuff</title>
-      <link>https://blog.kill9pid.top/hugo/posts/funstuff/</link>
+      <link>https://cornradio.github.io/hugo/posts/funstuff/</link>
       <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/funstuff/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/funstuff/</guid>
       <description>cmatrix 黑客帝国命令行 Gow 让win可以用大部分linux常用命令</description>
     </item>
     
     <item>
       <title>corntab计划任务</title>
-      <link>https://blog.kill9pid.top/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</link>
+      <link>https://cornradio.github.io/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</guid>
       <description>corntab 设置corntab任务，使用默认编辑器 1corntab -e 设置默认编辑器 1select-editor 设置任务，每天2：00执行 10 2 * * * /home/saber/DDREPORT/ddrp.sh</description>
     </item>
     
     <item>
       <title>proxychains 使用教程</title>
-      <link>https://blog.kill9pid.top/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</link>
+      <link>https://cornradio.github.io/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</guid>
       <description>安装proxychains sudo apt install proxychains4 配置他的配置文件：sudo vim /etc/proxychains4.conf 取消掉的注释 dynamic_chain 将底部的网络协议和代理端口和ip改成你翻墙软件提供的: 1socks5 127.0.0.1 1089 2http</description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>https://blog.kill9pid.top/hugo/posts/shell/</link>
+      <link>https://cornradio.github.io/hugo/posts/shell/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/shell/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/shell/</guid>
       <description>菜鸟shell教程 Shell 命令脚本 Shell 脚本文件的名称可以任意，建议将.sh 后缀加上，以表示是一个脚本文件。 创建脚本：vim example.sh 写好脚本的内容（就是连串</description>
     </item>
     
     <item>
       <title>ubuntu安装Qv2ray</title>
-      <link>https://blog.kill9pid.top/hugo/posts/linux-v2ray-setup/</link>
+      <link>https://cornradio.github.io/hugo/posts/linux-v2ray-setup/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/linux-v2ray-setup/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/linux-v2ray-setup/</guid>
       <description>replace your source with tuna speed up apt-update : https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ this is for ubuntu , but igeuss it will working well on other linux machines too. download Qv2ray here: https://github.com/Qv2ray/Qv2ray/releases download v2ray-core here (linux-64 ver):https://github.com/v2ray/v2ray-core/releases before open Appimage file you should give it permission! : chmod 777 * set up subscribe follow this instruction :https://qv2ray.</description>
     </item>
     
     <item>
       <title>ubuntu换源</title>
-      <link>https://blog.kill9pid.top/hugo/posts/%E6%8D%A2%E6%BA%90/</link>
+      <link>https://cornradio.github.io/hugo/posts/%E6%8D%A2%E6%BA%90/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/%E6%8D%A2%E6%BA%90/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/%E6%8D%A2%E6%BA%90/</guid>
       <description>ps：也可以通过内置的software &amp;amp; update来测试和更换中国源 清华： https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ 阿里： https://developer.aliyun.com/mirror/ubuntu</description>
     </item>
     
     <item>
       <title>ubuntu上安装java</title>
-      <link>https://blog.kill9pid.top/hugo/posts/ubuntu-install-java/</link>
+      <link>https://cornradio.github.io/hugo/posts/ubuntu-install-java/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/ubuntu-install-java/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/ubuntu-install-java/</guid>
       <description>ubuntu 安装 java 最好的教程：https://docs.datastax.com/en/jdk-install/doc/jdk-install/ins</description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>https://blog.kill9pid.top/hugo/posts/vim/</link>
+      <link>https://cornradio.github.io/hugo/posts/vim/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/vim/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/vim/</guid>
       <description>vimtutor-ch 快速使用vim: 跳转 行之间的跳转 1[n] shift g #跳转到第n行 2gg #跳转到第一行 3shift g #跳转到最后一行 行内的跳转 1~ #切换大小写 2w #到下一个单词头部 30 #到</description>
     </item>
     
     <item>
       <title>安装zsh和配置主题</title>
-      <link>https://blog.kill9pid.top/hugo/posts/my-zsh/</link>
+      <link>https://cornradio.github.io/hugo/posts/my-zsh/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/my-zsh/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/my-zsh/</guid>
       <description>zsh 有很多实用功能，下面安装和配置ohmyzsh的教程： 安装zsh 1sudo apt install zsh 提前安装所需的字体 1sudo apt-get install fonts-powerline powerline-GitHub 抄国光的作业 1sh -c &amp;#34;$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)&amp;#34; .zshrc配置 打</description>
     </item>
     
     <item>
       <title>盒盖不关机</title>
-      <link>https://blog.kill9pid.top/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</link>
+      <link>https://cornradio.github.io/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</guid>
       <description>1、编辑 logind.conf 文件，命令如下 sudo vim /etc/systemd/logind.conf 2、把所有相关 HandleLidSwitch 的值都改成 ignore 3、执行让修改的内容即时生效，输入命令： systemctl restart systemd-logind (实时生效命令可能不能用，我这边ub</description>
     </item>
     

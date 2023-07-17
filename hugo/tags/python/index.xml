@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/python/</link>
+    <link>https://cornradio.github.io/hugo/tags/python/</link>
     <description>Recent content in python on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Fri, 14 Jul 2023 15:12:50 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jul 2023 15:12:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Win 安装</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</link>
       <pubDate>Fri, 14 Jul 2023 15:12:50 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</guid>
       <description></description>
     </item>
     
     <item>
       <title>如何一键安装和更新pip包</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</link>
       <pubDate>Wed, 22 Mar 2023 09:42:16 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</guid>
       <description>&lt;p&gt;在把自己的项目分享给别人的时候，对方需要安装一些依赖包，但是每次等待报错然后手动 pip install 太麻烦了（尤其是包比较多的情况下），可以使用这种方式来一键安装和更新pip包。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>如何把 Python 程序打包成 exe</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</link>
       <pubDate>Sat, 18 Feb 2023 22:27:09 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</guid>
       <description>我需要把我写的程序分给很多没有装 python 环境的人用（即使撞上了 python 环境，也会因为网络原因无法 pip 下载依赖），所以我需要把它打包成 exe ，这样使用门槛就可以</description>
     </item>
     
     <item>
       <title>Python打包和上传到pypi</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</link>
       <pubDate>Sat, 18 Feb 2023 21:59:09 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</guid>
       <description>教程 用 python 的人都用 pip 安装过包。那么有着开源精神的你，是否也想把自己写的包上传到 pypi 呢？ 官方中文教程地址 一个视频教程 更新/发布步骤： 修改完善 setup.py 进行</description>
     </item>
     
     <item>
       <title>我写了一个python库：dumb_meun</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</link>
       <pubDate>Sat, 18 Feb 2023 16:19:07 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</guid>
       <description>我之前再我的程序里面 用了一个第三方库：simple_term_menu，提供菜单功能。但是当我再windows上尝试跑一下终于写好的程序时，</description>
     </item>
     
     <item>
       <title>用 simple_term_menu 创建更好的python菜单</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</link>
       <pubDate>Thu, 09 Feb 2023 16:25:24 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</guid>
       <description>安装 1pip install simple_term_menu ⚠️ 不支持windows 这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。 支持J K/⬆</description>
     </item>
     
     <item>
       <title>使用标准的path处理方法 (Python)</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-01-31python-path/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</link>
       <pubDate>Tue, 31 Jan 2023 15:26:05 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-31python-path/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</guid>
       <description>&lt;p&gt;标准方法可以兼容不同系统，并且有一定的容错性（比如在目录末尾写不写/）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;os.path.split(path)&lt;/code&gt; 分割路径和文件名&lt;/li&gt;
@@ -79,55 +79,55 @@
     
     <item>
       <title>Django-tutorial 1</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-01-05-django-1/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</link>
       <pubDate>Mon, 16 Jan 2023 16:51:26 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-05-django-1/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</guid>
       <description>Django 是一个 使用python作为后端语言的框架。 学习 Django 源于我想要让我的 jandan 脚本可以提供在线服务…… 没想到这个东东这么复杂， 亏了呀！ 安装Django</description>
     </item>
     
     <item>
       <title>Python Xml和读取excel</title>
-      <link>https://blog.kill9pid.top/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</link>
+      <link>https://cornradio.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</link>
       <pubDate>Mon, 08 Aug 2022 19:35:59 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</guid>
       <description>最近我接到了一个工作，就是把一份很长很长的漏洞扫描报告导入到单位的“测评能手”工具中，但是这个工具不支持导入这个excel表格，所以我要艰难</description>
     </item>
     
     <item>
       <title>使用python多线程批量ping</title>
-      <link>https://blog.kill9pid.top/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</link>
+      <link>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</link>
       <pubDate>Sat, 18 Jun 2022 19:53:02 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</guid>
       <description>批量ping是我的工作中常常需要用到的功能了，但是手动好麻烦！我在网上找到了一个脚本，经过了一些改进现在非常好用了，为了方便自己以后复制和互</description>
     </item>
     
     <item>
       <title>pip配置源</title>
-      <link>https://blog.kill9pid.top/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</link>
+      <link>https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</link>
       <pubDate>Thu, 19 May 2022 10:21:58 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</guid>
       <description>如何给pip配置代理； 将pip加入环境变量 可以通过下面的指令来查看自己的python安装在什么位置： 1python -c &amp;#34;import sys; print(sys.executable)&amp;#34; 应该会存在这样一个目录：...</description>
     </item>
     
     <item>
       <title>Python移动文件、新建目录</title>
-      <link>https://blog.kill9pid.top/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</link>
+      <link>https://cornradio.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</link>
       <pubDate>Sat, 11 Dec 2021 12:23:30 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</guid>
       <description>使用python移动文件和新建目录主要是用于大量的文档分类工作，以下是代码部分: 1import os #新建目录 2import shutil #复制文件 3# 新建一个文件夹out 然后把f.</description>
     </item>
     
     <item>
       <title>Python操作word</title>
-      <link>https://blog.kill9pid.top/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</link>
+      <link>https://cornradio.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</link>
       <pubDate>Tue, 07 Dec 2021 23:12:32 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</guid>
       <description>用python操作word::docx库的使用方法 python-docx这个库，说好用不好用，但是他是python上面唯一的选择，这里我就来</description>
     </item>
     

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>books on cornradio的技术博客</title>
-    <link>https://blog.kill9pid.top/hugo/tags/books/</link>
+    <link>https://cornradio.github.io/hugo/tags/books/</link>
     <description>Recent content in books on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sun, 29 Jan 2023 13:24:03 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Jan 2023 13:24:03 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/books/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>zlibrary</title>
-      <link>https://blog.kill9pid.top/hugo/posts/2023-01-29zlib/</link>
+      <link>https://cornradio.github.io/hugo/posts/2023-01-29zlib/</link>
       <pubDate>Sun, 29 Jan 2023 13:24:03 +0800</pubDate>
       
-      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-29zlib/</guid>
+      <guid>https://cornradio.github.io/hugo/posts/2023-01-29zlib/</guid>
       <description>&lt;p&gt;关于如何在2023年使用zlibrary，可以下载很多小说、电子书、期刊等等。（我以前以为只能下载学术论文啥的所以从来没有关注过！）&lt;/p&gt;</description>
     </item>
     
