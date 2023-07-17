@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>office on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/office/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/office/</link>
     <description>Recent content in office on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Wed, 05 Jul 2023 22:01:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/office/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jul 2023 22:01:50 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/office/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Get Office / Windows and crack it</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-07-05-get-office/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-07-05-get-office/</link>
       <pubDate>Wed, 05 Jul 2023 22:01:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-07-05-get-office/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-07-05-get-office/</guid>
       <description>&lt;p&gt;因为经常要给各种机器装office 已经麻了 所以写个小博客，方便后面用&lt;/p&gt;</description>
     </item>
     

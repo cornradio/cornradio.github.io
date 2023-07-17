@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>文件管理 on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</link>
     <description>Recent content in 文件管理 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Thu, 17 Feb 2022 10:24:20 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Feb 2022 10:24:20 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xypolyer 使用教学</title>
-      <link>https://cornradio.github.io/hugo/posts/xypolyer/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/xypolyer/</link>
       <pubDate>Thu, 17 Feb 2022 10:24:20 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/xypolyer/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/xypolyer/</guid>
       <description>xyployer 教程 常用快捷键 功能 按键 开启树状图 F8 开启双面板 F10 自定义按钮 图床使用 imgur 如果无法看图请确保网络连通 自定义按钮非常好用，可以把某个常用位置放到按钮</description>
     </item>
     

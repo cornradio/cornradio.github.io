@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/linux/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/linux/</link>
     <description>Recent content in linux on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 20 Dec 2022 16:14:59 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Dec 2022 16:14:59 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>burpsuite（入门教学课程）</title>
-      <link>https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</link>
       <pubDate>Tue, 20 Dec 2022 16:14:59 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</guid>
       <description>burpsuite（入门教学课程） Intercept and modify HTTP traffic with Burp Proxy. Set the target scope to focus your work on interesting content. Probe for vulnerabilities by reissuing requests with Burp Repeater. Run automated vulnerability scans and generate reports with Burp Scanner. intercept （拦截）流量 https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic 拦截请求（in</description>
     </item>
     
     <item>
       <title>sed Linux命令</title>
-      <link>https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Tue, 06 Dec 2022 20:14:59 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</guid>
       <description>参考链接： https://www.youtube.com/watch?v=nXLnx8ncZyE sed命令 sed据我了解是linux中用于替换的一个命令。 使用方法 仅替换第一次出现的： 1# 把a.txt中的 abc 换成 def 并打印出来。 2sed &amp;#39;s/abc/def/&amp;#39;</description>
     </item>
     
     <item>
       <title>Tar的用法、常见的linux压缩解包方法</title>
-      <link>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 22 May 2022 16:45:55 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>常见的linux 压缩解包方法 1gzip xxx 2gunzip xxx 3 4tar zcvf 压缩文件名 压缩文件 5tar zxvf 解压包名 解压文件 6 7tar jcvf renwolesshel.tar.bz2 打包 8tar jxvf renwolesshel.tar.bz2 解压 9 10zip -q a.zip a.txt 11unzip a.zip 12 -q “安静模式” tar的</description>
     </item>
     
     <item>
       <title>自定义ls后各种文件夹的颜色</title>
-      <link>https://cornradio.github.io/hugo/posts/%E8%87%AA%E5%AE%9A%E4%B9%89ls%E5%90%8E%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E9%A2%9C%E8%89%B2/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E8%87%AA%E5%AE%9A%E4%B9%89ls%E5%90%8E%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E9%A2%9C%E8%89%B2/</link>
       <pubDate>Sun, 22 May 2022 16:14:26 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E8%87%AA%E5%AE%9A%E4%B9%89ls%E5%90%8E%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E9%A2%9C%E8%89%B2/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E8%87%AA%E5%AE%9A%E4%B9%89ls%E5%90%8E%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E9%A2%9C%E8%89%B2/</guid>
       <description>今天用WLS打开windows目录，一片亮瞎眼的绿色，再加上这个复古特效，真的字都看不清了： 在网上搜了一圈修改办法，终于找到一个有用的文章：</description>
     </item>
     
     <item>
       <title>chmod的用法</title>
-      <link>https://cornradio.github.io/hugo/posts/chmod%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/chmod%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Fri, 22 Apr 2022 15:30:54 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/chmod%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/chmod%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>chmod的用法 今天我们有一节技术分享，讲的是linux的文件和权限，学到了点有用的。 然后由于我自己的一些思考，我就觉得比如我把自己写文件的</description>
     </item>
     

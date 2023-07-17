@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>clash on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/clash/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/clash/</link>
     <description>Recent content in clash on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 26 Dec 2022 22:57:21 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/clash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 22:57:21 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/clash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>clash 中的 minxin 使用教程</title>
-      <link>https://cornradio.github.io/hugo/posts/4clash-minxin-howtouse/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/4clash-minxin-howtouse/</link>
       <pubDate>Mon, 26 Dec 2022 22:57:21 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/4clash-minxin-howtouse/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/4clash-minxin-howtouse/</guid>
       <description>什么是mixin mixin就是这个按钮，简单说，mixin是一种混合配置的方式，你可以把自己的配置注入到“配置文件”中，这样就可以在一定程度</description>
     </item>
     
     <item>
       <title>steam如何绕过clash的全局代理</title>
-      <link>https://cornradio.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</link>
       <pubDate>Tue, 30 Nov 2021 13:11:11 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</guid>
       <description>我想要默认开启电脑的clash全局代理。但是要求steam这个东东登录和下载（尤其是游戏下载）不要走代理。下载太耗费流量了，还不能跑满网速。</description>
     </item>
     

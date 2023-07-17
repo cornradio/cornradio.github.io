@@ -2,143 +2,143 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/posts/</link>
+    <link>https://blog.kill9pid.top/hugo/posts/</link>
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Fri, 14 Jul 2023 15:12:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jul 2023 15:12:50 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Win 安装</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</link>
       <pubDate>Fri, 14 Jul 2023 15:12:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CopyQ</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-07-13-copyq/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-07-13-copyq/</link>
       <pubDate>Thu, 13 Jul 2023 15:47:10 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-07-13-copyq/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-07-13-copyq/</guid>
       <description>最近再寻找一个好用的clipboard manager软件，copyQ是一个选择。 再windows上面的copyQ 界面非常古董，功能也不是那么</description>
     </item>
     
     <item>
       <title>csharp 使用 Epplus 读写 excel表格</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-20epplus-excel/</link>
       <pubDate>Tue, 11 Jul 2023 16:33:34 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-20epplus-excel/</guid>
       <description>📅 2023-03-20 首发 📅 2023-07-11 更新 - 从excel反序列化到内存 // epplus是一个读写excel表格的 csharp库。官网教程 官方教程中使用 using 语法，我不喜欢多</description>
     </item>
     
     <item>
       <title>制作一个2G大的dummy文件</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 05 Jul 2023 22:27:20 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/</guid>
       <description>用途 用于测试文件传输速度 在 Mac 上想要测试文件传输速度时，因为 finder 没有提供速度值的显示，所以需要借助“活动监视器”，在传输文件时，&amp;ldquo;磁</description>
     </item>
     
     <item>
       <title>Get Office / Windows and crack it</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-07-05-get-office/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-07-05-get-office/</link>
       <pubDate>Wed, 05 Jul 2023 22:01:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-07-05-get-office/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-07-05-get-office/</guid>
       <description>&lt;p&gt;因为经常要给各种机器装office 已经麻了 所以写个小博客，方便后面用&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在csharp程序中获取当前目录</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</link>
       <pubDate>Mon, 03 Jul 2023 10:13:05 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</guid>
       <description>在csharp程序中获取当前目录 1string exeDirectory = AppDomain.CurrentDomain.BaseDirectory; 返回的是当前应用程序域的基目录，它通常是可执行文件所在的目录。 通过这个方法获取到的路径可以用于加载资</description>
     </item>
     
     <item>
       <title>windows 右键菜单管理</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-06-28-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-06-28-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/</link>
       <pubDate>Wed, 28 Jun 2023 14:50:35 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-06-28-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-06-28-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/</guid>
       <description>&lt;p&gt;目前我正在开发一个命令行程序，用途是处理docx文件，我的用户想要增加 “右键点击docx文件就能处理文件” 的功能。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Csahrp Arg Test</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-06-28-csahrpargtest/</link>
       <pubDate>Wed, 28 Jun 2023 12:00:40 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-06-28-csahrpargtest/</guid>
       <description>前言 命令行参数在csharp中有专门的类库，https://github.com/commandlineparser/commandline</description>
     </item>
     
     <item>
       <title>Hugo Commands</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-06-13-hugo-commands/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-06-13-hugo-commands/</link>
       <pubDate>Tue, 13 Jun 2023 22:18:58 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-06-13-hugo-commands/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-06-13-hugo-commands/</guid>
       <description>我写了一些 hugo 脚本，包括 win 和 mac（linux） 平台。 方便写博客。 下载： hugo-commands 吐槽一下这个power shell的command我是真的不会写基本上</description>
     </item>
     
     <item>
       <title>csharp 字典 key 不区分大小写</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-06-13-csharp_dict_ignorecase/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-06-13-csharp_dict_ignorecase/</link>
       <pubDate>Tue, 13 Jun 2023 10:41:53 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-06-13-csharp_dict_ignorecase/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-06-13-csharp_dict_ignorecase/</guid>
       <description>Csharp_dict_ignorecase 参考链接： https://www.tutorialspoint.com/case-insensitive-dictionary-in-chash?ranMID=49144&amp;ranEAID=mP6UMnc5Ozo&amp;ranSITEID=mP6UMnc5Ozo-0dXMNkfvS087.74Ygvbi7Q 今天遇到一个问题，需要在C#中使用字典，但是字典的key是不区分大小写的，所以需要自己实现一个不区分大小写的字典，好在 c# 提供这</description>
     </item>
     
     <item>
       <title>Parallels crack</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-06-13-parallels_crack/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-06-13-parallels_crack/</link>
       <pubDate>Tue, 13 Jun 2023 09:22:06 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-06-13-parallels_crack/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-06-13-parallels_crack/</guid>
       <description>Parallels Desktop Crack https://github.com/crazyPerject/ParallelsDesktopCrack readme 中包含详细的破解步骤。 以防原repo被删，我fork了一份，地址： https://github.com/cornradio/ParallelsDesktopCrack</description>
     </item>
     
     <item>
       <title>nessus 无法访问的解决办法 for mac and win</title>
-      <link>https://cornradio.github.io/hugo/posts/nessus-%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-for-mac/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/nessus-%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-for-mac/</link>
       <pubDate>Mon, 05 Jun 2023 13:00:07 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/nessus-%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-for-mac/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/nessus-%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-for-mac/</guid>
       <description>本篇内容全程推荐使用chrome而不是safari，safari还是没有办法进入的。 nessus 是一款漏洞扫描软件，在我开始使用mac之后，我尝试安装</description>
     </item>
     
     <item>
       <title>Xray扫描器-如何登录扫描</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-04-24-xray%E6%89%AB%E6%8F%8F%E5%99%A8--%E5%A6%82%E4%BD%95%E7%99%BB%E5%BD%95%E6%89%AB%E6%8F%8F/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-04-24-xray%E6%89%AB%E6%8F%8F%E5%99%A8--%E5%A6%82%E4%BD%95%E7%99%BB%E5%BD%95%E6%89%AB%E6%8F%8F/</link>
       <pubDate>Mon, 24 Apr 2023 16:45:43 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-04-24-xray%E6%89%AB%E6%8F%8F%E5%99%A8--%E5%A6%82%E4%BD%95%E7%99%BB%E5%BD%95%E6%89%AB%E6%8F%8F/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-04-24-xray%E6%89%AB%E6%8F%8F%E5%99%A8--%E5%A6%82%E4%BD%95%E7%99%BB%E5%BD%95%E6%89%AB%E6%8F%8F/</guid>
       <description>xray 安装 https://github.com/chaitin/xray/releases 下载对应的版本，解压后，将 xray_windows_amd64.exe 文件放到系统环境变量文件夹中。 第一次运行之前要双击 xray_windows_amd64.exe ，让他先生成自己需要的 yaml 等配置文件 命令 扫描静态页面 1xray</description>
     </item>
     
     <item>
       <title>Ipad看哔咔哔咔</title>
-      <link>https://cornradio.github.io/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/</link>
       <pubDate>Fri, 21 Apr 2023 16:56:54 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/ipad%E7%9C%8B%E5%93%94%E5%92%94%E5%93%94%E5%92%94/</guid>
       <description>23-4-21 https://altstore.io/ 这个是一个更好用的自签名方法，主要是可以不用7天重装，在手机上可以进行自签名更新 这是官方的教程： IOS下载-PicAcg-哔咔漫画下载 (picacn.xyz)</description>
     </item>
     
     <item>
       <title>使用Azure自建节点</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</link>
       <pubDate>Sat, 15 Apr 2023 12:31:55 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</guid>
       <description>&lt;p&gt;Azure注册新账户，会赠送一个月的 200USD 免费额度，如果升级成“即用即付”，则这 200USD 可以延长使用期限到一年。（需要填写自己的信用卡信息）&lt;/p&gt;
 &lt;p&gt;除此之外，还有至少有免费 1个月 的免费 vm 用。 可以在这里查看：&lt;a href=&#34;https://portal.azure.com/#view/Microsoft_Azure_Billing/FreeServicesBlade&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Azure免费服务&lt;/a&gt;
 &lt;/p&gt;</description>
@@ -146,64 +146,64 @@
     
     <item>
       <title>Mp3tag--给下载的无图音乐增加专辑图</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-04-15-mp3tag/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-04-15-mp3tag/</link>
       <pubDate>Sat, 15 Apr 2023 12:17:42 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-04-15-mp3tag/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-04-15-mp3tag/</guid>
       <description>yt-dlp 下载 youtube 的命令行工具有：you-get， youtube-dl, yt-dlp yt-dlp 是目前最好用的。 1yt-dlp --extract-audio --audio-format mp3 &amp;lt;video-url&amp;gt; 但是下载的源文件咩有专辑封面图（都是无图mp3） mp3tag https://www.mp3tag.de/en/download.html mp3tag 是一个用于编辑</description>
     </item>
     
     <item>
       <title>Win切换java版本</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/</link>
       <pubDate>Thu, 13 Apr 2023 14:57:51 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-04-13-win%E5%88%87%E6%8D%A2java%E7%89%88%E6%9C%AC/</guid>
       <description></description>
     </item>
     
     <item>
       <title>代码审计-Java</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-java/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-java/</link>
       <pubDate>Thu, 30 Mar 2023 22:23:15 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-java/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>代码审计 基础概念</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</link>
       <pubDate>Thu, 30 Mar 2023 22:23:02 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-30-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mysql渗透基础</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-30-mysql%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-30-mysql%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Thu, 30 Mar 2023 22:22:41 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-30-mysql%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-30-mysql%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80/</guid>
       <description>&lt;p&gt;mysql 常用的命令行操作、新建删除数据库、新建删除表、修改表结构、操作表数据、表内的常用语法等。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>e-H阅读插件/e-h下载插件</title>
-      <link>https://cornradio.github.io/hugo/posts/e-h%E6%8F%92%E4%BB%B6/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/e-h%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Tue, 28 Mar 2023 08:03:32 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/e-h%E6%8F%92%E4%BB%B6/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/e-h%E6%8F%92%E4%BB%B6/</guid>
       <description>e-h是一个广为人知的网站，但是他的阅读体验很糟糕。 这里有一个油猴脚本，名字叫做eHunter，可以让你的阅读体验究极升级！ ehunter-openuserjs e-hunter-github (作者还提供</description>
     </item>
     
     <item>
       <title>如何拷贝一个对象</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</link>
       <pubDate>Sun, 26 Mar 2023 11:28:25 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</guid>
       <description>&lt;p&gt;这是我工作中遇到的一个bug，困扰了我一个下午。&lt;/p&gt;
 &lt;p&gt;但是我会用一个好理解的例子来说明。&lt;/p&gt;
 &lt;p&gt;应该在所有面向对象编程语言中是通用的，这是关于”克隆一个实体“的问题。&lt;/p&gt;</description>
@@ -211,10 +211,10 @@
     
     <item>
       <title>Iterm 调教（快捷键和主题）</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98-copy/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98-copy/</link>
       <pubDate>Sat, 25 Mar 2023 11:28:25 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98-copy/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-25-iterm2%E8%B0%83%E6%95%99%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%BB%E9%A2%98-copy/</guid>
       <description>&lt;p&gt;Iterm 是广为流传的mac超强终端模拟器，
 下载 &lt;a href=&#34;https://iterm2.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;iterm2&lt;/a&gt;
 ｜
@@ -225,10 +225,10 @@
     
     <item>
       <title>如何使用vscode新建一个donet（csharp）项目</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Sat, 25 Mar 2023 00:06:47 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</guid>
       <description>&lt;p&gt;通常情况下，使用 Visual Studio 来编写 C# 代码创建项目和管理非常的简单。但是，Visual Studio 是一个非常大的 IDE（而且visual studio mac版与win版并非同根同源，mac版本比较难用），如果您只是想编写一些简单的 C# 代码，安装一个巨大的vs是不适合的。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;visual studio 来写c#（常规选择）&lt;/li&gt;
@@ -238,157 +238,157 @@
     
     <item>
       <title>国内测速网站推荐</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-24-%E5%9B%BD%E5%86%85%E6%B5%8B%E9%80%9F%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-24-%E5%9B%BD%E5%86%85%E6%B5%8B%E9%80%9F%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</link>
       <pubDate>Fri, 24 Mar 2023 14:33:32 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-24-%E5%9B%BD%E5%86%85%E6%B5%8B%E9%80%9F%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-24-%E5%9B%BD%E5%86%85%E6%B5%8B%E9%80%9F%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://speedtest.im/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;http://speedtest.im/&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP - 1 </title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20-php-1/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-20-php-1/</link>
       <pubDate>Thu, 23 Mar 2023 14:02:18 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-php-1/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-20-php-1/</guid>
       <description>&lt;p&gt;学习一下上古语言，
 据说渗透测试用得到。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP - 2 </title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20-php-2/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-20-php-2/</link>
       <pubDate>Thu, 23 Mar 2023 14:02:18 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-php-2/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-20-php-2/</guid>
       <description>&lt;p&gt;学习一下上古语言，
 据说渗透测试用得到。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>如何一键安装和更新pip包</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</link>
       <pubDate>Wed, 22 Mar 2023 09:42:16 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-22-%E5%A6%82%E4%BD%95%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0pip%E5%8C%85/</guid>
       <description>&lt;p&gt;在把自己的项目分享给别人的时候，对方需要安装一些依赖包，但是每次等待报错然后手动 pip install 太麻烦了（尤其是包比较多的情况下），可以使用这种方式来一键安装和更新pip包。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Javascript 入门-for Pentest</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/</link>
       <pubDate>Mon, 20 Mar 2023 21:53:22 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-for-pentest/</guid>
       <description>&lt;p&gt;js基础（for pentest） 真的很基础。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Javascript 入门-DOM</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/</link>
       <pubDate>Mon, 20 Mar 2023 21:50:30 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-dom/</guid>
       <description>&lt;p&gt;dom 元素的定位、修改、创建、删除、指定位置插入等操作&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Javascript 入门-常用操作</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Mon, 20 Mar 2023 21:49:07 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-20-javascript-%E5%85%A5%E9%97%A8-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
       <description>&lt;p&gt;console.log 、 alert 、 prompt 、 confirm 、 location.href 、 setinterval 、 settimeout 、addEventListener&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>python_beautiful_soup</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-1-0xpython_beautiful_soup/</link>
       <pubDate>Mon, 20 Mar 2023 15:50:22 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-1-0xpython_beautiful_soup/</guid>
       <description>还没写，先留着空位 2023-03-20可恶啊，我又忘了 好耶，留着留着，就忘了。。。 现在不会了 该死……</description>
     </item>
     
     <item>
       <title>移动光猫改桥接</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-03-%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB%E6%94%B9%E6%A1%A5%E6%8E%A5%E7%9A%84%E4%B8%80%E6%AC%A1%E7%BB%8F%E9%AA%8C/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-03-%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB%E6%94%B9%E6%A1%A5%E6%8E%A5%E7%9A%84%E4%B8%80%E6%AC%A1%E7%BB%8F%E9%AA%8C/</link>
       <pubDate>Fri, 03 Mar 2023 23:04:09 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-03-%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB%E6%94%B9%E6%A1%A5%E6%8E%A5%E7%9A%84%E4%B8%80%E6%AC%A1%E7%BB%8F%E9%AA%8C/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-03-%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%AB%E6%94%B9%E6%A1%A5%E6%8E%A5%E7%9A%84%E4%B8%80%E6%AC%A1%E7%BB%8F%E9%AA%8C/</guid>
       <description>0. 为什么要做教程 改成桥接之后，可以把游戏主机放到DMZ区域，NAT类型可能得到改善。还有软路由的一些好玩功能都可以试试看。 打电话中国移动客服</description>
     </item>
     
     <item>
       <title>如何避免timemachine占用宝贵的mac磁盘空间</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-28-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8Dtimemachine%E5%8D%A0%E7%94%A8%E5%AE%9D%E8%B4%B5%E7%9A%84mac%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-28-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8Dtimemachine%E5%8D%A0%E7%94%A8%E5%AE%9D%E8%B4%B5%E7%9A%84mac%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Tue, 28 Feb 2023 16:47:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-28-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8Dtimemachine%E5%8D%A0%E7%94%A8%E5%AE%9D%E8%B4%B5%E7%9A%84mac%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-28-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8Dtimemachine%E5%8D%A0%E7%94%A8%E5%AE%9D%E8%B4%B5%E7%9A%84mac%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</guid>
       <description>因为我买的MacBook只有512G的容量，所以我一直对容量使用比较在意，今天打开磁盘工具，发现我的MacBook的磁盘空间已经不足了。 我一</description>
     </item>
     
     <item>
       <title>windows开启WebDAV</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-24windows%E5%BC%80%E5%90%AFwebdav/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-24windows%E5%BC%80%E5%90%AFwebdav/</link>
       <pubDate>Fri, 24 Feb 2023 19:56:44 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-24windows%E5%BC%80%E5%90%AFwebdav/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-24windows%E5%BC%80%E5%90%AFwebdav/</guid>
       <description>开启 WebDAV 可以让你的 windows 设备变成家庭媒体服务器。 这是一个替代选项，毕竟ftp已经过时（无安全性）、文件夹共享简直是太烂了 开启系统功能 搜索：启用或关</description>
     </item>
     
     <item>
       <title>mac essencials 2</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-23macos_essencials2/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-23macos_essencials2/</link>
       <pubDate>Thu, 23 Feb 2023 20:03:07 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-23macos_essencials2/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-23macos_essencials2/</guid>
       <description>经过了半年的使用，这是最新的软件推荐列表！ PS：最近在装机（mac mini），正好整理一下。 mac必装软件 解压软件 fastzip 滚轮和鼠标优化软件 Mos 视频</description>
     </item>
     
     <item>
       <title>如何把 Python 程序打包成 exe</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</link>
       <pubDate>Sat, 18 Feb 2023 22:27:09 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85%E6%88%90exe/</guid>
       <description>我需要把我写的程序分给很多没有装 python 环境的人用（即使撞上了 python 环境，也会因为网络原因无法 pip 下载依赖），所以我需要把它打包成 exe ，这样使用门槛就可以</description>
     </item>
     
     <item>
       <title>Python打包和上传到pypi</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</link>
       <pubDate>Sat, 18 Feb 2023 21:59:09 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-18-python%E6%89%93%E5%8C%85/</guid>
       <description>教程 用 python 的人都用 pip 安装过包。那么有着开源精神的你，是否也想把自己写的包上传到 pypi 呢？ 官方中文教程地址 一个视频教程 更新/发布步骤： 修改完善 setup.py 进行</description>
     </item>
     
     <item>
       <title>我写了一个python库：dumb_meun</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</link>
       <pubDate>Sat, 18 Feb 2023 16:19:07 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-18-%E6%88%91%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AApython%E5%BA%93dumb_meun/</guid>
       <description>我之前再我的程序里面 用了一个第三方库：simple_term_menu，提供菜单功能。但是当我再windows上尝试跑一下终于写好的程序时，</description>
     </item>
     
     <item>
       <title>用 simple_term_menu 创建更好的python菜单</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</link>
       <pubDate>Thu, 09 Feb 2023 16:25:24 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-09-%E4%BD%BF%E7%94%A8simple_term_menu%E5%88%9B%E5%BB%BA%E6%9B%B4%E5%A5%BD%E7%9A%84python%E8%8F%9C%E5%8D%95/</guid>
       <description>安装 1pip install simple_term_menu ⚠️ 不支持windows 这个菜单库使用非常简单，只需要传入一个列表，就可以生成一个菜单，返回值就是选择的菜单项的索引。 支持J K/⬆</description>
     </item>
     
     <item>
       <title>Dbdiagram.io,数据库设计的好选择</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</link>
       <pubDate>Thu, 09 Feb 2023 16:01:23 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-09-dbdiagram.io%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%9A%84%E5%A5%BD%E9%80%89%E6%8B%A9/</guid>
       <description>&lt;p&gt;说到数据库设计软件，之前上学的时候用过 powerdesigener 、 navicat设计数据库。&lt;/p&gt;
 &lt;p&gt;但是都是付费软件，今天找到了一个免费的数据库设计工具 &lt;a href=&#34;https://dbdiagram.io&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;dbdiagram.io&lt;/a&gt;
 。&lt;/p&gt;</description>
@@ -396,10 +396,10 @@
     
     <item>
       <title>Fix dual system time problem</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</link>
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-06fix-dual-system-time-problem-copy/</guid>
       <description>Fix dual system time problem fix a dual system bug : windows time not right everytime after using ubuntu.
 run this in ubuntu
 1sudo timedatectl set-local-rtc 1 --adjust-system-clock why having this problem there a hardware called RTC in your computer:
@@ -410,10 +410,10 @@ ubuntu think : RTC time is UTC+0:00 so i have to add 8 hours and now is 08:00</d
     
     <item>
       <title>grub settings for noobies</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-06grub/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-06grub/</link>
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-06grub/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-06grub/</guid>
       <description>turn on grub menu if your grub menu don&amp;rsquo;t show when you boot up your system , you can follow this :
 edit grub config
 1sudo vim /etc/default/grub 1# GRUB_TIMEOUT_STYLE=hidden 2GRUB_TIMEOUT=10 commit
@@ -426,10 +426,10 @@ commit</description>
     
     <item>
       <title>install Qv2ray on ubuntu</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-06qv2ray-on-ubuntu/</link>
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-06qv2ray-on-ubuntu/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-06qv2ray-on-ubuntu/</guid>
       <description>install Qv2ray install qv2ray in snap store.
 get core of Qv2ray go to this link on git hub to download &amp;gt;this link&amp;lt; unzip core to whatever floder, set up the core path in Qv2ray - Preferences - Kernel Settings and it&amp;rsquo;s all done!
 use your phone as a proxy router , speed up download process.
@@ -438,10 +438,10 @@ settings after you get your servers into Qv2ray , you have to goto ubuntu settin
     
     <item>
       <title>install sougou for ubuntu</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-02-06sougouforubuntu-copy/</link>
       <pubDate>Mon, 06 Feb 2023 14:21:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-02-06sougouforubuntu-copy/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-02-06sougouforubuntu-copy/</guid>
       <description>install sougou for ubuntu you can follow this guide download and install download sougou here fix every thing sougou need
 1sudo apt install fcitx 2sudo cp /usr/share/applications/fcitx.desktop /etc/xdg/autostart/ 3sudo apt purge ibus 4sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 5sudo apt install libgsettings-qt1 install the package again
 1sudo dpkg -i sougou...deb reboot
@@ -452,19 +452,19 @@ goto fcitx configuration , search for sougoupinyin and add it</description>
     
     <item>
       <title>Json读写（Python）</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-31python-json/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-31python-json/</link>
       <pubDate>Tue, 31 Jan 2023 15:34:37 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-31python-json/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-31python-json/</guid>
       <description>&lt;p&gt;使用 python 读写 json，或者使用 json5 处理一些格式“不太正确”的 json string，比如js代码的格式。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用标准的path处理方法 (Python)</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-31python-path/</link>
       <pubDate>Tue, 31 Jan 2023 15:26:05 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-31python-path/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-31python-path/</guid>
       <description>&lt;p&gt;标准方法可以兼容不同系统，并且有一定的容错性（比如在目录末尾写不写/）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;os.path.split(path)&lt;/code&gt; 分割路径和文件名&lt;/li&gt;
@@ -477,10 +477,10 @@ goto fcitx configuration , search for sougoupinyin and add it</description>
     
     <item>
       <title>喜欢的老高视频|老高與小茉视频推荐</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-29mrgaomsmo/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-29mrgaomsmo/</link>
       <pubDate>Sun, 29 Jan 2023 23:37:58 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-29mrgaomsmo/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-29mrgaomsmo/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/@laogao&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;老高與小茉 Mr &amp;amp; Mrs Gao&lt;/a&gt;
  在我感觉人生无聊的时候给了我新的观点和信念！&lt;/p&gt;
 &lt;p&gt;我还记得我第一个看到的是“29号宇宙”，讲述的是一个养老鼠实验模拟人类社会。&lt;/p&gt;</description>
@@ -488,631 +488,631 @@ goto fcitx configuration , search for sougoupinyin and add it</description>
     
     <item>
       <title>zlibrary</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-29zlib/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-29zlib/</link>
       <pubDate>Sun, 29 Jan 2023 13:24:03 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-29zlib/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-29zlib/</guid>
       <description>&lt;p&gt;关于如何在2023年使用zlibrary，可以下载很多小说、电子书、期刊等等。（我以前以为只能下载学术论文啥的所以从来没有关注过！）&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Django-tutorial 1</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-05-django-1/</link>
       <pubDate>Mon, 16 Jan 2023 16:51:26 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-05-django-1/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-05-django-1/</guid>
       <description>Django 是一个 使用python作为后端语言的框架。 学习 Django 源于我想要让我的 jandan 脚本可以提供在线服务…… 没想到这个东东这么复杂， 亏了呀！ 安装Django</description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-16-docker/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-16-docker/</link>
       <pubDate>Mon, 16 Jan 2023 14:25:02 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-16-docker/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-16-docker/</guid>
       <description>要想使用docker，需要正确的了解一些基础信息，比如 image 是啥、容器是啥、 docker hub 是啥 、 为什么pull等等，我这里先给出一些简单的解释，但是详细可</description>
     </item>
     
     <item>
       <title>c# 的打包技巧（打包成singlefile)</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</link>
       <pubDate>Tue, 10 Jan 2023 16:10:14 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</guid>
       <description>我已经想要把我的小工具打包成单个程序很久了。但是一直不知道怎么操作 今天看到reddit里面给我推送：how_to_build_my_cons</description>
     </item>
     
     <item>
       <title>Regex 101</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-06-regex/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-06-regex/</link>
       <pubDate>Fri, 06 Jan 2023 16:10:14 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-06-regex/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-06-regex/</guid>
       <description>最近工作终于闲了下来，可以上班研究代码。遇到一些需要正则表达式的编程问题，无法解决所以决定个学一下。 Regex 101 - ZH-CN (regexlearn.com) Regex Learn - 练习场 Regex Learn - cheatsheet 练习题 简单</description>
     </item>
     
     <item>
       <title>vscode技巧</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Thu, 05 Jan 2023 16:38:27 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-05vscode%E6%8A%80%E5%B7%A7/</guid>
       <description>csharp 程序不能输入 用vscode运行csharp默认使用的terminal是不支持输入的，输入没反应 需要修改 launch.json 增加这两行我估计是关闭了什么东西，</description>
     </item>
     
     <item>
       <title>clash 中的 minxin 使用教程</title>
-      <link>https://cornradio.github.io/hugo/posts/4clash-minxin-howtouse/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/4clash-minxin-howtouse/</link>
       <pubDate>Mon, 26 Dec 2022 22:57:21 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/4clash-minxin-howtouse/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/4clash-minxin-howtouse/</guid>
       <description>什么是mixin mixin就是这个按钮，简单说，mixin是一种混合配置的方式，你可以把自己的配置注入到“配置文件”中，这样就可以在一定程度</description>
     </item>
     
     <item>
       <title>burpsuite - 3 - inturder</title>
-      <link>https://cornradio.github.io/hugo/posts/3burpsuite_inturder/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/3burpsuite_inturder/</link>
       <pubDate>Wed, 21 Dec 2022 16:00:59 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/3burpsuite_inturder/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/3burpsuite_inturder/</guid>
       <description>inturder https://portswigger.net/burp/documentation/desktop/tools/intruder burpsuite的inturder用于自动化攻击web应用，可以更换http请求中指定位置的payload，不停的发送请求。并收集返回</description>
     </item>
     
     <item>
       <title>burpsuite（入门教学课程）</title>
-      <link>https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</link>
       <pubDate>Tue, 20 Dec 2022 16:14:59 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</guid>
       <description>burpsuite（入门教学课程） Intercept and modify HTTP traffic with Burp Proxy. Set the target scope to focus your work on interesting content. Probe for vulnerabilities by reissuing requests with Burp Repeater. Run automated vulnerability scans and generate reports with Burp Scanner. intercept （拦截）流量 https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic 拦截请求（in</description>
     </item>
     
     <item>
       <title>在macos上面安装burpsuite（crackverison）</title>
-      <link>https://cornradio.github.io/hugo/posts/2burponmac_cracked/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2burponmac_cracked/</link>
       <pubDate>Mon, 19 Dec 2022 12:18:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2burponmac_cracked/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2burponmac_cracked/</guid>
       <description>你下载了一个破解版burpsuite pro，但是你不知道怎么安装，burp又提示一堆诡异的java17+错误，这篇文章就是写给你的。 文件目录</description>
     </item>
     
     <item>
       <title>sed Linux命令</title>
-      <link>https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Tue, 06 Dec 2022 20:14:59 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/</guid>
       <description>参考链接： https://www.youtube.com/watch?v=nXLnx8ncZyE sed命令 sed据我了解是linux中用于替换的一个命令。 使用方法 仅替换第一次出现的： 1# 把a.txt中的 abc 换成 def 并打印出来。 2sed &amp;#39;s/abc/def/&amp;#39;</description>
     </item>
     
     <item>
       <title>如何删除git中的所有历史文件</title>
-      <link>https://cornradio.github.io/hugo/posts/1%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E6%96%87%E4%BB%B6/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/1%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E6%96%87%E4%BB%B6/</link>
       <pubDate>Sat, 03 Dec 2022 12:18:50 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/1%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/1%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E6%96%87%E4%BB%B6/</guid>
       <description>需要工具 gitbash 用于快速操作 githubDesktop 用于查看文件历史等 注意 此操作不可撤销，如果你的历史记录中有着不想要被删除的重要数据，请务必提前备份。 适用情况：清理g</description>
     </item>
     
     <item>
       <title>ubuntu设置ssh、修改mac地址(home pc)</title>
-      <link>https://cornradio.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</link>
       <pubDate>Tue, 22 Nov 2022 22:03:01 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/</guid>
       <description>本教程包含：开启ubuntu ssh server 功能（可以被远程）\修改ubuntu 的 网卡mac地址 安装ssh服务器 1sudo apt update 2sudo apt install openssh-server 查看ssh服务器启动状态 1sudo</description>
     </item>
     
     <item>
       <title>windows酷命令</title>
-      <link>https://cornradio.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/</link>
       <pubDate>Sat, 29 Oct 2022 23:00:17 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/</guid>
       <description>如果你更喜欢看视频：https://www.youtube.com/watch?v=Jfvg3CS1X3A&amp;amp;t=1s 有些命令需要使用</description>
     </item>
     
     <item>
       <title>自定义终端标识符</title>
-      <link>https://cornradio.github.io/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Thu, 15 Sep 2022 23:03:01 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
       <description>zshrc zsh是macos目前默认的交互终端，如果要修改默认标识符有2中办法： 在～/.zshrc文件中加入行来设置： 你可以通过设置PS1这个变量，</description>
     </item>
     
     <item>
       <title>传入参数ARGV</title>
-      <link>https://cornradio.github.io/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/</link>
       <pubDate>Sat, 10 Sep 2022 20:03:01 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0argv/</guid>
       <description>传入参数 在使用linux命令的时候，很多命令都能传入参数比如 ls -l。 这次使用的例子是我之前写过的me_in_jandan.py，他的功能是通</description>
     </item>
     
     <item>
       <title>自学 linux 命令</title>
-      <link>https://cornradio.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 18 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E8%87%AA%E5%AD%A6-linux-%E5%91%BD%E4%BB%A4/</guid>
       <description>官方培训课程 控制台常用快捷键 按键 作用 Ctrl+d 键盘输入结束或退出终端 Ctrl+s 暂停当前程序，暂停后按下任意键恢复运行 Ctrl+z 将当前程序放到后台运行，恢复到前台为命</description>
     </item>
     
     <item>
       <title>Python Xml和读取excel</title>
-      <link>https://cornradio.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</link>
       <pubDate>Mon, 08 Aug 2022 19:35:59 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/python-xml%E5%92%8C%E8%AF%BB%E5%8F%96excel/</guid>
       <description>最近我接到了一个工作，就是把一份很长很长的漏洞扫描报告导入到单位的“测评能手”工具中，但是这个工具不支持导入这个excel表格，所以我要艰难</description>
     </item>
     
     <item>
       <title>ssh to parallels （kali）</title>
-      <link>https://cornradio.github.io/hugo/posts/sshtoparallels/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/sshtoparallels/</link>
       <pubDate>Sat, 06 Aug 2022 10:00:00 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/sshtoparallels/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/sshtoparallels/</guid>
       <description>参考： https://wpguru.co.uk/2014/02/how-to-ssh-into-a-virtual-machine-in-parallels-desktop/ 使用ssh链接 parallels 虚拟机的 kali linux系统 本教程基于PD17，m1 MacBook。 首先你也直接在pd虚拟机中直接下载和安装kali，而</description>
     </item>
     
     <item>
       <title>柯林斯词典 On MAC</title>
-      <link>https://cornradio.github.io/hugo/posts/collionsdictformac/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/collionsdictformac/</link>
       <pubDate>Wed, 27 Jul 2022 20:00:00 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/collionsdictformac/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/collionsdictformac/</guid>
       <description>链接: https://pan.baidu.com/s/1MAu0cTODwGCIXydUK9zt5Q?pwd=t8q4 提取码: t8q4 也许存在会导致spotlight不能用的问题，可以尝试使用文中提到的下载链接，那个版本好像不会导致spotlight问题。</description>
     </item>
     
     <item>
       <title>mac essencials</title>
-      <link>https://cornradio.github.io/hugo/posts/macos_essencials/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/macos_essencials/</link>
       <pubDate>Sat, 02 Jul 2022 20:03:07 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/macos_essencials/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/macos_essencials/</guid>
       <description>mac必装软件 粘贴版历史记录软件（AppleStore） 快捷键设置软件（可以设置快捷键打开任何安装的应用）（AppleStore） 解压软件（</description>
     </item>
     
     <item>
       <title>pip on mac</title>
-      <link>https://cornradio.github.io/hugo/posts/postspiponmac/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/postspiponmac/</link>
       <pubDate>Sat, 25 Jun 2022 22:03:07 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/postspiponmac/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/postspiponmac/</guid>
       <description>mac自带了python，但是竟然不带pip，这篇文章将会教你如何在mac上面安装pip包管理器。 这个文章是在mac上面写的哦，因为环境很难</description>
     </item>
     
     <item>
       <title>Excel黑色模式</title>
-      <link>https://cornradio.github.io/hugo/posts/excel%E9%BB%91%E8%89%B2%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/excel%E9%BB%91%E8%89%B2%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 22 Jun 2022 19:03:01 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/excel%E9%BB%91%E8%89%B2%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/excel%E9%BB%91%E8%89%B2%E6%A8%A1%E5%BC%8F/</guid>
       <description>OFFICE系列在最近增加了黑色模式支持，对于word来说非常好，他有做颜色映射，可以让一个本来是白色的文档变成黑色之后颜色也不显得奇怪。（</description>
     </item>
     
     <item>
       <title>战地5键盘不灵的解决办法</title>
-      <link>https://cornradio.github.io/hugo/posts/%E6%88%98%E5%9C%B05%E9%94%AE%E7%9B%98%E4%B8%8D%E7%81%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E6%88%98%E5%9C%B05%E9%94%AE%E7%9B%98%E4%B8%8D%E7%81%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Mon, 20 Jun 2022 22:09:55 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E6%88%98%E5%9C%B05%E9%94%AE%E7%9B%98%E4%B8%8D%E7%81%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E6%88%98%E5%9C%B05%E9%94%AE%E7%9B%98%E4%B8%8D%E7%81%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>战地5键盘不灵的解决办法 最近在玩战地5，游戏是origin出的，但是有个bug，一边前进一边开镜，就会站着不动，总之是输入冲突的问题，在网上</description>
     </item>
     
     <item>
       <title>使用python多线程批量ping</title>
-      <link>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</link>
       <pubDate>Sat, 18 Jun 2022 19:53:02 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</guid>
       <description>批量ping是我的工作中常常需要用到的功能了，但是手动好麻烦！我在网上找到了一个脚本，经过了一些改进现在非常好用了，为了方便自己以后复制和互</description>
     </item>
     
     <item>
       <title>使用Netch加速apex</title>
-      <link>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8netch%E5%8A%A0%E9%80%9Fapex/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E4%BD%BF%E7%94%A8netch%E5%8A%A0%E9%80%9Fapex/</link>
       <pubDate>Sat, 28 May 2022 14:36:11 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8netch%E5%8A%A0%E9%80%9Fapex/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E4%BD%BF%E7%94%A8netch%E5%8A%A0%E9%80%9Fapex/</guid>
       <description>前段时间我没有续费我的uu加速器了，因为这个老鬼东西实在是价格太贵，并且也不是多好用。 上次我为了和同学一些玩游戏又在网上买了个uu加速器（登</description>
     </item>
     
     <item>
       <title>如何打造最好用的微软输入法</title>
-      <link>https://cornradio.github.io/hugo/posts/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/</link>
       <pubDate>Tue, 24 May 2022 20:50:59 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
       <description>很多人都用搜狗输入法，但是在win11上面他显然不是一个最好的选择。 在windows11上面，微软对中文输入发进行了全新的设计，支持了黑色模</description>
     </item>
     
     <item>
       <title>Tar的用法、常见的linux压缩解包方法</title>
-      <link>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 22 May 2022 16:45:55 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/tar%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>常见的linux 压缩解包方法 1gzip xxx 2gunzip xxx 3 4tar zcvf 压缩文件名 压缩文件 5tar zxvf 解压包名 解压文件 6 7tar jcvf renwolesshel.tar.bz2 打包 8tar jxvf renwolesshel.tar.bz2 解压 9 10zip -q a.zip a.txt 11unzip a.zip 12 -q “安静模式” tar的</description>
     </item>
     
     <item>
       <title>自定义ls后各种文件夹的颜色</title>
-      <link>https://cornradio.github.io/hugo/posts/%E8%87%AA%E5%AE%9A%E4%B9%89ls%E5%90%8E%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E9%A2%9C%E8%89%B2/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E8%87%AA%E5%AE%9A%E4%B9%89ls%E5%90%8E%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E9%A2%9C%E8%89%B2/</link>
       <pubDate>Sun, 22 May 2022 16:14:26 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E8%87%AA%E5%AE%9A%E4%B9%89ls%E5%90%8E%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E9%A2%9C%E8%89%B2/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E8%87%AA%E5%AE%9A%E4%B9%89ls%E5%90%8E%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E9%A2%9C%E8%89%B2/</guid>
       <description>今天用WLS打开windows目录，一片亮瞎眼的绿色，再加上这个复古特效，真的字都看不清了： 在网上搜了一圈修改办法，终于找到一个有用的文章：</description>
     </item>
     
     <item>
       <title>漫画软件推荐</title>
-      <link>https://cornradio.github.io/hugo/posts/%E6%BC%AB%E7%94%BB%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E6%BC%AB%E7%94%BB%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</link>
       <pubDate>Fri, 20 May 2022 13:27:25 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E6%BC%AB%E7%94%BB%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E6%BC%AB%E7%94%BB%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</guid>
       <description>最近我想看一拳超人漫画，我需要看高质量（清晰度）的并且不要bilibili漫画←它要钱而且差不多一章一块钱！最终我找到了下载版的，是汉化组的</description>
     </item>
     
     <item>
       <title>pip配置源</title>
-      <link>https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</link>
       <pubDate>Thu, 19 May 2022 10:21:58 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/pip%E9%85%8D%E7%BD%AE%E6%BA%90/</guid>
       <description>如何给pip配置代理； 将pip加入环境变量 可以通过下面的指令来查看自己的python安装在什么位置： 1python -c &amp;#34;import sys; print(sys.executable)&amp;#34; 应该会存在这样一个目录：...</description>
     </item>
     
     <item>
       <title>把doc文件转换成docx</title>
-      <link>https://cornradio.github.io/hugo/posts/%E6%8A%8Adoc%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90docx/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E6%8A%8Adoc%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90docx/</link>
       <pubDate>Thu, 12 May 2022 16:52:49 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E6%8A%8Adoc%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90docx/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E6%8A%8Adoc%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90docx/</guid>
       <description>在word中开启开发者模式，新建一个宏（快捷键 alt F11），使用下面的代码，然后双击运行宏。 会让你选择多个文件，然后系统会把他们都转换成doc</description>
     </item>
     
     <item>
       <title>chmod的用法</title>
-      <link>https://cornradio.github.io/hugo/posts/chmod%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/chmod%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Fri, 22 Apr 2022 15:30:54 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/chmod%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/chmod%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>chmod的用法 今天我们有一节技术分享，讲的是linux的文件和权限，学到了点有用的。 然后由于我自己的一些思考，我就觉得比如我把自己写文件的</description>
     </item>
     
     <item>
       <title>word小工具开发</title>
-      <link>https://cornradio.github.io/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
       <pubDate>Thu, 31 Mar 2022 15:44:16 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/docx%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
       <description>本期是发到公众号上的技术分享，分享的内容就是之前我的Docx相关东东，但是本篇除了介绍代码方便、会更加全面的讲解程序搭建的思路、以及myut</description>
     </item>
     
     <item>
       <title>Ipad看TikTok</title>
-      <link>https://cornradio.github.io/hugo/posts/ipad%E7%9C%8Btiktok/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/ipad%E7%9C%8Btiktok/</link>
       <pubDate>Wed, 30 Mar 2022 18:51:07 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/ipad%E7%9C%8Btiktok/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/ipad%E7%9C%8Btiktok/</guid>
       <description>https://www.youtube.com/watch?v=5tqzLUTLW-A 这个频道主人做了好多期怎么在苹果上面用tiktok的影片，虽然他宣传机场，但是他讲的很清楚。 目前来说，需要到设置-地区，把地区切换成美国就</description>
     </item>
     
     <item>
       <title>游戏自动录屏利器 Overwolf &#43; Medaltv</title>
-      <link>https://cornradio.github.io/hugo/posts/%E6%B8%B8%E6%88%8F%E8%87%AA%E5%8A%A8%E5%BD%95%E5%B1%8F%E5%88%A9%E5%99%A8-overwolf&#43;medaltv/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E6%B8%B8%E6%88%8F%E8%87%AA%E5%8A%A8%E5%BD%95%E5%B1%8F%E5%88%A9%E5%99%A8-overwolf&#43;medaltv/</link>
       <pubDate>Sun, 13 Mar 2022 12:22:25 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E6%B8%B8%E6%88%8F%E8%87%AA%E5%8A%A8%E5%BD%95%E5%B1%8F%E5%88%A9%E5%99%A8-overwolf&#43;medaltv/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E6%B8%B8%E6%88%8F%E8%87%AA%E5%8A%A8%E5%BD%95%E5%B1%8F%E5%88%A9%E5%99%A8-overwolf&#43;medaltv/</guid>
       <description>下载和安装 在官网下overwolf （他是一个软件商店）Overwolf Appstore 按照这个目录找，然后下载medal.tv 下载安装好之后你就可以看到这</description>
     </item>
     
     <item>
       <title>如何使用FRP</title>
-      <link>https://cornradio.github.io/hugo/posts/howtousefrp/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/howtousefrp/</link>
       <pubDate>Sat, 12 Mar 2022 08:56:19 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/howtousefrp/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/howtousefrp/</guid>
       <description>FRP是一个开源的内网穿透软件，本文将会介绍如何使用frp。 frp - github 原理解释 背景 我们有一台能访问公网，但是没有公网ip（不能为外部提供服务的s</description>
     </item>
     
     <item>
       <title>关于我从CLASH切换到v2rayN这件事</title>
-      <link>https://cornradio.github.io/hugo/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%8Eclash%E5%88%87%E6%8D%A2%E5%88%B0v2rayn%E8%BF%99%E4%BB%B6%E4%BA%8B/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%8Eclash%E5%88%87%E6%8D%A2%E5%88%B0v2rayn%E8%BF%99%E4%BB%B6%E4%BA%8B/</link>
       <pubDate>Thu, 10 Mar 2022 18:40:24 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%8Eclash%E5%88%87%E6%8D%A2%E5%88%B0v2rayn%E8%BF%99%E4%BB%B6%E4%BA%8B/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%8Eclash%E5%88%87%E6%8D%A2%E5%88%B0v2rayn%E8%BF%99%E4%BB%B6%E4%BA%8B/</guid>
       <description>我从clash切换到使用v2rayN了， 这件事情是因为steam，但是也因为clash是一个坏软件。 起因 我昨天晚上登录steam，借用朋友的</description>
     </item>
     
     <item>
       <title>IT BOOKS</title>
-      <link>https://cornradio.github.io/hugo/posts/itbook/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/itbook/</link>
       <pubDate>Mon, 07 Mar 2022 16:40:49 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/itbook/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/itbook/</guid>
       <description>在这个网站五角钱的程序员/IT_book (gitee.com) 转载的一些书籍下载链接，如果书挂了可能要去看一下。 自己找还挺麻烦的，不如就copy一份出来（顺便删</description>
     </item>
     
     <item>
       <title>Steam好友已断开连接修复办法</title>
-      <link>https://cornradio.github.io/hugo/posts/steam%E5%A5%BD%E5%8F%8B%E5%B7%B2%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E4%BF%AE%E5%A4%8D%E5%8A%9E%E6%B3%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/steam%E5%A5%BD%E5%8F%8B%E5%B7%B2%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E4%BF%AE%E5%A4%8D%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Sat, 05 Mar 2022 11:32:35 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/steam%E5%A5%BD%E5%8F%8B%E5%B7%B2%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E4%BF%AE%E5%A4%8D%E5%8A%9E%E6%B3%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/steam%E5%A5%BD%E5%8F%8B%E5%B7%B2%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E4%BF%AE%E5%A4%8D%E5%8A%9E%E6%B3%95/</guid>
       <description>问题描述 有时候会出现这种情况：像上图一样，steam的好友网络无法访问，更关键的是这个东西会不定期的跳出来，比如，在你和其他敌人激烈对线的时</description>
     </item>
     
     <item>
       <title>Xypolyer 使用教学</title>
-      <link>https://cornradio.github.io/hugo/posts/xypolyer/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/xypolyer/</link>
       <pubDate>Thu, 17 Feb 2022 10:24:20 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/xypolyer/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/xypolyer/</guid>
       <description>xyployer 教程 常用快捷键 功能 按键 开启树状图 F8 开启双面板 F10 自定义按钮 图床使用 imgur 如果无法看图请确保网络连通 自定义按钮非常好用，可以把某个常用位置放到按钮</description>
     </item>
     
     <item>
       <title>Permission Denied (publickey,gssapi-keyex,gssapi-with-mic) 解决办法</title>
-      <link>https://cornradio.github.io/hugo/posts/ssh2/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/ssh2/</link>
       <pubDate>Mon, 14 Feb 2022 09:56:15 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/ssh2/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/ssh2/</guid>
       <description>今天ssh登录阿里云远程的centos，出现了 1Permission denied (publickey,gssapi-keyex,gssapi-with-mic) 尝试使用生成的key（pem文件）没有成功。 1ssh -i myvmubuntu.pem root@123.56.18.36 提示如下错误： 1Permission denied (publickey,gssapi-keyex,gssapi-with-mic) 解决方案 修改这文</description>
     </item>
     
     <item>
       <title>Excel转换pdf</title>
-      <link>https://cornradio.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</link>
       <pubDate>Sun, 09 Jan 2022 20:44:16 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/excel%E8%BD%AC%E6%8D%A2pdf/</guid>
       <description>这个函数可是费我老大劲了。 我可以保证，你无法在除了我发的——互联网任何一个地方找到这段代码。 使用的dll需要在安装了ms office的电脑上</description>
     </item>
     
     <item>
       <title>Docx的搜索实现</title>
-      <link>https://cornradio.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Fri, 07 Jan 2022 22:19:49 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/docx%E7%9A%84%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0/</guid>
       <description>我做了一个c#的docx函数库。 python操作word实在是太垃了，尤其是涉及到多表、页眉页脚，甚至有时候好好的段落硬是搜不到。所以我转向</description>
     </item>
     
     <item>
       <title>2022</title>
-      <link>https://cornradio.github.io/hugo/posts/2022/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2022/</link>
       <pubDate>Tue, 04 Jan 2022 21:31:54 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2022/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2022/</guid>
       <description>2022年的第一个帖子！ 今年的元旦我老妈从黑龙江过来看我。 在这之前，我一直有点嘴巴上火还是什么的，有好几个大大的溃疡，非常疼！ 直到31号，我</description>
     </item>
     
     <item>
       <title>Python移动文件、新建目录</title>
-      <link>https://cornradio.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</link>
       <pubDate>Sat, 11 Dec 2021 12:23:30 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/python%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</guid>
       <description>使用python移动文件和新建目录主要是用于大量的文档分类工作，以下是代码部分: 1import os #新建目录 2import shutil #复制文件 3# 新建一个文件夹out 然后把f.</description>
     </item>
     
     <item>
       <title>Python操作word</title>
-      <link>https://cornradio.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</link>
       <pubDate>Tue, 07 Dec 2021 23:12:32 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/python%E6%93%8D%E4%BD%9Cword/</guid>
       <description>用python操作word::docx库的使用方法 python-docx这个库，说好用不好用，但是他是python上面唯一的选择，这里我就来</description>
     </item>
     
     <item>
       <title>C# 保存程序设置</title>
-      <link>https://cornradio.github.io/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Tue, 30 Nov 2021 22:42:30 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/csharp%E4%BF%9D%E5%AD%98%E8%AE%BE%E7%BD%AE/</guid>
       <description>一个可视化应用程序难免要保存一些数据，保存数据如果要自己手动操作文件的话就感觉很麻烦，好在微软提供一个很好用的保存功能，这就让我给你讲一下：</description>
     </item>
     
     <item>
       <title>steam如何绕过clash的全局代理</title>
-      <link>https://cornradio.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</link>
       <pubDate>Tue, 30 Nov 2021 13:11:11 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E8%AE%A9steam%E7%BB%95%E8%BF%87clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86/</guid>
       <description>我想要默认开启电脑的clash全局代理。但是要求steam这个东东登录和下载（尤其是游戏下载）不要走代理。下载太耗费流量了，还不能跑满网速。</description>
     </item>
     
     <item>
       <title>2021</title>
-      <link>https://cornradio.github.io/hugo/posts/2021/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2021/</link>
       <pubDate>Mon, 15 Nov 2021 23:24:17 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2021/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2021/</guid>
       <description>毕业 2021年是我毕业的一年。也是我做了很多事情都失败了的一年。 失败事项： 考研 考公 出国做交换项目 考研和考公我可以认为是准备不充分所以失败了，</description>
     </item>
     
     <item>
       <title>linux fun stuff</title>
-      <link>https://cornradio.github.io/hugo/posts/funstuff/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/funstuff/</link>
       <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/funstuff/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/funstuff/</guid>
       <description>cmatrix 黑客帝国命令行 Gow 让win可以用大部分linux常用命令</description>
     </item>
     
     <item>
       <title>C#执行命令</title>
-      <link>https://cornradio.github.io/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/cs%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</guid>
       <description>1using System.Diagnostics; 2 3private void runincmd(string yourcommand) 4{ 5string strCmdText; 6strCmdText = $&amp;#34;/C {yourcommand}&amp;#34;; 7Process.Start(&amp;#34;CMD.exe&amp;#34;, strCmdText); 8} Process.Start(string 程序, string 参数); 程序最好是有完整的地址，如果不需要传入参数的话可以只传入一个参数。 上面这个语句启动一个程</description>
     </item>
     
     <item>
       <title>视频网站集</title>
-      <link>https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/</link>
       <pubDate>Sun, 18 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/</guid>
       <description>正规站 bilibili https://www.bilibili.com/ netflix https://www.netflix.com/browse 正常剧 低端影视 https://ddrk.me/ 奈飞影视 https://www.nfmovies.com/ 动画片 紫可可 http://zikeke.net/ AGE FANS https://www.agefans.cc/ 短视频 Coub https://coub.com/ 开眼 https://home.eyepetizer.net/ emmm X video https://www.xvideos.com/ Sex.com https://www.sex.com/ PornHub https://cn.pornhub.com/</description>
     </item>
     
     <item>
       <title>win10 DPI FIX</title>
-      <link>https://cornradio.github.io/hugo/posts/windows10dpifix/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/windows10dpifix/</link>
       <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/windows10dpifix/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/windows10dpifix/</guid>
       <description>Windows10 DPI Fix http://windows10-dpi-fix.xpexplorer.com/ 这个软件的功能是修复win10在缩放125%的情况下产生的字体模糊。 他的原理是调用win7/8.1的缩放DPI，这个老的DPI是专门</description>
     </item>
     
     <item>
       <title>c#文件管理器、读取文件列表</title>
-      <link>https://cornradio.github.io/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</guid>
       <description>打开文件夹和选择其中某一项 1private void openExplorer() 2{ 3 string FilePath = Directory.GetCurrentDirectory(); 4 //打开文件夹并选中文件 5 System.Diagnostics.Process.Start(&amp;#34;Explorer&amp;#34;, &amp;#34;/select,&amp;#34; + FilePath + &amp;#34;\\&amp;#34; + &amp;#34;infolist.xml&amp;#34;); 6 //仅打开文件夹 7 System.Diagnostics.Process.Start(FilePath); 8} 读取某位置的指定后缀文件（列</description>
     </item>
     
     <item>
       <title>winform适配dpi</title>
-      <link>https://cornradio.github.io/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</guid>
       <description>https://zhuanlan.zhihu.com/p/128588859 在项目中添加一个：应用程序清单文件 在清单文件app.manifest的 &amp;lt;/assembly&amp;gt; 标签下添加 1&amp;lt;application xmlns=&amp;#34;urn:schemas-microsoft-com:asm.v3&amp;#34;&amp;gt; 2 &amp;lt;windowsSettings&amp;gt; 3 &amp;lt;dpiAware xmlns=&amp;#34;http://schemas.microsoft.com/SMI/2005/WindowsSettings&amp;#34;&amp;gt;true&amp;lt;/dpiAware&amp;gt; 4 &amp;lt;/windowsSettings&amp;gt; 5&amp;lt;/application&amp;gt; 适配DPI之后，即便是电脑dpi为缩</description>
     </item>
     
     <item>
       <title>归档辅助小程序</title>
-      <link>https://cornradio.github.io/hugo/posts/%E5%BD%92%E6%A1%A3%E8%BE%85%E5%8A%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E5%BD%92%E6%A1%A3%E8%BE%85%E5%8A%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E5%BD%92%E6%A1%A3%E8%BE%85%E5%8A%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E5%BD%92%E6%A1%A3%E8%BE%85%E5%8A%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
       <description>最近写了一个工作用的小程序：https://github.com/kasusa/archive_helper 然后从开始写到现在大概花了5小时</description>
     </item>
     
     <item>
       <title>linkedlist删除指定值</title>
-      <link>https://cornradio.github.io/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/</guid>
       <description>info是我自己定义的一个类。 下面是如何删除linklist中指定item的办法。 1LinkedList&amp;lt;info&amp;gt; infolist = new LinkedList&amp;lt;info&amp;gt;(); 2 3string todelete = &amp;#34;1&amp;#34;; 4 5info tmpitem = new info(); 6foreach (var item in infolist) 7{ 8 if (item.no == todelete) 9 tmpitem</description>
     </item>
     
     <item>
       <title>保存object到xml</title>
-      <link>https://cornradio.github.io/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/</guid>
       <description>对实体类做标记 [DataContract] 标记在class前。 [DataMember] 标记在需要保存的属性前。 1 [DataContract] 2public class Car 3{ 4 [DataMember] 5 public string name; 6 7 [DataMember] 8 double power; 9 10 [DataMember] 11 List&amp;lt;Wheel&amp;gt; wheels; 12} 拷贝这两个函数 保存：保存文件</description>
     </item>
     
     <item>
       <title>corntab计划任务</title>
-      <link>https://cornradio.github.io/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/corntab-%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</guid>
       <description>corntab 设置corntab任务，使用默认编辑器 1corntab -e 设置默认编辑器 1select-editor 设置任务，每天2：00执行 10 2 * * * /home/saber/DDREPORT/ddrp.sh</description>
     </item>
     
     <item>
       <title>hugo博客</title>
-      <link>https://cornradio.github.io/hugo/posts/hugo-newblog/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/hugo-newblog/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/hugo-newblog/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/hugo-newblog/</guid>
       <description>剧情介绍 今天yr在我旁边弄新的hugo主题，我感觉他的新主题真的很清新，很不错，然后markdown记录之类的确实要比转化成html再放出来</description>
     </item>
     
     <item>
       <title>proxychains 使用教程</title>
-      <link>https://cornradio.github.io/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/youtube-proxychains%E6%80%BB%E7%BB%93/</guid>
       <description>安装proxychains sudo apt install proxychains4 配置他的配置文件：sudo vim /etc/proxychains4.conf 取消掉的注释 dynamic_chain 将底部的网络协议和代理端口和ip改成你翻墙软件提供的: 1socks5 127.0.0.1 1089 2http</description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>https://cornradio.github.io/hugo/posts/shell/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/shell/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/shell/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/shell/</guid>
       <description>菜鸟shell教程 Shell 命令脚本 Shell 脚本文件的名称可以任意，建议将.sh 后缀加上，以表示是一个脚本文件。 创建脚本：vim example.sh 写好脚本的内容（就是连串</description>
     </item>
     
     <item>
       <title>ubuntu安装Qv2ray</title>
-      <link>https://cornradio.github.io/hugo/posts/linux-v2ray-setup/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/linux-v2ray-setup/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/linux-v2ray-setup/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/linux-v2ray-setup/</guid>
       <description>replace your source with tuna speed up apt-update : https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ this is for ubuntu , but igeuss it will working well on other linux machines too. download Qv2ray here: https://github.com/Qv2ray/Qv2ray/releases download v2ray-core here (linux-64 ver):https://github.com/v2ray/v2ray-core/releases before open Appimage file you should give it permission! : chmod 777 * set up subscribe follow this instruction :https://qv2ray.</description>
     </item>
     
     <item>
       <title>ubuntu换源</title>
-      <link>https://cornradio.github.io/hugo/posts/%E6%8D%A2%E6%BA%90/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E6%8D%A2%E6%BA%90/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E6%8D%A2%E6%BA%90/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E6%8D%A2%E6%BA%90/</guid>
       <description>ps：也可以通过内置的software &amp;amp; update来测试和更换中国源 清华： https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ 阿里： https://developer.aliyun.com/mirror/ubuntu</description>
     </item>
     
     <item>
       <title>ubuntu上安装java</title>
-      <link>https://cornradio.github.io/hugo/posts/ubuntu-install-java/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/ubuntu-install-java/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/ubuntu-install-java/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/ubuntu-install-java/</guid>
       <description>ubuntu 安装 java 最好的教程：https://docs.datastax.com/en/jdk-install/doc/jdk-install/ins</description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>https://cornradio.github.io/hugo/posts/vim/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/vim/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/vim/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/vim/</guid>
       <description>vimtutor-ch 快速使用vim: 跳转 行之间的跳转 1[n] shift g #跳转到第n行 2gg #跳转到第一行 3shift g #跳转到最后一行 行内的跳转 1~ #切换大小写 2w #到下一个单词头部 30 #到</description>
     </item>
     
     <item>
       <title>安装zsh和配置主题</title>
-      <link>https://cornradio.github.io/hugo/posts/my-zsh/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/my-zsh/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/my-zsh/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/my-zsh/</guid>
       <description>zsh 有很多实用功能，下面安装和配置ohmyzsh的教程： 安装zsh 1sudo apt install zsh 提前安装所需的字体 1sudo apt-get install fonts-powerline powerline-GitHub 抄国光的作业 1sh -c &amp;#34;$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)&amp;#34; .zshrc配置 打</description>
     </item>
     
     <item>
       <title>盒盖不关机</title>
-      <link>https://cornradio.github.io/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E7%9B%92%E7%9B%96%E4%B8%8D%E5%85%B3%E6%9C%BA/</guid>
       <description>1、编辑 logind.conf 文件，命令如下 sudo vim /etc/systemd/logind.conf 2、把所有相关 HandleLidSwitch 的值都改成 ignore 3、执行让修改的内容即时生效，输入命令： systemctl restart systemd-logind (实时生效命令可能不能用，我这边ub</description>
     </item>
     
     <item>
       <title>友情链接</title>
-      <link>https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E5%8F%8B%E9%93%BE/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E5%8F%8B%E9%93%BE/</guid>
       <description>友链。 La Bibliothèque de Lumière https://ble-m.ltgc.cc/ （卢米埃尔图书馆） Xeterium https://blog.izfsk.top/ https://bb.izfsk.top/ new！ Terrarum::异世界丨居正博客 https://blog.skyju.cc/ 颜树人 https://yantree.github.io/ （从不更新的</description>
     </item>
     

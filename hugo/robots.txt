@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://cornradio.github.io/hugo/sitemap.xml
+Sitemap: https://blog.kill9pid.top/hugo/sitemap.xml

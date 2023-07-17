@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>csharp on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/csharp/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/csharp/</link>
     <description>Recent content in csharp on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 11 Jul 2023 16:33:34 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jul 2023 16:33:34 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>csharp 使用 Epplus 读写 excel表格</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-20epplus-excel/</link>
       <pubDate>Tue, 11 Jul 2023 16:33:34 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-20epplus-excel/</guid>
       <description>📅 2023-03-20 首发 📅 2023-07-11 更新 - 从excel反序列化到内存 // epplus是一个读写excel表格的 csharp库。官网教程 官方教程中使用 using 语法，我不喜欢多</description>
     </item>
     
     <item>
       <title>在csharp程序中获取当前目录</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</link>
       <pubDate>Mon, 03 Jul 2023 10:13:05 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-07-03-%E5%9C%A8csharp%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95/</guid>
       <description>在csharp程序中获取当前目录 1string exeDirectory = AppDomain.CurrentDomain.BaseDirectory; 返回的是当前应用程序域的基目录，它通常是可执行文件所在的目录。 通过这个方法获取到的路径可以用于加载资</description>
     </item>
     
     <item>
       <title>Csahrp Arg Test</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-06-28-csahrpargtest/</link>
       <pubDate>Wed, 28 Jun 2023 12:00:40 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-06-28-csahrpargtest/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-06-28-csahrpargtest/</guid>
       <description>前言 命令行参数在csharp中有专门的类库，https://github.com/commandlineparser/commandline</description>
     </item>
     
     <item>
       <title>如何拷贝一个对象</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</link>
       <pubDate>Sun, 26 Mar 2023 11:28:25 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-26-%E5%A6%82%E4%BD%95%E6%8B%B7%E8%B4%9D%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/</guid>
       <description>&lt;p&gt;这是我工作中遇到的一个bug，困扰了我一个下午。&lt;/p&gt;
 &lt;p&gt;但是我会用一个好理解的例子来说明。&lt;/p&gt;
 &lt;p&gt;应该在所有面向对象编程语言中是通用的，这是关于”克隆一个实体“的问题。&lt;/p&gt;</description>
@@ -47,10 +47,10 @@
     
     <item>
       <title>如何使用vscode新建一个donet（csharp）项目</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Sat, 25 Mar 2023 00:06:47 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-03-25-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAdonetcsharp%E9%A1%B9%E7%9B%AE/</guid>
       <description>&lt;p&gt;通常情况下，使用 Visual Studio 来编写 C# 代码创建项目和管理非常的简单。但是，Visual Studio 是一个非常大的 IDE（而且visual studio mac版与win版并非同根同源，mac版本比较难用），如果您只是想编写一些简单的 C# 代码，安装一个巨大的vs是不适合的。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;visual studio 来写c#（常规选择）&lt;/li&gt;
@@ -60,55 +60,55 @@
     
     <item>
       <title>c# 的打包技巧（打包成singlefile)</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</link>
       <pubDate>Tue, 10 Jan 2023 16:10:14 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-01-10csharp%E7%9A%84%E6%89%93%E5%8C%85%E6%8A%80%E5%B7%A7singlefile/</guid>
       <description>我已经想要把我的小工具打包成单个程序很久了。但是一直不知道怎么操作 今天看到reddit里面给我推送：how_to_build_my_cons</description>
     </item>
     
     <item>
       <title>c#文件管理器、读取文件列表</title>
-      <link>https://cornradio.github.io/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/csharp%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E9%80%89%E5%AE%9A%E6%96%87%E4%BB%B6/</guid>
       <description>打开文件夹和选择其中某一项 1private void openExplorer() 2{ 3 string FilePath = Directory.GetCurrentDirectory(); 4 //打开文件夹并选中文件 5 System.Diagnostics.Process.Start(&amp;#34;Explorer&amp;#34;, &amp;#34;/select,&amp;#34; + FilePath + &amp;#34;\\&amp;#34; + &amp;#34;infolist.xml&amp;#34;); 6 //仅打开文件夹 7 System.Diagnostics.Process.Start(FilePath); 8} 读取某位置的指定后缀文件（列</description>
     </item>
     
     <item>
       <title>winform适配dpi</title>
-      <link>https://cornradio.github.io/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/winform%E9%80%82%E9%85%8Ddpi/</guid>
       <description>https://zhuanlan.zhihu.com/p/128588859 在项目中添加一个：应用程序清单文件 在清单文件app.manifest的 &amp;lt;/assembly&amp;gt; 标签下添加 1&amp;lt;application xmlns=&amp;#34;urn:schemas-microsoft-com:asm.v3&amp;#34;&amp;gt; 2 &amp;lt;windowsSettings&amp;gt; 3 &amp;lt;dpiAware xmlns=&amp;#34;http://schemas.microsoft.com/SMI/2005/WindowsSettings&amp;#34;&amp;gt;true&amp;lt;/dpiAware&amp;gt; 4 &amp;lt;/windowsSettings&amp;gt; 5&amp;lt;/application&amp;gt; 适配DPI之后，即便是电脑dpi为缩</description>
     </item>
     
     <item>
       <title>归档辅助小程序</title>
-      <link>https://cornradio.github.io/hugo/posts/%E5%BD%92%E6%A1%A3%E8%BE%85%E5%8A%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E5%BD%92%E6%A1%A3%E8%BE%85%E5%8A%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E5%BD%92%E6%A1%A3%E8%BE%85%E5%8A%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E5%BD%92%E6%A1%A3%E8%BE%85%E5%8A%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
       <description>最近写了一个工作用的小程序：https://github.com/kasusa/archive_helper 然后从开始写到现在大概花了5小时</description>
     </item>
     
     <item>
       <title>linkedlist删除指定值</title>
-      <link>https://cornradio.github.io/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/linkedlist%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%80%BC/</guid>
       <description>info是我自己定义的一个类。 下面是如何删除linklist中指定item的办法。 1LinkedList&amp;lt;info&amp;gt; infolist = new LinkedList&amp;lt;info&amp;gt;(); 2 3string todelete = &amp;#34;1&amp;#34;; 4 5info tmpitem = new info(); 6foreach (var item in infolist) 7{ 8 if (item.no == todelete) 9 tmpitem</description>
     </item>
     
     <item>
       <title>保存object到xml</title>
-      <link>https://cornradio.github.io/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/%E4%BF%9D%E5%AD%98%E4%BB%BB%E6%84%8Fobject%E5%88%B0%E6%96%87%E4%BB%B6/</guid>
       <description>对实体类做标记 [DataContract] 标记在class前。 [DataMember] 标记在需要保存的属性前。 1 [DataContract] 2public class Car 3{ 4 [DataMember] 5 public string name; 6 7 [DataMember] 8 double power; 9 10 [DataMember] 11 List&amp;lt;Wheel&amp;gt; wheels; 12} 拷贝这两个函数 保存：保存文件</description>
     </item>
     

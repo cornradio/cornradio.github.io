@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>分类 on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/categories/</link>
+    <link>https://blog.kill9pid.top/hugo/categories/</link>
     <description>Recent content in 分类 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Thu, 15 Sep 2022 23:03:01 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Sep 2022 23:03:01 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>bash</title>
-      <link>https://cornradio.github.io/hugo/categories/bash/</link>
+      <link>https://blog.kill9pid.top/hugo/categories/bash/</link>
       <pubDate>Thu, 15 Sep 2022 23:03:01 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/categories/bash/</guid>
+      <guid>https://blog.kill9pid.top/hugo/categories/bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>centos</title>
-      <link>https://cornradio.github.io/hugo/categories/centos/</link>
+      <link>https://blog.kill9pid.top/hugo/categories/centos/</link>
       <pubDate>Mon, 14 Feb 2022 09:56:15 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/categories/centos/</guid>
+      <guid>https://blog.kill9pid.top/hugo/categories/centos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://cornradio.github.io/hugo/categories/ssh/</link>
+      <link>https://blog.kill9pid.top/hugo/categories/ssh/</link>
       <pubDate>Mon, 14 Feb 2022 09:56:15 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/categories/ssh/</guid>
+      <guid>https://blog.kill9pid.top/hugo/categories/ssh/</guid>
       <description></description>
     </item>
     

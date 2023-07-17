@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/azure/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/azure/</link>
     <description>Recent content in Azure on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 15 Apr 2023 12:31:55 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Apr 2023 12:31:55 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Azure自建节点</title>
-      <link>https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</link>
       <pubDate>Sat, 15 Apr 2023 12:31:55 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/2023-04-15-%E4%BD%BF%E7%94%A8azure%E8%87%AA%E5%BB%BA%E8%8A%82%E7%82%B9/</guid>
       <description>&lt;p&gt;Azure注册新账户，会赠送一个月的 200USD 免费额度，如果升级成“即用即付”，则这 200USD 可以延长使用期限到一年。（需要填写自己的信用卡信息）&lt;/p&gt;
 &lt;p&gt;除此之外，还有至少有免费 1个月 的免费 vm 用。 可以在这里查看：&lt;a href=&#34;https://portal.azure.com/#view/Microsoft_Azure_Billing/FreeServicesBlade&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Azure免费服务&lt;/a&gt;
 &lt;/p&gt;</description>

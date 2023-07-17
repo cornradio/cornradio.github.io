@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程书籍 on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D/</link>
     <description>Recent content in 编程书籍 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 07 Mar 2022 16:40:49 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Mar 2022 16:40:49 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IT BOOKS</title>
-      <link>https://cornradio.github.io/hugo/posts/itbook/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/itbook/</link>
       <pubDate>Mon, 07 Mar 2022 16:40:49 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/itbook/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/itbook/</guid>
       <description>在这个网站五角钱的程序员/IT_book (gitee.com) 转载的一些书籍下载链接，如果书挂了可能要去看一下。 自己找还挺麻烦的，不如就copy一份出来（顺便删</description>
     </item>
     

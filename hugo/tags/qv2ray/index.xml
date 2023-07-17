@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Qv2ray on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/qv2ray/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/qv2ray/</link>
     <description>Recent content in Qv2ray on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/qv2ray/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/qv2ray/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ubuntu安装Qv2ray</title>
-      <link>https://cornradio.github.io/hugo/posts/linux-v2ray-setup/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/linux-v2ray-setup/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/linux-v2ray-setup/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/linux-v2ray-setup/</guid>
       <description>replace your source with tuna speed up apt-update : https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ this is for ubuntu , but igeuss it will working well on other linux machines too. download Qv2ray here: https://github.com/Qv2ray/Qv2ray/releases download v2ray-core here (linux-64 ver):https://github.com/v2ray/v2ray-core/releases before open Appimage file you should give it permission! : chmod 777 * set up subscribe follow this instruction :https://qv2ray.</description>
     </item>
     

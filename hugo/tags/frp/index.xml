@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>frp on cornradio的技术博客</title>
-    <link>https://cornradio.github.io/hugo/tags/frp/</link>
+    <link>https://blog.kill9pid.top/hugo/tags/frp/</link>
     <description>Recent content in frp on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 12 Mar 2022 08:56:19 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/frp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 08:56:19 +0800</lastBuildDate><atom:link href="https://blog.kill9pid.top/hugo/tags/frp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何使用FRP</title>
-      <link>https://cornradio.github.io/hugo/posts/howtousefrp/</link>
+      <link>https://blog.kill9pid.top/hugo/posts/howtousefrp/</link>
       <pubDate>Sat, 12 Mar 2022 08:56:19 +0800</pubDate>
       
-      <guid>https://cornradio.github.io/hugo/posts/howtousefrp/</guid>
+      <guid>https://blog.kill9pid.top/hugo/posts/howtousefrp/</guid>
       <description>FRP是一个开源的内网穿透软件，本文将会介绍如何使用frp。 frp - github 原理解释 背景 我们有一台能访问公网，但是没有公网ip（不能为外部提供服务的s</description>
     </item>
     
