@@ -3,26 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CopyQ - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+    <title>Firefox 配置 burp_proxy 和 证书 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
 <link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
-<meta name="description" content="" /><meta itemprop="name" content="CopyQ">
-<meta itemprop="description" content="最近再寻找一个好用的clipboard manager软件，copyQ是一个选择。 再windows上面的copyQ 界面非常古董，功能也不是那么"><meta itemprop="datePublished" content="2023-07-13T15:47:10+08:00" />
-<meta itemprop="dateModified" content="2023-07-13T15:47:10+08:00" />
-<meta itemprop="wordCount" content="473">
-<meta itemprop="keywords" content="," /><meta property="og:title" content="CopyQ" />
-<meta property="og:description" content="最近再寻找一个好用的clipboard manager软件，copyQ是一个选择。 再windows上面的copyQ 界面非常古董，功能也不是那么" />
+<meta name="description" content="" /><meta itemprop="name" content="Firefox 配置 burp_proxy 和 证书">
+<meta itemprop="description" content="安装代理拓展 安装拓展： chrome ： switchomega firefox ： foxyproxy 创建代理 ： 127.0.0.1:8080 安装burp证书 先开启burp，然后切换到 burp 的代理 访问 https://burp/ 下载证书 打开firefox设置 - 搜索”"><meta itemprop="datePublished" content="2023-07-27T12:39:49+08:00" />
+<meta itemprop="dateModified" content="2023-07-27T12:39:49+08:00" />
+<meta itemprop="wordCount" content="91">
+<meta itemprop="keywords" content="," /><meta property="og:title" content="Firefox 配置 burp_proxy 和 证书" />
+<meta property="og:description" content="安装代理拓展 安装拓展： chrome ： switchomega firefox ： foxyproxy 创建代理 ： 127.0.0.1:8080 安装burp证书 先开启burp，然后切换到 burp 的代理 访问 https://burp/ 下载证书 打开firefox设置 - 搜索”" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-07-13T15:47:10+08:00" />
-<meta property="article:modified_time" content="2023-07-13T15:47:10+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-07-27-firefox_burp_proxy/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-27T12:39:49+08:00" />
+<meta property="article:modified_time" content="2023-07-27T12:39:49+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CopyQ"/>
-<meta name="twitter:description" content="最近再寻找一个好用的clipboard manager软件，copyQ是一个选择。 再windows上面的copyQ 界面非常古董，功能也不是那么"/>
+<meta name="twitter:title" content="Firefox 配置 burp_proxy 和 证书"/>
+<meta name="twitter:description" content="安装代理拓展 安装拓展： chrome ： switchomega firefox ： foxyproxy 创建代理 ： 127.0.0.1:8080 安装burp证书 先开启burp，然后切换到 burp 的代理 访问 https://burp/ 下载证书 打开firefox设置 - 搜索”"/>
 <link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0f8a4c66cf997def48fb97fc5013eec8ec7ff4a7e8cc37953d3bd9e7c6891247.css" integrity="sha256-D4pMZs&#43;Zfe9I&#43;5f8UBPuyOx/9KfozDeVPTvZ58aJEkc=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.0f8a4c66cf997def48fb97fc5013eec8ec7ff4a7e8cc37953d3bd9e7c6891247.css" integrity="sha256-D4pMZs&#43;Zfe9I&#43;5f8UBPuyOx/9KfozDeVPTvZ58aJEkc=" crossorigin="anonymous"></noscript></head>
   <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
@@ -46,11 +46,11 @@
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=CopyQ&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-07-13-copyq%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=Firefox%20%e9%85%8d%e7%bd%ae%20burp_proxy%20%e5%92%8c%20%e8%af%81%e4%b9%a6&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-07-27-firefox_burp_proxy%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-07-13-copyq%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-07-27-firefox_burp_proxy%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -199,7 +199,7 @@
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">CopyQ</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">Firefox 配置 Burp_proxy 和 证书</li></ol>
   </div>
 </nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
   <div class="d-flex flex-column component rounded post-panel">
@@ -217,99 +217,41 @@
 ">
   <i class="fas fa-fw fa-copyright"></i>
 </a>
-    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
-  <i class="fas fa-fw fa-list-alt"></i>
-</a>
+    
     
   </div>
 </div>
 <div class="card-body">
-        <h1 class="card-title my-3">CopyQ
+        <h1 class="card-title my-3">Firefox 配置 Burp_proxy 和 证书
 </h1><div class="post-meta"><span class="post-date" title="created on">
-    <i class="fas fa-fw fa-calendar-alt"></i>2023-07-13
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-07-27
   </span><span class="post-reading-time" title="reading time">
     <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
   </span></div>
-<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
-  <div class="offcanvas-header">
-    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
-      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
-        <i class="fas fa-times"></i>
-      </button>
-  </div>
-  <div class="offcanvas-body">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#快捷键设置">快捷键设置</a></li>
-    <li><a href="#item-管理">item 管理</a></li>
-    <li><a href="#tab-管理">Tab 管理</a></li>
-  </ul>
-</nav>
-  </div>
-</div><div class="post-content mb-3"><p>最近再寻找一个好用的clipboard manager软件，copyQ是一个选择。</p>
-<p>再windows上面的copyQ 界面非常古董，功能也不是那么显而易见，参看了下面的官网doc。</p>
-<p><a href="https://copyq.readthedocs.io/en/stable/basic-usage.html" target="_blank" rel="noopener noreferrer">https://copyq.readthedocs.io/en/stable/basic-usage.html</a>
+<div class="post-content mb-3"><h2 id="安装代理拓展">安装代理拓展</h2>
+<p>安装拓展：</p>
+<p>chrome ： <a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=zh-CN" target="_blank" rel="noopener noreferrer">switchomega</a>
 </p>
-<p>我整理了下列用法：</p>
-<h2 id="快捷键设置">快捷键设置</h2>
-<p>copyQ默认不设置快捷键，需要自行设置。</p>
-<ul>
-<li>打开copyQ - ctrl + P 打开设置菜单</li>
-<li>把【显示主窗口】、【显示托盘菜单】设置快捷键
-<img class="img-fluid" alt="Imgur" src="https://i.imgur.com/la6RJOS.png" loading="lazy"
-  
-   />
-
-</li>
-</ul>
-<h2 id="item-管理">item 管理</h2>
-<blockquote>
-<p>下面功能都是 主窗口 的功能，托盘菜单功能很少。</p>
-</blockquote>
-<ul>
-<li>按下回车粘贴，可以多选</li>
-<li>直接打字开始搜索</li>
-<li>F2 编辑项目， 再次按下 F2 保存</li>
-<li>ctrl+N 新建项目，把这里当作一个临时记事本 F2 保存</li>
-<li>delete 删除项目， ctrl + A 全选后清空垃圾</li>
-</ul>
-<hr>
-<ul>
-<li>F7 放大查看图片</li>
-<li>F4 可以修改格式，比如从code里面复制出来的代码，可以删除带颜色的html格式，从而变成纯text格式</li>
-</ul>
-<hr>
-<ul>
-<li>ctrl+E 用外置编辑器打开项目，再windows上默认是使用notepad。（我修改成了 <code>cmd /c code %1</code> 用 vscode打开文件）</li>
-<li>多选时按下 ctrl + shift + R 可以逆转顺序（这个功能很有趣）
-<img class="img-fluid" alt="Imgur" src="https://i.imgur.com/cXeZi74.png" loading="lazy"
-  
-   />
-
-</li>
-</ul>
-<h2 id="tab-管理">Tab 管理</h2>
-<ul>
-<li>ctrl+T 新建tab</li>
-<li>tab 的名称可以使用<code>&amp;</code>开头，比如<code>&amp;my</code>，这样就可以使用 alt+M 快捷键切换tab了</li>
-<li>使用 ctrl+1&hellip;9 切换tab</li>
-<li>再设置中，可以给tab增加好看的图标</li>
-</ul>
+<p>firefox ： <a href="https://addons.mozilla.org/zh-CN/firefox/addon/foxyproxy-standard/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search" target="_blank" rel="noopener noreferrer">foxyproxy</a>
+</p>
+<p>创建代理 ： <code>127.0.0.1:8080</code></p>
+<h2 id="安装burp证书">安装burp证书</h2>
+<ol>
+<li>先开启burp，然后切换到 burp 的代理</li>
+<li>访问 https://burp/ 下载证书</li>
+<li>打开firefox设置 - 搜索”证书“ - 查看证书 - 导入 - 选择刚刚下载的证书</li>
+</ol>
 </div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/">Csharp 使用 Epplus 读写 Excel表格
-</a>
-  </div><div class="post-nav post-next">
     <a href="https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/">Python Win 安装
 </a>
-    <i class="fas fa-fw fa-chevron-right"></i>
   </div></div><section class="related-posts-wrapper">
     <h3>相关文章</h3>
-    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-06-28-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/">Windows 右键菜单管理
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/">CopyQ
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-28-%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/">Windows 右键菜单管理
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-13-hugo-commands/">Hugo Commands
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-13-csharp_dict_ignorecase/">Csharp 字典 Key 不区分大小写
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-06-13-parallels_crack/">Parallels Crack
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-1-0xpython_beautiful_soup/">Python_beautiful_soup
 </a></li></ul>
   </section></div>
     </article><div class="card component row post-comments">
