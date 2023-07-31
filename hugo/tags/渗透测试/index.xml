@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>渗透测试 on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 渗透测试 on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Mon, 31 Jul 2023 20:59:37 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>文件上传漏洞笔记</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-07-31-fileupload/</link>
+      <pubDate>Mon, 31 Jul 2023 20:59:37 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-07-31-fileupload/</guid>
+      <description>00-文件上传简介 upload-labs 靶场 c0ny1/upload-labs 蚁剑 第一个Shell (yuque.com) 文件上传通常要上传如 php asp 这种文件，服务器在你访问上传的文件后，对文件进行解析/执行。 比如你上</description>
+    </item>
+    
+  </channel>
+</rss>

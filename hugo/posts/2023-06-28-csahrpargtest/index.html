@@ -283,9 +283,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ps1" data-lang="ps1"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$originalPath</span> <span class="p">=</span> <span class="nb">Get-Location</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">Set-Location</span> <span class="n">CsahrpArgTest</span><span class="p">/</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">dotnet</span> <span class="n">build</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">echo </span><span class="p">-</span><span class="n">-runcode:</span><span class="p">--------------------------------</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nb">Set-Location</span> <span class="n">bin</span><span class="p">/</span><span class="n">Debug</span><span class="p">/</span><span class="n">net7</span><span class="p">.</span><span class="py">0</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">.\</span><span class="n">CsahrpArgTest</span><span class="p">.</span><span class="py">exe</span> <span class="n">-PentestReport</span> <span class="s2">&#34;c:/a.docx&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">echo </span><span class="p">-</span><span class="n">-runcode</span><span class="err">:</span><span class="p">--------------------------------</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nb">Set-Location</span> <span class="n">bin</span><span class="p">/</span><span class="n">Debug</span><span class="p">/</span><span class="n">net7</span><span class="p">.</span><span class="n">0</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">.\</span><span class="n">CsahrpArgTest</span><span class="p">.</span><span class="n">exe</span> <span class="n">-PentestReport</span> <span class="s2">&#34;c:/a.docx&#34;</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl">
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="c"># 恢复原始工作目录</span>
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="nb">Set-Location</span> <span class="nv">$originalPath</span>
@@ -393,11 +393,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-27-firefox_burp_proxy/">Firefox 配置 Burp_proxy 和 证书
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-07-31-fileupload/">文件上传漏洞笔记
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-27-firefox_burp_proxy/">Firefox 配置 Burp_proxy 和 证书
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/">Python Win 安装
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-13-copyq/">CopyQ
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-03-20epplus-excel/">Csharp 使用 Epplus 读写 Excel表格
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-07-05-%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA2g%E5%A4%A7%E7%9A%84dummy%E6%96%87%E4%BB%B6/">制作一个2G大的dummy文件
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">
