@@ -5,8 +5,36 @@
     <link>https://cornradio.github.io/hugo/tags/</link>
     <description>Recent content in 标签 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 31 Jul 2023 20:59:37 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Aug 2023 20:23:18 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>https://cornradio.github.io/hugo/tags/git/</link>
+      <pubDate>Fri, 04 Aug 2023 20:23:18 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://cornradio.github.io/hugo/tags/github/</link>
+      <pubDate>Fri, 04 Aug 2023 20:23:18 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>v2ray</title>
+      <link>https://cornradio.github.io/hugo/tags/v2ray/</link>
+      <pubDate>Fri, 04 Aug 2023 20:23:18 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/v2ray/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>upload-labs</title>
       <link>https://cornradio.github.io/hugo/tags/upload-labs/</link>
@@ -121,15 +149,6 @@
       <pubDate>Sat, 15 Apr 2023 12:31:55 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/tags/azure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>v2ray</title>
-      <link>https://cornradio.github.io/hugo/tags/v2ray/</link>
-      <pubDate>Sat, 15 Apr 2023 12:31:55 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/tags/v2ray/</guid>
       <description></description>
     </item>
     
@@ -391,15 +410,6 @@
       <pubDate>Tue, 20 Dec 2022 16:14:59 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://cornradio.github.io/hugo/tags/git/</link>
-      <pubDate>Mon, 19 Dec 2022 12:18:50 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/tags/git/</guid>
       <description></description>
     </item>
     

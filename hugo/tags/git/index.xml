@@ -5,8 +5,18 @@
     <link>https://cornradio.github.io/hugo/tags/git/</link>
     <description>Recent content in git on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 19 Dec 2022 12:18:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Aug 2023 20:23:18 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git 命令行登录</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-08-04-git%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Fri, 04 Aug 2023 20:23:18 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-08-04-git%E7%99%BB%E5%BD%95/</guid>
+      <description>有时候登录命令行版本的git会出现这个错误 1remote: Support for password authentication was removed on August 13, 2021. 2remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication. 原因是github不再支持密码验证，需要使用toke</description>
+    </item>
+    
     <item>
       <title>在macos上面安装burpsuite（crackverison）</title>
       <link>https://cornradio.github.io/hugo/posts/2burponmac_cracked/</link>
