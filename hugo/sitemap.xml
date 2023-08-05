@@ -2,11 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cornradio.github.io/hugo/tags/2077/</loc>
+    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
+  </url><url>
     <loc>https://cornradio.github.io/hugo/</loc>
-    <lastmod>2023-08-05T00:08:50+08:00</lastmod>
+    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/game/</loc>
+    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/</loc>
-    <lastmod>2023-08-05T00:08:50+08:00</lastmod>
+    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/</loc>
+    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-08-05-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vortex%E5%AE%89%E8%A3%852077mod/</loc>
+    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/tags/v2ray/</loc>
     <lastmod>2023-08-05T00:08:50+08:00</lastmod>
@@ -15,9 +27,6 @@
     <lastmod>2023-08-05T00:08:50+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-08-05-x-ui/</loc>
-    <lastmod>2023-08-05T00:08:50+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/</loc>
     <lastmod>2023-08-05T00:08:50+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/tags/git/</loc>
@@ -406,9 +415,6 @@
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/%E4%BD%BF%E7%94%A8python%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%B9%E9%87%8Fping/</loc>
     <lastmod>2022-06-18T19:53:02+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/game/</loc>
-    <lastmod>2022-05-28T14:36:11+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/tags/netch/</loc>
     <lastmod>2022-05-28T14:36:11+08:00</lastmod>

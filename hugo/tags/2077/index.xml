@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2077 on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/2077/</link>
+    <description>Recent content in 2077 on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 05 Aug 2023 23:19:43 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/2077/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何使用vortex安装2077mod</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-08-05-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vortex%E5%AE%89%E8%A3%852077mod/</link>
+      <pubDate>Sat, 05 Aug 2023 23:19:43 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-08-05-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vortex%E5%AE%89%E8%A3%852077mod/</guid>
+      <description>如何使用vortex安装2077mod vortex 是一个 mod 管理器，使用它可以方便你安装、卸载、管理mod。不用手动操作游戏文件夹。 下载 vortex ，安装时选择游</description>
+    </item>
+    
+  </channel>
+</rss>
