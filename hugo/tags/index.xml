@@ -6,7 +6,16 @@
     <description>Recent content in 标签 on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 05 Aug 2023 23:19:43 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Aug 2023 13:37:48 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windows</title>
+      <link>https://cornradio.github.io/hugo/tags/windows/</link>
+      <pubDate>Sun, 06 Aug 2023 13:37:48 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/tags/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>2077</title>
       <link>https://cornradio.github.io/hugo/tags/2077/</link>
@@ -328,15 +337,6 @@
       <pubDate>Fri, 03 Mar 2023 23:04:09 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://cornradio.github.io/hugo/tags/windows/</link>
-      <pubDate>Fri, 24 Feb 2023 19:56:44 +0800</pubDate>
-      
-      <guid>https://cornradio.github.io/hugo/tags/windows/</guid>
       <description></description>
     </item>
     

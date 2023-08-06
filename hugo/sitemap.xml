@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cornradio.github.io/hugo/</loc>
+    <lastmod>2023-08-06T13:37:48+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/</loc>
+    <lastmod>2023-08-06T13:37:48+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/posts/2023-08-06-win11%E5%A4%87%E4%BB%BD%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95%E5%B8%83%E5%B1%80/</loc>
+    <lastmod>2023-08-06T13:37:48+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/windows/</loc>
+    <lastmod>2023-08-06T13:37:48+08:00</lastmod>
+  </url><url>
+    <loc>https://cornradio.github.io/hugo/tags/</loc>
+    <lastmod>2023-08-06T13:37:48+08:00</lastmod>
+  </url><url>
     <loc>https://cornradio.github.io/hugo/tags/2077/</loc>
     <lastmod>2023-08-05T23:19:43+08:00</lastmod>
   </url><url>
-    <loc>https://cornradio.github.io/hugo/</loc>
-    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
-  </url><url>
     <loc>https://cornradio.github.io/hugo/tags/game/</loc>
-    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/posts/</loc>
-    <lastmod>2023-08-05T23:19:43+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/</loc>
     <lastmod>2023-08-05T23:19:43+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-08-05-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vortex%E5%AE%89%E8%A3%852077mod/</loc>
@@ -238,9 +244,6 @@
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-02-28-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8Dtimemachine%E5%8D%A0%E7%94%A8%E5%AE%9D%E8%B4%B5%E7%9A%84mac%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</loc>
     <lastmod>2023-02-28T16:47:50+08:00</lastmod>
-  </url><url>
-    <loc>https://cornradio.github.io/hugo/tags/windows/</loc>
-    <lastmod>2023-02-24T19:56:44+08:00</lastmod>
   </url><url>
     <loc>https://cornradio.github.io/hugo/posts/2023-02-24windows%E5%BC%80%E5%90%AFwebdav/</loc>
     <lastmod>2023-02-24T19:56:44+08:00</lastmod>

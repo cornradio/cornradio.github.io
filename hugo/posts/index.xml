@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 05 Aug 2023 23:19:43 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Aug 2023 13:37:48 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>win11 备份开始菜单布局</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-08-06-win11%E5%A4%87%E4%BB%BD%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Sun, 06 Aug 2023 13:37:48 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-08-06-win11%E5%A4%87%E4%BB%BD%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95%E5%B8%83%E5%B1%80/</guid>
+      <description>win11开始菜单有bug 我在删除图标的时候卡了bug，具体来说就是第一次删除没删掉，第二次删除这个图标，整个开始菜单都没了…… 图标布局都恢</description>
+    </item>
+    
     <item>
       <title>如何使用vortex安装2077mod</title>
       <link>https://cornradio.github.io/hugo/posts/2023-08-05-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vortex%E5%AE%89%E8%A3%852077mod/</link>
