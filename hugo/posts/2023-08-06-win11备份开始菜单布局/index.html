@@ -18,7 +18,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-08-06-win11%E5%A4%87%E4%BB%BD%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95%E5%B8%83%E5%B1%80/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-06T13:37:48+08:00" />
-<meta property="article:modified_time" content="2023-08-06T13:37:48+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+<meta property="article:modified_time" content="2023-08-06T13:37:48+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="win11 备份开始菜单布局"/>
@@ -225,9 +225,9 @@
 </div>
 <div class="card-body">
         <h1 class="card-title my-3">Win11 备份开始菜单布局
-</h1><div class="post-meta"><span class="post-date" title="created on">
+</h1><div class="post-meta"><span class="post-date" title="">
     <i class="fas fa-fw fa-calendar-alt"></i>2023-08-06
-  </span><span class="post-reading-time" title="reading time">
+  </span><span class="post-reading-time" title="">
     <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
   </span><a href="https://cornradio.github.io/hugo/tags/windows/" class="badge rounded-pill text-white bg-primary post-taxonomy">windows</a></div>
 <div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
@@ -269,7 +269,7 @@
 </span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c"># 获取当前日期和时间作为后缀</span>
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nv">$dateSuffix</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="s2">&#34;yyyyMMdd_HHmmss&#34;</span>
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c"># 构建新的文件名</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nv">$newFileName</span> <span class="p">=</span> <span class="s2">&#34;start2.bin.$dateSuffix&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nv">$newFileName</span> <span class="p">=</span> <span class="s2">&#34;start2.bin.</span><span class="nv">$dateSuffix</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c"># 构建目标文件路径</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="nv">$destinationFile</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="n">-Path</span> <span class="nv">$destinationFolder</span> <span class="n">-ChildPath</span> <span class="nv">$newFileName</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c"># 复制文件</span>

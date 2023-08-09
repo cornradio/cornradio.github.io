@@ -32,7 +32,7 @@ commit" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cornradio.github.io/hugo/posts/2023-02-06grub/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-06T14:21:50+08:00" />
-<meta property="article:modified_time" content="2023-02-06T14:21:50+08:00" /><meta property="og:site_name" content="cornradio的技术博客" />
+<meta property="article:modified_time" content="2023-02-06T14:21:50+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="grub settings for noobies"/>
@@ -244,17 +244,17 @@ commit"/>
 </div>
 <div class="card-body">
         <h1 class="card-title my-3">Grub Settings for Noobies
-</h1><div class="post-meta"><span class="post-date" title="created on">
+</h1><div class="post-meta"><span class="post-date" title="">
     <i class="fas fa-fw fa-calendar-alt"></i>2023-02-06
-  </span><span class="post-reading-time" title="reading time">
+  </span><span class="post-reading-time" title="">
     <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
   </span><a href="https://cornradio.github.io/hugo/tags/ubuntu/" class="badge rounded-pill text-white bg-primary post-taxonomy">ubuntu</a></div>
 <div class="post-content mb-3"><h2 id="turn-on-grub-menu">turn on grub menu</h2>
 <p>if your grub menu don&rsquo;t show when you boot up your system , you can follow this :</p>
 <p>edit grub config</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl">sudo vim /etc/default/grub
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"># GRUB_TIMEOUT_STYLE=hidden
-</span></span><span class="line"><span class="ln">2</span><span class="cl">GRUB_TIMEOUT=10
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-conf" data-lang="conf"><span class="line"><span class="ln">1</span><span class="cl"><span class="c"># GRUB_TIMEOUT_STYLE=hidden
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="nv">GRUB_TIMEOUT</span><span class="o">=</span><span class="nv">10</span>
 </span></span></code></pre></div><p>commit</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl">sudo update-grub
 </span></span></code></pre></div><h2 id="get-a-theme">get a theme</h2>
