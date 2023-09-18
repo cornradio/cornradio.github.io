@@ -12,6 +12,7 @@
     <style>
         html {
             background-color: #232323;
+            /* background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/carbon_fibre.png); */
             color: #e2f7ff;
             font-size: 1.3em;
             font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
@@ -28,10 +29,12 @@
             transform: translate(-50%, -50%);
             border-radius: 50px;
             background: #171515;
-            box-shadow: inset .8em .8em 3em #eb3dce,
+            /* border: 2px solid rgb(14, 192, 112); */
+            box-shadow: inset 0em 0em 1em #000000;
+            /* box-shadow: inset .8em .8em 3em #eb3dce,
                         inset -.8em -.8em 3em #17dab3,
                         -.2em -.2em 2em #e513f0,
-                        .2em .2em 2em #17dab3;
+                        .2em .2em 2em #17dab3; */
             z-index: 1;
         }
 
@@ -45,15 +48,15 @@
         a {
             /* overflow: hidden; */
 
-            color: #9de4ff;
+            color: #caedfb;
             text-decoration: none;
             /* transition: 0s; */
         }
 
         a:hover {
-            color: #f3efef !important;
-            text-shadow: 2px 1px 1px rgb(0, 186, 243),
-                         -1px -1px 1px rgb(172, 1, 210);
+            color: #ff0000 !important;
+            text-shadow: 2px 1px 1px rgb(189, 26, 167),
+                         -1px -1px 1px rgb(245, 0, 0);
             text-decoration: underline;
             /* background-color: rgba(144, 242, 74, 0.893); */
             transition: .1s;
@@ -110,6 +113,29 @@
         .neteast-container:hover{
             transform: none;
         }
+        .bigleft{
+            position: fixed;
+            top: 50%;
+            left: 21%;
+            font-family: 'Times New Roman',"Bauhaus 93",Algerian ;
+            font-weight: bolder;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            font-size: 3em;
+            color: #c9d2c947;
+            transition: .5s;
+
+        }
+        .bigleft:hover {
+            /* color: #ffffff; */
+            z-index: 2;
+            transform: translateX(12%)translateY(-50%);
+        }
+        .bigleft:hover p span{
+            /* font-size: 1.1em; */
+            transform: scale(2);
+            text-shadow: 1.6em 0   #ffffffb1,0 0 20px #1ab834;
+        }
     </style>
 </head>
 <body>
@@ -129,8 +155,11 @@
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=4&id=795090399&auto=1&height=430"></iframe>
 </div>
 
-
+<div class="bigleft">
+    <p>This Way <span>👉🏻</span></p> 
+</div>
 <div class="messages">
+    
     <div class="messages-content">
         <a href="daysleft/" class="comment">//Days Past</a></li><br>
 
