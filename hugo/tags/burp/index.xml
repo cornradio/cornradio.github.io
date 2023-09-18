@@ -17,5 +17,14 @@
       <description>inturder https://portswigger.net/burp/documentation/desktop/tools/intruder burpsuite的inturder用于自动化攻击web应用，可以更换http请求中指定位置的payload，不停的发送请求。并收集返回</description>
     </item>
     
+    <item>
+      <title>在macos上面安装burpsuite（crackverison）</title>
+      <link>https://cornradio.github.io/hugo/posts/2burponmac_cracked/</link>
+      <pubDate>Mon, 19 Dec 2022 12:18:50 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2burponmac_cracked/</guid>
+      <description>下载：java-jdk ｜ 破解版 burpsuite 正常顺序 打开：burploader.jar 通过: burploader 打开burp pro 输入 license 然后手动粘贴到 burploader，b</description>
+    </item>
+    
   </channel>
 </rss>

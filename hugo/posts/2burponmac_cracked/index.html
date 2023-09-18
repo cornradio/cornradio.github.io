@@ -12,8 +12,8 @@
 <meta name="description" content="111" /><meta itemprop="name" content="在macos上面安装burpsuite（crackverison）">
 <meta itemprop="description" content="111"><meta itemprop="datePublished" content="2022-12-19T12:18:50+08:00" />
 <meta itemprop="dateModified" content="2022-12-19T12:18:50+08:00" />
-<meta itemprop="wordCount" content="475">
-<meta itemprop="keywords" content="git," /><meta property="og:title" content="在macos上面安装burpsuite（crackverison）" />
+<meta itemprop="wordCount" content="431">
+<meta itemprop="keywords" content="burp," /><meta property="og:title" content="在macos上面安装burpsuite（crackverison）" />
 <meta property="og:description" content="111" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cornradio.github.io/hugo/posts/2burponmac_cracked/" /><meta property="article:section" content="posts" />
@@ -217,7 +217,9 @@
 ">
   <i class="fas fa-fw fa-copyright"></i>
 </a>
-    
+    <a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i class="fas fa-fw fa-list-alt"></i>
+</a>
     
   </div>
 </div>
@@ -227,50 +229,60 @@
     <i class="fas fa-fw fa-calendar-alt"></i>2022-12-19
   </span><span class="post-reading-time" title="">
     <i class="fas fa-fw fa-coffee"></i>1 分钟阅读
-  </span><a href="https://cornradio.github.io/hugo/tags/git/" class="badge rounded-pill text-white bg-primary post-taxonomy">git</a></div>
-<div class="post-content mb-3"><blockquote>
-<p>你下载了一个破解版burpsuite pro，但是你不知道怎么安装，burp又提示一堆诡异的java17+错误，这篇文章就是写给你的。</p>
+  </span><a href="https://cornradio.github.io/hugo/tags/burp/" class="badge rounded-pill text-white bg-primary post-taxonomy">burp</a></div>
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#正常顺序">正常顺序</a></li>
+    <li><a href="#实际情况">实际情况</a></li>
+    <li><a href="#解决办法">解决办法</a></li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><blockquote>
+<p>下载：<a href="https://www.oracle.com/java/technologies/downloads/" target="_blank" rel="noopener noreferrer">java-jdk</a>
+ ｜ <a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;tn=baidu&amp;wd=burpsuite%20%E7%A0%B4%E8%A7%A3%E7%89%88%202023&amp;oq=burpsuite%25E7%25A0%25B4%25E8%25A7%25A3%25E7%2589%2588%2520202%2526lt%253B&amp;rsv_pq=95921bbe00081999&amp;rsv_t=ef27GuFUOmyrbfwFDhdlPCtYjqy2aAuuaAKNGIB9hiok3BfZaI3I2lHSKPQ&amp;rqlang=cn&amp;rsv_enter=1&amp;rsv_dl=tb&amp;rsv_btype=t&amp;inputT=8287&amp;rsv_sug3=18&amp;rsv_sug1=16&amp;rsv_sug7=100&amp;rsv_sug2=0&amp;prefixsug=burpsuite%2520%25E7%25A0%25B4%25E8%25A7%25A3%25E7%2589%2588%2520202%2526lt%253B&amp;rsp=6&amp;rsv_sug4=8309" target="_blank" rel="noopener noreferrer">破解版 burpsuite</a>
+</p>
 </blockquote>
-<h1 id="文件目录">文件目录</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">-rwx------  1 kasusa  staff   213B 11 19  2021 Readme.txt
-</span></span><span class="line"><span class="ln">2</span><span class="cl">-rwx------@ 1 kasusa  staff   262K  5 22  2020 burploader.jar
-</span></span><span class="line"><span class="ln">3</span><span class="cl">-rwx------@ 1 kasusa  staff   517M  4  4  2022 burpsuite_pro_v2022.3.2.jar
-</span></span></code></pre></div><h1 id="正常顺序">正常顺序</h1>
+<h2 id="正常顺序">正常顺序</h2>
 <ol>
 <li>打开：burploader.jar</li>
-<li>通过burploader 打开burp pro</li>
-<li>输入license然后手动粘贴到burploader，burploader解密后给你返回一个字符串，你就破解成功了。</li>
+<li>通过: burploader 打开burp pro</li>
+<li>输入 license 然后手动粘贴到 burploader，burploader 解密后给你返回一个 respond 字符串，粘贴进入，破解成功。</li>
+<li>后续每次从 loader 中打开文件即可。</li>
 </ol>
-<h1 id="实际情况">实际情况</h1>
+<h2 id="实际情况">实际情况</h2>
 <ol>
 <li>打开：burploader.jar</li>
 <li>通过burploader 打开burp pro</li>
 <li>打开失败，报错</li>
 </ol>
-<p><img class="img-fluid" alt="Imgur" src="https://i.imgur.com/kU3Za9f.png" loading="lazy"
-  
-   />
-
-</p>
-<h1 id="解决办法">解决办法</h1>
-<p>主要原因是burp不是很兼容java 17+，但是官网给出了解决方法：
-通过这条命令即可正常启动(正版）burp：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">java -jar --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.desktop/javax.swing=ALL-UNNAMED burpsuite_pro_v2022.3.2.jar
-</span></span></code></pre></div><p>所以破解的步骤就是：</p>
+<h2 id="解决办法">解决办法</h2>
+<p>主要原因是burp不是很兼容java 17+，所以破解的步骤就是：</p>
 <ol>
 <li>打开：burploader.jar</li>
-<li>通过手工输入命令，打开burp pro，并指定 burploader 作为-noverify参数</li>
+<li>通过手工输入命令，打开 burp pro，并指定 burploader 作为-noverify参数</li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">java -noverify -javaagent:burploader.jar -jar --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.desktop/javax.swing=ALL-UNNAMED burpsuite_pro_v2022.3.2.jar
-</span></span></code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">java -jar --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.desktop/javax.swing=ALL-UNNAMED loader.jar
+</span></span></code></pre></div><ol>
 <li>正常流程激活(因为我激活过了不能再来一遍所以没有截图了)</li>
 <li>制作一个脚本（.bat / .sh）用于方便后面启动burp</li>
 </ol>
 <h1 id="mac快速启动脚本">mac快速启动脚本</h1>
-<p>在～目录制作一个sh文件，用于快速启动burp*</p>
-<p>burp.sh</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">cd</span> /Users/kasusa/bin/burp/BurpSuiteProfessional2022.3.2
-</span></span><span class="line"><span class="ln">2</span><span class="cl">java -noverify -javaagent:burploader.jar -jar --add-opens<span class="o">=</span>java.base/java.lang<span class="o">=</span>ALL-UNNAMED --add-opens<span class="o">=</span>java.desktop/javax.swing<span class="o">=</span>ALL-UNNAMED burpsuite_pro_v2022.3.2.jar
+<p>在zshrc中增加一条快速启动burp的命令/alias，（此时，你的burp应该已经完成了激活操作。
+其中分为两步骤：</p>
+<ol>
+<li>cd 到 burpsuite 目录。</li>
+<li>执行命令，用loader 挡住 agent ， 启动 burp.jar ， 加入了一些java17的 flag。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">alias</span> <span class="nv">bp</span><span class="o">=</span><span class="s2">&#34;cd /Users/kasusa/BurpSuite_pro_v2023.3&amp;&amp;java -noverify -javaagent:burp-loader-keygen-2_1_06.jar -jar --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.desktop/javax.swing=ALL-UNNAMED burpsuite_pro_v2023.3.jar&#34;</span>
 </span></span></code></pre></div></div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
     <a href="https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/">Sed Linux命令
@@ -281,8 +293,8 @@
     <i class="fas fa-fw fa-chevron-right"></i>
   </div></div><section class="related-posts-wrapper">
     <h3>相关文章</h3>
-    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/1%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E6%96%87%E4%BB%B6/">如何删除git中的所有历史文件
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/">Sed Linux命令
+    <ul class="related-posts"><li><a href="https://cornradio.github.io/hugo/posts/2sed-linux%E5%91%BD%E4%BB%A4/">Sed Linux命令
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/1%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E6%96%87%E4%BB%B6/">如何删除git中的所有历史文件
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/ubuntu%E8%AE%BE%E7%BD%AEssh/">Ubuntu设置ssh、修改mac地址(home Pc)
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/windows%E9%85%B7%E5%91%BD%E4%BB%A4--%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2/">Windows酷命令
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/zshrc%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">自定义终端标识符
@@ -358,14 +370,14 @@
             c#
           </a><a href="https://cornradio.github.io/hugo/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
             linux
-          </a><a href="https://cornradio.github.io/hugo/tags/git/" class="badge bg-primary text-white rounded post-taxonomy" title="git">
-            git
           </a><a href="https://cornradio.github.io/hugo/tags/js/" class="badge bg-primary text-white rounded post-taxonomy" title="js">
             js
           </a><a href="https://cornradio.github.io/hugo/tags/mac/" class="badge bg-primary text-white rounded post-taxonomy" title="mac">
             mac
           </a><a href="https://cornradio.github.io/hugo/tags/v2ray/" class="badge bg-primary text-white rounded post-taxonomy" title="v2ray">
             v2ray
+          </a><a href="https://cornradio.github.io/hugo/tags/winform/" class="badge bg-primary text-white rounded post-taxonomy" title="winform">
+            winform
           </a></div>
       </div>
     </section>
