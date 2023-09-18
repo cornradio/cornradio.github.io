@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="https://tvax1.sinaimg.cn/large/006rgJELly1gs6wib0802j30b60b6dgt.jpg">
+    <link rel="icon" href="">
     <!-- <link href="/css/indexstyle.css" rel="stylesheet" type="text/css" /> -->
     <title>BLOG NAV →</title>
     <style>
         html {
-            background-color: #232323;
+            background-color: #000000;
             /* background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/carbon_fibre.png); */
             color: #e2f7ff;
             font-size: 1.3em;
@@ -26,15 +26,10 @@
             padding: 3em;
             padding-left: 4em;
             /* bring your own prefixes */
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%)scale(1.5);
             border-radius: 50px;
-            background: #171515;
             /* border: 2px solid rgb(14, 192, 112); */
-            box-shadow: inset 0em 0em 1em #000000;
-            /* box-shadow: inset .8em .8em 3em #eb3dce,
-                        inset -.8em -.8em 3em #17dab3,
-                        -.2em -.2em 2em #e513f0,
-                        .2em .2em 2em #17dab3; */
+
             z-index: 1;
         }
 
@@ -104,19 +99,16 @@
             opacity: 1;
         }
         .neteast-container{
-            max-width: fit-content;
-            padding: 30px;
-            background-color: transparent;
-            transform: translateX(-95%);
-            transition: .5s;
+            display: none;
         }
-        .neteast-container:hover{
-            transform: none;
-        }
-        .bigleft{
+
+/* 仅宽屏状态使用 */
+@media screen and (min-width: 600px) {
+    .bigleft{
+        display: block !important;
             position: fixed;
             top: 50%;
-            left: 21%;
+            right: 50%;
             font-family: 'Times New Roman',"Bauhaus 93",Algerian ;
             font-weight: bolder;
             transform: translateY(-50%);
@@ -124,7 +116,6 @@
             font-size: 3em;
             color: #c9d2c947;
             transition: .5s;
-
         }
         .bigleft:hover {
             /* color: #ffffff; */
@@ -134,8 +125,42 @@
         .bigleft:hover p span{
             /* font-size: 1.1em; */
             transform: scale(2);
-            text-shadow: 1.6em 0   #ffffffb1,0 0 20px #1ab834;
+            text-shadow: 0 0 20px #1ab834;
         }
+        .neteast-container{
+            display: block;
+            max-width: fit-content;
+            padding: 30px;
+            background-color: transparent;
+            transform: translateX(-95%);
+            transition: .5s;
+        }
+        .neteast-container:hover{
+            transform: none;
+        }
+        .messages {
+            position: fixed;
+            top: 50%;
+            left: auto;
+            right: 10%;
+            border: 2px solid #cfdbd150;
+            box-shadow: inset 0em 0em 1em #000000;
+            background: #171515;
+            transform: translate(-50%, -50%) ;
+
+            /* box-shadow: inset .8em .8em 3em #eb3dce,
+                        inset -.8em -.8em 3em #17dab3,
+                        -.2em -.2em 2em #e513f0,
+                        .2em .2em 2em #17dab3; */
+        }
+        html{
+            background-color: #232323;
+        }
+}
+.bigleft{
+    display: none;
+}
+
     </style>
 </head>
 <body>
@@ -148,16 +173,16 @@
 </center>
 <a href="https://hits.seeyoufarm.com">
     <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fcornradio.github.io&count_bg=%2300FE8&title_bg=%23000000&icon=&icon_color=%23000000&title=count&edge_flat=false"/></a>
-
+    <div class="bigleft">
+        <p>This Way <span>👉🏻</span></p> 
+    </div>
 <div class="neteast-container">
     <script id="tg" async src="https://telegram.org/js/telegram-widget.js?1" data-telegram-post="kasusaland/221"data-width="30%"></script>
     <br>
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=4&id=795090399&auto=1&height=430"></iframe>
 </div>
 
-<div class="bigleft">
-    <p>This Way <span>👉🏻</span></p> 
-</div>
+
 <div class="messages">
     
     <div class="messages-content">
@@ -166,25 +191,24 @@
         <div class="message new">
             <div class="emo" style="--i:0">🎬 </div>
 
-            <a href="watchTV/" style="color: rgb(80, 241, 193);">watchTV </a></li><br>
+            <a href="https://tv.kill9pid.top/" style="color: rgb(212, 226, 10);">watchTV </a></li><br>
         </div>
 
         <div class="message new">
-            <div class="emo" style="--i:1">💾</div>
+            <div class="emo" style="--i:1">🌐</div>
             <a href="https://cornradio.github.io/hugo/">Teco blog</a></li><br>
-            <a href="https://cornradio.github.io/lab">mini Lab</a></li><br>
             <a href="https://kasusaland.blogspot.com/">Blogger</a></li><br>
             <a href="https://cornradio.github.io/index2">base ment</a></li><br>
         </div>
 
         <div class="message new">
-            <div class="emo" style="--i:2">🐹</div>
+            <div class="emo" style="--i:2">☎️</div>
             <!-- <a href="http://20.0.22.106:5230/">Memos</a></li><br> -->
             <a href="https://t.me/kasusaland">Telegram</a></li><br>
             <a href="https://github.com/cornradio">Github</a></li><br>
         </div>
         <div class="message new">
-            <div class="emo" style="--i:3">☁︎</div>
+            <div class="emo" style="--i:3">🐵</div>
             <a href="https://cornradio.github.io/hugo/posts/%E5%8F%8B%E9%93%BE/" style="color: rgb(255, 203, 248);">Friends </a>
             </li><br>
             <a href="https://cornradio.github.io/get%20a%20life2.html" style="color: rgb(255, 208, 55);">Airport </a></li><br>
