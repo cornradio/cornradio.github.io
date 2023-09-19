@@ -5,9 +5,17 @@
     <link>https://cornradio.github.io/hugo/</link>
     <description>Recent content on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 18 Sep 2023 08:03:07 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Sep 2023 09:32:55 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>powershell 设置别名 alias</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-09-19-zshrc_for_powershell/</link>
+      <pubDate>Tue, 19 Sep 2023 09:32:55 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-09-19-zshrc_for_powershell/</guid>
+      <description>使用 zsh 之后，回到windows，我很怀念alias功能。 以及 zshrc 配置文件。 但是 powershell 可以实现类似的功能：参考 打开 powershell 管理员 ， 执行允许ps1脚本的命令</description>
+    </item>
+    
     <item>
       <title>mac essencials 3</title>
       <link>https://cornradio.github.io/hugo/posts/2023-02-23macos_essencials2/</link>
