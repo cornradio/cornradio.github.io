@@ -5,15 +5,16 @@
     <link>https://cornradio.github.io/hugo/tags/xray/</link>
     <description>Recent content in xray on cornradio的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Mon, 24 Apr 2023 16:45:43 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/xray/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 16:45:43 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/xray/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xray扫描器-如何登录扫描</title>
       <link>https://cornradio.github.io/hugo/posts/2023-04-24-xray%E6%89%AB%E6%8F%8F%E5%99%A8--%E5%A6%82%E4%BD%95%E7%99%BB%E5%BD%95%E6%89%AB%E6%8F%8F/</link>
-      <pubDate>Mon, 24 Apr 2023 16:45:43 +0800</pubDate>
+      <pubDate>Wed, 20 Sep 2023 16:45:43 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-04-24-xray%E6%89%AB%E6%8F%8F%E5%99%A8--%E5%A6%82%E4%BD%95%E7%99%BB%E5%BD%95%E6%89%AB%E6%8F%8F/</guid>
-      <description>xray 安装 https://github.com/chaitin/xray/releases 下载对应的版本，解压后，将 xray_windows_amd64.exe 文件放到系统环境变量文件夹中。 第一次运行之前要双击 xray_windows_amd64.exe ，让他先生成自己需要的 yaml 等配置文件 命令 扫描静态页面 1xray</description>
+      <description>xray 就像是一台安检扫描器，让你透视整个网站的漏洞和安全问题。 xray 安装 https://github.com/chaitin/xray/releases 下载对应的版本，解压后，将 xray_windows_amd64.exe 文件放到系统环境变量文件夹中。 证书安装 ca证书</description>
     </item>
     
   </channel>
