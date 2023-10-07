@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dirsearch on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/dirsearch/</link>
+    <description>Recent content in dirsearch on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 07 Oct 2023 09:32:55 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/dirsearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dirsearch</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-10-07-dirsearch/</link>
+      <pubDate>Sat, 07 Oct 2023 09:32:55 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-10-07-dirsearch/</guid>
+      <description>maurosoria/dirsearch: Web path scanner (github.com) 扫描例句(win) 1python dirsearch.py -u baidu.com -x400-500 -F --full-url 2python dirsearch.py -l urls.txt --headers-file headers.txt -x400-500 -F --full-url 扫描例句(kali) 1dirsearch -u baidu.com -x400-500 -F --full-url 2dirsearch -l urls.txt --headers-file headers.txt -x400-500 -F --full-url urls.txt 从burp中提取主要的url，</description>
+    </item>
+    
+  </channel>
+</rss>
