@@ -14,7 +14,7 @@
       <pubDate>Tue, 19 Sep 2023 09:32:55 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-09-19-zshrc_for_powershell/</guid>
-      <description>使用 zsh 之后，回到windows，我很怀念alias功能。 以及 zshrc 配置文件。 但是 powershell 可以实现类似的功能：参考 打开 powershell 管理员 ， 执行允许ps1脚本的命令</description>
+      <description>使用 zsh 之后，回到windows，我很怀念alias功能。 以及 zshrc 配置文件。 但是 powershell 可以实现类似的功能：参考 打开管理员 powershell ， 执行允许ps1脚本的命令</description>
     </item>
     
   </channel>

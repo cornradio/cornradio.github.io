@@ -230,7 +230,7 @@
   </span><a href="https://cornradio.github.io/hugo/tags/c#/" class="badge rounded-pill text-white bg-primary post-taxonomy">c#</a><a href="https://cornradio.github.io/hugo/tags/%E7%BC%96%E7%A8%8B/" class="badge rounded-pill text-white bg-primary post-taxonomy">编程</a></div>
 <div class="post-content mb-3"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">using</span> <span class="nn">System.Diagnostics</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl">
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">runincmd</span><span class="p">(</span><span class="kt">string</span> <span class="n">yourcommand</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">runincmd</span><span class="p">(</span><span class="kt">string</span> <span class="n">yourcommand</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="kt">string</span> <span class="n">strCmdText</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">strCmdText</span> <span class="p">=</span> <span class="s">$&#34;/C {yourcommand}&#34;</span><span class="p">;</span>
@@ -243,12 +243,12 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">ProcessStartInfo</span> <span class="n">processStartInfo</span> <span class="p">=</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl">	<span class="k">new</span> <span class="n">ProcessStartInfo</span><span class="p">(</span><span class="n">txtExecutable</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Trim</span><span class="p">(),</span> <span class="n">txtParameter</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Trim</span><span class="p">());</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1">//保持静音</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">ErrorDialog</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">UseShellExecute</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">ErrorDialog</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">UseShellExecute</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1">//用于重定向输出</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">RedirectStandardError</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">RedirectStandardInput</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">RedirectStandardOutput</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">RedirectStandardError</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">RedirectStandardInput</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">processStartInfo</span><span class="p">.</span><span class="n">RedirectStandardOutput</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1">//用上面的设定新建一个进程</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="n">Process</span> <span class="n">process</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Process</span><span class="p">();</span>
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="n">process</span><span class="p">.</span><span class="n">StartInfo</span> <span class="p">=</span> <span class="n">processStartInfo</span><span class="p">;</span>
@@ -268,8 +268,8 @@
 </span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="n">txtResult</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">displayText</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">27</span><span class="cl">    
 </span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="c1">//关闭stream</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">outputReader</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>  <span class="n">outputReader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">errorReader</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>  <span class="n">errorReader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">outputReader</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>  <span class="n">outputReader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">errorReader</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>  <span class="n">errorReader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
 </span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><blockquote>
 <p>我一开始打算把cmd搬到我的winform里面（可以实时更新输出的那种），但是我搜了好久也没有可以拷贝的代码，而且获取输出并且贴到textbox中会有时产生莫名其妙的死循环，于是我便放弃了于是就选择了功能相同但是弹出窗口的了。</p>
@@ -285,13 +285,13 @@
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">//打开文件夹
 </span></span><span class="line"><span class="ln">2</span><span class="cl">Process.Start(&#34;explorer.exe&#34;, @&#34;c:\test&#34;);
 </span></span></code></pre></div><p>对了，这里我同时说两个好用的string用法，他们分别是@和$:（语法糖)</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">@ 可以输出源字符串而不做转义，这对于string写文件目录很有用：
-</span></span><span class="line"><span class="ln">2</span><span class="cl">如果没有@ 系统会对\U \k \D \G 挨个转义，碰到转义失败的就报错了。
-</span></span><span class="line"><span class="ln">3</span><span class="cl">string a = @&#34;C:\Users\kasusa\Documents\Gitee&#34;;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="ln">1</span><span class="cl"><span class="err">@</span> <span class="err">可以输出源字符串而不做转义，这对于</span><span class="n">string写文件目录很有用</span><span class="err">：</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="err">如果没有@</span> <span class="err">系统会对\</span><span class="n">U</span> <span class="err">\</span><span class="n">k</span> <span class="err">\</span><span class="n">D</span> <span class="err">\</span><span class="n">G</span> <span class="err">挨个转义，碰到转义失败的就报错了。</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">string</span> <span class="n">a</span> <span class="o">=</span> <span class="err">@</span><span class="s2">&#34;C:</span><span class="err">\</span><span class="s2">Users</span><span class="err">\</span><span class="s2">kasusa</span><span class="err">\</span><span class="s2">Documents</span><span class="err">\</span><span class="s2">Gitee&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">
-</span></span><span class="line"><span class="ln">5</span><span class="cl">$ 可以快速的在一个字符串中插入一个变量而不需要用一堆的引号和加号
-</span></span><span class="line"><span class="ln">6</span><span class="cl">string b = &#34;cake&#34;;
-</span></span><span class="line"><span class="ln">7</span><span class="cl">string c = $&#34;i love eating {b}， and drink cola！&#34;;
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="err">$</span> <span class="err">可以快速的在一个字符串中插入一个变量而不需要用一堆的引号和加号</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">string</span> <span class="n">b</span> <span class="o">=</span> <span class="s2">&#34;cake&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="n">string</span> <span class="n">c</span> <span class="o">=</span> <span class="err">$</span><span class="s2">&#34;i love eating </span><span class="si">{b}</span><span class="s2">， and drink cola！&#34;</span><span class="p">;</span>
 </span></span></code></pre></div></div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
     <a href="https://cornradio.github.io/hugo/posts/%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E9%9B%86/">视频网站集
@@ -341,11 +341,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-04-24-xray%E6%89%AB%E6%8F%8F%E5%99%A8--%E5%A6%82%E4%BD%95%E7%99%BB%E5%BD%95%E6%89%AB%E6%8F%8F/">Xray扫描器-如何登录扫描
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2023-11-22-tkinter/">Tkinter
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-11-01-jupyternotebook/">Jupyter Notebook
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-10-07-dirsearch/">Dirsearch
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-04-24-xray%E6%89%AB%E6%8F%8F%E5%99%A8--%E5%A6%82%E4%BD%95%E7%99%BB%E5%BD%95%E6%89%AB%E6%8F%8F/">Xray扫描器-如何登录扫描
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-09-19-zshrc_for_powershell/">Powershell 设置别名 Alias
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-02-23macos_essencials2/">Mac Essencials 3
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-08-06-win11%E5%A4%87%E4%BB%BD%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95%E5%B8%83%E5%B1%80/">Win11 备份开始菜单布局
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-08-05-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vortex%E5%AE%89%E8%A3%852077mod/">如何使用vortex安装2077mod
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">
