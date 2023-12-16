@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Fri, 14 Jul 2023 15:12:50 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Dec 2023 15:17:51 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python json config</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/</link>
+      <pubDate>Sat, 16 Dec 2023 15:17:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/</guid>
+      <description>&lt;p&gt;python 使用json存储自身配置的代码示例;
+包含配置缺少报错提示、初始化配置文件等功能，方便取用&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Python Win 安装</title>
       <link>https://cornradio.github.io/hugo/posts/2023-07-14-python-win-%E5%AE%89%E8%A3%85/</link>

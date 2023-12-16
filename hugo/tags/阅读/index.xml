@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>阅读 on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/%E9%98%85%E8%AF%BB/</link>
+    <description>Recent content in 阅读 on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 16 Dec 2023 15:17:51 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开源阅读</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-12-16-%E5%BC%80%E6%BA%90%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sat, 16 Dec 2023 15:17:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-12-16-%E5%BC%80%E6%BA%90%E9%98%85%E8%AF%BB/</guid>
+      <description>&lt;p&gt;开源阅读 是一款开源小说阅读器&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>中国移动宽带-解限速脚本</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-12-16-%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E5%AE%BD%E5%B8%A6-%E8%A7%A3%E9%99%90%E9%80%9F%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sat, 16 Dec 2023 15:17:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-12-16-%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E5%AE%BD%E5%B8%A6-%E8%A7%A3%E9%99%90%E9%80%9F%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;这个脚本可以模拟测速过程，挂在服务器上每小时执行，就可以解除移动定期降速了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
