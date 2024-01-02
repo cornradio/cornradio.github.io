@@ -7,7 +7,72 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Sat, 07 Oct 2023 09:32:55 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Jan 2024 09:56:40 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pandas</title>
+      <link>https://cornradio.github.io/hugo/posts/2024-01-02-pandas/</link>
+      <pubDate>Tue, 02 Jan 2024 09:56:40 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2024-01-02-pandas/</guid>
+      <description>&lt;p&gt;本文介绍pandas基础知识
+提供代码示例&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python json config</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/</link>
+      <pubDate>Sat, 16 Dec 2023 15:17:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/</guid>
+      <description>&lt;p&gt;python 使用json存储自身配置的代码示例;
+包含配置缺少报错提示、初始化配置文件等功能，方便取用&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>switch 盗版游戏安装</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 16 Dec 2023 15:17:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/</guid>
+      <description>wifi 装游戏 Awoo： https://github.com/Huntereb/Awoo-Installer ns-usbloader： https://github.com/developersu/ns-usbloader/releases 选择 net - 选择游戏 - 游戏机打开awoo ， 然后上传。 速度大概10m/s 平均 USB 装游戏 电脑上： https://github.com/developersu/ns-usbloader/releases 打开</description>
+    </item>
+    
+    <item>
+      <title>开源阅读</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-12-16-%E5%BC%80%E6%BA%90%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sat, 16 Dec 2023 15:17:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-12-16-%E5%BC%80%E6%BA%90%E9%98%85%E8%AF%BB/</guid>
+      <description>&lt;p&gt;开源阅读 是一款开源小说阅读器&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>中国移动宽带-解限速脚本</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-12-16-%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E5%AE%BD%E5%B8%A6-%E8%A7%A3%E9%99%90%E9%80%9F%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sat, 16 Dec 2023 15:17:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-12-16-%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E5%AE%BD%E5%B8%A6-%E8%A7%A3%E9%99%90%E9%80%9F%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;这个脚本可以模拟测速过程，挂在服务器上每小时执行，就可以解除移动定期降速了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>tkinter</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-11-22-tkinter/</link>
+      <pubDate>Wed, 22 Nov 2023 17:14:50 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-11-22-tkinter/</guid>
+      <description>tkinter 是Python的一个默认GUI库，本教程从基础开始一直到做出一个好看的gui界面。 我会根据教学内容把我所学到的一切整理在这里。 The ultimate introduction to modern GUIs</description>
+    </item>
+    
+    <item>
+      <title>Jupyter notebook</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-11-01-jupyternotebook/</link>
+      <pubDate>Wed, 01 Nov 2023 13:40:05 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-11-01-jupyternotebook/</guid>
+      <description>安装 Jupyter Notebook 可以通过以下步骤完成： 确保你已经安装了 Python。 使用 pip 安装 Jupyter Notebook。 1pip3 install jupyter 如果提示没有pip3： 按下 Win + Pause/Break 键打开系统属</description>
+    </item>
+    
     <item>
       <title>dirsearch</title>
       <link>https://cornradio.github.io/hugo/posts/2023-10-07-dirsearch/</link>
@@ -32,7 +97,7 @@
       <pubDate>Tue, 19 Sep 2023 09:32:55 +0800</pubDate>
       
       <guid>https://cornradio.github.io/hugo/posts/2023-09-19-zshrc_for_powershell/</guid>
-      <description>使用 zsh 之后，回到windows，我很怀念alias功能。 以及 zshrc 配置文件。 但是 powershell 可以实现类似的功能：参考 打开 powershell 管理员 ， 执行允许ps1脚本的命令</description>
+      <description>使用 zsh 之后，回到windows，我很怀念alias功能。 以及 zshrc 配置文件。 但是 powershell 可以实现类似的功能：参考 打开管理员 powershell ， 执行允许ps1脚本的命令</description>
     </item>
     
     <item>

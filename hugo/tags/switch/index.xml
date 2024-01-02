@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>switch on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/switch/</link>
+    <description>Recent content in switch on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 16 Dec 2023 15:17:51 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/switch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>switch 盗版游戏安装</title>
+      <link>https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 16 Dec 2023 15:17:51 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/</guid>
+      <description>wifi 装游戏 Awoo： https://github.com/Huntereb/Awoo-Installer ns-usbloader： https://github.com/developersu/ns-usbloader/releases 选择 net - 选择游戏 - 游戏机打开awoo ， 然后上传。 速度大概10m/s 平均 USB 装游戏 电脑上： https://github.com/developersu/ns-usbloader/releases 打开</description>
+    </item>
+    
+  </channel>
+</rss>
