@@ -13,7 +13,7 @@
 <meta itemprop="description" content="python 使用json存储自身配置的代码示例;
 包含配置缺少报错提示、初始化配置文件等功能，方便取用"><meta itemprop="datePublished" content="2023-12-16T15:17:51+08:00" />
 <meta itemprop="dateModified" content="2023-12-16T15:17:51+08:00" />
-<meta itemprop="wordCount" content="452">
+<meta itemprop="wordCount" content="469">
 <meta itemprop="keywords" content="python,json," /><meta property="og:title" content="python json config" />
 <meta property="og:description" content="python 使用json存储自身配置的代码示例;
 包含配置缺少报错提示、初始化配置文件等功能，方便取用" />
@@ -244,21 +244,29 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#使用方法">使用方法</a></li>
-    <li><a href="#todo">todo</a></li>
   </ul>
 </nav>
   </div>
 </div><div class="post-content mb-3"><p>python 使用json存储自身配置的代码示例;
 包含配置缺少报错提示、初始化配置文件等功能，方便取用</p>
 <h2 id="使用方法">使用方法</h2>
-<p>声明 <code>config_path</code> 作为json存放路径</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">config_path</span> <span class="o">=</span> <span class="s1">&#39;./myconfig.json&#39;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">config_data</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="s2">&#34;key1&#34;</span><span class="p">:</span> <span class="s2">&#34;v1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="s2">&#34;key2&#34;</span><span class="p">:</span> <span class="s2">&#34;v2&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="n">load_json_config</span><span class="p">()</span>
+</span></span></code></pre></div><p>声明 <code>config_path</code> 作为json存放路径</p>
 <p>声明 <code>config_data</code> 作为全局变量（字典类型）</p>
 <p>代码中使用 <code>load_json_config()</code> 读取 config.json 的配置到内存</p>
 <blockquote>
 <p><code>load_json_config</code> 会调用 <code>try_create_config</code> 、  <code>check_config</code> , 功能包括把json读取到内存，如果没有配置文件则创建;如果读取到的 config 配置文件比 <code>config_data</code> 字典内容少会进行提示报错。</p>
 </blockquote>
 <p>使用 <code>config_data['xxx']</code> 访问即可</p>
-<h2 id="todo">todo</h2>
+<p><strong>todo</strong></p>
 <p>未完善保存相关功能，目前都是从外部加载配置文件，暂时没有保存需求！</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">config_path</span> <span class="o">=</span> <span class="s2">&#34;assests</span><span class="se">\\</span><span class="s2">config.json&#34;</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">config_data</span> <span class="o">=</span> <span class="p">{</span>
