@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Free To Share.</copyright>
-    <lastBuildDate>Tue, 20 Dec 2022 16:14:59 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Jan 2024 16:08:37 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024 01 17 Tmux</title>
+      <link>https://cornradio.github.io/hugo/posts/2024-01-17-tmux/</link>
+      <pubDate>Wed, 17 Jan 2024 16:08:37 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2024-01-17-tmux/</guid>
+      <description>tmux 特点是可以有多个窗口（分割视图），非常方便 https://tmuxcheatsheet.com/ 这里是基础用法 1tmux 2ctrl-B + D 离开（不退出） 3ctrl - D 离开（退出） 4 5tmux a 连接上次用的tmux 6tmux ls 查看所有 tmux</description>
+    </item>
+    
+    <item>
+      <title>Wireguard-管线卫士</title>
+      <link>https://cornradio.github.io/hugo/posts/2024-01-17-wireguard/</link>
+      <pubDate>Wed, 17 Jan 2024 15:46:23 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2024-01-17-wireguard/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>burpsuite（入门教学课程）</title>
       <link>https://cornradio.github.io/hugo/posts/3burpsuite%E5%85%A5%E9%97%A8/</link>
