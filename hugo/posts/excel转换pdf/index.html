@@ -253,7 +253,7 @@
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1">//在下面两个文件夹中找到 office 和 Microsoft.Office.Interop.Excel 两个dll</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1">//C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1">//C:\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">button2_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">button2_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="kt">string</span> <span class="n">filePath</span>  <span class="p">=</span> <span class="n">Environment</span><span class="p">.</span><span class="n">GetFolderPath</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">SpecialFolder</span><span class="p">.</span><span class="n">Desktop</span><span class="p">)</span> <span class="p">+</span> <span class="s">@&#34;\Sample\wb.xlsx&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="kt">string</span> <span class="n">filePath2</span> <span class="p">=</span> <span class="n">Environment</span><span class="p">.</span><span class="n">GetFolderPath</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">SpecialFolder</span><span class="p">.</span><span class="n">Desktop</span><span class="p">)</span> <span class="p">+</span> <span class="s">@&#34;\Sample\wb.pdf&#34;</span><span class="p">;</span>
@@ -264,7 +264,7 @@
 </span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="n">workbook</span><span class="p">.</span><span class="n">ExportAsFixedFormat</span><span class="p">(</span><span class="n">XlFixedFormatType</span><span class="p">.</span><span class="n">xlTypePDF</span><span class="p">,</span> <span class="n">filePath2</span><span class="p">,</span> <span class="n">XlFixedFormatQuality</span><span class="p">.</span><span class="n">xlQualityStandard</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="封装函数">封装函数</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">ConvertExcelToPDF</span><span class="p">(</span><span class="kt">string</span> <span class="n">sourcePath</span><span class="p">,</span><span class="kt">string</span> <span class="n">targetPath</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">ConvertExcelToPDF</span><span class="p">(</span><span class="kt">string</span> <span class="n">sourcePath</span><span class="p">,</span><span class="kt">string</span> <span class="n">targetPath</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">Application</span> <span class="n">application</span> <span class="p">;</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">Workbook</span> <span class="n">workbook</span> <span class="p">;</span>
@@ -339,11 +339,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">2024 01 17 Tmux
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-burp%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3%E7%89%88/">Burp下载（破解版）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-vscode%E9%85%8D%E5%90%88wsl%E7%BC%96%E7%A8%8B/">Vscode配合wsl编程
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">Tmux
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-wireguard/">Wireguard-管线卫士
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-02-pandas/">Pandas
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/">Python Json Config
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/">Switch 盗版游戏安装
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">

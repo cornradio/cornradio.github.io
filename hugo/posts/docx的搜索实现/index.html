@@ -311,14 +311,14 @@
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1">//注意这里我没有删除空格和tab，这是为了从word中复制过来方便，实际在函数中会把空格、tab字符都删除后进行对比</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="kt">var</span> <span class="n">table1</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">findTableList</span><span class="p">(</span><span class="s">&#34;序号	机房名称	物理位置	重要程度&#34;</span><span class="p">)[</span><span class="m">0</span><span class="p">];</span>
 </span></span></code></pre></div><p>下面是我实现的一个表格复制函数。从word1中把t1复制到t2，可以选择是否包含表头。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#region 表格复制函数</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#region</span> <span class="err">表格复制函数</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cs">/// &lt;param name=&#34;t1head&#34;&gt;table1 表头&lt;/param&gt;</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cs">/// &lt;param name=&#34;i1&#34;&gt;table1 所在index&lt;/param&gt;</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="cs">/// &lt;param name=&#34;t2head&#34;&gt;table2 表头&lt;/param&gt;</span>
 </span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="cs">/// &lt;param name=&#34;i2&#34;&gt;table 2 所在index&lt;/param&gt;</span>
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">void</span> <span class="n">CopyTable</span><span class="p">(</span><span class="kt">string</span> <span class="n">t1head</span><span class="p">,</span> <span class="kt">string</span> <span class="n">t2head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i1</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i2</span> <span class="p">=</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="kt">bool</span> <span class="n">toremove</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="kt">bool</span> <span class="n">toremove</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="kt">var</span> <span class="n">table1</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">findTableList</span><span class="p">(</span><span class="n">t1head</span><span class="p">)[</span><span class="n">i1</span><span class="p">];</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="n">ConsoleWriter</span><span class="p">.</span><span class="n">WriteColoredText</span><span class="p">(</span><span class="s">&#34;table 报告中 ↑&#34;</span><span class="p">,</span> <span class="n">ConsoleColor</span><span class="p">.</span><span class="n">Green</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="kt">var</span> <span class="n">table2</span> <span class="p">=</span> <span class="n">tempo</span><span class="p">.</span><span class="n">findTableList</span><span class="p">(</span><span class="n">t2head</span><span class="p">)[</span><span class="n">i2</span><span class="p">];</span>
@@ -327,7 +327,7 @@
 </span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">table1</span><span class="p">.</span><span class="n">ColumnCount</span> <span class="p">&gt;</span> <span class="n">table2</span><span class="p">.</span><span class="n">ColumnCount</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="n">table2</span><span class="p">.</span><span class="n">InsertColumn</span><span class="p">();</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="n">toremove</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="n">toremove</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">    <span class="c1">//如果t1比t2更窄，直接给t2瘦身</span>
 </span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">table1</span><span class="p">.</span><span class="n">ColumnCount</span> <span class="p">&lt;</span> <span class="n">table2</span><span class="p">.</span><span class="n">ColumnCount</span><span class="p">)</span>
@@ -364,7 +364,7 @@
 </span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="cs">/// &lt;param name=&#34;i2&#34;&gt;table 2 所在位数&lt;/param&gt;</span>
 </span></span><span class="line"><span class="ln">52</span><span class="cl"><span class="k">void</span> <span class="n">CopyTable_withHead</span><span class="p">(</span><span class="kt">string</span> <span class="n">t1head</span><span class="p">,</span> <span class="kt">string</span> <span class="n">t2head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i1</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i2</span> <span class="p">=</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="ln">54</span><span class="cl">    <span class="kt">bool</span> <span class="n">toremove</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">    <span class="kt">bool</span> <span class="n">toremove</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">55</span><span class="cl">    <span class="kt">var</span> <span class="n">table1</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">findTableList</span><span class="p">(</span><span class="n">t1head</span><span class="p">)[</span><span class="n">i1</span><span class="p">];</span>
 </span></span><span class="line"><span class="ln">56</span><span class="cl">    <span class="n">ConsoleWriter</span><span class="p">.</span><span class="n">WriteColoredText</span><span class="p">(</span><span class="s">&#34;table 报告中 ↑&#34;</span><span class="p">,</span> <span class="n">ConsoleColor</span><span class="p">.</span><span class="n">Green</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">57</span><span class="cl">    <span class="kt">var</span> <span class="n">table2</span> <span class="p">=</span> <span class="n">tempo</span><span class="p">.</span><span class="n">findTableList</span><span class="p">(</span><span class="n">t2head</span><span class="p">)[</span><span class="n">i2</span><span class="p">];</span>
@@ -373,7 +373,7 @@
 </span></span><span class="line"><span class="ln">60</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">table1</span><span class="p">.</span><span class="n">ColumnCount</span> <span class="p">&gt;</span> <span class="n">table2</span><span class="p">.</span><span class="n">ColumnCount</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">61</span><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="ln">62</span><span class="cl">        <span class="n">table2</span><span class="p">.</span><span class="n">InsertColumn</span><span class="p">();</span>
-</span></span><span class="line"><span class="ln">63</span><span class="cl">        <span class="n">toremove</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl">        <span class="n">toremove</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">64</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">65</span><span class="cl">    <span class="c1">//如果t1比t2更窄，直接给t2瘦身</span>
 </span></span><span class="line"><span class="ln">66</span><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">table1</span><span class="p">.</span><span class="n">ColumnCount</span> <span class="p">&lt;</span> <span class="n">table2</span><span class="p">.</span><span class="n">ColumnCount</span><span class="p">)</span>
@@ -403,7 +403,7 @@
 </span></span><span class="line"><span class="ln">90</span><span class="cl">
 </span></span><span class="line"><span class="ln">91</span><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="ln">92</span><span class="cl">
-</span></span><span class="line"><span class="ln">93</span><span class="cl"><span class="err">#</span><span class="n">endregion</span>
+</span></span><span class="line"><span class="ln">93</span><span class="cl"><span class="cp">#endregion</span>
 </span></span></code></pre></div><h2 id="文字批量替换">文字批量替换</h2>
 <p>文字批量替换是我参考官方文档的例子写出来的，因为功能很常用所以把他包含到了库中。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//向字典里面添加【被替换str】、【替换成str】</span>
@@ -463,11 +463,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">2024 01 17 Tmux
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-burp%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3%E7%89%88/">Burp下载（破解版）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-vscode%E9%85%8D%E5%90%88wsl%E7%BC%96%E7%A8%8B/">Vscode配合wsl编程
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">Tmux
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-wireguard/">Wireguard-管线卫士
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-02-pandas/">Pandas
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/">Python Json Config
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/">Switch 盗版游戏安装
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">

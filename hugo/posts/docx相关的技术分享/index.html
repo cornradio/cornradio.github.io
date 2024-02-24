@@ -382,7 +382,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//使用工具类“myuitl”一句话读取文件</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1">//path为docx文件的目录</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">doc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">myutil</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">public</span> <span class="n">myutil</span><span class="p">(</span><span class="kt">string</span> <span class="n">str_path</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">public</span> <span class="n">myutil</span><span class="p">(</span><span class="kt">string</span> <span class="n">str_path</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="err">…</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="kt">var</span> <span class="n">document</span> <span class="p">=</span> <span class="n">DocX</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="c1">//读取document</span>
@@ -456,9 +456,9 @@
 <li>对于会有多个搜索结果的，返回list，或者指定要求获得第几个搜索结果</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">//列举一些实搜索现的例子</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">public</span> <span class="kt">string</span> <span class="n">Find_Paragraph_for_text</span><span class="p">(</span><span class="kt">string</span> <span class="n">v</span><span class="p">,</span><span class="kt">int</span> <span class="n">count</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Paragraph</span><span class="p">&gt;</span> <span class="n">Find_Paragraph_for_plist</span><span class="p">(</span> <span class="kt">string</span> <span class="n">v</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">Find_Paragraph_for_ilist</span><span class="p">(</span> <span class="kt">string</span> <span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kd">public</span> <span class="kt">string</span> <span class="n">Find_Paragraph_for_text</span><span class="p">(</span><span class="kt">string</span> <span class="n">v</span><span class="p">,</span><span class="kt">int</span> <span class="n">count</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="kd">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Paragraph</span><span class="p">&gt;</span> <span class="n">Find_Paragraph_for_plist</span><span class="p">(</span> <span class="kt">string</span> <span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="kd">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">Find_Paragraph_for_ilist</span><span class="p">(</span> <span class="kt">string</span> <span class="n">v</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl">    
 </span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="c1">//用搜索的方式获取段落</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl"> <span class="n">tmpstr</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">Find_Paragraph_for_text</span><span class="p">(</span><span class="s">&#34;本报告记录编号：&#34;</span><span class="p">);</span>
@@ -472,7 +472,7 @@
 </span></span><span class="line"><span class="ln">6</span><span class="cl">        <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">7</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
 </span></span></code></pre></div><h3 id="表格搜索">表格搜索</h3>
 <p><img class="img-fluid" alt="image" src="https://tvax3.sinaimg.cn/large/006rgJELly1h0sy8718i9j30ux07rq4w.jpg" loading="lazy"
   
@@ -491,7 +491,7 @@
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1">//提供表格、行索引（row）、行内的单元格索引（cell),获取指定单元格内容</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="kt">string</span> <span class="n">text</span> <span class="p">=</span> <span class="n">table_Get_cell_text</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
 </span></span></code></pre></div><p>表格搜索的实现如下</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Table</span><span class="p">&gt;</span> <span class="n">findTableList</span><span class="p">(</span><span class="kt">string</span> <span class="n">v1</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Table</span><span class="p">&gt;</span> <span class="n">findTableList</span><span class="p">(</span><span class="kt">string</span> <span class="n">v1</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">v1</span> <span class="p">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">).</span><span class="n">Replace</span><span class="p">(</span><span class="s">&#34;\t&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">List</span><span class="p">&lt;</span><span class="n">Table</span><span class="p">&gt;</span> <span class="n">tlist</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Table</span><span class="p">&gt;();</span>
@@ -530,7 +530,7 @@
 </span></span><span class="line"><span class="ln">2</span><span class="cl">1、2021年12月28日～2021年12月29日，测评准备过程。
 </span></span><span class="line"><span class="ln">3</span><span class="cl">1、2021年12月28日～12月29日，测评准备过程。
 </span></span><span class="line"><span class="ln">4</span><span class="cl">1、2021年1月9日，测评准备过程。
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">private</span> <span class="kt">string</span> <span class="n">date_process</span><span class="p">(</span><span class="kt">string</span> <span class="n">a</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">private</span> <span class="kt">string</span> <span class="n">date_process</span><span class="p">(</span><span class="kt">string</span> <span class="n">a</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="c1">//提取日期（结束日期）</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">ConsoleWriter</span><span class="p">.</span><span class="n">WriteCyan</span><span class="p">(</span><span class="s">&#34;在字符串中寻找日期：&#34;</span> <span class="p">+</span> <span class="n">a</span><span class="p">);</span>
@@ -647,11 +647,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">2024 01 17 Tmux
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-burp%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3%E7%89%88/">Burp下载（破解版）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-vscode%E9%85%8D%E5%90%88wsl%E7%BC%96%E7%A8%8B/">Vscode配合wsl编程
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">Tmux
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-wireguard/">Wireguard-管线卫士
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-02-pandas/">Pandas
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/">Python Json Config
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/">Switch 盗版游戏安装
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">

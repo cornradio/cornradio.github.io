@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network security on cornradio的技术博客</title>
+    <link>https://cornradio.github.io/hugo/tags/network-security/</link>
+    <description>Recent content in network security on cornradio的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Free To Share.</copyright>
+    <lastBuildDate>Sat, 24 Feb 2024 16:34:43 +0800</lastBuildDate><atom:link href="https://cornradio.github.io/hugo/tags/network-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Burp下载（破解版）</title>
+      <link>https://cornradio.github.io/hugo/posts/2024-02-24-burp%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3%E7%89%88/</link>
+      <pubDate>Sat, 24 Feb 2024 16:34:43 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2024-02-24-burp%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3%E7%89%88/</guid>
+      <description>&lt;p&gt;再也不用去奇怪的网站和博客找破解版burp了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vscode配合wsl编程</title>
+      <link>https://cornradio.github.io/hugo/posts/2024-02-24-vscode%E9%85%8D%E5%90%88wsl%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Sat, 24 Feb 2024 16:34:43 +0800</pubDate>
+      
+      <guid>https://cornradio.github.io/hugo/posts/2024-02-24-vscode%E9%85%8D%E5%90%88wsl%E7%BC%96%E7%A8%8B/</guid>
+      <description>&lt;p&gt;使用wsl，用windows环境GUI + linux 高效地编程。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

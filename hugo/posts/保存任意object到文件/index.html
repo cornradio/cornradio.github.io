@@ -250,10 +250,10 @@
 <p><code> [DataContract]</code> 标记在class前。</p>
 <p><code> [DataMember]</code> 标记在需要保存的属性前。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="na"> [DataContract]</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">public</span> <span class="k">class</span> <span class="nc">Car</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Car</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="na">  [DataMember]</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="k">public</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="kd">public</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="na">
 </span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="na">  [DataMember]</span>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="kt">double</span> <span class="n">power</span><span class="p">;</span>
@@ -264,12 +264,12 @@
 </span></span></code></pre></div><h2 id="拷贝这两个函数">拷贝这两个函数</h2>
 <p>保存：保存文件到xml，文件目录和程序目录相同，文件名自定。</p>
 <p>读取：从指定文件名读取。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">static</span> <span class="k">void</span> <span class="n">SaveViaDataContractSerialization</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">serializableObject</span><span class="p">,</span> <span class="kt">string</span> <span class="n">filepath</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">static</span> <span class="k">void</span> <span class="n">SaveViaDataContractSerialization</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">serializableObject</span><span class="p">,</span> <span class="kt">string</span> <span class="n">filepath</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="kt">var</span> <span class="n">serializer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DataContractSerializer</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="kt">var</span> <span class="n">settings</span> <span class="p">=</span> <span class="k">new</span> <span class="n">XmlWriterSettings</span><span class="p">()</span>
 </span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">Indent</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="n">Indent</span> <span class="p">=</span> <span class="kc">true</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="n">IndentChars</span> <span class="p">=</span> <span class="s">&#34;\t&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="p">};</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="kt">var</span> <span class="n">writer</span> <span class="p">=</span> <span class="n">XmlWriter</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">settings</span><span class="p">);</span>
@@ -278,12 +278,12 @@
 </span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="ln">13</span><span class="cl">
 </span></span><span class="line"><span class="ln">14</span><span class="cl">
-</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">static</span> <span class="n">T</span> <span class="n">LoadViaDataContractSerialization</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">filepath</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="kd">static</span> <span class="n">T</span> <span class="n">LoadViaDataContractSerialization</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">filepath</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="kt">var</span> <span class="n">fileStream</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FileStream</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">18</span><span class="cl">  <span class="kt">var</span> <span class="n">reader</span> <span class="p">=</span> <span class="n">XmlDictionaryReader</span><span class="p">.</span><span class="n">CreateTextReader</span><span class="p">(</span><span class="n">fileStream</span><span class="p">,</span> <span class="k">new</span> <span class="n">XmlDictionaryReaderQuotas</span><span class="p">());</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="kt">var</span> <span class="n">serializer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DataContractSerializer</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl">  <span class="n">T</span> <span class="n">serializableObject</span> <span class="p">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">serializer</span><span class="p">.</span><span class="n">ReadObject</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">  <span class="n">T</span> <span class="n">serializableObject</span> <span class="p">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">serializer</span><span class="p">.</span><span class="n">ReadObject</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 </span></span><span class="line"><span class="ln">21</span><span class="cl">  <span class="n">reader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
 </span></span><span class="line"><span class="ln">22</span><span class="cl">  <span class="n">fileStream</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
 </span></span><span class="line"><span class="ln">23</span><span class="cl">  <span class="k">return</span> <span class="n">serializableObject</span><span class="p">;</span>
@@ -293,7 +293,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">// Save single object</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">Car</span> <span class="n">bmw</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="s">&#34;BMW&#34;</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;Left&#34;</span><span class="p">,</span> <span class="s">&#34;Right&#34;</span> <span class="p">});</span>    <span class="c1">// create object</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">SaveViaDataContractSerialization</span><span class="p">(</span><span class="n">bmw</span><span class="p">,</span> <span class="s">&#34;bmw.xml&#34;</span><span class="p">);</span>                       <span class="c1">// save object</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">bmw</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>                                                             <span class="c1">// delete object</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">bmw</span> <span class="p">=</span> <span class="kc">null</span><span class="p">;</span>                                                             <span class="c1">// delete object</span>
 </span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">bmw</span> <span class="p">=</span> <span class="n">LoadViaDataContractSerialization</span><span class="p">&lt;</span><span class="n">Car</span><span class="p">&gt;(</span><span class="s">&#34;bmw.xml&#34;</span><span class="p">);</span>                 <span class="c1">// reload object</span>
 </span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">bmw</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>                                      <span class="c1">// print object</span>
 </span></span><span class="line"><span class="ln"> 7</span><span class="cl">
@@ -306,7 +306,7 @@
 </span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="s">&#34;Aston Martin&#34;</span><span class="p">,</span> <span class="m">300</span><span class="p">,</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;Front&#34;</span> <span class="p">})</span>
 </span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="n">SaveViaDataContractSerialization</span><span class="p">(</span><span class="n">carList</span><span class="p">,</span> <span class="s">&#34;cars.xml&#34;</span><span class="p">);</span>                  <span class="c1">// save object list</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="n">carList</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>                                                         <span class="c1">// delete object list</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="n">carList</span> <span class="p">=</span> <span class="kc">null</span><span class="p">;</span>                                                         <span class="c1">// delete object list</span>
 </span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="n">carList</span> <span class="p">=</span> <span class="n">LoadViaDataContractSerialization</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Car</span><span class="p">&gt;&gt;(</span><span class="s">&#34;cars.xml&#34;</span><span class="p">);</span>      <span class="c1">// reload object list</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">a</span> <span class="k">in</span> <span class="n">carList</span><span class="p">)</span>                                              <span class="c1">// print object list</span>
 </span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
@@ -363,11 +363,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">2024 01 17 Tmux
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-burp%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3%E7%89%88/">Burp下载（破解版）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-vscode%E9%85%8D%E5%90%88wsl%E7%BC%96%E7%A8%8B/">Vscode配合wsl编程
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">Tmux
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-wireguard/">Wireguard-管线卫士
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-02-pandas/">Pandas
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/">Python Json Config
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/">Switch 盗版游戏安装
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">

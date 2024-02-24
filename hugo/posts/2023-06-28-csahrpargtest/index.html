@@ -254,7 +254,7 @@
 <h2 id="csharp-接受命令行参数简单例子">csharp 接受命令行参数（简单例子）</h2>
 <p>csharp 接受的命令行参数其实就是一个 string 数组：</p>
 <p>这是一个简单接受参数输入的程序</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="c1">// 判断是否有传入参数</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">Length</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
@@ -299,7 +299,7 @@
 <li>-p 的处理</li>
 <li>未知参数的处理</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="n">processArgs</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">bool</span> <span class="n">processArgs</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="c1">// 判断是否有传入参数</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">Length</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
@@ -313,7 +313,7 @@
 </span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="s">  本软件可以使用参数如下：
 </span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="s">  --help, -h: 打印帮助信息
 </span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="s">  --pentestreport &lt;path&gt; ,-p &lt;path&gt;: 指定渗透测试报告路径并转换&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">                <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">16</span><span class="cl">                <span class="k">break</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">17</span><span class="cl">
 </span></span><span class="line"><span class="ln">18</span><span class="cl">            <span class="k">case</span> <span class="s">&#34;--pentestreport&#34;</span><span class="p">:</span>
@@ -322,25 +322,25 @@
 </span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="p">{</span>
 </span></span><span class="line"><span class="ln">22</span><span class="cl">                    <span class="kt">string</span> <span class="n">reportPath</span> <span class="p">=</span> <span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
 </span></span><span class="line"><span class="ln">23</span><span class="cl">                    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;渗透测试报告路径：&#34;</span> <span class="p">+</span> <span class="n">reportPath</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">24</span><span class="cl">                    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">                    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">25</span><span class="cl">                <span class="p">}</span>
 </span></span><span class="line"><span class="ln">26</span><span class="cl">                <span class="k">else</span>
 </span></span><span class="line"><span class="ln">27</span><span class="cl">                <span class="p">{</span>
 </span></span><span class="line"><span class="ln">28</span><span class="cl">                    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;未指定渗透测试报告路径&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">                    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">                    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">30</span><span class="cl">                <span class="p">}</span>
 </span></span><span class="line"><span class="ln">31</span><span class="cl">                <span class="k">break</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">32</span><span class="cl">
 </span></span><span class="line"><span class="ln">33</span><span class="cl">            <span class="k">default</span><span class="p">:</span>
 </span></span><span class="line"><span class="ln">34</span><span class="cl">                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;未知参数：&#34;</span> <span class="p">+</span> <span class="n">arg0</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">35</span><span class="cl">                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">36</span><span class="cl">                <span class="k">break</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="ln">38</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">39</span><span class="cl">    <span class="k">else</span>
 </span></span><span class="line"><span class="ln">40</span><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="ln">41</span><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;没有传入参数&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">42</span><span class="cl">        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">43</span><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="ln">44</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
@@ -393,11 +393,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">2024 01 17 Tmux
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-burp%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3%E7%89%88/">Burp下载（破解版）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-vscode%E9%85%8D%E5%90%88wsl%E7%BC%96%E7%A8%8B/">Vscode配合wsl编程
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">Tmux
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-wireguard/">Wireguard-管线卫士
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-02-pandas/">Pandas
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/">Python Json Config
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/">Switch 盗版游戏安装
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">

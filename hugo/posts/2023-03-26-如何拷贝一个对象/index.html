@@ -264,7 +264,7 @@
 <h2 id="问题">问题</h2>
 <p>首先，我手上有两个类，一个是<code>Person</code>，另一个是<code>Car</code>。</p>
 <p>Person有一个属性叫做<code>car</code>，创建新Person时，要传入<code>Car</code>的实例。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">test1</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">test1</span><span class="p">()</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">Car</span> <span class="n">car</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="s">&#34;BMW&#34;</span><span class="p">,</span> <span class="s">&#34;Black&#34;</span><span class="p">,</span> <span class="m">100000</span><span class="p">);</span><span class="c1">//brand , color, price</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="n">Person</span> <span class="n">person</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&#34;John&#34;</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="n">car</span><span class="p">);</span>
@@ -296,7 +296,7 @@
 <h3 id="创建一个新的car">创建一个新的Car</h3>
 <p>他的意识其实就是所谓的“深拷贝”，就是把一个对象的所有属性都拷贝一份，</p>
 <p>传入的参数从<code>car</code>变成了<code>new Car(car.brand, car.color, car.price)</code>。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="n">test2</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">private</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">test2</span><span class="p">()</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">Car</span> <span class="n">car</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="s">&#34;BMW&#34;</span><span class="p">,</span> <span class="s">&#34;Black&#34;</span><span class="p">,</span> <span class="m">100000</span><span class="p">);</span><span class="c1">//brand , color, price</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="c1">// if i want to copy the car(this is not a good way)</span>
@@ -321,12 +321,12 @@
 <p><code>MemberwiseClone</code>这个方法是<code>Object</code>类中的一个方法，他的就是所谓的“浅拷贝”，就是把一个对象的所有属性都拷贝一份，但是如果属性是引用类型，那么只是拷贝了引用，而不是拷贝了引用的值。</p>
 <p><code>MemberwiseClone</code>是私有属性，为了调用它，需要在car类中创建一个Clone方法</p>
 <p>Clone方法（在Car.cs中）：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">internal</span> <span class="n">Car</span> <span class="n">Clone</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">internal</span> <span class="n">Car</span> <span class="n">Clone</span><span class="p">()</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">Car</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="n">MemberwiseClone</span><span class="p">();</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>这回传入的参数从<code>car</code>变成了<code>car.Clone()</code>。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="n">test3</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kd">private</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">test3</span><span class="p">()</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="n">Car</span> <span class="n">car</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="s">&#34;BMW&#34;</span><span class="p">,</span> <span class="s">&#34;Black&#34;</span><span class="p">,</span> <span class="m">100000</span><span class="p">);</span><span class="c1">//brand , color, price</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="c1">// &#34;the better clone way&#34;you will need to implement Clone() method，go see the colne method in Car.cs</span>
@@ -347,13 +347,13 @@
 </ul>
 <p>⭐️我创建了一个<code>Clone_p</code>函数，他会专门返回一个Paragraph对象</p>
 <p>传入的确实是引用，但是使用了专门copy函数后，就不会不小心修改到他了，在内存中也是独立的一个位置（docx初始化完毕之后，所有paragraph都会读到内存中放置）完美解决问题！</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">public</span> <span class="n">Paragraph</span> <span class="n">Clone_p</span><span class="p">(</span><span class="n">Paragraph</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="ln">1</span><span class="cl"><span class="kd">public</span> <span class="n">Paragraph</span> <span class="n">Clone_p</span><span class="p">(</span><span class="n">Paragraph</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">return</span> <span class="n">find_p_by_pid</span><span class="p">(</span><span class="n">Get_pid</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="k">public</span> <span class="n">Paragraph</span> <span class="n">find_p_by_pid</span><span class="p">(</span><span class="kt">string</span> <span class="k">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Paragraphs</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Xml</span><span class="p">.</span><span class="n">FirstAttribute</span><span class="p">.</span><span class="n">ToString</span><span class="p">()==</span><span class="k">value</span><span class="p">).</span><span class="n">ToList</span><span class="p">()[</span><span class="m">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="kd">public</span> <span class="n">Paragraph</span> <span class="n">find_p_by_pid</span><span class="p">(</span><span class="kt">string</span> <span class="k">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Paragraphs</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Xml</span><span class="p">.</span><span class="n">FirstAttribute</span><span class="p">.</span><span class="n">ToString</span><span class="p">()==</span><span class="k">value</span><span class="p">).</span><span class="n">ToList</span><span class="p">()[</span><span class="m">0</span><span class="p">];</span>
 </span></span><span class="line"><span class="ln">6</span><span class="cl">
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="n">Get_pid</span><span class="p">(</span><span class="n">Paragraph</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">string</span> <span class="n">Get_pid</span><span class="p">(</span><span class="n">Paragraph</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">Xml</span><span class="p">.</span><span class="n">FirstAttribute</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
@@ -406,11 +406,11 @@
   </section><section class="recent-posts row card component">
   <div class="card-body">
     <h2 class="card-title">最近文章</h2>
-    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">2024 01 17 Tmux
+    <ul><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-burp%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3%E7%89%88/">Burp下载（破解版）
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-02-24-vscode%E9%85%8D%E5%90%88wsl%E7%BC%96%E7%A8%8B/">Vscode配合wsl编程
+</a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-tmux/">Tmux
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-17-wireguard/">Wireguard-管线卫士
 </a></li><li><a href="https://cornradio.github.io/hugo/posts/2024-01-02-pandas/">Pandas
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-python-json-config/">Python Json Config
-</a></li><li><a href="https://cornradio.github.io/hugo/posts/2023-12-16-switch%E7%9B%97%E7%89%88%E6%B8%B8%E6%88%8F%E5%AE%89%E8%A3%85/">Switch 盗版游戏安装
 </a></li></ul>
   </div>
 </section><section class="taxonomies row card component">
